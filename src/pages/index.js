@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Services from './services';
 import Divider from '../components/divider';
 import About from './about';
+import Pricing from './pricing';
 import Title from '../components/title';
 import HeroImage from '../components/heroImage';
 import TopBar from '../components/topBar';
@@ -33,6 +34,12 @@ class Index extends Component {
                     <About />
                 </section>
                 <Divider image="leaves.jpg" />
+                <section id="work" className="container">
+                    <Title text="Our Work" />
+                </section>
+                <section id="pricing">
+                    <Pricing image="bamboo-sunset.jpg" />
+                </section>
                 <section id="contact" className="container">
                     <Title text="Contact Me" />
                     <Contact />
