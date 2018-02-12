@@ -1,0 +1,17 @@
+{
+  "name": "gatsby-portfolio",
+  "description": "Gatsby Portfolio",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.158",
+    "gatsby-link": "^1.6.34",
+    "gatsby-plugin-sass": "^1.0.16",
+    "gatsby-plugin-typography": "^1.7.13",
+    "typography-theme-doelger": "^0.15.11"
+  }
+}
