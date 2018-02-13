@@ -4,6 +4,7 @@ import Divider from '../components/divider';
 import About from './about';
 import Pricing from './pricing';
 import Title from '../components/title';
+import Work from './work';
 import HeroImage from '../components/heroImage';
 import TopBar from '../components/topBar';
 import Contact from './contact';
@@ -21,24 +22,25 @@ class Index extends Component {
         return (
             <div className='content-wrapper'>
                 <TopBar />
-                <HeroImage title="Soren Baird" subtitle="Web Developer" image="bamboo-sunrise.jpg" />
+                <HeroImage title="Sore Bear" subtitle="Development" image="forest-trail-dark.jpg" />
                 <section id="services" className="container">
                     <Title text="Our Services" />
                     <Services />
                 </section>
-                <Divider image="bamboo.jpg">
+                <Divider image="mountain-view-sunrise.jpg">
 
                 </Divider>
                 <section id="about" className="container">
                     <Title text="About Me" />
                     <About />
                 </section>
-                <Divider image="leaves.jpg" />
+                <Divider image="misty-forest-trail.jpg" />
                 <section id="work" className="container">
                     <Title text="Our Work" />
+                    <Work />
                 </section>
                 <section id="pricing">
-                    <Pricing image="bamboo-sunset.jpg" />
+                    <Pricing image="snowy-forest.jpg" />
                 </section>
                 <section id="contact" className="container">
                     <Title text="Contact Me" />

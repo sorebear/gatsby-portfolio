@@ -29,7 +29,8 @@ const styles = {
         textShadow: '0px 4px 2px rgba(0, 0, 0, .7)'
     },
     mainTitleStyle: {
-        fontSize: '4rem'
+        fontSize: '4rem',
+        color: 'rgb(96, 100, 0)'
     }
 }
 

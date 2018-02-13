@@ -5,6 +5,7 @@ class TopBar extends Component {
         super(props);
         this.state = {
             backgroundColor: 'transparent',
+            color: 'white'
         }
     }
 
@@ -14,9 +15,9 @@ class TopBar extends Component {
 
     toggleOpacity(e) {
         if (e.pageY !== 0) {
-            this.setState({ backgroundColor: 'rgb(51, 51, 51)', color: 'deepskyblue' });
+            this.setState({ backgroundColor: 'rgb(51, 51, 51)', color: 'rgb(228, 159, 0)' });
         } else {
-            this.setState({ backgroundColor: 'transparent', color: 'black' });
+            this.setState({ backgroundColor: 'transparent', color: 'rgb(255, 255, 255)' });
         }
     }
 
