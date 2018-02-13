@@ -3,10 +3,10 @@ import ServiceBox from '../components/serviceBox';
 
 export default () => (
     <div style={styles.serviceStyle}>
-        <ServiceBox service="Web Development">
+        <ServiceBox service="Custom CMS Development">
             <p>We build clean, beautiful, responsive designs</p>
         </ServiceBox>
-        <ServiceBox service="Mobile Development">
+        <ServiceBox service="Web Development">
             <p>We build clean, beautiful, responsive designs</p>
         </ServiceBox>
         <ServiceBox service="Mobile Development">
@@ -18,6 +18,7 @@ export default () => (
 const styles = {
     serviceStyle: {
         display: 'flex',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        borderRight: '1rem solid white'
     }
 }
