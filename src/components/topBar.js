@@ -37,7 +37,7 @@ class TopBar extends Component {
                     </ul>
                 </div>
             </div>
-        )
+        );
     }
 }
 

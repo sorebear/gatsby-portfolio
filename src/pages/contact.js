@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 
 class Contact extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	handleSubmit(e) {
+		console.log("Submitted!");
+		e.preventDefault();
+	}
+
 	render() {
 		return (
 			<div>
-				<form style={styles.formStyle}>
+				<form style={styles.formStyle} onSubmit={this.handleSubmit.bind(this)}>
 					<label htmlFor="name" style={styles.labelStyle}>
 						Your Name
 					</label>
