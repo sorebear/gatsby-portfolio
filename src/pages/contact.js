@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Button from '../components/button';
 
 class Contact extends Component {
 	constructor(props) {
@@ -31,7 +32,7 @@ class Contact extends Component {
 						Your Message
 					</label>
 					<textarea name="message" rows="5" style={styles.inputStyle} />
-					<button type="submit" style={styles.buttonStyle}>Send</button>
+					<Button type="submit" style={{ margin: '0 0 5rem 0'}}>Send</Button>
 				</form>
 			</div>
 		);
@@ -58,14 +59,5 @@ const styles = {
 		width: '100%',
 		padding: '10px 15px',
 		marginBottom: '2rem'
-   },
-   buttonStyle: {
-      backgroundColor: 'rgb(0, 106, 114)',
-      boxShadow: '0 5px 10px rgba(0, 0, 0, 0.3)',
-      border: 'none',
-      padding: '20px 50px',
-      borderRadius: '5px',
-      color: 'white',
-      margin: '0 auto'
    }
 };

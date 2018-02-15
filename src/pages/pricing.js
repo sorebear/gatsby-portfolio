@@ -3,6 +3,7 @@ import Title from '../components/title';
 
 import Icon from '../components/icon';
 import BasicCard from '../components/basicCard';
+import Button from '../components/button';
 
 export default ({ image }) => (
 	<div style={{ ...styles.pricingWrapperStyle, backgroundImage: `url('./static/${image}` }}>
@@ -18,19 +19,22 @@ export default ({ image }) => (
 			</BasicCard>
 			<BasicCard style={{backgroundColor: 'rgba(245, 245, 245, .9)'}}>
             <Icon className="icon-basic-clock" />
-				<h3 style={{ marginTop: 0}}>Pay By Time</h3>
+				<h3 style={{ marginTop: 0}}>Hire Me By The Hour</h3>
 				<h2>$35/hour</h2>
 				<p>
-					We will develop your designs into a custom CMS Site and maintain the hosting for you.
+					Do you have a project that needs someone to quickly jump in and help? Or perhaps an ongoing project and you are uncertain about the total amount of work required? Hiring by the hour might be best for you.
 				</p>
 			</BasicCard>
 			<BasicCard style={{backgroundColor: 'rgba(245, 245, 245, .9)'}}>
             <Icon className="icon-basic-notebook-pencil" />
-				<h3 style={{ marginTop: 0}}>Pay By Project</h3>
+				<h3 style={{ marginTop: 0}}>Hire Me By The Project</h3>
 				<h2>Let's Talk!</h2>
 				<p>
-					We will develop your designs into a custom CMS Site and maintain the hosting for you.
+					Do you have a specific project you would like built or you quickly need someone to jump in and get a product to completion? Hiring by the project might be best for you. Let's talk about the scope of your project and negotiate a fair price.
 				</p>
+				<Button>
+					Get Started
+				</Button>
 			</BasicCard>
 		</div>
 	</div>

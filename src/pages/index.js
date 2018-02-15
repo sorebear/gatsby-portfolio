@@ -8,43 +8,42 @@ import Work from './work';
 import HeroImage from '../components/heroImage';
 import TopBar from '../components/topBar';
 import Contact from './contact';
+import Footer from './footer';
 import '../scss/main.scss';
 
 
 
 class Index extends Component {
-
-    componentDidMount() {
-
-    }
-
     render() {
         return (
             <div className='content-wrapper'>
                 <TopBar />
                 <HeroImage title="Sore Bear" subtitle="Development" image="forest-trail-dark.jpg" />
                 <section id="services" className="container">
-                    <Title text="Our Services" />
+                    <Title text="Services" />
                     <Services />
                 </section>
                 <Divider image="mountain-view-sunrise.jpg">
 
                 </Divider>
                 <section id="about" className="container">
-                    <Title text="About Us" />
+                    <Title text="About" />
                     <About />
                 </section>
                 <Divider image="misty-forest-trail.jpg" />
                 <section id="work" className="container">
-                    <Title text="Our Work" />
+                    <Title text="Work" />
                     <Work />
                 </section>
                 <section id="pricing">
                     <Pricing image="snowy-forest.jpg" />
                 </section>
                 <section id="contact" className="container">
-                    <Title text="Contact Us" />
+                    <Title text="Contact" />
                     <Contact />
+                </section>
+                <section id="footer">
+                    <Footer />
                 </section>
             </div>
         )
