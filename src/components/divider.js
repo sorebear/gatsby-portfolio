@@ -12,6 +12,6 @@ const styles = {
         width: '100%',
         backgroundSize: 'cover',
         backgroundAttachment: 'fixed',
-        margin: '5rem 0'
+        marginTop: '5rem'
     }
 }

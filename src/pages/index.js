@@ -31,7 +31,7 @@ class Index extends Component {
 
                 </Divider>
                 <section id="about" className="container">
-                    <Title text="About Me" />
+                    <Title text="About Us" />
                     <About />
                 </section>
                 <Divider image="misty-forest-trail.jpg" />
@@ -43,7 +43,7 @@ class Index extends Component {
                     <Pricing image="snowy-forest.jpg" />
                 </section>
                 <section id="contact" className="container">
-                    <Title text="Contact Me" />
+                    <Title text="Contact Us" />
                     <Contact />
                 </section>
             </div>

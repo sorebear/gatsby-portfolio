@@ -1,17 +1,29 @@
 import React from 'react';
-import ServiceBox from '../components/serviceBox';
+import Icon from '../components/icon';
+import bambooDivider from '../images/bamboo-divider.svg';
+
+import BasicCard from '../components/basicCard';
 
 export default () => (
     <div style={styles.serviceStyle}>
-        <ServiceBox service="Custom CMS Development">
+        <BasicCard>
+            <Icon className="icon-basic-webpage-img-txt" />
+            <img src={bambooDivider} style={{ marginBottom: 0}}/>
+            <h4>Custom CMS Development</h4>
             <p>We build clean, beautiful, responsive designs</p>
-        </ServiceBox>
-        <ServiceBox service="Web Development">
+        </BasicCard>
+        <BasicCard>
+            <Icon className="icon-basic-laptop" />
+            <img src={bambooDivider} style={{ marginBottom: 0}}/>
+            <h4>Web Development</h4>
             <p>We build clean, beautiful, responsive designs</p>
-        </ServiceBox>
-        <ServiceBox service="Mobile Development">
+        </BasicCard>
+        <BasicCard>
+            <Icon className="icon-basic-smartphone" />
+            <img src={bambooDivider} style={{ marginBottom: 0}}/>
+            <h4>Mobile Development</h4>
             <p>We build clean, beautiful, responsive designs</p>
-        </ServiceBox>
+        </BasicCard>
     </div>
 )
 

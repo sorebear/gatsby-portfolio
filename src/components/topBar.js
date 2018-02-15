@@ -25,12 +25,13 @@ class TopBar extends Component {
         return (
             <div className="top-bar" style={this.state}>
                 <div style={styles.topBarStyle}>
-                    <h2 style={styles.logoStyle}>Soren Baird</h2>
+                    <h2 style={styles.logoStyle}>Sore Bear</h2>
                     <ul className="nav" style={styles.navStyle}>
                         <ListItem>services</ListItem>
                         <ListItem>about</ListItem>
                         <ListItem>skills</ListItem>
                         <ListItem>work</ListItem>
+                        <ListItem>pricing</ListItem>
                         <ListItem>references</ListItem>
                         <ListItem>contact</ListItem>
                     </ul>
