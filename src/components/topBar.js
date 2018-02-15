@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import smoothScroll from 'smoothscroll';
 
 class TopBar extends Component {
     constructor(props) {
         super(props);
+        this.navLinks = ['services', 'about', 'work', 'pricing', 'contact'];
         this.state = {
             backgroundColor: 'transparent',
             color: 'white'
@@ -21,19 +23,28 @@ class TopBar extends Component {
         }
     }
 
+    handleSmoothScroll(anchor) {
+        const scrollDestination = document.getElementById(anchor);
+        smoothScroll(scrollDestination);
+    }
+
+    renderNavLinks() {
+        return this.navLinks.map((link, index) => {
+            return (
+                <li key={index} onClick={() => this.handleSmoothScroll(link)} style={styles.listItemStyle}>
+                    { link }
+                </li>
+            )
+        })
+    }
+
     render() {
         return (
             <div className="top-bar" style={this.state}>
                 <div style={styles.topBarStyle}>
                     <a href="#home" style={styles.anchorStyle}><h2 style={styles.logoStyle}>Sore Bear</h2></a>
                     <ul className="nav" style={styles.navStyle}>
-                        <ListItem>services</ListItem>
-                        <ListItem>about</ListItem>
-                        <ListItem>skills</ListItem>
-                        <ListItem>work</ListItem>
-                        <ListItem>pricing</ListItem>
-                        <ListItem>references</ListItem>
-                        <ListItem>contact</ListItem>
+                        {this.renderNavLinks()}
                     </ul>
                 </div>
             </div>
@@ -44,8 +55,8 @@ class TopBar extends Component {
 export default TopBar;
 
 const ListItem = ({ children }) => (
-    <li style={styles.listItemStyle}>
-        <a href={`#${children}`} style={styles.anchorStyle}>{ children }</a>
+    <li onClick={() => this.handleSmoothScroll(children)} style={styles.listItemStyle}>
+        { children }
     </li>
 );
 
@@ -69,7 +80,9 @@ const styles = {
         margin: 0
     },
     listItemStyle: {
-        margin: '0 1rem'
+        margin: '0 1rem',
+        textTransform: 'capitalize',
+        cursor: 'pointer'
     },
     logoStyle: {
         margin: '0 1rem',
