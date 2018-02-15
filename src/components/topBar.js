@@ -42,7 +42,7 @@ class TopBar extends Component {
         return (
             <div className="top-bar" style={this.state}>
                 <div style={styles.topBarStyle}>
-                    <a href="#home" style={styles.anchorStyle}><h2 style={styles.logoStyle}>Sore Bear</h2></a>
+                    <h2 onClick={() => this.handleSmoothScroll('home')} style={styles.logoStyle}>Sore Bear</h2>
                     <ul className="nav" style={styles.navStyle}>
                         {this.renderNavLinks()}
                     </ul>
@@ -86,14 +86,7 @@ const styles = {
     },
     logoStyle: {
         margin: '0 1rem',
-        color: 'white'
-    },
-    anchorStyle: {
-        textTransform: 'capitalize',
-        textDecoration: 'none',
-        backgroundImage: 'none',
-        textShadow: 'none',
-        color: 'inherit'
-
+        color: 'white',
+        cursor: 'pointer'
     }
 }
