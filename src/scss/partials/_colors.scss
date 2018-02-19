@@ -1,7 +1,87 @@
 /* https://color.adobe.com/Renaissance-color-theme-16511/edit/?copy=true&base=0&rule=Custom&selected=4&name=Copy%20of%20Renaissance&mode=rgb&rgbvalues=0,0.415686,0.447059,0.376471,0.392157,0,0.854902,0.847059,0.709804,0.694118,0,0,0.894118,0.623529,0&swatchOrder=0,1,2,3,4 */
 
+// Greyscale
+$white: rgb(255, 255, 255);
+$offwhite: #f9faff;
+$slate: rgb(51, 51, 51);
+$black: rgb(0, 0, 0);
+
+// Color Pallette
 $teal: rgb(0, 106, 114);
 $olive: rgb(96, 100, 0);
 $beige: rgb(218, 216, 181);
 $red: rgb(177, 0, 0);
 $orange: rgb(228, 159, 0);
+
+// Box Shadows
+$box-shadow-hover: 0 16px 32px 0 rgba(62, 57, 107, 0.18), 0 0 0 transparent;
+$box-shadow: 0 10px 40px 0 rgba(97, 4, 95, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
+
+body {
+   background-color: $offwhite;
+}
+
+button {
+   background-color: $teal;
+   color: $white;
+}
+
+h3.section-title {
+   color: $teal;
+   text-shadow: $box-shadow;
+}
+
+.top-bar {
+
+   &--unscrolled {
+      background-color: transparent;
+      
+      li {
+         color: $white;
+      }
+   }
+
+   &--scrolled {
+      background-color: $slate;
+
+      li {
+         color: $orange;
+      }
+   }
+}
+
+.basic-card {
+
+   &--offwhite {
+      color: $slate;
+      background-color: $offwhite;
+      box-shadow: $box-shadow;
+
+      &:hover {
+         box-shadow: $box-shadow-hover;
+         transform: translateY(-5px);
+      }
+   }
+
+   &--white {
+      color: $slate;
+      background-color: $white;
+      box-shadow: $box-shadow;
+
+      &:hover {
+         box-shadow: $box-shadow-hover;
+         transform: translateY(-5px);
+      }
+   }
+}
+
+.section-services {
+   .basic-card-white,
+   .basic-card--offwhite {
+      box-shadow: none;
+
+      &:hover {
+         box-shadow: $box-shadow-hover;
+      }
+   }
+}

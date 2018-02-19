@@ -1,19 +1,17 @@
 import React from 'react';
 
-export default ({ children, style }) => (
-    <div style={{...styles.servieBoxStyle, ...style}}>
+export default ({ children, style, className }) => (
+    <div style={{...styles.servieBoxStyle, ...style}} className={ className }> 
         { children }
     </div>
 );
 
 const styles = {
     servieBoxStyle: {
-        backgroundColor: 'whitesmoke',
         padding: '2rem',
-        color: 'black',
         maxWidth: '350px',
         borderRadius: '5px',
-        boxShadow: '0 6px 10px rgba(0, 0, 0, 0.15)',
-        textAlign: 'center'
+        textAlign: 'center',
+        transition: '.3s'
     }
 }

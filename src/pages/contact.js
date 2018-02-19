@@ -58,6 +58,7 @@ const styles = {
 		display: 'block',
 		width: '100%',
 		padding: '10px 15px',
-		marginBottom: '2rem'
+      marginBottom: '2rem',
+      backgroundColor: 'transparent'
    }
 };

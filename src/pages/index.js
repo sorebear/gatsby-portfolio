@@ -19,26 +19,24 @@ class Index extends Component {
             <div className='content-wrapper'>
                 <TopBar />
                 <HeroImage title="Sore Bear" subtitle="Development" image="forest-trail-dark.jpg" />
-                <section id="services" className="container">
+                <section id="services" className="container section-services">
                     <Title text="Services" />
                     <Services />
                 </section>
-                <Divider image="mountain-view-sunrise.jpg">
-
-                </Divider>
-                <section id="about" className="container">
+                <Divider image="mountain-view-sunrise.jpg"/>
+                <section id="about" className="container section-about">
                     <Title text="About" />
                     <About />
                 </section>
                 <Divider image="misty-forest-trail.jpg" />
-                <section id="work" className="container">
+                <section id="work" className="container section-work">
                     <Title text="Work" />
                     <Work />
                 </section>
-                <section id="pricing">
+                <section id="pricing" className="section-pricing">
                     <Pricing image="snowy-forest.jpg" />
                 </section>
-                <section id="contact" className="container">
+                <section id="contact" className="container section-contact">
                     <Title text="Contact" />
                     <Contact />
                 </section>
