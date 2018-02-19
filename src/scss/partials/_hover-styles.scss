@@ -1,0 +1,47 @@
+.basic-card--offwhite,
+.basic-card--white {
+   box-shadow: $box-shadow;
+   -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+   backface-visibility: hidden;
+   transform: translate3d(0, 0, 0);
+
+	&:hover {
+		box-shadow: $box-shadow-hover;
+		transform: translate3d(0, -5px, 0);
+	}
+}
+
+button {
+	box-shadow: $box-shadow;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+   backface-visibility: hidden;
+   transform: translate3d(0, 0, 0);
+
+	// &:hover {
+	//    transform: translateY(-5px);
+	// }
+
+	&:active {
+		box-shadow: $box-shadow;
+		transform: translate3d(0, 2px, 0);
+	}
+}
+
+.section-services {
+	.basic-card-white,
+	.basic-card--offwhite {
+		box-shadow: none;
+
+		&:hover {
+			box-shadow: $box-shadow-hover;
+		}
+	}
+}

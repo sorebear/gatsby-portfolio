@@ -16,7 +16,7 @@ export default ({ image }) => (
 				<p>
 					We will develop your designs into a custom CMS Site and maintain the hosting for you.
 				</p>
-            <Button>
+            <Button style={{ justifySelf: 'flex-end'}}>
                Hire Me
             </Button>
 			</BasicCard>

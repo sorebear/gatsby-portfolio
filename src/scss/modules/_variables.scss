@@ -1,10 +1,23 @@
-$white: 'white';
-$black: 'black';
-$darkgrey: '#333';
-$blue: 'deepskyblue';
+// Greyscale
+$white: rgb(255, 255, 255);
+$offwhite: #f9faff;
+$slate: rgb(51, 51, 51);
+$black: rgb(0, 0, 0);
 
+// Color Pallette
+$teal: rgb(0, 106, 114);
+$olive: rgb(96, 100, 0);
+$beige: rgb(218, 216, 181);
+$red: rgb(177, 0, 0);
+$orange: rgb(228, 159, 0);
+
+// Box Shadows
+$box-shadow: 0 10px 40px 0 rgba(97, 4, 95, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
+$box-shadow-hover: 0 16px 32px 0 rgba(62, 57, 107, 0.18), 0 0 0 transparent;
+$box-shadow-active: 0 5px 20px 0 rgba(97, 4, 95, 0.07), 0 1px 5px 0 rgba(62, 57, 107, 0.06);
 
 $primary-text-color: $black;
-$secondary-text-color: $blue;
-$primary-background-color: $white;
-$secondary-background-color: $darkgrey;
+$secondary-text-color: $teal;
+$primary-background-color: $offwhite;
+$secondary-background-color: $slate;
+$tertiary-background-color: $slate;
