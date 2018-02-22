@@ -2,11 +2,12 @@ import React from 'react';
 import Icon from '../components/icon';
 import Button from '../components/button';
 import bambooDivider from '../images/bamboo-divider.svg';
-import reactIcon from '../images/react-original.svg';
-import meteorIcon from '../images/meteor-original.svg';
-import mongoDBIcon from '../images/mongodb-original.svg';
-import nodeJSIcon from '../images/nodejs-original.svg';
-import graphQLIcon from '../images/graphql-original.svg';
+import reactIcon from '../images/react.svg';
+import meteorIcon from '../images/meteor.svg';
+import mongoDBIcon from '../images/mongodb.svg';
+import nodeJSIcon from '../images/nodejs.svg';
+import graphQLIcon from '../images/graphql.svg';
+import netlifyIcon from '../images/netlify.svg';
 
 import BasicCard from '../components/basicCard';
 
@@ -42,7 +43,15 @@ export default () => (
                 <img className="skill-icon react" style={styles.iconStyle} src={reactIcon} />
                 <h3>+</h3>
                 <img className="skill-icon graphql" style={styles.iconStyle} src={graphQLIcon} />
+                <h3>+</h3>
+                <img className="skill-icon netlify" style={styles.iconStyle} src={netlifyIcon} />
             </div>
+            <p>
+               Do you need a blog or small business website? Why not have something custom that will allow you to easily add new content through a smooth, intuitive interface. I can help you build, maintain, and update your page.
+            </p>
+            <p>
+               I specialize in building modern Content Management Systems (CMS) for individuals and small companies using Gatsby.js, React.js, GraphQL, and Netlify.
+            </p>
         </div>
     </div>
 )
@@ -53,11 +62,12 @@ const styles = {
         justifyContent: 'space-between'
     },
     iconStyle: {
-        height: '200px'
+        height: '200px',
     },
     technologiesStyle: {
         display: 'flex',
         justifyContent: 'space-around',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: '5rem'
     }
 }
