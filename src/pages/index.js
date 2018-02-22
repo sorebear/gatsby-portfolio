@@ -11,8 +11,6 @@ import Contact from './contact';
 import Footer from './footer';
 import '../scss/main.scss';
 
-
-
 class Index extends Component {
     render() {
         return (
