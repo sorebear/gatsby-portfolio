@@ -1,9 +1,9 @@
 import React from 'react';
-import BasicCard from '../components/basicCard';
+import AnimatedCard from '../components/animatedCard';
 
 export default () => (
    <div style={styles.workStyle}>
-      <BasicCard className="basic-card--white">
+      <AnimatedCard className="animated-card card--white">
          <img src='static/puzzle-me.jpg' style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Puzzle Me</h2>
          <p>
@@ -11,8 +11,8 @@ export default () => (
             <span> / </span>
             <a href="https://github.com/sorebear/puzzle_me" style={styles.linkStyle} target="_blank">GitHub</a>
          </p>
-      </BasicCard>
-      <BasicCard className="basic-card--white">
+      </AnimatedCard>
+      <AnimatedCard className="animated-card card--white">
          <img src='static/memory-match.jpg' style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Inventor Memory Match</h2>
          <p>
@@ -20,8 +20,8 @@ export default () => (
             <span> / </span>
             <a href="https://github.com/sorebear/inventor_memory_match" style={styles.linkStyle} target="_blank">GitHub</a>
          </p>
-      </BasicCard>
-      <BasicCard className="basic-card--white">
+      </AnimatedCard>
+      <AnimatedCard className="animated-card card--white">
          <img src='static/todo-list.jpg' style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Todo List</h2>
          <p>
@@ -29,7 +29,7 @@ export default () => (
             <span> / </span>
             <a href="https://github.com/sorebear/todo_list" style={styles.linkStyle} target="_blank">GitHub</a>
          </p>
-      </BasicCard>
+      </AnimatedCard>
    </div>
 );
 

@@ -45,3 +45,15 @@ h3.section-title {
       background-color: $white;
    }
 }
+
+.card {
+   &--offwhite {
+      color: $slate;
+      background-color: $offwhite;
+   }
+
+   &--white {
+      color: $slate;
+      background-color: $white;
+   }
+}

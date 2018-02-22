@@ -18,7 +18,7 @@ class Index extends Component {
         return (
             <div className='content-wrapper'>
                 <TopBar />
-                <HeroImage title="Sore Bear" subtitle="Development" image="forest-trail-dark.jpg" />
+                <HeroImage title="Soren Baird" subtitle="Developer / Designer" image="forest-trail-dark.jpg" />
                 <section id="services" className="container section-services">
                     <Title text="Services" />
                     <Services />
