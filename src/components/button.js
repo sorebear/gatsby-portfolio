@@ -1,31 +1,30 @@
+
 import React from 'react';
 
-export default ({ children, type, value, style }) => (
-	<div style={ styles.buttonContainerStyle }>
-		<button style={{ ...styles.buttonStyle, ...style }} value={ value }>
-			{children}
-		</button>
-	</div>
+export default ({ type, value, className, children, style }) => (
+   <button 
+      type={type}
+      value={value} 
+      className={className}
+      style={{...styles.buttonStyle, ...style}}>
+      <h5 style={styles.textStyle}>{ children }</h5>
+   </button>
 );
 
 const styles = {
-	buttonContainerStyle: {
-		position: 'relative',
-		margin: '2.5rem auto',
-		width: '80%',
-		height: '60px'
-	},
-	buttonStyle: {
-		position: 'absolute',
-		display: 'flex',
-		justifyContent: 'center',
-		alignItems: 'center',
-		width: '100%',
-		maxWidth: '225px',
-		height: '100%',
-		border: 'none',
-		borderRadius: '5px',
+   buttonStyle: {
+		padding: '16px 20px',
+      width: '100%',
+		maxWidth: '250px',
+		textAlign: 'center',
+      color: 'black',
+      border: '2px solid black',
+		backgroundColor: 'transparent',
 		cursor: 'pointer',
-		transition: 'all .2s',
+		margin: '0 auto'
+	},
+	textStyle: {
+		margin: 0,
+		padding: 0
 	}
-};
+}

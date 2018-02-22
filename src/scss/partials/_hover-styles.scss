@@ -7,48 +7,11 @@
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
    backface-visibility: hidden;
-   transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+	transition: .3s;
 
 	&:hover {
 		box-shadow: $box-shadow-hover;
-		transform: translate3d(0, -5px, 0);
+		transform: translateY(-5px);
 	}
-}
-
-button {
-	box-shadow: $box-shadow;
-	-webkit-transform-style: preserve-3d;
-	-moz-transform-style: preserve-3d;
-	transform-style: preserve-3d;
-	-webkit-backface-visibility: hidden;
-	-moz-backface-visibility: hidden;
-   backface-visibility: hidden;
-   transform: translate3d(0, 0, 0);
-
-	// &:hover {
-	//    transform: translateY(-5px);
-	// }
-
-	&:active {
-		box-shadow: $box-shadow;
-		transform: translate3d(0, 2px, 0);
-	}
-}
-
-.section-services {
-	.basic-card-white,
-	.basic-card--offwhite {
-		box-shadow: none;
-
-		&:hover {
-			box-shadow: $box-shadow-hover;
-		}
-	}
-}
-
-.animated-card {
-
-   &:hover > div {
-      transform: rotate3d(0, 1, 0, 180deg);
-   }
 }

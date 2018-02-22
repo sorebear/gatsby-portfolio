@@ -1,7 +1,8 @@
 import Typography from "typography";
 import doelgerTheme from "typography-theme-doelger";
+import altonTheme from "typography-theme-alton";
 
-const typography = new Typography(doelgerTheme);
+const typography = new Typography(altonTheme);
 
 export default typography;
 

@@ -15,6 +15,7 @@
     "gatsby-plugin-typography": "^1.7.13",
     "gatsby-source-graphcms": "0.0.1",
     "smoothscroll": "^0.4.0",
+    "typography-theme-alton": "^0.15.10",
     "typography-theme-doelger": "^0.15.11"
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BasicSection from '../components/basicSection';
 import Services from './services';
 import Divider from '../components/divider';
 import About from './about';
@@ -11,33 +12,35 @@ import Contact from './contact';
 import Footer from './footer';
 import '../scss/main.scss';
 
+const darkGradient = `linear-gradient(rgba(25, 25, 25, .7), rgba(25, 25, 25, .5))`; 
+const lightGradient = `linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .5))`;
+
 class Index extends Component {
     render() {
         return (
             <div className='content-wrapper'>
                 <TopBar />
                 <HeroImage title="Soren Baird" subtitle="Developer / Designer" image="forest-trail-dark.jpg" />
-                <section id="services" className="section-services">
+                <BasicSection id="services" className="services">
                     <Title text="Services" />
                     <Services />
-                </section>
-                <Divider image="mountain-view-sunrise.jpg"/>
-                <section id="about" className="container section-about">
+                </BasicSection>
+                <BasicSection id="about" className="about" style={{backgroundImage: `${lightGradient}, url('static/mountain-view-sunrise.jpg')`}}>
                     <Title text="About" />
                     <About />
-                </section>
-                <Divider image="misty-forest-trail.jpg" />
-                <section id="work" className="container section-work">
+                </BasicSection>
+                <BasicSection id="work" className="work">
                     <Title text="Work" />
                     <Work />
-                </section>
-                <section id="pricing" className="section-pricing">
+                </BasicSection>
+                <BasicSection id="pricing" className="pricing">
+                    <Title text="Pricing" />
                     <Pricing image="snowy-forest.jpg" />
-                </section>
-                <section id="contact" className="container section-contact">
-                    <Title text="Contact" />
+                </BasicSection>
+                <BasicSection id="contact" className="contact" style={{backgroundImage: `${lightGradient}, url('static/snowy-forest.jpg')`}}>
+                    <Title text="Contact"/>
                     <Contact />
-                </section>
+                </BasicSection>
                 <section id="footer">
                     <Footer />
                 </section>

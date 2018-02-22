@@ -1,0 +1,112 @@
+.services {
+
+   &__types-selector--box,
+   &__types-selector--line,
+   &__details {
+      border-style: dotted !important;
+   }
+
+   &.custom-cms {
+
+      .services {
+
+         &__types-selector--box,
+         &__types-selector--line,
+         &__details {
+            border-color: $orange !important;
+         }
+      }
+   }
+
+   &.web-development {
+
+      .services {
+
+         &__types-selector--box,
+         &__types-selector--line,
+         &__details {
+            border-color: $red !important;
+         }
+      }
+   }
+
+   &.mobile-development {
+
+      .services {
+
+         &__types-selector--box,
+         &__types-selector--line,
+         &__details {
+            border-color: $teal !important;
+         }
+      }
+   }
+
+   &__service-type-card {
+      transition: .3s;
+
+      &--custom-cms {
+         i {
+            background-image: linear-gradient($orange, darken($orange, 15%));
+         }
+
+         h4 {
+            color: darken($orange, 15%);
+         }
+
+         &:hover {
+            background-color: rgba($orange, .5) !important;
+         }
+      }
+
+      &--web-development {
+         i {
+            background-image: linear-gradient($red, darken($red, 15%));
+         }
+
+         h4 {
+            color: darken($red, 15%);
+         }
+
+         &:hover {
+            background-color: rgba($red, .5) !important;
+         }
+      }
+
+      &--mobile-development {
+
+         i {
+            background-image: linear-gradient($teal, darken($teal, 10%));
+         }
+
+         h4 {
+            color: darken($teal, 10%);
+         }
+
+         &:hover {
+            background-color: rgba($teal, .5) !important;
+         }
+      }
+   }
+}
+
+
+
+.section-services {
+	.basic-card-white,
+	.basic-card--offwhite {
+		border: none;
+		box-shadow: none;
+
+		&:hover {
+			background-color: rgba($teal, .3) !important;
+		}
+	}
+}
+
+.animated-card {
+
+   &:hover > div {
+      transform: rotate3d(0, 1, 0, 180deg);
+   }
+}

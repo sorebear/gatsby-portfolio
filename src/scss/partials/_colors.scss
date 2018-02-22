@@ -10,17 +10,22 @@ button {
 }
 
 h3.section-title {
-   color: $teal;
+   color: $slate;
    text-shadow: $box-shadow;
 }
 
 .top-bar {
 
+   &--unscrolled li,
+   &--scrolled li {
+      transition: .5s;
+   }
+
    &--unscrolled {
       background-color: transparent;
       
       li {
-         color: $white;
+         color: $orange;
       }
    }
 
@@ -28,7 +33,7 @@ h3.section-title {
       background-color: $slate;
 
       li {
-         color: $orange;
+         color: $white;
       }
    }
 }
@@ -56,4 +61,8 @@ h3.section-title {
       color: $slate;
       background-color: $white;
    }
+}
+
+.light-text {
+   color: $white;
 }

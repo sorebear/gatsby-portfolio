@@ -1,15 +1,39 @@
 import React from 'react';
 
-export default ({ text }) => (
-    <h3 style={styles.titleStyle} className="section-title">{text}</h3>
+export default ({ text, style }) => (
+	<div style={styles.titleContainerStyle}>
+		<h3 style={{ ...styles.titleStyle, ...style }} className="section-title">
+			{text}
+		</h3>
+		<div style={styles.borderWrapperStyle}>
+			<div className="section-title__animated-border" style={styles.animatedBorderStyle} />
+		</div>
+	</div>
 );
 
 const styles = {
-    titleStyle: {
-        fontSize: '3rem',
-        paddingTop: '5rem',
-        marginBottom: '5rem',
-        textAlign: 'center',
-        textShadow: '0 4px 2px rgba(0, 0, 0, .3)'
-    }
-}
+	titleContainerStyle: {
+		display: 'block',
+		textAlign: 'center',
+		position: 'relative',
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center',
+        height: '15rem',
+        flexDirection: 'column'
+	},
+	borderWrapperStyle: {
+        overflow: 'hidden',
+        width: '200px'
+	},
+	animatedBorderStyle: {
+        borderBottom: '5px dotted black',
+        width: '1000px'
+	},
+	titleStyle: {
+		fontSize: '3rem',
+		display: 'inline-block',
+		borderWidth: '0 0 5px 0',
+		margin: 0
+	}
+};
