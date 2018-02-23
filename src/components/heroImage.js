@@ -30,7 +30,7 @@ const styles = {
     },
     mainTitleStyle: {
         fontSize: '4rem',
-        color: '#b10000'
+        color: '#e49f00'
     }
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
-export default ({ image, children }) => (
-    <section style={{...styles.dividerStyle, backgroundImage: `url('./static/${image}')`}}>
+export default ({ style, children }) => (
+    <section style={{...styles.dividerStyle, ...style}}>
         { children }
     </section>
 );

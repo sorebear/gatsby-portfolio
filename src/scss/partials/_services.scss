@@ -89,24 +89,3 @@
       }
    }
 }
-
-
-
-.section-services {
-	.basic-card-white,
-	.basic-card--offwhite {
-		border: none;
-		box-shadow: none;
-
-		&:hover {
-			background-color: rgba($teal, .3) !important;
-		}
-	}
-}
-
-.animated-card {
-
-   &:hover > div {
-      transform: rotate3d(0, 1, 0, 180deg);
-   }
-}

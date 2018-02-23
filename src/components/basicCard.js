@@ -14,6 +14,7 @@ const styles = {
         textAlign: 'center',
         transition: '.3s',
         display: 'flex',
-        flexDirection: 'column'
+        flexDirection: 'column',
+        justifyContent: 'space-between'
     }
 }

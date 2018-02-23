@@ -1,0 +1,31 @@
+.top-bar {
+
+   &__logo,
+   &__nav-link {
+      transition: .5s;
+   }
+
+   &--unscrolled {
+      background-color: transparent;
+
+      h2 {
+         transform: translateY(-175%);
+      }
+      
+      li {
+         color: $orange;
+      }
+   }
+
+   &--scrolled {
+      background-color: $slate;
+
+      h2 {
+         transform: translateY(0);
+      }
+
+      li {
+         color: $white;
+      }
+   }
+}

@@ -14,30 +14,6 @@ h3.section-title {
    text-shadow: $box-shadow;
 }
 
-.top-bar {
-
-   &--unscrolled li,
-   &--scrolled li {
-      transition: .5s;
-   }
-
-   &--unscrolled {
-      background-color: transparent;
-      
-      li {
-         color: $orange;
-      }
-   }
-
-   &--scrolled {
-      background-color: $slate;
-
-      li {
-         color: $white;
-      }
-   }
-}
-
 .basic-card {
 
    &--offwhite {

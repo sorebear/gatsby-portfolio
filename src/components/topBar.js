@@ -30,7 +30,7 @@ class TopBar extends Component {
    renderNavLinks() {
       return this.navLinks.map((link, index) => {
          return (
-            <li key={index} onClick={() => this.handleSmoothScroll(link)} style={styles.listItemStyle}>
+            <li key={index} onClick={() => this.handleSmoothScroll(link)} className="top-bar__nav-link" style={styles.listItemStyle}>
                {link}
             </li>
          );
@@ -41,7 +41,7 @@ class TopBar extends Component {
       return (
          <div className="top-bar" className={this.state.topBarClass}>
             <div style={styles.topBarStyle}>
-               <h2 onClick={() => this.handleSmoothScroll('home')} style={styles.logoStyle}>
+               <h2 onClick={() => this.handleSmoothScroll('home')} className="top-bar__logo" style={styles.logoStyle}>
                   Soren Baird
                </h2>
                <ul className="nav" style={styles.navStyle}>

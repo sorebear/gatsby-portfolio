@@ -7,10 +7,7 @@ export default ({ children, style, className }) => (
             { children }
          </div>
          <div style={ styles.backStyle }>
-            <div style={ styles.accordianStyle } />
-            <div style={ styles.accordianStyle } />
-            <div style={ styles.accordianStyle } />
-            <div style={ styles.accordianStyle } />
+            <h2>Hello!</h2>
          </div>
       </div>
    </div>
@@ -27,7 +24,8 @@ const styles = {
       padding: '2rem'
    },
    animatedCardStyle: {
-      transition: '.3s'
+      transition: '.3s',
+      backfaceVisibility: 'hidden'
    },
    frontStyle: {
       backfaceVisibility: 'hidden'
@@ -39,7 +37,7 @@ const styles = {
       left: 0,
       width: '100%',
       height: '100%',
-      transform: 'rotateY(180deg)',
+      // transform: 'rotateY(180deg)',
       backfaceVisibility: 'hidden'
    }
 }

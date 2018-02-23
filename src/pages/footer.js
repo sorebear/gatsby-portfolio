@@ -1,7 +1,7 @@
 import React from 'react';
-import twitter from '../images/social/twitter.png';
-import github from '../images/social/github.png';
-import linkedIn from '../images/social/linked-in.png';
+import twitter from '../images/social/twitter.svg';
+import github from '../images/social/github.svg';
+import linkedIn from '../images/social/linked-in.svg';
 import email from '../images/social/email.png';
 
 export default () => (
@@ -15,9 +15,6 @@ export default () => (
          </a>
          <a href="https://www.linkedin.com/in/soren-baird/" target="_blank">
             <img style={styles.socialMediaLinkStyle} src={linkedIn}/>
-         </a>
-         <a href="mailto:sorenbaird@protonmail.com" target="_blank">
-            <img style={styles.socialMediaLinkStyle} src={email}/>
          </a>
       </div>
       <p style={styles.textStyle}>&copy; Soren Baird - {new Date().getFullYear()}</p>
@@ -39,7 +36,7 @@ const styles = {
       justifyContent: 'space-around'
    },
    socialMediaLinkStyle: {
-      height: '100px',
+      height: '75px',
       padding: '10px'
       
    },
