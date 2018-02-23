@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ title, subtitle, image }) => {
     return (
-        <div id='home' style={{...styles.heroImageStyle, backgroundImage: `url('../static/${image}')`}}>
+        <div id='home' style={{...styles.heroImageStyle, backgroundImage: `url(${image})`}}>
             <h1 style={styles.titleStyle}>
                <span style={styles.mainTitleStyle}>{ title }</span>
                <span>{ subtitle }</span> 

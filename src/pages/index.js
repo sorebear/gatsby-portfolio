@@ -10,6 +10,11 @@ import HeroImage from '../components/heroImage';
 import TopBar from '../components/topBar';
 import Contact from './contact';
 import Footer from './footer';
+
+import mountainViewSunrise from '../images/bg/mountain-view-sunrise--comp.jpg';
+import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
+import snowyForest from '../images/bg/snowy-forest--comp.jpg';
+
 import '../scss/main.scss';
 
 const darkGradient = `linear-gradient(rgba(25, 25, 25, .7), rgba(25, 25, 25, .5))`; 
@@ -20,12 +25,12 @@ class Index extends Component {
         return (
             <div className='content-wrapper'>
                 <TopBar />
-                <HeroImage title="Soren Baird" subtitle="Developer / Designer" image="forest-trail-dark.jpg" />
+                <HeroImage title="Soren Baird" subtitle="Developer / Designer" image={forestTrailDark} />
                 <BasicSection id="services" className="services">
                     <Title text="Services" />
                     <Services />
                 </BasicSection>
-                <BasicSection id="about" className="about" style={{backgroundImage: `${lightGradient}, url('static/mountain-view-sunrise.jpg')`}}>
+                <BasicSection id="about" className="about" style={{backgroundImage: `${lightGradient}, url(${mountainViewSunrise})`}}>
                     <Title text="About" />
                     <About />
                 </BasicSection>
@@ -37,7 +42,7 @@ class Index extends Component {
                     <Title text="Pricing" />
                     <Pricing image="snowy-forest.jpg" />
                 </BasicSection>
-                <BasicSection id="contact" className="contact" style={{backgroundImage: `${lightGradient}, url('static/snowy-forest.jpg')`}}>
+                <BasicSection id="contact" className="contact" style={{backgroundImage: `${lightGradient}, url(${snowyForest})`}}>
                     <Title text="Contact"/>
                     <Contact />
                 </BasicSection>

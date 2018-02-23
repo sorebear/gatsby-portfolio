@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import Icon from '../components/icon';
 import Button from '../components/button';
 import bambooDivider from '../images/bamboo-divider.svg';
-import reactIcon from '../images/react.svg';
-import meteorIcon from '../images/meteor.svg';
-import mongoDBIcon from '../images/mongodb.svg';
-import nodeJSIcon from '../images/nodejs.svg';
-import graphQLIcon from '../images/graphql.svg';
-import netlifyIcon from '../images/netlify.svg';
-import androidIcon from '../images/android.svg';
-import javaIcon from '../images/java.svg';
+import reactIcon from '../images/devicons/react.svg';
+import meteorIcon from '../images/devicons/meteor.svg';
+import mongoDBIcon from '../images/devicons/mongodb.svg';
+import nodeJSIcon from '../images/devicons/nodejs.svg';
+import graphQLIcon from '../images/devicons/graphql.svg';
+import netlifyIcon from '../images/devicons/netlify.svg';
+import androidIcon from '../images/devicons/android.svg';
+import javaIcon from '../images/devicons/java.svg';
 
 import BasicCard from '../components/basicCard';
 

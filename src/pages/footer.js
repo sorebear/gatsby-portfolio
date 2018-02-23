@@ -1,19 +1,23 @@
 import React from 'react';
+import twitter from '../images/social/twitter.png';
+import github from '../images/social/github.png';
+import linkedIn from '../images/social/linked-in.png';
+import email from '../images/social/email.png';
 
 export default () => (
    <div style={styles.footerStyle}>
       <div style={styles.linkContainerStyle}>
          <a href="https://twitter.com/sore_bear" target="_blank">
-            <img style={styles.socialMediaLinkStyle} src="static/twitter.png"/>
+            <img style={styles.socialMediaLinkStyle} src={twitter}/>
          </a>
          <a href="https://github.com/sorebear" target="_blank">
-            <img style={styles.socialMediaLinkStyle} src="static/github.png"/>
+            <img style={styles.socialMediaLinkStyle} src={github}/>
          </a>
          <a href="https://www.linkedin.com/in/soren-baird/" target="_blank">
-            <img style={styles.socialMediaLinkStyle} src="static/linked-in.png"/>
+            <img style={styles.socialMediaLinkStyle} src={linkedIn}/>
          </a>
          <a href="mailto:sorenbaird@protonmail.com" target="_blank">
-            <img style={styles.socialMediaLinkStyle} src="static/email.png"/>
+            <img style={styles.socialMediaLinkStyle} src={email}/>
          </a>
       </div>
       <p style={styles.textStyle}>&copy; Soren Baird - {new Date().getFullYear()}</p>
