@@ -10,6 +10,9 @@ import graphQLIcon from '../images/devicons/graphql.svg';
 import netlifyIcon from '../images/devicons/netlify.svg';
 import androidIcon from '../images/devicons/android.svg';
 import javaIcon from '../images/devicons/java.svg';
+import drupalIcon from '../images/devicons/drupal.svg';
+import wordpressIcon from '../images/devicons/wordpress.svg';
+import phpIcon from '../images/devicons/php.svg';
 
 import BasicCard from '../components/basicCard';
 
@@ -19,7 +22,7 @@ class Services extends Component {
 		this.setTranslate = this.setTranslate.bind(this);
 		this.state = {
          translate: 0,
-         activeService: 'custom-cms'
+         activeService: 'cms-development'
 		};
 	}
 
@@ -50,12 +53,12 @@ class Services extends Component {
                      </div>
                   </div>
 						<div
-							onClick={() => this.setTranslate(0, 'custom-cms')}
-							className="services__service-type-card services__service-type-card--custom-cms"
+							onClick={() => this.setTranslate(0, 'cms-development')}
+							className="services__service-type-card services__service-type-card--cms-development"
 							style={styles.typeCardStyle}
 						>
 							<Icon className="icon-basic-webpage-img-txt services__service-type-icon" />
-							<h4 style={{ marginTop: 0 }}>Custom CMS Development</h4>
+							<h4 style={{ marginTop: 0 }}>CMS Development</h4>
 						</div>
 						<div
 							onClick={() => this.setTranslate(1, 'web-development')}
@@ -85,7 +88,7 @@ class Services extends Component {
 						}}
 					>
 						<div
-							className="services__details--custom-cms"
+							className="services__details--cms-development"
 							style={styles.servicesDetailsItemStyle}
 						>
 							<div className="container">
@@ -97,34 +100,37 @@ class Services extends Component {
 											'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjAwIDEyMDAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiM2Mzl9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjAwLDBDMjY4LjYsMCwwLDI2OC42LDAsNjAwczI2OC42LDYwMCw2MDAsNjAwczYwMC0yNjguNiw2MDAtNjAwUzkzMS40LDAsNjAwLDB6IE0yNjYuNiw5MzMuMwlDMTc2LjEsODQyLjgsMTMxLDcyNC42LDEyOS42LDYwNkw1OTQsMTA3MC40QzQ3NS40LDEwNjksMzU3LjIsMTAyMy45LDI2Ni42LDkzMy4zeiBNNzA0LjMsMTA1OS40TDE0MC42LDQ5NS43CWM0Ny41LTIxMC4xLDIzNS0zNjcuMSw0NTkuNC0zNjcuMWMxNTYuOSwwLDI5NS41LDc3LDM4MS4yLDE5NC45TDkxNS42LDM3OUM4NDUuOCwyNzkuNSw3MzAuNSwyMTQuMyw2MDAsMjE0LjMJYy0xNjcuNywwLTMxMC4zLDEwNy43LTM2My4zLDI1Ny41bDQ5MS42LDQ5MS42YzEyMy40LTQzLjcsMjE4LTE0OC4yLDI0Ny42LTI3Ny42SDc3MS40VjYwMGgzMDAJQzEwNzEuNCw4MjQuNSw5MTQuNCwxMDExLjksNzA0LjMsMTA1OS40eiIvPjwvc3ZnPg=='
 										}
 									/>
-									<h3>&amp;&amp;</h3>
-									<img
-										className="skill-icon react"
-										style={styles.iconStyle}
-										src={reactIcon}
-									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon graphql"
 										style={styles.iconStyle}
 										src={graphQLIcon}
 									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon netlify"
 										style={styles.iconStyle}
 										src={netlifyIcon}
 									/>
+									<h3 style={{marginBottom: 0}}>||</h3>
+									<img
+										className="skill-icon wordpress"
+										style={styles.iconStyle}
+										src={wordpressIcon}
+									/>
+									<h3 style={{marginBottom: 0}}>||</h3>
+									<img
+										className="skill-icon drupal"
+										style={styles.iconStyle}
+										src={drupalIcon}
+									/>
 								</div>
-								<p>
-									Do you need a blog or small business website? Why not have something
-									custom that will allow you to easily add new content through a smooth,
-									intuitive interface. I can help you build, maintain, and update your
-									page.
+								<p style={styles.detailsDescription}>
+									I primarily build modern, fast, and secure CMS solutions with
+									Gatsby.js, GraphQL and Netlify. 
 								</p>
-								<p>
-									I specialize in building modern, fast, and secure CMS solutions with
-									Gatsby.js, React.js, GraphQL, and Netlify.
+								<p style={styles.detailsDescription}>
+									I also build traditional CMS sites using Wordpress and Drupal.
 								</p>
 							</div>
 						</div>
@@ -139,29 +145,36 @@ class Services extends Component {
 										style={styles.iconStyle}
 										src={meteorIcon}
 									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon react"
 										style={styles.iconStyle}
 										src={reactIcon}
 									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon nodejs"
 										style={styles.iconStyle}
 										src={nodeJSIcon}
 									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon mongodb"
 										style={styles.iconStyle}
 										src={mongoDBIcon}
 									/>
+									<h3 style={{marginBottom: 0}}>||</h3>
+									<img
+										className="skill-icon php"
+										style={styles.iconStyle}
+										src={phpIcon}
+									/>
 								</div>
-								<p>
-									Whether you want something built from scratch or you could use an extra
-									set of hands on a current project, I can help you turn your idea into a
-									beautiful, responsive, functional web application.
+								<p style={styles.detailsDescription}>
+									I primarily build full-stack web applications using the Meteor Framework with React, Node.js and MongoDB.
+								</p>
+								<p style={styles.detailsDescription}>
+									I also build a variety of other web applications using JavaScript and PHP.
 								</p>
 							</div>
 						</div>
@@ -176,19 +189,19 @@ class Services extends Component {
 										style={styles.iconStyle}
 										src={reactIcon}
 									/>
-									<h3>||</h3>
+									<h3 style={{marginBottom: 0}}>||</h3>
 									<img
 										className="skill-icon meteor"
 										style={styles.iconStyle}
 										src={meteorIcon}
 									/>
-									<h3>||</h3>
+									<h3 style={{marginBottom: 0}}>||</h3>
 									<img
 										className="skill-icon android"
 										style={styles.iconStyle}
 										src={androidIcon}
 									/>
-									<h3>&amp;&amp;</h3>
+									<h3 style={{marginBottom: 0}}>&amp;&amp;</h3>
 									<img
 										className="skill-icon java"
 										style={styles.iconStyle}
@@ -196,13 +209,11 @@ class Services extends Component {
 									/>
 								</div>
 
-								<p>
-									Engage your users on the device that is always in their possesion. I can
-									help build you a mobile app or contribute to your exisiting team of app
-									developers
+								<p style={styles.detailsDescription}>
+									I build Android and iOS mobile applications using React Native and Meteor with Cordova.
 								</p>
-								<p>
-									I can build cross-platform mobile applications using React Native or Meteor. I also build native Android applications using Java and Android Studio.
+								<p style={styles.detailsDescription}>
+									I also build native Android applications using Java and Android Studio.
 								</p>
 							</div>
 						</div>
@@ -249,12 +260,14 @@ const styles = {
 		top: '106%'
 	},
 	iconStyle: {
-		height: '150px'
+		height: '100px',
+		marginBottom: 0
 	},
 	technologiesStyle: {
 		display: 'flex',
 		justifyContent: 'space-around',
-		alignItems: 'center'
+		alignItems: 'center',
+		marginBottom: '2.9rem'
 	},
 	servicesDetailsWrapperStyle: {
       width: '100%',
@@ -270,6 +283,13 @@ const styles = {
       borderBottomStyle: 'dotted',
 		display: 'flex',
 		transition: 'all 1s'
+	},
+	detailsDescription: {
+		width: '100%',
+		maxWidth: '625px',
+		margin: '0 auto',
+		textAlign: 'center',
+		marginBottom: '1.45rem'
 	},
 	servicesDetailsItemStyle: {
 		width: '33.33%'

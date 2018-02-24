@@ -2,33 +2,25 @@ import React from 'react';
 
 export default () => (
 	<div>
-		<h2 style={styles.titleStyle}>Hi, I'm Soren,</h2>
-		<p style={styles.textStyle}>
-			I am a talented web developer with an eye for design and a love for learning. I love
-			developing, coding, and learning any new technology I can get my hands on.
-		</p>
+		<h2 style={styles.titleStyle}>Hi, I'm Soren. 
+			I'm a web developer, with an eye for design, and a love for learning new things and meeting new people.
+		</h2>
 		<p  style={styles.textStyle}>
-			I worked for five years doing student and leadership development within Higher Education
-			and two years working for a staffing agency, supporting a large automotive manufactorer in
-			Northern California. Though I loved these jobs and enjoyed building meaningful
-			relationships with clients and coworkers, I had a longing to create, code, and develop.
+			I started my career assuming relational and leadership roles in College Student Development and Human Resources.
+			Though I love to connect and build relationships, I also love to design, build, and create which brought me to Development.
 		</p>
 		<p style={styles.textStyle}>
-			I recently took the plunge, left my previous career and dove head first into programming. I
-			have spent the last three months studying and developing at LearningFuze, an accelerated
-			Web Development Program in Orange County. I have been immersed in numerous in-demand
-			technologies and build several applications. I currently have a particular fondness for
-			React, JavaScript and Node. You can see more about my technical skills and recent projects
-			below.
+			I recently took the plunge, left my previous career and dove head first into programming. I spent three months learning and 
+			developing at an accelerated Web Development Program in Orange County, and then started working at Envivent as a full-time
+			web developer. 
 		</p>
 		<p  style={styles.textStyle}>
-			I am now a full-time Web Developer for Envivent, Inc. where I build and maintain CMS
+			I could not be happier with my decision to change careers. I spend most of my extra time learning new technologies, going to
+			web and mobile development events, and building side projects. 
 			websites, web applications, custom emails, and more.
 		</p>
 		<p style={styles.textStyle}>
-			I would love to work with you on your next project. I bring the technical skills,
-			interpersonal skills, and experience interfacing with clients to be a great asset to your
-			team.
+		I am available for hire for part-time freelance projects. Please send me a quick a message if you have a project you'd like help on, or if you just want to grab a coffee or a pint and talk about development. 
 		</p>
 	</div>
 );

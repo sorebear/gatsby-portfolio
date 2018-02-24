@@ -32,9 +32,9 @@ class Index extends Component {
         return (
             <div className='content-wrapper'>
                 <TopBar />
-                <HeroImage title="Soren Baird" subtitle="Developer / Designer" image={forestTrailDark} />
+                <HeroImage title="Soren Baird" subtitle="Web Developer / Mobile Developer" image={forestTrailDark} />
                 <BasicSection id="services" className="services">
-                    <Title text="Services" />
+                    <Title text="Skills" />
                     <Services />
                 </BasicSection>
                 <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${leaves})`}}>

@@ -6,7 +6,7 @@
       border-style: dotted !important;
    }
 
-   &.custom-cms {
+   &.cms-development {
 
       .services {
 
@@ -45,7 +45,7 @@
    &__service-type-card {
       transition: .3s;
 
-      &--custom-cms {
+      &--cms-development {
          i {
             background-image: linear-gradient($orange, darken($orange, 15%));
          }

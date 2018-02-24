@@ -2,7 +2,6 @@ import React from 'react';
 import twitter from '../images/social/twitter.svg';
 import github from '../images/social/github.svg';
 import linkedIn from '../images/social/linked-in.svg';
-import email from '../images/social/email.png';
 
 export default () => (
    <div style={styles.footerStyle}>
