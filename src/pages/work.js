@@ -9,7 +9,7 @@ import todoList from '../images/work/todo-list.jpg';
 export default () => (
    <div style={styles.workStyle}>
       <BasicCard className="basic-card basic-card--white">
-         <img src='static/puzzle-me.jpg' style={styles.imageStyle} />
+         <img src={puzzleMe} style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Puzzle Me</h2>
          <p>
             <a href="http://puzzleme.sorenbaird.com" style={styles.linkStyle} target="_blank">Live</a>
@@ -18,7 +18,7 @@ export default () => (
          </p>
       </BasicCard>
       <BasicCard className="basic-card basic-card--white">
-         <img src='static/memory-match.jpg' style={styles.imageStyle} />
+         <img src={memoryMatch} style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Inventor Memory Match</h2>
          <p>
             <a href="http://sorenbaird.com/apps/memory_match" style={styles.linkStyle} target="_blank">Live</a>
@@ -27,7 +27,7 @@ export default () => (
          </p>
       </BasicCard>
       <BasicCard className="basic-card basic-card--white">
-         <img src='static/todo-list.jpg' style={styles.imageStyle} />
+         <img src={todoList} style={styles.imageStyle} />
          <h2 style={styles.titleStyle}>Todo List</h2>
          <p>
             <a href="http://sorenbaird.com/apps/todo_list" style={styles.linkStyle} target="_blank">Live</a>
