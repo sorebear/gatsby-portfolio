@@ -19,6 +19,7 @@ import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
 import snowyForest from '../images/bg/snowy-forest--comp.jpg';
 import forestSunrise from '../images/bg/forest-sunrise--comp.jpg';
 import leaves from '../images/bg/leaves--comp.jpg';
+import aboutMe from '../images/bg/about-me.jpg';
 
 // CSS
 import '../scss/main.scss';
@@ -37,8 +38,8 @@ class Index extends Component {
                     <Title text="Skills" />
                     <Services />
                 </BasicSection>
-                <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${leaves})`}}>
-                    <Title text="About" style={{ color: 'white'}} />
+                <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${aboutMe})`}}>
+                    {/* <Title text="About" style={{ color: 'white'}} /> */}
                     <About />
                 </BasicSection>
                 <BasicSection id="work" className="work">

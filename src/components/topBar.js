@@ -14,8 +14,8 @@ class TopBar extends Component {
       document.addEventListener('scroll', this.toggleOpacity.bind(this));
    }
 
-   toggleOpacity(e) {
-      if (e.path[1].pageYOffset !== 0) {
+   toggleOpacity() {
+      if (window.pageYOffset !== 0) {
          this.setState({ topBarClass: 'top-bar--scrolled' });
       } else {
          this.setState({ topBarClass: 'top-bar--unscrolled' });
