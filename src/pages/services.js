@@ -244,7 +244,7 @@ const styles = {
 		height: '100%',
 		top: 0,
 		left: 0,
-      borderWidth: '7px',
+      borderWidth: '.4rem',
       borderStyle: 'dotted',
       zIndex: 50,
       transition: 'all 1s'
@@ -252,7 +252,7 @@ const styles = {
 	typesSelectorLineStyle: {
 		width: 0,
 		height: '4rem',
-		borderWidth: '0 0 0 7px',
+		borderWidth: '0 0 0 .4rem',
 		position: 'absolute',
 		left: '50%',
 		transform: 'translateX(-50%)',
@@ -260,7 +260,7 @@ const styles = {
 		top: '106%'
 	},
 	iconStyle: {
-		height: '100px',
+		height: '5.5rem',
 		marginBottom: 0
 	},
 	technologiesStyle: {
@@ -278,7 +278,7 @@ const styles = {
       width: '300%',
       paddingTop: '5rem',
       paddingBottom: '3.55rem',
-      borderWidth: '7px 0',
+      borderWidth: '.4rem 0',
       borderTopStyle: 'dotted',
       borderBottomStyle: 'dotted',
 		display: 'flex',

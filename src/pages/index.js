@@ -15,6 +15,7 @@ import Footer from './footer';
 
 // Images
 import mountainViewSunrise from '../images/bg/mountain-view-sunrise--comp.jpg';
+import bambooSunrise from '../images/bg/bamboo-sunrise--comp.jpg';
 import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
 import snowyForest from '../images/bg/snowy-forest--comp.jpg';
 import forestSunrise from '../images/bg/forest-sunrise--comp.jpg';
@@ -33,7 +34,7 @@ class Index extends Component {
         return (
             <div className='content-wrapper'>
                 <TopBar />
-                <HeroImage title="Soren Baird" subtitle="Web Developer / Mobile Developer" image={forestTrailDark} />
+                <HeroImage title="Soren Baird" image={forestTrailDark} />
                 <BasicSection id="services" className="services">
                     <Title text="Skills" />
                     <Services />
