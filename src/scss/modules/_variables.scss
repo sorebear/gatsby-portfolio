@@ -12,6 +12,10 @@ $beige: rgb(218, 216, 181);
 $red: rgb(177, 0, 0);
 $orange: rgb(228, 159, 0);
 
+// Borders
+$default-border-style: dashed;
+$default-border-width: 0.15rem;
+
 // Box Shadows
 $box-shadow: 0 10px 40px 0 rgba(97, 4, 95, 0.07), 0 2px 9px 0 rgba(62, 57, 107, 0.06);
 $box-shadow-hover: 0 16px 32px 0 rgba(62, 57, 107, 0.18), 0 0 0 transparent;

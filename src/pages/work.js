@@ -166,9 +166,10 @@ const styles = {
    workStyle: {
       display: 'flex',
       justifyContent: 'space-between',
+      borderWidth: 0
    },
    typesContainerStyle: {
-      width: '25%',
+      width: '33.33%',
       textAlign: 'right',
       display: 'flex',
       flexDirection: 'column',
@@ -176,10 +177,10 @@ const styles = {
       paddingTop: '1.45rem'
    },
    lineContainerStyle: {
-      width: '25%'
+      width: '33.33%'
    },
    projectsContainerStyle: {
-      width: '50%',
+      width: '33.33%',
       position: 'relative',
       paddingLeft: '1.25rem',
       transition: 'border-left 1s'
@@ -198,7 +199,7 @@ const styles = {
    typeStyle: {
       cursor: 'pointer',
       position: 'relative',
-      borderRight: '0.35rem dotted transparent',
+      borderRightColor: 'transparent',
       paddingRight: '.5rem',
       transition: 'border-right .1s',
       zIndex: 5,
@@ -218,7 +219,6 @@ const styles = {
       backgroundImage: 'none'
    },
    horizontalLineStyle: {
-      borderBottom: '0.35rem dotted black',
       position: 'absolute',
       left: '100%',
       top: '50%',
@@ -227,7 +227,6 @@ const styles = {
    },
    verticalLineStyle: {
       position: 'absolute',
-      borderLeft: '.35rem dotted black',
       right: '100%',
       height: '0%'
    }

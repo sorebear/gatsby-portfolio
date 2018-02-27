@@ -19,16 +19,16 @@ const styles = {
 		display: 'flex',
 		justifyContent: 'center',
 		alignItems: 'center',
-        height: '15rem',
-        flexDirection: 'column'
+		height: '15rem',
+		flexDirection: 'column'
 	},
 	borderWrapperStyle: {
         overflow: 'hidden',
         width: '200px'
 	},
 	animatedBorderStyle: {
-        borderBottom: '5px dotted black',
-        width: '1000px'
+      //   borderBottom: '5px dotted black',
+      //   width: '1000px'
 	},
 	titleStyle: {
 		fontSize: '3rem',

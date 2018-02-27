@@ -3,7 +3,8 @@
    &__types-selector--box,
    &__types-selector--line,
    &__details {
-      border-style: dotted !important;
+      border-style: $default-border-style;
+      border-width: $default-border-width;
    }
 
    &.cms-development {

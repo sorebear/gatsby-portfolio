@@ -12,6 +12,7 @@ const styles = {
    basicSectionStyle: {
       backgroundSize: 'cover',
       backgroundAttachment: 'fixed',
-      paddingBottom: '5rem'
+      paddingBottom: '5rem',
+      borderWidth: 0
    }
 }

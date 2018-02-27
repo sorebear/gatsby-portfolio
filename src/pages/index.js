@@ -47,11 +47,11 @@ class Index extends Component {
                     <Title text="Work" />
                     <Work />
                 </BasicSection>
-                <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
+                {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
                 <BasicSection id="pricing" className="pricing">
                     <Title text="Pricing" />
                     <Pricing image="snowy-forest.jpg" />
-                </BasicSection>
+                </BasicSection> */}
                 <BasicSection id="contact" className="contact" style={{backgroundImage: `${lightGradient}, url(${snowyForest})`}}>
                     <Title text="Contact"/>
                     <Contact />

@@ -23,6 +23,9 @@
       .section-title__animated-border {
          animation: moveLeft 20s linear infinite forwards;
          animation-play-state: paused;
+         border-bottom-width: $default-border-width;
+         border-bottom-style: $default-border-style;
+         width: 1000px;
       }
    }
 

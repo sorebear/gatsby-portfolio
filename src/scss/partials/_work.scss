@@ -28,18 +28,29 @@
 }
 
 .work {
+
+   border-style: $default-border-style;
+   border-width: $default-border-width;
+
    &__type-name {
       background-color: $offwhite;
+      border-right-style: $default-border-style;
+      border-right-width: $default-border-width;
+      border-color: transparent;
    }
 
    &__displaying-main .work {
       &__type--main .work {
          &__type-name {
-            border-right: 0.35rem dotted $slate !important;
+            border-right-style: $default-border-style;
+            border-right-width: $default-border-width;
+            border-color: $slate !important;
          }
 
          &__horizontal-line {
             animation: expandRight 0.2s forwards 0.1s;
+            border-bottom-style: $default-border-style;
+            border-bottom-width: $default-border-width;
             border-color: $slate !important;
          }
       }
@@ -51,6 +62,8 @@
 
          .work__vertical-line--main {
             animation: expandDown 0.2s forwards 0.3s;
+            border-left-style: $default-border-style;
+            border-left-width: $default-border-width;
             border-color: $slate !important;
          }
       }
@@ -63,11 +76,15 @@
    &__displaying-cms .work {
       &__type--cms .work {
          &__type-name {
-            border-right: 0.35rem dotted $orange !important;
+            border-right-style: $default-border-style;
+            border-right-width: $default-border-width;
+            border-color: $orange !important;
          }
 
          &__horizontal-line {
             animation: expandRight 0.2s forwards 0.1s;
+            border-bottom-style: $default-border-style;
+            border-bottom-width: $default-border-width;
             border-color: $orange !important;
          }
       }
@@ -79,6 +96,8 @@
 
          .work__vertical-line--cms {
             animation: expandDown 0.2s forwards 0.3s;
+            border-left-style: $default-border-style;
+            border-left-width: $default-border-width;
             border-color: $orange !important;
          }
       }
@@ -95,17 +114,23 @@
          }
          .work__vertical-line--web {
             animation: expandDown 0.2s forwards 0.3s;
+            border-left-style: $default-border-style;
+            border-left-width: $default-border-width;
             border-color: $red !important;
          }
       }
 
       &__type--web .work {
          &__type-name {
-            border-right: 0.35rem dotted $red !important;
+            border-right-style: $default-border-style;
+            border-right-width: $default-border-width;
+            border-color: $red !important;
          }
 
          &__horizontal-line {
             animation: expandRight 0.2s forwards 0.1s;
+            border-bottom-style: $default-border-style;
+            border-bottom-width: $default-border-width;
             border-color: $red !important;
          }
       }
@@ -123,17 +148,23 @@
 
          .work__vertical-line--mobile {
             animation: expandDown 0.2s forwards 0.3s;
+            border-left-style: $default-border-style;
+            border-left-width: $default-border-width;
             border-color: $teal !important;
          }
       }
 
       &__type--mobile .work {
          &__type-name {
-            border-right: 0.35rem dotted $teal !important;
+            border-right-style: $default-border-style;
+            border-right-width: $default-border-width;
+            border-color: $teal !important;
          }
 
          &__horizontal-line {
             animation: expandRight 0.2s forwards 0.1s;
+            border-bottom-style: $default-border-style;
+            border-bottom-width: $default-border-width;
             border-color: $teal !important;
          }
       }
