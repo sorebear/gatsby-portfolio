@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Icon from '../components/icon';
 import Button from '../components/button';
+import StitchBox from '../components/stitchBox';
+
 import bambooDivider from '../images/bamboo-divider.svg';
 import reactIcon from '../images/devicons/react.svg';
 import meteorIcon from '../images/devicons/meteor.svg';
@@ -16,10 +19,26 @@ import phpIcon from '../images/devicons/php.svg';
 
 import BasicCard from '../components/basicCard';
 
-class Services extends Component {
+class Skills extends Component {
 	constructor(props) {
 		super(props);
 		this.setTranslate = this.setTranslate.bind(this);
+		this.skillSets = [
+			{ 
+				name: 'CMS Development',
+				icon: 'icon-basic-webpage-img-txt',
+				rotate: 7.5
+			},
+			{
+				name: 'Web Development',
+				icon: 'icon-basic-laptop',
+				rotate: -7.5
+			},
+			{
+				name: 'Mobile Development',
+				icon: 'icon-basic-smartphone',
+				rotate: 7.5
+			}]
 		this.state = {
          translate: 0,
          activeService: 'cms-development'
@@ -33,66 +52,63 @@ class Services extends Component {
 		});
 	}
 
+	renderSkillSets() {
+		return this.skillSets.map((skillSet, index) => {
+			const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
+			return (
+				<div key={index} className={`skills__skill-type-card--${parsedName}`} style={styles.typeCardWrapperStyle}>
+					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg`}}>
+						<div
+							onClick={() => this.props.updateSkillSet(parsedName, 'skills')}
+							className='skills__skill-type-card'
+							style={{...styles.typeCardStyle, transform: `rotate(${skillSet.rotate * -1}deg`}}
+						>
+							<Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+							<h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
+						</div>
+					</StitchBox>
+				</div>
+			)
+		});
+	}
+
 	render() {
 		return (
-			<div className={`services ${this.state.activeService}`}>
+			<div className={`skills ${this.props.activeSkillSet}`}>
 				<div className="container">
 					<div
-						className="services__types-container"
+						className="skills__types-container"
 						style={styles.typesContainerStyle}
 					>
-						<div
-							className="services__types-selector--box"
-							style={{
-								...styles.typesSelectorStyle,
-								left: `${this.state.translate * 50}%`,
-								transform: `translateX(${this.state.translate * -50}%)`
-							}}
-						>
-                     <div className="services__types-selector--line" style={styles.typesSelectorLineStyle}>
-                     </div>
-                  </div>
-						<div
-							onClick={() => this.setTranslate(0, 'cms-development')}
-							className="services__service-type-card services__service-type-card--cms-development"
-							style={styles.typeCardStyle}
-						>
-							<Icon className="icon-basic-webpage-img-txt services__service-type-icon" />
-							<h4 style={{ marginTop: 0 }}>CMS Development</h4>
+						{ this.renderSkillSets() } 
+					</div>
+					<div className="vertical-line-container vertical-line-container--row-1" style={styles.verticalLineContainer}>
+						<div className="vertical-line-mask skills__vertical-line-mask--first-row skills__vertical-line-mask--cms-development" style={styles.verticalMaskStyle}>
+							<div className="border-vertical" />
 						</div>
-						<div
-							onClick={() => this.setTranslate(1, 'web-development')}
-							className="services__service-type-card services__service-type-card--web-development"
-							style={styles.typeCardStyle}
-						>
-							<Icon className="icon-basic-laptop" />
-							<h4 style={{ marginTop: 0 }}>Web Development</h4>
+						<div className="vertical-line-mask skills__vertical-line-mask--first-row skills__vertical-line-mask--web-development" style={styles.verticalMaskStyle}>
+							<div className="border-vertical" />
 						</div>
-						<div
-							onClick={() => this.setTranslate(2, 'mobile-development')}
-							className="services__service-type-card services__service-type-card--mobile-development"
-							style={styles.typeCardStyle}
-						>
-							<Icon className="icon-basic-smartphone" />
-							<h4 style={{ marginTop: 0 }}>Mobile Development</h4>
+						<div className="vertical-line-mask skills__vertical-line-mask--first-row skills__vertical-line-mask--mobile-development" style={styles.verticalMaskStyle}>
+							<div className="border-vertical" />
 						</div>
 					</div>
 				</div>
 
-				<div className="services__details-wrapper" style={styles.servicesDetailsWrapperStyle}>
+				<div className="skills__details-wrapper" style={styles.skillsDetailsWrapperStyle}>
 					<div
-						className="services__details"
+						className="skills__details"
 						style={{
-							...styles.servicesDetailsStyle,
+							...styles.skillsDetailsStyle,
 							transform: `translateX(${this.state.translate * -33.33}%)`
 						}}
 					>
 						<div
-							className="services__details--cms-development"
-							style={styles.servicesDetailsItemStyle}
+							className="skills__details--cms-development"
+							style={styles.skillsDetailsItemStyle}
 						>
 							<div className="container">
-								<div className="technology-container" style={styles.technologiesStyle}>
+								<div className="skills__technology-container" style={styles.technologiesStyle}>
 									<img
 										className="skill-icon gatsby"
 										style={styles.iconStyle}
@@ -135,11 +151,11 @@ class Services extends Component {
 							</div>
 						</div>
 						<div
-							className="services__details--web-development"
-							style={styles.servicesDetailsItemStyle}
+							className="skills__details--web-development"
+							style={styles.skillsDetailsItemStyle}
 						>
 							<div className="container">
-								<div className="technology-container" style={styles.technologiesStyle}>
+								<div className="skills__technology-container" style={styles.technologiesStyle}>
 									<img
 										className="skill-icon meteor"
 										style={styles.iconStyle}
@@ -179,11 +195,11 @@ class Services extends Component {
 							</div>
 						</div>
 						<div
-							className="services__details--mobile-development"
-							style={styles.servicesDetailsItemStyle}
+							className="skills__details--mobile-development"
+							style={styles.skillsDetailsItemStyle}
 						>
 							<div className="container">
-								<div className="technology-container" style={styles.technologiesStyle}>
+								<div className="skills__technology-container" style={styles.technologiesStyle}>
 									<img
 										className="skill-icon react-native"
 										style={styles.iconStyle}
@@ -224,32 +240,23 @@ class Services extends Component {
 	}
 }
 
-export default Services;
+export default Skills;
 
 const styles = {
 	typesContainerStyle: {
 		display: 'flex',
 		position: 'relative',
 		justifyContent: 'space-between',
-		marginBottom: '5rem'
+	},
+	typeCardWrapperStyle: {
+		width: '33.33%'
 	},
 	typeCardStyle: {
-		width: '33.33%',
-		padding: '2rem',
       textAlign: 'center',
 	},
-	typesSelectorStyle: {
-		position: 'absolute',
-		width: '33.33%',
-		height: '100%',
-		top: 0,
-		left: 0,
-      zIndex: 50,
-      transition: 'all 1s'
-	},
 	typesSelectorLineStyle: {
+		// height: '4rem',
 		width: 0,
-		height: '4rem',
 		borderRightWidth: 0,
 		borderTopWidth: 0,
 		borderBottomWidth: 0,
@@ -257,7 +264,7 @@ const styles = {
 		left: '50%',
 		transform: 'translateX(-50%)',
 		transition: '1s',
-		top: '106%'
+		top: '100%'
 	},
 	iconStyle: {
 		height: '5.5rem',
@@ -267,17 +274,14 @@ const styles = {
 		display: 'flex',
 		justifyContent: 'space-around',
 		alignItems: 'center',
-		marginBottom: '2.9rem'
 	},
-	servicesDetailsWrapperStyle: {
+	skillsDetailsWrapperStyle: {
       width: '100%',
 		overflowX: 'hidden',
 		position: 'relative'
 	},
-	servicesDetailsStyle: {
+	skillsDetailsStyle: {
       width: '300%',
-      paddingTop: '5rem',
-		paddingBottom: '3.55rem',
 		borderLeftWidth: 0,
 		borderRightWidth: 0,
 		display: 'flex',
@@ -286,11 +290,22 @@ const styles = {
 	detailsDescription: {
 		width: '100%',
 		maxWidth: '625px',
-		margin: '0 auto',
-		textAlign: 'center',
-		marginBottom: '1.45rem'
+		textAlign: 'center'
 	},
-	servicesDetailsItemStyle: {
+	skillsDetailsItemStyle: {
 		width: '33.33%'
+	},
+	verticalLineContainer: {
+		width: '100%',
+		display: 'flex',
+		position: 'relative',
+		justifyContent: 'space-between'
+	},
+	verticalMaskStyle: {
+		width: '33.33%',
+		position: 'absolute',
+		display: 'flex',
+		justifyContent: 'center',
+		overflow: 'hidden'
 	}
 };

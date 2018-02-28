@@ -1,4 +1,25 @@
-.services {
+.skills {
+
+   &__skill-type-card {
+      padding: $single-space;
+   }
+
+   &__details--cms-development,
+   &__details--web-development,
+   &__details--mobile-development {
+      p {
+         margin: 0 auto $single-space auto;
+      }
+
+      p:last-child {
+         margin-bottom: 0;
+      }
+   }
+
+   &__details {
+      padding-top: $triple-space;
+      padding-bottom: $triple-space;
+   }
 
    &__types-selector--box,
    &__types-selector--line,
@@ -7,9 +28,17 @@
       border-width: $default-border-width;
    }
 
+   &__types-selector--line {
+      height: $quad-space;
+   }
+
+   &__technology-container {
+      margin-bottom: $double-space;
+   }
+
    &.cms-development {
 
-      .services {
+      .skills {
 
          &__types-selector--box,
          &__types-selector--line,
@@ -21,7 +50,7 @@
 
    &.web-development {
 
-      .services {
+      .skills {
 
          &__types-selector--box,
          &__types-selector--line,
@@ -33,7 +62,7 @@
 
    &.mobile-development {
 
-      .services {
+      .skills {
 
          &__types-selector--box,
          &__types-selector--line,
@@ -43,10 +72,15 @@
       }
    }
 
-   &__service-type-card {
+   &__skill-type-card {
       transition: .3s;
 
       &--cms-development {
+
+         .stitch-box__border {
+            border-color: $orange;
+         }
+
          i {
             background-image: linear-gradient($orange, darken($orange, 15%));
          }
@@ -56,11 +90,16 @@
          }
 
          &:hover {
-            background-color: rgba($orange, .5) !important;
+            // background-color: rgba($orange, .5) !important;
          }
       }
 
       &--web-development {
+
+         .stitch-box__border {
+            border-color: $red;
+         }
+
          i {
             background-image: linear-gradient($red, darken($red, 15%));
          }
@@ -70,11 +109,15 @@
          }
 
          &:hover {
-            background-color: rgba($red, .5) !important;
+            // background-color: rgba($red, .5) !important;
          }
       }
 
       &--mobile-development {
+
+         .stitch-box__border {
+            border-color: $teal;
+         }
 
          i {
             background-image: linear-gradient($teal, darken($teal, 10%));
@@ -85,7 +128,7 @@
          }
 
          &:hover {
-            background-color: rgba($teal, .5) !important;
+            // background-color: rgba($teal, .5) !important; 
          }
       }
    }

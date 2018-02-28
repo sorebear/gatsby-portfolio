@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import StitchText from '../components/stitchText';
 import smoothScroll from 'smoothscroll';
 
 class TopBar extends Component {
    constructor(props) {
       super(props);
-      this.navLinks = ['services', 'about', 'work', 'pricing', 'contact'];
+      this.navLinks = ['skills', 'about', 'work', 'contact'];
       this.state = {
          topBarClass: 'top-bar--unscrolled'
       };
@@ -31,7 +32,9 @@ class TopBar extends Component {
       return this.navLinks.map((link, index) => {
          return (
             <li key={index} onClick={() => this.handleSmoothScroll(link)} className="top-bar__nav-link" style={styles.listItemStyle}>
+               <StitchText>
                {link}
+               </StitchText>
             </li>
          );
       });
@@ -39,7 +42,7 @@ class TopBar extends Component {
 
    render() {
       return (
-         <div className="top-bar" className={this.state.topBarClass}>
+         <div className={`top-bar ${this.state.topBarClass}`}>
             <div style={styles.topBarStyle}>
                <h2 onClick={() => this.handleSmoothScroll('home')} className="top-bar__logo" style={styles.logoStyle}>
                   Soren Baird

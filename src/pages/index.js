@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 
 // React Components
 import BasicSection from '../components/basicSection';
-import Services from './services';
+import Skills from './skills';
 import Divider from '../components/divider';
 import About from './about';
 import Pricing from './pricing';
@@ -30,14 +31,32 @@ const darkGradient = `linear-gradient(rgba(25, 25, 25, .8), rgba(25, 25, 25, .6)
 const lightGradient = `linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .5))`;
 
 class Index extends Component {
+    constructor(props) {
+        super(props);
+        this.updateSet = this.updateSet.bind(this);
+        this.state = {
+            activeSet: 'cms-development',
+            activeSection: 'skills'
+        }
+    }
+
+    updateSet(newSet, section) {
+        this.setState({
+            activeSet: newSet,
+            activeSection: section
+            
+        })
+    }
+
     render() {
+        const { activeSet, activeSection } = this.state;
         return (
-            <div className='content-wrapper'>
+            <div className={`content-wrapper ${activeSection}-${activeSet}`}>
                 <TopBar />
                 <HeroImage title="Soren Baird" image={forestTrailDark} />
-                <BasicSection id="services" className="services">
+                <BasicSection id="skills" className="skills">
                     <Title text="Skills" />
-                    <Services />
+                    <Skills activeSkillSet={this.state.activeSet} updateSkillSet={this.updateSet} />
                 </BasicSection>
                 <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${aboutMe})`}}>
                     {/* <Title text="About" style={{ color: 'white'}} /> */}

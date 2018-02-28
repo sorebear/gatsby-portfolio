@@ -1,43 +1,12 @@
 import React, { Component } from 'react';
 import AnimatedCard from '../components/animatedCard';
 import BasicCard from '../components/basicCard';
+import AnimatedBorderBox from '../components/animatedBorderBox';
 
 import envivent from '../images/work/envivent.svg';
 import puzzleMe from '../images/work/puzzle-me.jpg';
 import memoryMatch from '../images/work/memory-match.jpg';
 import todoList from '../images/work/todo-list.jpg';
-
-// export default () => (
-//    <div style={styles.workStyle}>
-//       <BasicCard className="basic-card basic-card--white">
-//          <img src={puzzleMe} style={styles.imageStyle} />
-//          <h2 style={styles.titleStyle}>Puzzle Me</h2>
-//          <p>
-//             <a href="http://puzzleme.sorenbaird.com" style={styles.linkStyle} target="_blank">Live</a>
-//             <span> / </span>
-//             <a href="https://github.com/sorebear/puzzle_me" style={styles.linkStyle} target="_blank">GitHub</a>
-//          </p>
-//       </BasicCard>
-//       <BasicCard className="basic-card basic-card--white">
-//          <img src={memoryMatch} style={styles.imageStyle} />
-//          <h2 style={styles.titleStyle}>Inventor Memory Match</h2>
-//          <p>
-//             <a href="http://sorenbaird.com/apps/memory_match" style={styles.linkStyle} target="_blank">Live</a>
-//             <span> / </span>
-//             <a href="https://github.com/sorebear/inventor_memory_match" style={styles.linkStyle} target="_blank">GitHub</a>
-//          </p>
-//       </BasicCard>
-//       <BasicCard className="basic-card basic-card--white">
-//          <img src={todoList} style={styles.imageStyle} />
-//          <h2 style={styles.titleStyle}>Todo List</h2>
-//          <p>
-//             <a href="http://sorenbaird.com/apps/todo_list" style={styles.linkStyle} target="_blank">Live</a>
-//             <span> / </span>
-//             <a href="https://github.com/sorebear/todo_list" style={styles.linkStyle} target="_blank">GitHub</a>
-//          </p>
-//       </BasicCard>
-//    </div>
-// );
 
 class Work extends Component {
    constructor(props) {
@@ -86,11 +55,10 @@ class Work extends Component {
    }
 
    updateDisplayedWork(workType) {
-      console.log('Updating Work Types', workType);
       this.setState({ displayedWork: workType });
    }
 
-   renderWorks() {
+   renderProjectTypes() {
       let typeAlreadyRendered = [];
       return this.myWork.map((project, index) => {
          if (!typeAlreadyRendered.includes(project.type)) {
@@ -124,28 +92,35 @@ class Work extends Component {
                className={`work__individual-project work__individual-project--${project.type.toLowerCase()}`}
                style={styles.individualProjectStyle}
             >
-               <img
-                  src={project.image}
-                  style={styles.individualProjectImageStyle}
-                  className="work__individual-project__image"
-               />
-               <h5 className="work__individual-project__title">{project.title}</h5>
-               <p>
-                  <a href={project.liveLink} target="_blank">Live</a>
-                  <span> / </span>
-                  <a href={project.githubLink} target="_blank">GitHub</a>
-               </p>
+               <AnimatedBorderBox hoverContent={{
+                  title: project.title,
+                  links: [
+                     {
+                        title: 'Live',
+                        href: project.liveLink
+                     },
+                     {
+                        title: 'GitHub',
+                        href: project.githubLink
+                     }
+                  ]
+               }}>
+                  <img
+                     src={project.image}
+                     style={styles.individualProjectImageStyle}
+                     className="work__individual-project__image"
+                  />
+               </AnimatedBorderBox>
             </div>
          );
       });
    }
 
    render() {
-      console.log(this.state);
       return (
          <div className={`work work__displaying-${this.state.displayedWork.toLowerCase()}`} style={styles.workStyle}>
             <div className="work__types-container" style={styles.typesContainerStyle}>
-               {this.renderWorks()}
+               {this.renderProjectTypes()}
             </div>
             <div className="work__horizontal-line-space" style={styles.lineContainerStyle} />
             <div className="work__projects-container" style={styles.projectsContainerStyle}>
@@ -174,7 +149,6 @@ const styles = {
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'flex-start',
-      paddingTop: '1.45rem'
    },
    lineContainerStyle: {
       width: '33.33%'
@@ -182,7 +156,6 @@ const styles = {
    projectsContainerStyle: {
       width: '33.33%',
       position: 'relative',
-      paddingLeft: '1.25rem',
       transition: 'border-left 1s'
    },
    individualProjectStyle: {
@@ -191,7 +164,8 @@ const styles = {
       textAlign: 'center'
    },
    individualProjectImageStyle: {
-      width: '100%'
+      height: '100%',
+      margin: 0
    },
    titleStyle: {
       color: 'black'
@@ -223,7 +197,7 @@ const styles = {
       left: '100%',
       top: '50%',
       transform: 'translate(-100%, -50%)',
-      width: '94%'
+      width: '100%'
    },
    verticalLineStyle: {
       position: 'absolute',

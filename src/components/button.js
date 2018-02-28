@@ -1,5 +1,5 @@
-
 import React from 'react';
+import AnimatedBorderBox from './animatedBorderBox';
 
 export default ({ type, value, className, children, style }) => (
    <button 
@@ -7,7 +7,7 @@ export default ({ type, value, className, children, style }) => (
       value={value} 
       className={className}
       style={{...styles.buttonStyle, ...style}}>
-      <h5 style={styles.textStyle}>{ children }</h5>
+         <h5 style={styles.textStyle}>{ children }</h5>
    </button>
 );
 

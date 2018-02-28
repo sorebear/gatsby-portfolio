@@ -7,7 +7,6 @@ export default ({ className, style }) => (
 const styles = {
    iconStyle: {
       fontSize: '8rem',
-      paddingTop: '1rem',
       backgroundSize: `cover`,
       WebkitBackgroundClip: 'text',
       color: 'transparent'

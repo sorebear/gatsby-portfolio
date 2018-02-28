@@ -28,4 +28,15 @@
          color: $white;
       }
    }
+
+   .stitch-text {
+
+		&__top-border,
+		&__bottom-border {
+			border-bottom-width: $half-border-width;
+			border-bottom-style: $default-border-style;
+			width: 100%;
+		}
+	}
 }
+

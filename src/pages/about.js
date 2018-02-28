@@ -29,7 +29,6 @@ export default () => (
 
 const styles = {
    aboutMeStyle: {
-      paddingTop: '5rem',
       width: '60%',
       marginLeft: 'auto'
    },

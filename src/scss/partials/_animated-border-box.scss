@@ -1,0 +1,74 @@
+@keyframes expandHorizontal {
+   0% { width: 0%; }
+   100% { width: 100%; }
+}
+
+@keyframes expandVertical {
+   0% { height: 0%; }
+   100% { height: 100%; }
+}
+
+.animated-border-box {
+
+   border-color: $teal !important;
+
+   &__left-border {
+      border-color: $white;
+      border-left-width: $default-border-width;
+      border-left-style: $default-border-style;
+   }
+
+   &__top-border {
+      border-color: $white;
+      border-top-width: $default-border-width;
+      border-top-style: $default-border-style;
+   }
+
+   &__right-border {
+      border-color: $white;
+      border-right-width: $default-border-width;
+      border-right-style: $default-border-style;
+   }
+
+   &__bottom-border {
+      border-color: $white;
+      border-bottom-width: $default-border-width;
+      border-bottom-style: $default-border-style;
+   }
+
+   &__hover-content {
+      opacity: 0;
+      transition: opacity .4s;
+      color: $white;
+   }
+}
+
+.animated-border-box:hover {
+
+   .animated-border-box {
+
+      &__overlay {
+         background-color: rgba(0, 0, 0, .6);
+      }
+
+      &__left-border {
+         animation: expandVertical .2s forwards;
+      }
+
+      &__top-border {
+         animation: expandHorizontal .2s forwards;
+      }
+
+      &__right-border {
+         animation: expandVertical .2s forwards .2s;
+      }
+
+      &__bottom-border {
+         animation: expandHorizontal .2s forwards .2s;
+      }
+
+      &__hover-content {
+         opacity: 1;
+      }
+   }
+}

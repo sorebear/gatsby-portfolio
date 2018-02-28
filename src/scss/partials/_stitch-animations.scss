@@ -1,0 +1,17 @@
+.border-vertical {
+	position: absolute;
+	height: 100%;
+	border-left-width: $default-border-width;
+	border-left-style: $default-border-style;
+}
+
+.skills {
+
+   .vertical-line-container--row-1 {
+      height: $quad-space;
+
+      .vertical-line-mask {
+         height: 50%;
+      }
+   }
+}

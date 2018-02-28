@@ -23,14 +23,15 @@
       transform: translate(-100%, -50%);
    }
    100% {
-      transform: translate(2%, -50%);
+      transform: translate(0%, -50%);
    }
 }
 
 .work {
 
-   border-style: $default-border-style;
-   border-width: $default-border-width;
+   &__individual-project {
+      margin: 0 $single-space $single-space $single-space;
+   }
 
    &__type-name {
       background-color: $offwhite;
