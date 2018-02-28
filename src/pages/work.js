@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import AnimatedCard from '../components/animatedCard';
 import BasicCard from '../components/basicCard';
 import AnimatedBorderBox from '../components/animatedBorderBox';
+import Title from '../components/title';
+import StitchColumns from '../components/stitchColumns';
 
 import envivent from '../images/work/envivent.svg';
 import puzzleMe from '../images/work/puzzle-me.jpg';
@@ -118,17 +120,23 @@ class Work extends Component {
 
    render() {
       return (
-         <div className={`work work__displaying-${this.state.displayedWork.toLowerCase()}`} style={styles.workStyle}>
-            <div className="work__types-container" style={styles.typesContainerStyle}>
-               {this.renderProjectTypes()}
+         <div>
+            <div className="work__header" style={{ position: 'relative'}}>
+               <StitchColumns row='3' section='work' skillSetArr={['mobile-development', 'web-development', 'cms-development']} />
+               <Title text="Work" style={styles.workTitleStyle} />
             </div>
-            <div className="work__horizontal-line-space" style={styles.lineContainerStyle} />
-            <div className="work__projects-container" style={styles.projectsContainerStyle}>
-               <div className="work__vertical-line--main" style={styles.verticalLineStyle} />
-               <div className="work__vertical-line--cms" style={styles.verticalLineStyle} />
-               <div className="work__vertical-line--web" style={styles.verticalLineStyle} />
-               <div className="work__vertical-line--mobile" style={styles.verticalLineStyle} />
-               {this.renderProjects()}
+            <div className={`work work__displaying-${this.state.displayedWork.toLowerCase()}`} style={styles.workStyle}>
+               <div className="work__types-container" style={styles.typesContainerStyle}>
+                  {this.renderProjectTypes()}
+               </div>
+               <div className="work__horizontal-line-space" style={styles.lineContainerStyle} />
+               <div className="work__projects-container" style={styles.projectsContainerStyle}>
+                  <div className="work__vertical-line--main" style={styles.verticalLineStyle} />
+                  <div className="work__vertical-line--cms" style={styles.verticalLineStyle} />
+                  <div className="work__vertical-line--web" style={styles.verticalLineStyle} />
+                  <div className="work__vertical-line--mobile" style={styles.verticalLineStyle} />
+                  {this.renderProjects()}
+               </div>
             </div>
          </div>
       );
@@ -142,6 +150,13 @@ const styles = {
       display: 'flex',
       justifyContent: 'space-between',
       borderWidth: 0
+   },
+   workTitleStyle: {
+      margin: 0,
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%, -50%)'
    },
    typesContainerStyle: {
       width: '33.33%',

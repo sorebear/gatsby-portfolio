@@ -1,17 +1,225 @@
-.border-vertical {
-	position: absolute;
-	height: 100%;
+@keyframes expandVertical {
+	0% {
+		height: 0%;
+	}
+	100% {
+		height: 100%;
+	}
+}
+
+@keyframes expandHorizontal {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+	}
+}
+
+.vertical-line {
 	border-left-width: $default-border-width;
 	border-left-style: $default-border-style;
 }
 
 .skills {
+	.vertical-line-container--row-1,
+	.vertical-line-container--row-2 {
+		height: $quad-space;
 
-   .vertical-line-container--row-1 {
-      height: $quad-space;
+		.vertical-line {
+			height: $quad-space;
+		}
 
-      .vertical-line-mask {
-         height: 50%;
-      }
+		.vertical-line-mask {
+			height: 0%;
+		}
+	}
+}
+
+.work {
+	.vertical-line-container--row-3 {
+		height: $quad-space + $quad-space + $double-space;
+
+		.vertical-line {
+			height: $quad-space + $quad-space + $double-space;
+		}
+
+		.vertical-line-mask {
+			height: 0%;
+		}
+	}
+}
+
+.content-wrapper.skills-cms-development {
+	.skills {
+		&__skill-type-card--cms-development {
+			.stitch-box {
+				&__top-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__bottom-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__left-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+
+				&__right-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+			}
+		}
+
+		&__vertical-line-mask--cms-development {
+			&.skills__vertical-line-mask {
+				.vertical-line {
+					border-color: $orange;
+				}
+
+				&--row-1 {
+					animation: expandVertical 0.3s forwards;
+				}
+
+				&--row-2 {
+					animation: expandVertical 0.3s forwards 0.3s;
+				}
+			}
+		}
    }
+   
+	.work {
+		&__vertical-line-mask--cms-development {
+			&.work__vertical-line-mask {
+				.vertical-line {
+					border-color: $red;
+				}
+
+				&--row-3 {
+					animation: expandVertical 0.3s forwards 0.6s;
+				}
+
+				&--row-4 {
+					animation: expandVertical 0.3s forwards 0.9s;
+				}
+			}
+		}
+	}
+}
+
+.content-wrapper.skills-web-development {
+	.skills {
+		&__skill-type-card--web-development {
+			.stitch-box {
+				&__top-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__bottom-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__left-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+
+				&__right-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+			}
+		}
+
+		&__vertical-line-mask--web-development {
+			&.skills__vertical-line-mask {
+				.vertical-line {
+					border-color: $red;
+				}
+
+				&--row-1 {
+					animation: expandVertical 0.3s forwards;
+				}
+
+				&--row-2 {
+					animation: expandVertical 0.3s forwards 0.3s;
+				}
+			}
+		}
+	}
+
+	.work {
+		&__vertical-line-mask--web-development {
+			&.work__vertical-line-mask {
+				.vertical-line {
+					border-color: $red;
+				}
+
+				&--row-3 {
+					animation: expandVertical 0.3s forwards 0.6s;
+				}
+
+				&--row-4 {
+					animation: expandVertical 0.3s forwards 0.9s;
+				}
+			}
+		}
+	}
+}
+
+.content-wrapper.skills-mobile-development {
+	.skills {
+		&__skill-type-card--mobile-development {
+			.stitch-box {
+				&__top-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__bottom-border-mask {
+					animation: expandHorizontal 0.2s forwards;
+				}
+
+				&__left-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+
+				&__right-border-mask {
+					animation: expandVertical 0.2s forwards;
+				}
+			}
+		}
+
+		&__vertical-line-mask--mobile-development {
+			&.skills__vertical-line-mask {
+				.vertical-line {
+					border-color: $teal;
+				}
+
+				&--row-1 {
+					animation: expandVertical 0.3s forwards;
+				}
+
+				&--row-2 {
+					animation: expandVertical 0.3s forwards 0.3s;
+				}
+			}
+		}
+   }
+   
+   .work {
+		&__vertical-line-mask--mobile-development {
+			&.work__vertical-line-mask {
+				.vertical-line {
+					border-color: $teal;
+				}
+
+				&--row-3 {
+					animation: expandVertical 0.3s forwards 0.6s;
+				}
+
+				&--row-4 {
+					animation: expandVertical 0.3s forwards 0.9s;
+				}
+			}
+		}
+	}
 }

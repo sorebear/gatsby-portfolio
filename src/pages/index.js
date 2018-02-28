@@ -36,34 +36,34 @@ class Index extends Component {
         this.updateSet = this.updateSet.bind(this);
         this.state = {
             activeSet: 'cms-development',
-            activeSection: 'skills'
+            activeSection: 'skills',
+            activeIndex: 0
         }
     }
 
-    updateSet(newSet, section) {
+    updateSet(newSet, section, newIndex) {
         this.setState({
             activeSet: newSet,
-            activeSection: section
-            
+            activeSection: section,
+            activeIndex: newIndex
         })
     }
 
     render() {
-        const { activeSet, activeSection } = this.state;
+        const { activeSet, activeSection, activeIndex } = this.state;
         return (
             <div className={`content-wrapper ${activeSection}-${activeSet}`}>
                 <TopBar />
                 <HeroImage title="Soren Baird" image={forestTrailDark} />
-                <BasicSection id="skills" className="skills">
+                <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
                     <Title text="Skills" />
-                    <Skills activeSkillSet={this.state.activeSet} updateSkillSet={this.updateSet} />
+                    <Skills activeSkillSet={activeSet} activeIndex={activeIndex} updateSkillSet={this.updateSet} />
                 </BasicSection>
                 <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${aboutMe})`}}>
                     {/* <Title text="About" style={{ color: 'white'}} /> */}
                     <About />
                 </BasicSection>
-                <BasicSection id="work" className="work">
-                    <Title text="Work" />
+                <BasicSection id="work" className="work" style={{ padding: 0 }}>
                     <Work />
                 </BasicSection>
                 {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
