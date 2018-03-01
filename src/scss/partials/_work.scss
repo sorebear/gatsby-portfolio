@@ -33,6 +33,16 @@
       background-color: $offwhite;
    }
 
+   &__projects-wrapper {
+      margin-top: -$quad-space;
+      margin-bottom: $quad-space;
+   }
+
+   &__projects {
+      margin-top: $single-space;
+      margin-bottom: $single-space;
+   }
+
    &__individual-project {
       margin: 0 $single-space $single-space $single-space;
    }

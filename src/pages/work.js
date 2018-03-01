@@ -6,6 +6,7 @@ import Title from '../components/title';
 import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
+import StitchRows from '../components/stitchRows';
 
 import data from '../data/skillsAndWorksData';
 
@@ -18,79 +19,94 @@ class Work extends Component {
    constructor(props) {
       super(props);
    }
-   
+
    renderSkillSets() {
-		return data.map((skillSet, index) => {
-			const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
-			return (
-				<div
-					key={index}
-					className={`skills__skill-type-card--${parsedName}`}
-					style={{ width: `${100/data.length}%` }}
-				>
-					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg` }}>
-						<div
-							onClick={() => this.props.updateSet(parsedName, 'skills', index)}
-							className="skills__skill-type-card"
-							style={{
-								textAlign: 'center',
-								transform: `rotate(${skillSet.rotate * -1}deg`
-							}}
-						>
-							<Icon className={`${skillSet.icon} skills__skill-type-icon`} />
-							<h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
-						</div>
-					</StitchBox>
-				</div>
-			);
-		});
+      return data.map((skillSet, index) => {
+         const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
+         return (
+            <div
+               key={index}
+               className={`skills__skill-type-card--${parsedName}`}
+               style={{ width: `${100 / data.length}%` }}
+            >
+               <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg` }}>
+                  <div
+                     onClick={() => this.props.updateSet(parsedName, 'skills', index)}
+                     className="skills__skill-type-card"
+                     style={{
+                        textAlign: 'center',
+                        transform: `rotate(${skillSet.rotate * -1}deg`
+                     }}
+                  >
+                     <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+                     <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
+                  </div>
+               </StitchBox>
+            </div>
+         );
+      });
    }
 
    renderProjectCategory(i) {
-		return data[i].works.map((work, index) => {
-         return <img key={index} src={work.image} />
+      return data[i].works.map((work, index) => {
+         return <img key={index} src={work.image} />;
       });
-	}
+   }
 
    renderAllProjects() {
-		return data.map((workTypes, index) => {
-			const parsedName = workTypes.name.replace(/\ /g, '-').toLowerCase();
-			return (
-				<div key={index} className={`work__projects work__projects--${parsedName}`} style={styles.projectTypeContainerStyle}>
-					<div className="container">
-						{ this.renderProjectCategory(index) }
-					</div>
-				</div>
-			);
+      return data.map((workTypes, index) => {
+         const parsedName = workTypes.name.replace(/\ /g, '-').toLowerCase();
+         return (
+            <div key={index} style={{ width: '33.33%' }}>
+               <StitchRows rows={['3', '4']} section="work" set={parsedName} rotate={workTypes.rotate}>
+                  <div className={`work__projects work__projects--${parsedName}`} style={{ width: '100%' }}>
+                     <div className="container">{this.renderProjectCategory(index)}</div>
+                  </div>
+               </StitchRows>
+            </div>
+         );
       });
    }
 
    render() {
       return (
          <div>
-            <div className="work__header" style={{ position: 'relative'}}>
-               <StitchColumns row='3' section='work' skillSetArr={['mobile-development', 'web-development', 'cms-development']} />
+            <div className="work__header" style={{ position: 'relative' }}>
+               <StitchColumns
+                  row="3"
+                  section="work"
+                  skillSetArr={['mobile-development', 'web-development', 'cms-development']}
+               />
                <Title text="Work" style={styles.workSectionTitleStyle} />
             </div>
             <div style={styles.mainWorkStyle}>
                <h3>I am currently a full-time developer at Envivent.</h3>
             </div>
-            <StitchColumns row='4' section='work' skillSetArr={['cms-development', 'web-development', 'mobile-development']} />
+            <StitchColumns
+               row="4"
+               section="work"
+               skillSetArr={['cms-development', 'web-development', 'mobile-development']}
+            />
             <div className="work__types-container" style={styles.workSetsContainerStyle}>
                {this.renderSkillSets()}
             </div>
-            <StitchColumns row='5' section='work' skillSetArr={['cms-development', 'web-development', 'mobile-development']} />
-				<div className="work__projects-wrapper" style={styles.allProjectsWrapperStyle}>
-					<div
-						className="work__projects"
-						style={{
-							...styles.allProjectsContainerStyle,
-							transform: `translateX(${this.props.activeIndex * -33.33}%)`
-						}}
-					>
-						{ this.renderAllProjects() }
-					</div>
-				</div>
+            <StitchColumns
+               row="5"
+               section="work"
+               heightArr={['60%', '80%', '100%']}
+               skillSetArr={['cms-development', 'web-development', 'mobile-development']}
+            />
+            <div className="work__projects-wrapper" style={styles.allProjectsWrapperStyle}>
+               <div
+                  className="work__projects"
+                  style={{
+                     ...styles.allProjectsContainerStyle,
+                     transform: `translateX(${this.props.activeIndex * -33.33}%)`
+                  }}
+               >
+                  {this.renderAllProjects()}
+               </div>
+            </div>
          </div>
       );
    }
@@ -107,25 +123,22 @@ const styles = {
       transform: 'translate(-50%, -50%)'
    },
    allProjectsWrapperStyle: {
-		width: '100%',
-		overflowX: 'hidden',
-		position: 'relative'
+      width: '100%',
+      overflowX: 'hidden',
+      position: 'relative'
    },
    allProjectsContainerStyle: {
-		width: '300%',
-		borderLeftWidth: 0,
-		borderRightWidth: 0,
-		display: 'flex',
-		transition: 'all 1s'
-   },
-   projectTypeContainerStyle: {
-      width: '33.33%'
+      width: '300%',
+      borderLeftWidth: 0,
+      borderRightWidth: 0,
+      display: 'flex',
+      transition: 'all 1s'
    },
    workSetsContainerStyle: {
       display: 'flex',
-		position: 'relative',
-		justifyContent: 'space-between'
-	},
+      position: 'relative',
+      justifyContent: 'space-between'
+   },
    mainWorkStyle: {
       height: '14rem',
       display: 'flex',
@@ -133,5 +146,5 @@ const styles = {
       alignItems: 'center',
       backgroundColor: 'grey',
       color: 'white'
-   },
+   }
 };

@@ -32,7 +32,7 @@
 }
 
 .horizontal-line-mask {
-   width: 100%;
+   width: 0%;
 }
 
 .skills {
@@ -55,17 +55,28 @@
 		}
    }
    
-   .vertical-line-container--row-4,
-   .vertical-line-container--row-5 {
+   .vertical-line-container--row-4 {
       height: $quad-space;
 
       .vertical-line {
          height: $quad-space;
       }
    }
+
+   .vertical-line-container--row-5 {
+      height: $quad-space + $double-space;
+
+      .vertical-line {
+         height: $quad-space + $double-space;
+      }
+   }
 }
 
 .content-wrapper.skills-cms-development {
+   .horizontal-line {
+      border-color: $orange;
+   }
+
 	.skills {
 		&__skill-type-card--cms-development {
 			.stitch-box {
@@ -101,7 +112,21 @@
 					animation: expandVertical 0.3s forwards 0.3s;
 				}
 			}
-		}
+      }
+
+      &__horizontal-line-mask--cms-development {
+			&.skills__horizontal-line-mask {
+
+				&--row-1 {
+					animation: expandHorizontal 1.3s forwards .5s;
+				}
+
+				&--row-2 {
+					animation: expandHorizontal 1.3s forwards 0.3s .5s;
+				}
+			}
+      }
+      
    }
    
 	.work {
@@ -128,6 +153,10 @@
 }
 
 .content-wrapper.skills-web-development {
+   .horizontal-line {
+      border-color: $red;
+   }
+
 	.skills {
 		&__skill-type-card--web-development {
 			.stitch-box {
@@ -190,6 +219,9 @@
 }
 
 .content-wrapper.skills-mobile-development {
+   .horizontal-line {
+      border-color: $teal;
+   }
 	.skills {
 		&__skill-type-card--mobile-development {
 			.stitch-box {
