@@ -5,15 +5,6 @@ class StitchRows extends Component {
       super(props);
       this.topTransformOrigin = this.props.rotate > 0 ? '100% 50%' : '0% 50%';
       this.bottomTransformOrigin = this.props.rotate > 0 ? '0% 50%' : '100% 50%';
-      this.state = {
-         sectionWidth: 1128
-      };
-   }
-
-   componentDidMount() {
-      this.setState({
-         sectionWidth: document.getElementById('skills-title').offsetWidth
-      });
    }
 
    render() {
@@ -26,7 +17,7 @@ class StitchRows extends Component {
                   style={{
                      transform: `rotate(${rotate}deg)`,
                      transformOrigin: this.topTransformOrigin,
-                     width: this.state.sectionWidth,
+                     width: '100%',
                      position: 'absolute',
                      bottom: 0
                   }}
@@ -39,7 +30,8 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     width: this.state.sectionWidth
+                     left: 0,
+                     width: '100%'
                   }}
                />
                
@@ -51,7 +43,7 @@ class StitchRows extends Component {
                   style={{
                      transform: `rotate(${rotate}deg)`,
                      transformOrigin: this.bottomTransformOrigin,
-                     width: this.state.sectionWidth,
+                     width: '100%',
                      position: 'absolute',
                      top: 0
                   }}
@@ -64,7 +56,8 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     width: this.state.sectionWidth
+                     right: 0,
+                     width: '100%'
                   }}
                />
             </div>

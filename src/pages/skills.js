@@ -119,7 +119,6 @@ class Skills extends Component {
 					<StitchColumns
 						row="1"
 						section="skills"
-						heightArr={['60%', '80%', '100%']}
 						skillSetArr={['cms-development', 'web-development', 'mobile-development']}
 					/>
 				</div>
@@ -138,7 +137,6 @@ class Skills extends Component {
 				<StitchColumns
 					row="2"
 					section="skills"
-					heightArr={['100%', '80%', '60%']}
 					alignItems="flex-end"
 					skillSetArr={['mobile-development', 'web-development', 'cms-development']}
 				/>
@@ -191,7 +189,7 @@ const styles = {
 		borderLeftWidth: 0,
 		borderRightWidth: 0,
 		display: 'flex',
-		transition: 'all 1s'
+		transition: 'all .5s'
 	},
 	detailsDescription: {
 		width: '100%',

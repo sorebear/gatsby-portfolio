@@ -9,19 +9,19 @@ export default ({ section, row, heightArr=[], alignItems='flex-start', skillSetA
 			className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[0]}`}
 			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
 		>
-			<div className="vertical-line" style={{ height: heightArr[0], zIndex: 10 }} />
+			<div className="vertical-line" style={{ zIndex: 10 }} />
 		</div>
 		<div
 			className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[1]}`}
 			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
 		>
-			<div className="vertical-line" style={{ height: heightArr[1], zIndex: 10 }} />
+			<div className="vertical-line" style={{ zIndex: 10 }} />
 		</div>
 		<div
          className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[2]}`}
 			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
 		>
-			<div className="vertical-line" style={{ height: heightArr[2], zIndex: 10 }} />
+			<div className="vertical-line" style={{ zIndex: 10 }} />
 		</div>
 	</div>
 );

@@ -19,8 +19,10 @@ $half-border-width: 0.075rem;
 
 // Spacing
 $single-space: 1.45rem;
+$half-space: $single-space / 2;
+$third-space: $single-space / 3;
+$quarter-space: $single-space / 4;
 $double-space: $single-space * 2;
-$double-and-half-space: $single-space * 2.5;
 $triple-space: $single-space * 3;
 $quad-space: $single-space * 4;
 $quint-space: $single-space * 5;

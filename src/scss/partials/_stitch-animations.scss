@@ -16,6 +16,11 @@
 	}
 }
 
+@keyframes retractHorizontal {
+	0% { width: 100%; }
+	100% { width: 20%; }
+}
+
 .vertical-line {
 	border-left-width: $default-border-width;
 	border-left-style: $default-border-style;
@@ -27,6 +32,10 @@
    width: 100%;
 }
 
+.horizontal-line-mask {
+	background-color: $offwhite;
+}
+
 .vertical-line-mask {
    height: 0%;
 }
@@ -36,12 +45,48 @@
 }
 
 .skills {
-	.vertical-line-container--row-1,
-	.vertical-line-container--row-2 {
+	.vertical-line-container--row-1 {
 		height: $quad-space + $double-space;
 
-		.vertical-line {
-			height: $quad-space + $double-space;
+		.skills__vertical-line-mask--cms-development {
+			.vertical-line {
+				height: $triple-space + $third-space + $third-space;
+			}
+		}
+
+		.skills__vertical-line-mask--web-development {
+			.vertical-line {
+				height: $quad-space + $half-space + $quarter-space;
+			}
+		}
+
+		.skills__vertical-line-mask--mobile-development {
+			.vertical-line {
+				height: $quad-space + $double-space;
+			}
+		}
+	}
+
+	.vertical-line-container--row-2 {
+		height: $quad-space + $double-space;
+		align-items: flex-end;
+
+		.skills__vertical-line-mask--cms-development {
+			.vertical-line {
+				height: $triple-space + $third-space + $third-space;
+			}
+		}
+
+		.skills__vertical-line-mask--web-development {
+			.vertical-line {
+				height: $quad-space + $half-space + $quarter-space;
+			}
+		}
+
+		.skills__vertical-line-mask--mobile-development {
+			.vertical-line {
+				height: $quad-space + $double-space;
+			}
 		}
 	}
 }
@@ -105,11 +150,11 @@
 				}
 
 				&--row-1 {
-					animation: expandVertical 0.3s forwards;
+					animation: expandVertical 0.3s forwards .3s;
 				}
 
 				&--row-2 {
-					animation: expandVertical 0.3s forwards 0.3s;
+					animation: expandVertical 0.3s forwards .5s;
 				}
 			}
       }
@@ -118,15 +163,14 @@
 			&.skills__horizontal-line-mask {
 
 				&--row-1 {
-					animation: expandHorizontal 1.3s forwards .5s;
+					animation: retractHorizontal .75s forwards .5s;
 				}
 
 				&--row-2 {
-					animation: expandHorizontal 1.3s forwards 0.3s .5s;
+					animation: retractHorizontal .75s forwards 0.3s .5s;
 				}
 			}
       }
-      
    }
    
 	.work {
@@ -193,6 +237,19 @@
 				}
 			}
 		}
+
+		&__horizontal-line-mask--web-development {
+			&.skills__horizontal-line-mask {
+
+				&--row-1 {
+					animation: retractHorizontal .75s forwards .5s;
+				}
+
+				&--row-2 {
+					animation: retractHorizontal .75s forwards 0.3s .5s;
+				}
+			}
+      }
 	}
 
 	.work {
@@ -258,6 +315,19 @@
             }
 			}
 		}
+
+		&__horizontal-line-mask--mobile-development {
+			&.skills__horizontal-line-mask {
+
+				&--row-1 {
+					animation: retractHorizontal .75s forwards .5s;
+				}
+
+				&--row-2 {
+					animation: retractHorizontal .75s forwards 0.3s .5s;
+				}
+			}
+      }
    }
    
    .work {
