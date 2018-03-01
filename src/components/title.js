@@ -12,6 +12,7 @@ export default ({ id, text, style }) => (
 const styles = {
 	titleContainerStyle: {
 		display: 'inline-block',
+		zIndex: 15,
 		textAlign: 'center',
 		position: 'relative',
 		display: 'flex',
@@ -21,7 +22,6 @@ const styles = {
 	},
 	titleStyle: {
 		fontSize: '3rem',
-		display: 'inline-block',
 		margin: 0
 	}
 };

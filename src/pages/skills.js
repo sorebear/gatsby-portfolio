@@ -137,7 +137,7 @@ class Skills extends Component {
 				<StitchColumns
 					row="2"
 					section="skills"
-					alignItems="flex-end"
+					
 					skillSetArr={['mobile-development', 'web-development', 'cms-development']}
 				/>
 			</div>

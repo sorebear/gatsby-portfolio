@@ -132,7 +132,7 @@ const styles = {
       borderLeftWidth: 0,
       borderRightWidth: 0,
       display: 'flex',
-      transition: 'all 1s'
+      transition: 'all .5s'
    },
    workSetsContainerStyle: {
       display: 'flex',
