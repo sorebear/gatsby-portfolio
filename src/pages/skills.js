@@ -4,19 +4,9 @@ import Icon from '../components/icon';
 import Button from '../components/button';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
+import StitchRows from '../components/stitchRows';
 
-const gatsbyIcon = 'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjAwIDEyMDAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiM2Mzl9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjAwLDBDMjY4LjYsMCwwLDI2OC42LDAsNjAwczI2OC42LDYwMCw2MDAsNjAwczYwMC0yNjguNiw2MDAtNjAwUzkzMS40LDAsNjAwLDB6IE0yNjYuNiw5MzMuMwlDMTc2LjEsODQyLjgsMTMxLDcyNC42LDEyOS42LDYwNkw1OTQsMTA3MC40QzQ3NS40LDEwNjksMzU3LjIsMTAyMy45LDI2Ni42LDkzMy4zeiBNNzA0LjMsMTA1OS40TDE0MC42LDQ5NS43CWM0Ny41LTIxMC4xLDIzNS0zNjcuMSw0NTkuNC0zNjcuMWMxNTYuOSwwLDI5NS41LDc3LDM4MS4yLDE5NC45TDkxNS42LDM3OUM4NDUuOCwyNzkuNSw3MzAuNSwyMTQuMyw2MDAsMjE0LjMJYy0xNjcuNywwLTMxMC4zLDEwNy43LTM2My4zLDI1Ny41bDQ5MS42LDQ5MS42YzEyMy40LTQzLjcsMjE4LTE0OC4yLDI0Ny42LTI3Ny42SDc3MS40VjYwMGgzMDAJQzEwNzEuNCw4MjQuNSw5MTQuNCwxMDExLjksNzA0LjMsMTA1OS40eiIvPjwvc3ZnPg=='
-import reactIcon from '../images/devicons/react.svg';
-import meteorIcon from '../images/devicons/meteor.svg';
-import mongoDBIcon from '../images/devicons/mongodb.svg';
-import nodeJSIcon from '../images/devicons/nodejs.svg';
-import graphQLIcon from '../images/devicons/graphql.svg';
-import netlifyIcon from '../images/devicons/netlify.svg';
-import androidIcon from '../images/devicons/android.svg';
-import javaIcon from '../images/devicons/java.svg';
-import drupalIcon from '../images/devicons/drupal.svg';
-import wordpressIcon from '../images/devicons/wordpress.svg';
-import phpIcon from '../images/devicons/php.svg';
+import data from '../data/skillsAndWorksData';
 
 import BasicCard from '../components/basicCard';
 
@@ -24,72 +14,6 @@ class Skills extends Component {
 	constructor(props) {
 		super(props);
 		this.setTranslate = this.setTranslate.bind(this);
-		this.skillSets = [
-			{
-				name: 'CMS Development',
-				icon: 'icon-basic-webpage-img-txt',
-				rotate: 7.5,
-				details: {
-					text: [
-						'I primarily build modern, fast, and secure CMS solutions with Gatsby.js, GraphQL and Netlify.',
-						'I also build traditional CMS sites using Wordpress and Drupal.'
-					],
-					icons: [
-						{ icon: gatsbyIcon },
-						{ separator: 'and' },
-						{ icon: graphQLIcon },
-						{ separator: 'and' },
-						{ icon: netlifyIcon },
-						{ separator: 'or' },
-						{ icon: wordpressIcon },
-						{ separator: 'or' },
-						{ icon: drupalIcon }
-					]
-				}
-			},
-			{
-				name: 'Web Development',
-				icon: 'icon-basic-laptop',
-				rotate: -7.5,
-				details: {
-					text: [
-						'I primarily build full-stack web applications using the Meteor Framework with React, Node.js and MongoDB.',
-						'I also build a variety of other web applications using JavaScript and PHP.'
-					],
-					icons: [
-						{ icon: meteorIcon },
-						{ separator: 'and' },
-						{ icon: reactIcon },
-						{ separator: 'and' },
-						{ icon: nodeJSIcon },
-						{ separator: 'and' },
-						{ icon: mongoDBIcon },
-						{ separator: 'or' },
-						{ icon: phpIcon }
-					]
-				}
-			},
-			{
-				name: 'Mobile Development',
-				icon: 'icon-basic-smartphone',
-				rotate: 7.5,
-				details: {
-					text: [
-						'I build Android and iOS mobile applications using React Native and Meteor with Cordova.',
-						'I also build native Android applications using Java and Android Studio.'
-					],
-					icons: [
-						{ icon: reactIcon },
-						{ separator: 'or' },
-						{ icon: meteorIcon },
-						{ separator: 'or' },
-						{ icon: androidIcon },
-						{ separator: 'and' },
-						{ icon: javaIcon }
-					]
-				}
-			}
-		];
 		this.state = {
 			translate: 0,
 			activeService: 'cms-development'
@@ -104,20 +28,20 @@ class Skills extends Component {
 	}
 
 	renderSkillSets() {
-		return this.skillSets.map((skillSet, index) => {
+		return data.map((skillSet, index) => {
 			const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
 			return (
 				<div
 					key={index}
 					className={`skills__skill-type-card--${parsedName}`}
-					style={styles.typeCardWrapperStyle}
+					style={{ width: `${100/data.length}%` }}
 				>
 					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg` }}>
 						<div
 							onClick={() => this.props.updateSkillSet(parsedName, 'skills', index)}
 							className="skills__skill-type-card"
 							style={{
-								...styles.typeCardStyle,
+								textAlign: 'center',
 								transform: `rotate(${skillSet.rotate * -1}deg`
 							}}
 						>
@@ -131,7 +55,7 @@ class Skills extends Component {
 	}
 
 	renderSkillSetDetailsIcons(i) {
-		return this.skillSets[i].details.icons.map((icon, index) => {
+		return data[i].details.icons.map((icon, index) => {
 			if (icon.icon) {
 				return (
 					<img key={index} className={`skill-icon`} style={styles.iconStyle} src={icon.icon} />
@@ -145,22 +69,26 @@ class Skills extends Component {
 	}
 
 	renderSkillSetDetailsText(i) {
-		return this.skillSets[i].details.text.map((text, index) => {
+		return data[i].details.text.map((text, index) => {
 			return <p key={index} style={styles.detailsDescription}>{text}</p>
 		});
 	}
 
 	renderSkillSetDetails() {
-		return this.skillSets.map((skillSetDetails, index) => {
+		return data.map((skillSetDetails, index) => {
 			const parsedName = skillSetDetails.name.replace(/\ /g, '-').toLowerCase();
 			return (
-				<div key={index} className={`skills__details--${parsedName}`} style={styles.skillsDetailsItemStyle}>
-					<div className="container">
-						<div className="skills__technology-container" style={styles.technologiesStyle}>
-							{ this.renderSkillSetDetailsIcons(index) }
+				<div key={index} style={{ width: '33.33%' }}>
+					<StitchRows rows={['1', '2']} section='skills' set={parsedName} rotate={skillSetDetails.rotate}>
+						<div className={`skills__details--${parsedName}`} style={{ width: '100%' }}>
+							
+							<div className="skills__technology-container" style={styles.technologiesStyle}>
+								{ this.renderSkillSetDetailsIcons(index) }
+							</div>
+							{ this.renderSkillSetDetailsText(index) }
 						</div>
-						{ this.renderSkillSetDetailsText(index) }
-					</div>
+						
+					</StitchRows>
 				</div>
 			)
 		});
@@ -229,7 +157,7 @@ const styles = {
 	},
 	skillsDetailsWrapperStyle: {
 		width: '100%',
-		overflowX: 'hidden',
+		overflow: 'hidden',
 		position: 'relative'
 	},
 	skillsDetailsStyle: {
@@ -243,9 +171,6 @@ const styles = {
 		width: '100%',
 		maxWidth: '625px',
 		textAlign: 'center'
-	},
-	skillsDetailsItemStyle: {
-		width: '33.33%'
 	},
 	verticalLineContainer: {
 		width: '100%',

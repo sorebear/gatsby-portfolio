@@ -1,8 +1,8 @@
 import React from 'react';
 import StichText from './stitchText';
 
-export default ({ text, style }) => (
-	<div className="section-title" style={{...styles.titleContainerStyle, ...style}}>
+export default ({ id, text, style }) => (
+	<div id={id} className="section-title" style={{...styles.titleContainerStyle, ...style}}>
 		<StichText style={{ cursor: 'default'}}>
 			<h3 style={styles.titleStyle}>{ text }</h3>
 		</StichText>

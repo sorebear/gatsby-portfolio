@@ -56,7 +56,7 @@ class Index extends Component {
                 <TopBar />
                 <HeroImage title="Soren Baird" image={forestTrailDark} />
                 <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
-                    <Title text="Skills" />
+                    <Title id="skills-title" text="Skills" />
                     <Skills activeSkillSet={activeSet} activeIndex={activeIndex} updateSkillSet={this.updateSet} />
                 </BasicSection>
                 <BasicSection id="about" className="about" style={{backgroundImage: `${darkGradient}, url(${aboutMe})`}}>
@@ -64,7 +64,7 @@ class Index extends Component {
                     <About />
                 </BasicSection>
                 <BasicSection id="work" className="work" style={{ padding: 0 }}>
-                    <Work />
+                    <Work activeSet={activeSet} activeIndex={activeIndex} updateSet={this.updateSet} />
                 </BasicSection>
                 {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
                 <BasicSection id="pricing" className="pricing">
