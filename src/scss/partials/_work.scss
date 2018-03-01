@@ -29,6 +29,10 @@
 
 .work {
 
+   .section-title {
+      background-color: $offwhite;
+   }
+
    &__individual-project {
       margin: 0 $single-space $single-space $single-space;
    }
