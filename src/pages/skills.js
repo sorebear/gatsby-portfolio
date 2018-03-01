@@ -36,13 +36,13 @@ class Skills extends Component {
 					className={`skills__skill-type-card--${parsedName}`}
 					style={{ width: `${100 / data.length}%` }}
 				>
-					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg` }}>
+					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
 						<div
 							onClick={() => this.props.updateSkillSet(parsedName, 'skills', index)}
 							className="skills__skill-type-card"
 							style={{
 								textAlign: 'center',
-								transform: `rotate(${skillSet.rotate * -1}deg`
+								transform: `rotate(${skillSet.rotate * -1}deg)`
 							}}
 						>
 							<Icon className={`${skillSet.icon} skills__skill-type-icon`} />
