@@ -29,7 +29,7 @@ class StitchRows extends Component {
 		const { section, children, rotate, rows, set } = this.props;
 		return (
 			<div style={styles.horizontalLineContainer}>
-				<div style={{...this.triangleStyles, height: `${this.state.sectionWidth * 0.0875}px`}}>
+				<div className='stitch-rows' style={{ position: 'relative'}}>
 					<div
 						className={`horizontal-line-mask ${section}__horizontal-line-mask ${section}__horizontal-line-mask--row-${
 							rows[0]
@@ -45,7 +45,7 @@ class StitchRows extends Component {
 					</div>
 				</div>
 				{children}
-				<div style={{ height: `${this.state.sectionWidth * 0.0875}px`, position: 'relative' }}>
+				<div className='stitch-rows' style={{ position: 'relative'}}>
 					<div
 						className={`horizontal-line-mask ${section}__horizontal-line-mask ${section}__horizontal-line-mask--row-${
 							rows[1]

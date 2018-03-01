@@ -34,7 +34,7 @@ class Skills extends Component {
 				<div
 					key={index}
 					className={`skills__skill-type-card--${parsedName}`}
-					style={{ width: `${100/data.length}%` }}
+					style={{ width: `${100 / data.length}%` }}
 				>
 					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg` }}>
 						<div
@@ -59,18 +59,30 @@ class Skills extends Component {
 			if (icon.icon) {
 				return (
 					<img key={index} className={`skill-icon`} style={styles.iconStyle} src={icon.icon} />
-				)
+				);
 			}
 			if (icon.separator === 'and') {
-				return <h3 key={index} style={{ marginBottom: 0 }}>&amp;&amp;</h3>
+				return (
+					<h3 key={index} style={{ marginBottom: 0 }}>
+						&amp;&amp;
+					</h3>
+				);
 			}
-			return <h3 key={index} style={{ marginBottom: 0}}>||</h3>
+			return (
+				<h3 key={index} style={{ marginBottom: 0 }}>
+					||
+				</h3>
+			);
 		});
 	}
 
 	renderSkillSetDetailsText(i) {
 		return data[i].details.text.map((text, index) => {
-			return <p key={index} style={styles.detailsDescription}>{text}</p>
+			return (
+				<p key={index} style={styles.detailsDescription}>
+					{text}
+				</p>
+			);
 		});
 	}
 
@@ -79,18 +91,21 @@ class Skills extends Component {
 			const parsedName = skillSetDetails.name.replace(/\ /g, '-').toLowerCase();
 			return (
 				<div key={index} style={{ width: '33.33%' }}>
-					<StitchRows rows={['1', '2']} section='skills' set={parsedName} rotate={skillSetDetails.rotate}>
+					<StitchRows
+						rows={['1', '2']}
+						section="skills"
+						set={parsedName}
+						rotate={skillSetDetails.rotate}
+					>
 						<div className={`skills__details--${parsedName}`} style={{ width: '100%' }}>
-							
 							<div className="skills__technology-container" style={styles.technologiesStyle}>
-								{ this.renderSkillSetDetailsIcons(index) }
+								{this.renderSkillSetDetailsIcons(index)}
 							</div>
-							{ this.renderSkillSetDetailsText(index) }
+							{this.renderSkillSetDetailsText(index)}
 						</div>
-						
 					</StitchRows>
 				</div>
-			)
+			);
 		});
 	}
 
@@ -101,7 +116,12 @@ class Skills extends Component {
 					<div className="skills__types-container" style={styles.typesContainerStyle}>
 						{this.renderSkillSets()}
 					</div>
-					<StitchColumns row='1' section='skills' skillSetArr={['cms-development', 'web-development', 'mobile-development']} />
+					<StitchColumns
+						row="1"
+						section="skills"
+						heightArr={['60%', '80%', '100%']}
+						skillSetArr={['cms-development', 'web-development', 'mobile-development']}
+					/>
 				</div>
 
 				<div className="skills__details-wrapper" style={styles.skillsDetailsWrapperStyle}>
@@ -112,10 +132,16 @@ class Skills extends Component {
 							transform: `translateX(${this.props.activeIndex * -33.33}%)`
 						}}
 					>
-						{ this.renderSkillSetDetails() }
+						{this.renderSkillSetDetails()}
 					</div>
 				</div>
-				<StitchColumns row='2' section='skills' skillSetArr={['mobile-development', 'web-development', 'cms-development']} />
+				<StitchColumns
+					row="2"
+					section="skills"
+					heightArr={['100%', '80%', '60%']}
+					alignItems="flex-end"
+					skillSetArr={['mobile-development', 'web-development', 'cms-development']}
+				/>
 			</div>
 		);
 	}
