@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 class StitchRows extends Component {
    constructor(props) {
       super(props);
+      this.topAttachment = this.props.rotate > 0 ? { left: 0 } : { right: 0 }
+      this.bottomAttachment = this.props.rotate > 0 ? { right: 0 } : { left: 0 }
       this.topTransformOrigin = this.props.rotate > 0 ? '100% 50%' : '0% 50%';
       this.bottomTransformOrigin = this.props.rotate > 0 ? '0% 50%' : '100% 50%';
    }
@@ -30,7 +32,7 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     left: 0,
+                     ...this.topAttachment,
                      width: '100%'
                   }}
                />
@@ -56,7 +58,7 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     right: 0,
+                     ...this.bottomAttachment,
                      width: '100%'
                   }}
                />
