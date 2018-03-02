@@ -31,16 +31,23 @@
 
    .section-title {
       background-color: $offwhite;
+      top: 45% !important;
    }
 
    &__projects-wrapper {
       margin-top: -$quad-space;
-      margin-bottom: $quad-space;
+      margin-bottom: $double-space;
    }
 
-   &__projects {
+   &__projects,
+   &__main-work {
       margin-top: $single-space;
       margin-bottom: $single-space;
+   }
+
+   &__main-work-wrapper {
+      margin-top: -$triple-space -$quarter-space;
+      margin-bottom: -$triple-space;
    }
 
    &__individual-project {
@@ -52,6 +59,45 @@
       border-right-style: $default-border-style;
       border-right-width: $default-border-width;
       border-color: transparent;
+   }
+
+   &__project-overlay {
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transform: translate3d(0, 0, 0);
+      transition: .3s;
+      transform: scale(.75);
+      opacity: 0;
+      transition: all .5s,
+   }
+
+   &__project-overlay:hover {
+      opacity: 1;
+      transform: scale(1);
+   }
+
+   &__projects {
+      &.work__projects--cms-development {
+         .stitch-box__border {
+            border-color: $orange;
+         }
+      }
+
+      &.work__projects--web-development {
+         .stitch-box__border {
+            border-color: $red;
+         }
+      }
+
+      &.work__projects--mobile-development {
+         .stitch-box__border {
+            border-color: $teal;
+         }
+      }
    }
 
    &__displaying-main .work {

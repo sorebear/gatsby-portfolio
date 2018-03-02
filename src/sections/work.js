@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import AnimatedCard from '../components/animatedCard';
+
+import MainWork from './mainWork';
+
 import BasicCard from '../components/basicCard';
-import AnimatedBorderBox from '../components/animatedBorderBox';
 import Title from '../components/title';
 import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
@@ -16,9 +17,6 @@ import memoryMatch from '../images/work/memory-match.jpg';
 import todoList from '../images/work/todo-list.jpg';
 
 class Work extends Component {
-   constructor(props) {
-      super(props);
-   }
 
    renderSkillSets() {
       return data.map((skillSet, index) => {
@@ -27,7 +25,7 @@ class Work extends Component {
             <div
                key={index}
                className={`skills__skill-type-card--${parsedName}`}
-               style={{ width: `${100 / data.length}%` }}
+               style={{ width: `${90 / data.length}%` }}
             >
                <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
                   <div
@@ -35,6 +33,7 @@ class Work extends Component {
                      className="skills__skill-type-card"
                      style={{
                         textAlign: 'center',
+                        cursor: 'pointer',
                         transform: `rotate(${skillSet.rotate * -1}deg)`
                      }}
                   >
@@ -47,22 +46,47 @@ class Work extends Component {
       });
    }
 
-   renderProjectCategory(i) {
-      return data[i].works.map((work, index) => {
-         return <img key={index} src={work.image} />;
-      });
-   }
-
    renderAllProjects() {
       return data.map((workTypes, index) => {
          const parsedName = workTypes.name.replace(/\ /g, '-').toLowerCase();
          return (
             <div key={index} style={{ width: '33.33%' }}>
-               <StitchRows rows={['3', '4']} section="work" set={parsedName} rotate={workTypes.rotate}>
-                  <div className={`work__projects work__projects--${parsedName}`} style={{ width: '100%' }}>
-                     <div className="container">{this.renderProjectCategory(index)}</div>
-                  </div>
+               <StitchRows rows={['5', '6']} section="work" set={parsedName} rotate={workTypes.rotate}>
+               {/* <div className="container"> */}
+                  <div className={`work__projects work__projects--${parsedName}`} style={styles.projectCategoryContainerStyle}>
+                        {this.renderProjectCategory(index)}
+                     </div>
+                  {/* </div> */}
                </StitchRows>
+            </div>
+         );
+      });
+   }
+
+   renderProjectCategory(i) {
+      console.log('Data Works: ', data[i].works);
+      if (!data[i].works.length) {
+         return (
+            <div style={{ marginTop: '5.8rem', marginBottom: '4.35rem'}}>
+               <h3>There are currently no {data[i].name} projects to showcase.</h3>
+               <h3>Please check back again later</h3>
+            </div>
+         )
+      }
+      return data[i].works.map((work, index) => {
+         return (
+            <div key={index} style={{ position: 'relative', width: '50%', padding: '2rem', display: 'flex'}}>
+               <StitchBox style={{ width: '100%'}}>
+                  <img src={work.image} style={{ margin: '5px', width: '100%' }} />
+                  <div className="work__project-overlay" style={styles.projectOverlayStyle}>
+                     <a href={work.liveLink} style={{ color: 'white'}}target='_blank'>
+                        <h2>{work.name}</h2>
+                     </a>
+                     <a href={work.githubLink} target='_blank'>
+                        <p>GitHub</p>
+                     </a>
+                  </div>
+               </StitchBox>
             </div>
          );
       });
@@ -77,16 +101,17 @@ class Work extends Component {
                   section="work"
                   skillSetArr={['mobile-development', 'web-development', 'cms-development']}
                />
-               <Title text="Work" style={styles.workSectionTitleStyle} />
+               <Title text="Full-Time Work" style={styles.workSectionTitleStyle} />
             </div>
-            <div style={styles.mainWorkStyle}>
-               <h3>I am currently a full-time developer at Envivent.</h3>
+            <MainWork props={this.props} />
+            <div style={{ position: 'relative'}}>
+               <StitchColumns
+                  row="4"
+                  section="work"
+                  skillSetArr={['cms-development', 'web-development', 'mobile-development']}
+               />
+               <Title text="Side-Projects" style={styles.workSectionTitleStyle} />
             </div>
-            <StitchColumns
-               row="4"
-               section="work"
-               skillSetArr={['cms-development', 'web-development', 'mobile-development']}
-            />
             <div className="work__types-container" style={styles.workSetsContainerStyle}>
                {this.renderSkillSets()}
             </div>
@@ -122,6 +147,11 @@ const styles = {
       left: '50%',
       transform: 'translate(-50%, -50%)'
    },
+   workSetsContainerStyle: {
+      display: 'flex',
+      position: 'relative',
+      justifyContent: 'space-around'
+   },
    allProjectsWrapperStyle: {
       width: '100%',
       overflowX: 'hidden',
@@ -134,17 +164,25 @@ const styles = {
       display: 'flex',
       transition: 'all .5s'
    },
-   workSetsContainerStyle: {
+   projectCategoryContainerStyle: {
       display: 'flex',
-      position: 'relative',
-      justifyContent: 'space-between'
-   },
-   mainWorkStyle: {
-      height: '14rem',
-      display: 'flex',
+      flexFlow: 'row wrap',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'grey',
-      color: 'white'
+      textAlign: 'center'
+   },
+   projectOverlayStyle: {
+      position: 'absolute', 
+      top: '5px', 
+      left: '5px', 
+      bottom: '5px',
+      right: '5px',
+      display: 'flex', 
+      padding: '1.45rem',
+      textAlign: 'center',
+      backgroundColor: 'rgba(0, 0, 0, .7)',
+      flexDirection: 'column',
+      justifyContent: 'center', 
+      alignItems: 'center'
    }
 };

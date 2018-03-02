@@ -39,12 +39,7 @@ const skillsData = [
          ]
       },
       works: [
-         {
-            name: 'Todo List',
-            image: todoList,
-            liveLink: 'http://todo.sorenbaird.com',
-            githubLink: 'https://github.com/sorebear/todo_list'
-         },
+
       ]
    },
    {
@@ -69,6 +64,12 @@ const skillsData = [
          ]
       },
       works: [
+         {
+            name: 'Todo List',
+            image: todoList,
+            liveLink: 'http://todo.sorenbaird.com',
+            githubLink: 'https://github.com/sorebear/todo_list'
+         },
          {
             name: 'Inventor Memory Match',
             image: memoryMatch,
@@ -102,7 +103,7 @@ const skillsData = [
             image: puzzleMe,
             liveLink: 'http://puzzleme.sorenbaird.com',
             githubLink: 'https://github.com/sorebear/puzzle_me'
-         }
+         },
       ]
    }
 ];

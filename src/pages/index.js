@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 
 // React Components
-import BasicSection from '../components/basicSection';
-import Skills from './skills';
-import Divider from '../components/divider';
-import About from './about';
-import Pricing from './pricing';
-import Title from '../components/title';
-import Work from './work';
-import HeroImage from '../components/heroImage';
+import HeroImage from '../sections/heroImage';
+import Skills from '../sections/skills';
+import About from '../sections/about';
+import Work from '../sections/work';
+import Pricing from '../sections/pricing';
+import Contact from '../sections/contact';
+import Footer from '../sections/footer';
+
 import TopBar from '../components/topBar';
-import Contact from './contact';
-import Footer from './footer';
+import Title from '../components/title';
+import BasicSection from '../components/basicSection';
+import Divider from '../components/divider';
 
 // Images
 import mountainViewSunrise from '../images/bg/mountain-view-sunrise--comp.jpg';

@@ -34,7 +34,7 @@ class Skills extends Component {
 				<div
 					key={index}
 					className={`skills__skill-type-card--${parsedName}`}
-					style={{ width: `${100 / data.length}%` }}
+					style={{ width: `${90 / data.length}%` }}
 				>
 					<StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
 						<div
@@ -42,6 +42,7 @@ class Skills extends Component {
 							className="skills__skill-type-card"
 							style={{
 								textAlign: 'center',
+								cursor: 'pointer',
 								transform: `rotate(${skillSet.rotate * -1}deg)`
 							}}
 						>
@@ -151,7 +152,7 @@ const styles = {
 	typesContainerStyle: {
 		display: 'flex',
 		position: 'relative',
-		justifyContent: 'space-between'
+		justifyContent: 'space-around'
 	},
 	typeCardWrapperStyle: {
 		width: '33.33%'

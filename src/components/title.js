@@ -22,6 +22,7 @@ const styles = {
 	},
 	titleStyle: {
 		fontSize: '3rem',
-		margin: 0
+		margin: 0,
+		cursor: 'default'
 	}
 };

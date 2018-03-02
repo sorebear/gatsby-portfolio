@@ -2,7 +2,7 @@ import React from 'react';
 
 export default ({ children, style }) => (
 
-   <div className="stitch-box" style={{ position: 'relative', ...style }}>
+   <div className="stitch-box" style={{ ...styles.componentStyle, ...style }}>
       { children }
       <div className="stitch-box__top-border-mask" style={styles.topBorderMaskStyle}>
          <div className="stitch-box__top-border stitch-box__border" style={styles.topBorderStyle} />
@@ -22,7 +22,9 @@ export default ({ children, style }) => (
 const styles = {
 	componentStyle: {
       position: 'relative',
-      display: 'inline-block'
+		display: 'flex',
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	topBorderStyle: {
 		position: 'absolute',

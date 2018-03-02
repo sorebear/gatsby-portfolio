@@ -3,10 +3,31 @@ import React, { Component } from 'react';
 class StitchRows extends Component {
    constructor(props) {
       super(props);
-      this.topAttachment = this.props.rotate > 0 ? { left: 0 } : { right: 0 }
-      this.bottomAttachment = this.props.rotate > 0 ? { right: 0 } : { left: 0 }
-      this.topTransformOrigin = this.props.rotate > 0 ? '100% 50%' : '0% 50%';
-      this.bottomTransformOrigin = this.props.rotate > 0 ? '0% 50%' : '100% 50%';
+      this.state = {
+         topAttachment : this.props.rotate > 0 ? { left: 0 } : { right: 0 },
+         bottomAttachment : this.props.rotate > 0 ? { right: 0 } : { left: 0 },
+         topTransformOrigin : this.props.rotate > 0 ? '100% 50%' : '0% 50%',
+         bottomTransformOrigin : this.props.rotate > 0 ? '0% 50%' : '100% 50%'
+      }
+   }
+
+   componentWillReceiveProps(newProps) {
+      console.log('Receiving New Props');
+      if (newProps.rotate > 0) {
+         this.setState({
+            topAttachment : { left: 0 },
+            bottomAttachment : { right: 0 },
+            topTransformOrigin : '100% 50%',
+            bottomTransformOrigin : '0 50%'
+         })
+      } else {
+         this.setState({
+            topAttachment: { right: 0 },
+            bottomAttachment: { left: 0 },
+            topTransformOrigin: '0% 50%',
+            bottomTransformOrigin: '100% 50%'
+         })
+      }
    }
 
    render() {
@@ -18,7 +39,7 @@ class StitchRows extends Component {
                   className="horizontal-line"
                   style={{
                      transform: `rotate(${rotate}deg)`,
-                     transformOrigin: this.topTransformOrigin,
+                     transformOrigin: this.state.topTransformOrigin,
                      width: '100%',
                      position: 'absolute',
                      bottom: 0
@@ -32,7 +53,7 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     ...this.topAttachment,
+                     ...this.state.topAttachment,
                      width: '100%'
                   }}
                />
@@ -44,7 +65,7 @@ class StitchRows extends Component {
                   className="horizontal-line"
                   style={{
                      transform: `rotate(${rotate}deg)`,
-                     transformOrigin: this.bottomTransformOrigin,
+                     transformOrigin: this.state.bottomTransformOrigin,
                      width: '100%',
                      position: 'absolute',
                      top: 0
@@ -58,7 +79,7 @@ class StitchRows extends Component {
                      ${section}__horizontal-line-mask--${set} `}
                   style={{
                      ...styles.horiztonalLineMaskStyle,
-                     ...this.bottomAttachment,
+                     ...this.state.bottomAttachment,
                      width: '100%'
                   }}
                />
