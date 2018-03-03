@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StitchRows from '../components/stitchRows';
 import enviventLogo from '../images/work/envivent.svg';
 
@@ -35,11 +36,11 @@ const styles = {
   },
 };
 
-export default (props) => {
-  const rotate = props.activeSet === 'web-development' ? -5 : 5;
+const MainWork = ({ activeSet }) => {
+  const rotate = activeSet === 'web-development' ? -5 : 5;
   return (
     <div className="work__main-work-wrapper" style={styles.mainWorkStyle}>
-      <StitchRows rows={['3', '4']} section="work" set={props.activeSet} rotate={rotate}>
+      <StitchRows rows={['3', '4']} section="work" set={activeSet} rotate={rotate}>
         <div style={styles.contentWrapperStyle} className="work__main-work">
           <div style={styles.logoContainerStyle}>
             <a href="envivent.com" target="_blank" style={styles.anchorStyle}>
@@ -61,4 +62,10 @@ export default (props) => {
       </StitchRows>
     </div>
   );
+};
+
+export default MainWork;
+
+MainWork.propTypes = {
+  activeSet: PropTypes.string.isRequired,
 };

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import StichText from './stitchText';
 
 const styles = {
@@ -18,10 +19,10 @@ const styles = {
   },
 };
 
-export default ({ id, text, style }) => (
+const SectionTitle = ({ id, text, style }) => (
   <div
     id={id}
-    className={`section-title section-title--${text.replace(/\ /g, '-').toLowerCase()}`}
+    className={`section-title section-title--${text.replace(/ /g, '-').toLowerCase()}`}
     style={{ ...styles.titleContainerStyle, ...style }}
   >
     <StichText style={{ cursor: 'default' }}>
@@ -29,3 +30,15 @@ export default ({ id, text, style }) => (
     </StichText>
   </div>
 );
+
+export default SectionTitle;
+
+SectionTitle.propTypes = {
+  id: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  style: PropTypes.object,
+};
+
+SectionTitle.defaultProps = {
+  style: {},
+};

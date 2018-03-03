@@ -143,7 +143,7 @@ class Work extends Component {
           />
           <Title text="Full-Time Work" style={styles.workSectionTitleStyle} />
         </div>
-        <MainWork {...this.props} />
+        <MainWork activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
           <StitchColumns
             row="4"

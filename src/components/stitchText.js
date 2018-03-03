@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
   componentStyle: {
@@ -31,7 +32,7 @@ const styles = {
   },
 };
 
-export default ({ children, style }) => (
+const StitchText = ({ children }) => (
   <div className="stitch-text" style={{ position: 'relative' }}>
     {children}
     <div className="stitch-text__top-border-mask" style={styles.topBorderMaskStyle}>
@@ -42,3 +43,12 @@ export default ({ children, style }) => (
     </div>
   </div>
 );
+
+export default StitchText;
+
+StitchText.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object,
+  ]).isRequired,
+};
