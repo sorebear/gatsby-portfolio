@@ -1,42 +1,72 @@
-import React from 'react';
 
-export default ({ section, row, heightArr=[], alignItems='flex-start', skillSetArr=[] }) => (
-	<div
-		className={`vertical-line-container vertical-line-container--row-${row}`}
-		style={styles.verticalLineContainer}
-	>
-		<div
-			className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[0]}`}
-			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
-		>
-			<div className="vertical-line" style={{ zIndex: 10 }} />
-		</div>
-		<div
-			className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[1]}`}
-			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
-		>
-			<div className="vertical-line" style={{ zIndex: 10 }} />
-		</div>
-		<div
-         className={`vertical-line-mask ${section}__vertical-line-mask ${section}__vertical-line-mask--row-${row} ${section}__vertical-line-mask--${skillSetArr[2]}`}
-			style={{...styles.verticalMaskStyle, alignItems: alignItems}}
-		>
-			<div className="vertical-line" style={{ zIndex: 10 }} />
-		</div>
-	</div>
-);
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const styles = {
-	verticalLineContainer: {
-		width: '100%',
-		display: 'flex',
-		position: 'relative',
-		justifyContent: 'space-between'
-	},
-	verticalMaskStyle: {
-		width: '33.33%',
-		display: 'flex',
-		justifyContent: 'center',
-		overflow: 'hidden'
-	}
+  verticalLineContainer: {
+    width: '100%',
+    display: 'flex',
+    position: 'relative',
+    justifyContent: 'space-between',
+  },
+  verticalMaskStyle: {
+    width: '33.33%',
+    display: 'flex',
+    justifyContent: 'center',
+    overflow: 'hidden',
+  },
+};
+
+const StitchColumn = ({ section, row, skillSetArr, alignItems }) => (
+  <div
+    className={`vertical-line-container vertical-line-container--row-${row}`}
+    style={styles.verticalLineContainer}
+  >
+    <div
+      className={
+        `vertical-line-mask
+        ${section}__vertical-line-mask 
+        ${section}__vertical-line-mask--row-${row} 
+        ${section}__vertical-line-mask--${skillSetArr[0]}`
+    }
+      style={{ ...styles.verticalMaskStyle, alignItems }}
+    >
+      <div className="vertical-line" style={{ zIndex: 10 }} />
+    </div>
+    <div
+      className={
+        `vertical-line-mask 
+        ${section}__vertical-line-mask 
+        ${section}__vertical-line-mask--row-${row} 
+        ${section}__vertical-line-mask--${skillSetArr[1]}`
+      }
+      style={{ ...styles.verticalMaskStyle, alignItems }}
+    >
+      <div className="vertical-line" style={{ zIndex: 10 }} />
+    </div>
+    <div
+      className={
+        `vertical-line-mask 
+        ${section}__vertical-line-mask 
+        ${section}__vertical-line-mask--row-${row} 
+        ${section}__vertical-line-mask--${skillSetArr[2]}`
+      }
+      style={{ ...styles.verticalMaskStyle, alignItems }}
+    >
+      <div className="vertical-line" style={{ zIndex: 10 }} />
+    </div>
+  </div>
+);
+
+export default StitchColumn;
+
+StitchColumn.propTypes = {
+  section: PropTypes.string.isRequired,
+  row: PropTypes.string.isRequired,
+  skillSetArr: PropTypes.array.isRequired,
+  alignItems: PropTypes.string,
+};
+
+StitchColumn.defaultProps = {
+  alignItems: 'flex-start',
 };

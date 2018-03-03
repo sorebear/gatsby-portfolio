@@ -31,6 +31,18 @@
 	100% { width: 0%; }
 }
 
+$row-1-vertical-animation: expandVertical 0.3s forwards .3s;
+$row-2-vertical-animation: expandVertical 0.3s forwards 1s;
+$row-3-vertical-animation: expandVertical 0.5s forwards 1.3s;
+$row-4-vertical-animation: expandVertical 0.5s forwards .3s;
+$row-5-vertical-animation: expandVertical 0.3s forwards .3s;
+
+$rows-1-2-horizontal-animation: retractHorizontal .75s forwards .5s;
+$rows-3-4-horizontal-animation-1: retractHorizontal .75s forwards .7s;
+$rows-3-4-horizontal-animation-2: retractHorizontal-2 .75s forwards .7s;
+$rows-3-4-horizontal-animation-3: retractHorizontal-3 .75s forwards .7s;
+$rows-5-6-horizontal-animation: retractHorizontal .75s forwards .5s;
+
 .vertical-line {
 	border-left-width: $default-border-width;
 	border-left-style: $default-border-style;
@@ -127,24 +139,26 @@
    
    .vertical-line-container--row-4 {
       height: $quad-space + $quad-space + $triple-space + $quarter-space;
+      align-items: flex-end !important;
 
 		.work__vertical-line-mask--cms-development {
+         align-items: flex-end !important;
 			.vertical-line {
 				height: $quad-space + $quad-space + $quad-space;
 			}
 		}
 
 		.work__vertical-line-mask--web-development {
+         align-items: flex-end !important;
 			.vertical-line {
-				margin-top: $single-space + $quarter-space;
-				height: $quad-space + $quad-space + $double-space + $half-space + $quarter-space;
+				height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
 			}
 		}
 
 		.work__vertical-line-mask--mobile-development {
+         align-items: flex-end !important;
 			.vertical-line {
-				margin-top: $double-space + $third-space;
-				height: $quad-space + $quad-space + $half-space + $quarter-space;
+				height: $quad-space + $quad-space + $half-space;
 			}
 		}
    }
@@ -180,18 +194,12 @@
 	.skills {
 		&__skill-type-card--cms-development {
 			.stitch-box {
-				&__top-border-mask {
+            &__top-border-mask,
+            &__bottom-border-mask {
 					animation: expandHorizontal 0.2s forwards;
 				}
 
-				&__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
-
-				&__left-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-
+				&__left-border-mask,
 				&__right-border-mask {
 					animation: expandVertical 0.2s forwards;
 				}
@@ -205,11 +213,11 @@
 				}
 
 				&--row-1 {
-					animation: expandVertical 0.3s forwards .3s;
+					animation: $row-1-vertical-animation;
 				}
 
 				&--row-2 {
-					animation: expandVertical 0.3s forwards 1s;
+					animation: $row-2-vertical-animation;
 				}
 			}
       }
@@ -217,12 +225,9 @@
       &__horizontal-line-mask--cms-development {
 			&.skills__horizontal-line-mask {
 
-				&--row-1 {
-					animation: retractHorizontal .75s forwards .5s;
-				}
-
-				&--row-2 {
-					animation: retractHorizontal .75s forwards .5s;
+            &--row-1,
+            &--row-2 {
+					animation: $rows-1-2-horizontal-animation
 				}
 			}
       }
@@ -236,15 +241,15 @@
 				}
 
 				&--row-3 {
-					animation: expandVertical 0.5s forwards 1.3s;
+					animation: $row-3-vertical-animation;
 				}
 
 				&--row-4 {
-					animation: expandVertical 0.3s forwards 1.8s;
+					animation: $row-4-vertical-animation;
             }
             
             &--row-5 {
-					animation: expandVertical 0.3s forwards 2.1s;
+					animation: $row-5-vertical-animation;
 				}
 			}
 		}
@@ -252,20 +257,14 @@
 		&__horizontal-line-mask--cms-development {
 			&.work__horizontal-line-mask {
 
-				&--row-3 {
-					animation: retractHorizontal .75s forwards 1.5s;
-				}
-
-				&--row-4 {
-					animation: retractHorizontal .75s forwards 0.3s 1.5s;
-				}
-
-				&--row-5 {
-					animation: retractHorizontal .75s forwards 2.4s;
-				}
-
-				&--row-6 {
-					animation: retractHorizontal .75s forwards 0.3s 2.4s;
+            &--row-3,
+            &--row-4 {
+					animation: $rows-3-4-horizontal-animation-1;
+            }
+            
+            &--row-5,
+            &--row-6 {
+					animation: $rows-5-6-horizontal-animation;
 				}
 			}
       }
@@ -280,18 +279,12 @@
 	.skills {
 		&__skill-type-card--web-development {
 			.stitch-box {
-				&__top-border-mask {
+            &__top-border-mask,
+            &__bottom-border-mask {
 					animation: expandHorizontal 0.2s forwards;
 				}
 
-				&__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
-
-				&__left-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-
+				&__left-border-mask,
 				&__right-border-mask {
 					animation: expandVertical 0.2s forwards;
 				}
@@ -305,11 +298,11 @@
 				}
 
 				&--row-1 {
-					animation: expandVertical 0.3s forwards .3s;
+					animation: $row-1-vertical-animation;
 				}
 
 				&--row-2 {
-					animation: expandVertical 0.3s forwards 1s;
+					animation: $row-2-vertical-animation;
 				}
 			}
 		}
@@ -317,12 +310,9 @@
 		&__horizontal-line-mask--web-development {
 			&.skills__horizontal-line-mask {
 
-				&--row-1 {
-					animation: retractHorizontal .75s forwards .5s;
-				}
-
-				&--row-2 {
-					animation: retractHorizontal .75s forwards .5s;
+            &--row-1,
+            &--row-2 {
+					animation: $rows-1-2-horizontal-animation;
 				}
 			}
       }
@@ -336,15 +326,15 @@
 				}
 
 				&--row-3 {
-					animation: expandVertical 0.5s forwards 1.3s;
+					animation: $row-3-vertical-animation;
 				}
 
 				&--row-4 {
-					animation: expandVertical 0.3s forwards 1.8s;
+					animation: $row-4-vertical-animation;
             }
             
             &--row-5 {
-					animation: expandVertical 0.3s forwards 2.1s;
+					animation: $row-5-vertical-animation;
 				}
 			}
 		}
@@ -352,20 +342,14 @@
 		&__horizontal-line-mask--web-development {
 			&.work__horizontal-line-mask {
 
-				&--row-3 {
-					animation: retractHorizontal-2 .75s forwards 1.5s;
+            &--row-3,
+            &--row-4 {
+					animation: $rows-3-4-horizontal-animation-2;
 				}
 
-				&--row-4 {
-					animation: retractHorizontal-2 .75s forwards 0.3s 1.5s;
-				}
-
-				&--row-5 {
-					animation: retractHorizontal .75s forwards 2.4s;
-				}
-
-				&--row-6 {
-					animation: retractHorizontal .75s forwards 0.3s 2.4s;
+            &--row-5,
+            &--row-6 {
+					animation: $rows-5-6-horizontal-animation;
 				}
 			}
       }
@@ -379,18 +363,12 @@
 	.skills {
 		&__skill-type-card--mobile-development {
 			.stitch-box {
-				&__top-border-mask {
+            &__top-border-mask,
+            &__bottom-border-mask {
 					animation: expandHorizontal 0.2s forwards;
 				}
 
-				&__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
-
-				&__left-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-
+				&__left-border-mask,
 				&__right-border-mask {
 					animation: expandVertical 0.2s forwards;
 				}
@@ -404,11 +382,11 @@
 				}
 
 				&--row-1 {
-					animation: expandVertical 0.3s forwards .3s;
+					animation: $row-1-vertical-animation;
 				}
 
 				&--row-2 {
-					animation: expandVertical 0.3s forwards 1s;
+					animation: $row-2-vertical-animation;
             }
 			}
 		}
@@ -416,12 +394,9 @@
 		&__horizontal-line-mask--mobile-development {
 			&.skills__horizontal-line-mask {
 
-				&--row-1 {
-					animation: retractHorizontal .75s forwards .5s;
-				}
-
-				&--row-2 {
-					animation: retractHorizontal .75s forwards .5s;
+            &--row-1,
+            &--row-2 {
+					animation: $rows-1-2-horizontal-animation;
 				}
 			}
       }
@@ -435,15 +410,15 @@
 				}
 
 				&--row-3 {
-					animation: expandVertical 0.5s forwards 1.3s;
+					animation: $row-3-vertical-animation;
 				}
 
 				&--row-4 {
-					animation: expandVertical 0.3s forwards 1.8s;
+					animation: $row-4-vertical-animation;
             }
             
             &--row-5 {
-					animation: expandVertical 0.3s forwards 2.1s;
+					animation: $row-5-vertical-animation;
 				}
 			}
 		}
@@ -451,20 +426,14 @@
 		&__horizontal-line-mask--mobile-development {
 			&.work__horizontal-line-mask {
 
-				&--row-3 {
-					animation: retractHorizontal-3 .75s forwards 1.5s;
+            &--row-3,
+            &--row-4 {
+					animation: $rows-3-4-horizontal-animation-3;
 				}
 
-				&--row-4 {
-					animation: retractHorizontal-3 .75s forwards 0.3s 1.5s;
-				}
-
-				&--row-5 {
-					animation: retractHorizontal .75s forwards 2.4s;
-				}
-
-				&--row-6 {
-					animation: retractHorizontal .75s forwards 0.3s 2.4s;
+            &--row-5,
+            &--row-6 {
+					animation: $rows-5-6-horizontal-animation;
 				}
 			}
       }

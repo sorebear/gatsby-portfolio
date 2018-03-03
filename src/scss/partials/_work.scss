@@ -31,8 +31,12 @@
 
    .section-title {
       background-color: $offwhite;
-      top: 45% !important;
+
+      &--full-time-work {
+         top: 45% !important;
+      }
    }
+   
 
    &__projects-wrapper {
       margin-top: -$quad-space;
@@ -47,7 +51,7 @@
 
    &__main-work-wrapper {
       margin-top: -$triple-space -$quarter-space;
-      margin-bottom: -$triple-space;
+      margin-bottom: -$triple-space -$third-space;
    }
 
    &__individual-project {
