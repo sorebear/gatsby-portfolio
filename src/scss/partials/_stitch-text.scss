@@ -1,36 +1,46 @@
 @keyframes expandHorizontal {
-   0% { width: 0%; }
-   100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes retractHorizontal {
-   0% { width: 100%; }
-   100% { width: 0%; }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 .stitch-text {
+  z-index: 101;
 
-   &__top-border,
-   &__bottom-border {
-      border-bottom-width: $default-border-width;
-      border-bottom-style: $default-border-style;
-      width: 100%;
-   }
+  &__top-border,
+  &__bottom-border {
+    border-bottom-width: $default-border-width;
+    border-bottom-style: $default-border-style;
+    width: 100%;
+  }
 
-   &__top-border-mask {
-      height: $default-border-width;
-      animation: retractHorizontal .3s forwards;
-   }
+  &__top-border-mask {
+    height: $default-border-width;
+    animation: retractHorizontal 0.3s forwards;
+  }
 
-   &__bottom-border-mask {
-      height: $default-border-width;
-      animation: retractHorizontal .3s forwards;
-   }
+  &__bottom-border-mask {
+    height: $default-border-width;
+    animation: retractHorizontal 0.3s forwards;
+  }
 
-   &:hover .stitch-text {
-      &__top-border-mask,
-      &__bottom-border-mask {
-         animation: expandHorizontal .3s forwards;
-      }
-   }
+  &:hover .stitch-text,
+  li:hover .stich-text {
+    &__top-border-mask,
+    &__bottom-border-mask {
+      animation: expandHorizontal 0.3s forwards !important;
+    }
+  }
 }

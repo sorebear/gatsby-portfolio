@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import MainWork from './mainWork';
 
@@ -66,12 +67,13 @@ class Work extends Component {
 
   renderSkillSets() {
     return data.map((skillSet, index) => {
-      const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
+      const parsedName = skillSet.name.replace(/ /g, '-').toLowerCase();
       return (
         <div key={index} className={`skills__skill-type-card--${parsedName}`} style={{ width: `${90 / data.length}%` }}>
           <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
-            <div
+            <button
               onClick={() => this.props.updateSet(parsedName, 'skills', index)}
+              onKeyDown={() => this.props.updateSet(parsedName, 'skills', index)}
               className="skills__skill-type-card"
               style={{
                 textAlign: 'center',
@@ -81,7 +83,7 @@ class Work extends Component {
             >
               <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
               <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
-            </div>
+            </button>
           </StitchBox>
         </div>
       );
@@ -90,7 +92,7 @@ class Work extends Component {
 
   renderAllProjects() {
     return this.data.map((workTypes, index) => {
-      const parsedName = workTypes.name.replace(/\ /g, '-').toLowerCase();
+      const parsedName = workTypes.name.replace(/ /g, '-').toLowerCase();
       return (
         <div key={index} style={{ width: '33.33%' }}>
           <StitchRows rows={['5', '6']} section="work" set={parsedName} rotate={workTypes.rotate}>
@@ -178,3 +180,10 @@ class Work extends Component {
 }
 
 export default Work;
+
+Work.propTypes = {
+  activeIndex: PropTypes.number.isRequired,
+  activeSet: PropTypes.string.isRequired,
+  updateSet: PropTypes.func.isRequired,
+};
+

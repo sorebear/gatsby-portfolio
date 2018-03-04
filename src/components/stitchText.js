@@ -8,12 +8,14 @@ const styles = {
   },
   topBorderStyle: {
     position: 'absolute',
+    borderColor: 'inherit',
     width: '500px',
     top: 0,
     left: 0,
   },
   bottomBorderStyle: {
     position: 'absolute',
+    borderColor: 'inherit',
     width: '500px',
     bottom: 0,
     right: 0,
@@ -48,6 +50,7 @@ export default StitchText;
 
 StitchText.propTypes = {
   children: PropTypes.oneOfType([
+    PropTypes.string,
     PropTypes.array,
     PropTypes.object,
   ]).isRequired,

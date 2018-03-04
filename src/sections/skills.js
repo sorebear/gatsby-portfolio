@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
@@ -75,25 +76,25 @@ class Skills extends Component {
     this.data = data;
   }
 
-
   renderSkillSets() {
     return data.map((skillSet, index) => {
-      const parsedName = skillSet.name.replace(/\ /g, '-').toLowerCase();
+      const parsedName = skillSet.name.replace(/ /g, '-').toLowerCase();
       return (
-        <div key={index} className={`skills__skill-type-card--${parsedName}`} style={{ width: `${90 / data.length}%` }}>
+        <div key={`skillset-${parsedName}`} className={`skills__skill-type-card--${parsedName}`} style={{ width: `${90 / data.length}%` }}>
           <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
-            <div
+            <button
               onClick={() => this.props.updateSkillSet(parsedName, 'skills', index)}
+              onKeyDown={() => this.props.updateSkillSet(parsedName, 'skills', index)}
               className="skills__skill-type-card"
               style={{
                 textAlign: 'center',
                 cursor: 'pointer',
-                transform: `rotate(${skillSet.rotate * -1}deg)`
+                transform: `rotate(${skillSet.rotate * -1}deg)`,
               }}
             >
               <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
               <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
-            </div>
+            </button>
           </StitchBox>
         </div>
       );
@@ -103,7 +104,7 @@ class Skills extends Component {
   renderSkillSetDetailsIcons(i) {
     return this.data[i].details.icons.map((icon, index) => {
       if (icon.icon) {
-        return <img key={index} className={`skill-icon`} style={styles.iconStyle} src={icon.icon} />;
+        return <img key={index} alt={icon.iconAlt} className="skill-icon" style={styles.iconStyle} src={icon.icon} />;
       }
       if (icon.separator === 'and') {
         return (
@@ -132,7 +133,7 @@ class Skills extends Component {
 
   renderSkillSetDetails() {
     return this.data.map((skillSetDetails, index) => {
-      const parsedName = skillSetDetails.name.replace(/\ /g, '-').toLowerCase();
+      const parsedName = skillSetDetails.name.replace(/ /g, '-').toLowerCase();
       return (
         <div key={index} style={{ width: '33.33%' }}>
           <StitchRows rows={['1', '2']} section="skills" set={parsedName} rotate={skillSetDetails.rotate}>
@@ -167,7 +168,7 @@ class Skills extends Component {
             className="skills__details"
             style={{
               ...styles.skillsDetailsStyle,
-              transform: `translateX(${this.props.activeIndex * -33.33}%)`
+              transform: `translateX(${this.props.activeIndex * -33.33}%)`,
             }}
           >
             {this.renderSkillSetDetails()}
@@ -184,3 +185,9 @@ class Skills extends Component {
 }
 
 export default Skills;
+
+Skills.propTypes = {
+  activeIndex: PropTypes.number.isRequired,
+  activeSkillSet: PropTypes.string.isRequired,
+  updateSkillSet: PropTypes.func.isRequired,
+};

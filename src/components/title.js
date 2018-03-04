@@ -34,11 +34,12 @@ const SectionTitle = ({ id, text, style }) => (
 export default SectionTitle;
 
 SectionTitle.propTypes = {
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   text: PropTypes.string.isRequired,
   style: PropTypes.object,
 };
 
 SectionTitle.defaultProps = {
   style: {},
+  id: '',
 };
