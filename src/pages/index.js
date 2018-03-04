@@ -10,7 +10,7 @@ import Contact from '../sections/contact';
 import Footer from '../sections/footer';
 
 import TopBar from '../components/topBar';
-import Title from '../components/title';
+import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
 // import Divider from '../components/divider';
 
@@ -52,7 +52,7 @@ class Index extends Component {
         <TopBar />
         <HeroImage title="Soren Baird" image={forestTrailDark} />
         <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
-          <Title id="skills-title" text="Skills" />
+          <SectionTitle id="skills-title" text="Skills" />
           <Skills
             activeSkillSet={activeSet}
             activeIndex={activeIndex}
@@ -71,7 +71,7 @@ class Index extends Component {
         </BasicSection>
         {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
                 <BasicSection id="pricing" className="pricing">
-                    <Title text="Pricing" />
+                    <SectionTitle text="Pricing" />
                     <Pricing image="snowy-forest.jpg" />
                 </BasicSection> */}
         <BasicSection
@@ -79,7 +79,7 @@ class Index extends Component {
           className="contact"
           style={{ backgroundImage: `${lightGradient}, url(${snowyForest})` }}
         >
-          <Title text="Contact" />
+          <SectionTitle text="Contact" />
           <Contact />
         </BasicSection>
         <section id="footer">

@@ -19,6 +19,7 @@ const gatsbyIcon =
 const skillsData = [
   {
     name: 'CMS Development',
+    spinalName: 'cms-development',
     icon: 'icon-basic-webpage-img-txt',
     rotate: 5,
     details: {
@@ -42,6 +43,7 @@ const skillsData = [
   },
   {
     name: 'Web Development',
+    spinalName: 'web-development',
     icon: 'icon-basic-laptop',
     rotate: -5,
     details: {
@@ -64,12 +66,14 @@ const skillsData = [
     works: [
       {
         name: 'Todo List',
+        spinalName: 'todo-list',
         image: todoList,
         liveLink: 'http://todo.sorenbaird.com',
         githubLink: 'https://github.com/sorebear/todo_list',
       },
       {
         name: 'Inventor Memory Match',
+        spinalName: 'inventor-memory-match',
         image: memoryMatch,
         liveLink: 'http://sorenbaird.com/apps/memory_match',
         githubLink: 'https://github.com/sorebear/inventor_memory_match',
@@ -78,6 +82,7 @@ const skillsData = [
   },
   {
     name: 'Mobile Development',
+    spinalName: 'mobile-development',
     icon: 'icon-basic-smartphone',
     rotate: 5,
     details: {
@@ -98,6 +103,7 @@ const skillsData = [
     works: [
       {
         name: 'Puzzle Me',
+        spinalName: 'puzzle-me',
         image: puzzleMe,
         liveLink: 'http://puzzleme.sorenbaird.com',
         githubLink: 'https://github.com/sorebear/puzzle_me',

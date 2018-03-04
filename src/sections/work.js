@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import MainWork from './mainWork';
 
-import Title from '../components/title';
+import SectionTitle from '../components/sectionTitle';
 import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
@@ -72,46 +72,49 @@ class Work extends Component {
   }
 
   renderSkillSets() {
-    return data.map((skillSet, index) => {
-      const parsedName = skillSet.name.replace(/ /g, '-').toLowerCase();
-      return (
-        <div key={index} className={`skills__skill-type-card--${parsedName}`} style={{ width: `${90 / data.length}%` }}>
-          <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
-            <button
-              onClick={() => this.props.updateSet(parsedName, 'skills', index)}
-              onKeyDown={() => this.props.updateSet(parsedName, 'skills', index)}
-              className="skills__skill-type-card"
-              style={{
-                textAlign: 'center',
-                cursor: 'pointer',
-                transform: `rotate(${skillSet.rotate * -1}deg)`
-              }}
-            >
-              <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
-              <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
-            </button>
-          </StitchBox>
-        </div>
-      );
-    });
+    return data.map((skillSet, index) => (
+      <div
+        key={`work-type-selectors-${skillSet.spinalName}`}
+        className={`skills__skill-type-card--${skillSet.spinalName}`}
+        style={{ width: `${90 / data.length}%` }}
+      >
+        <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
+          <button
+            onClick={() => this.props.updateSet(skillSet.spinalName, 'skills', index)}
+            onKeyDown={() => this.props.updateSet(skillSet.spinalName, 'skills', index)}
+            className="skills__skill-type-card"
+            style={{
+              textAlign: 'center',
+              cursor: 'pointer',
+              transform: `rotate(${skillSet.rotate * -1}deg)`,
+            }}
+          >
+            <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+            <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
+          </button>
+        </StitchBox>
+      </div>
+    ));
   }
 
   renderAllProjects() {
-    return this.data.map((workTypes, index) => {
-      const parsedName = workTypes.name.replace(/ /g, '-').toLowerCase();
-      return (
-        <div key={index} style={{ width: '33.33%' }}>
-          <StitchRows rows={['5', '6']} section="work" set={parsedName} rotate={workTypes.rotate}>
-            <div
-              className={`work__projects work__projects--${parsedName}`}
-              style={styles.projectCategoryContainerStyle}
-            >
-              {this.renderProjectCategory(index)}
-            </div>
-          </StitchRows>
-        </div>
-      );
-    });
+    return this.data.map((workTypes, index) => (
+      <div key={`projects-type-${workTypes.spinalName}`} style={{ width: '33.33%' }}>
+        <StitchRows
+          rows={['5', '6']}
+          section="work"
+          set={workTypes.spinalName}
+          rotate={workTypes.rotate}
+        >
+          <div
+            className={`work__projects work__projects--${workTypes.spinalName}`}
+            style={styles.projectCategoryContainerStyle}
+          >
+            {this.renderProjectCategory(index)}
+          </div>
+        </StitchRows>
+      </div>
+    ));
   }
 
   renderProjectCategory(i) {
@@ -123,8 +126,8 @@ class Work extends Component {
         </div>
       );
     }
-    return this.data[i].works.map((work, index) => (
-      <div key={index} className="work__individual-project" style={styles.individualProjectStyle}>
+    return this.data[i].works.map(work => (
+      <div key={`work-project-${work.spinalName}`} className="work__individual-project" style={styles.individualProjectStyle}>
         <StitchBox style={{ width: '100%' }}>
           <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
@@ -149,7 +152,7 @@ class Work extends Component {
             section="work"
             skillSetArr={['mobile-development', 'web-development', 'cms-development']}
           />
-          <Title text="Full-Time Work" style={styles.workSectionTitleStyle} />
+          <SectionTitle text="Full-Time Work" style={styles.workSectionTitleStyle} />
         </div>
         <MainWork activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
@@ -158,7 +161,7 @@ class Work extends Component {
             section="work"
             skillSetArr={['cms-development', 'web-development', 'mobile-development']}
           />
-          <Title text="Side-Projects" style={styles.workSectionTitleStyle} />
+          <SectionTitle text="Side-Projects" style={styles.workSectionTitleStyle} />
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>
           {this.renderSkillSets()}
@@ -192,4 +195,3 @@ Work.propTypes = {
   activeSet: PropTypes.string.isRequired,
   updateSet: PropTypes.func.isRequired,
 };
-

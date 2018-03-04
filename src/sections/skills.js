@@ -77,34 +77,43 @@ class Skills extends Component {
   }
 
   renderSkillSets() {
-    return data.map((skillSet, index) => {
-      const parsedName = skillSet.name.replace(/ /g, '-').toLowerCase();
-      return (
-        <div key={`skillset-${parsedName}`} className={`skills__skill-type-card--${parsedName}`} style={{ width: `${90 / data.length}%` }}>
-          <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
-            <button
-              onClick={() => this.props.updateSkillSet(parsedName, 'skills', index)}
-              onKeyDown={() => this.props.updateSkillSet(parsedName, 'skills', index)}
-              className="skills__skill-type-card"
-              style={{
-                textAlign: 'center',
-                cursor: 'pointer',
-                transform: `rotate(${skillSet.rotate * -1}deg)`,
-              }}
-            >
-              <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
-              <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
-            </button>
-          </StitchBox>
-        </div>
-      );
-    });
+    return data.map((skillSet, index) => (
+      <div
+        key={`skillset-${skillSet.spinalName}`}
+        className={`skills__skill-type-card--${skillSet.spinalName}`}
+        style={{ width: `${90 / data.length}%` }}
+      >
+        <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
+          <button
+            onClick={() => this.props.updateSkillSet(skillSet.spinalName, 'skills', index)}
+            onKeyDown={() => this.props.updateSkillSet(skillSet.spinalName, 'skills', index)}
+            className="skills__skill-type-card"
+            style={{
+              textAlign: 'center',
+              cursor: 'pointer',
+              transform: `rotate(${skillSet.rotate * -1}deg)`
+            }}
+          >
+            <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+            <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
+          </button>
+        </StitchBox>
+      </div>
+    ));
   }
 
   renderSkillSetDetailsIcons(i) {
     return this.data[i].details.icons.map((icon, index) => {
       if (icon.icon) {
-        return <img key={index} alt={icon.iconAlt} className="skill-icon" style={styles.iconStyle} src={icon.icon} />;
+        return (
+          <img
+            key={`${this.data[i].spinalName}-icons-${index}`}
+            alt={icon.iconAlt}
+            className="skill-icon"
+            style={styles.iconStyle}
+            src={icon.icon}
+          />
+        );
       }
       if (icon.separator === 'and') {
         return (
@@ -122,31 +131,34 @@ class Skills extends Component {
   }
 
   renderSkillSetDetailsText(i) {
-    return this.data[i].details.text.map((text, index) => {
-      return (
-        <p key={index} style={styles.detailsDescription}>
-          {text}
-        </p>
-      );
-    });
+    return this.data[i].details.text.map((text, index) => (
+      <p key={index} style={styles.detailsDescription}>
+        {text}
+      </p>
+    ));
   }
 
   renderSkillSetDetails() {
-    return this.data.map((skillSetDetails, index) => {
-      const parsedName = skillSetDetails.name.replace(/ /g, '-').toLowerCase();
-      return (
-        <div key={index} style={{ width: '33.33%' }}>
-          <StitchRows rows={['1', '2']} section="skills" set={parsedName} rotate={skillSetDetails.rotate}>
-            <div className={`skills__details--${parsedName}`} style={{ width: '100%' }}>
-              <div className="skills__technology-container" style={styles.technologiesStyle}>
-                {this.renderSkillSetDetailsIcons(index)}
-              </div>
-              {this.renderSkillSetDetailsText(index)}
+    return this.data.map((skillSetDetails, index) => (
+      <div key={index} style={{ width: '33.33%' }}>
+        <StitchRows
+          rows={['1', '2']}
+          section="skills"
+          set={skillSetDetails.spinalName}
+          rotate={skillSetDetails.rotate}
+        >
+          <div
+            className={`skills__details--${skillSetDetails.spinalName}`}
+            style={{ width: '100%' }}
+          >
+            <div className="skills__technology-container" style={styles.technologiesStyle}>
+              {this.renderSkillSetDetailsIcons(index)}
             </div>
-          </StitchRows>
-        </div>
-      );
-    });
+            {this.renderSkillSetDetailsText(index)}
+          </div>
+        </StitchRows>
+      </div>
+    ));
   }
 
   render() {
@@ -168,7 +180,7 @@ class Skills extends Component {
             className="skills__details"
             style={{
               ...styles.skillsDetailsStyle,
-              transform: `translateX(${this.props.activeIndex * -33.33}%)`,
+              transform: `translateX(${this.props.activeIndex * -33.33}%)`
             }}
           >
             {this.renderSkillSetDetails()}
@@ -189,5 +201,5 @@ export default Skills;
 Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSkillSet: PropTypes.string.isRequired,
-  updateSkillSet: PropTypes.func.isRequired,
+  updateSkillSet: PropTypes.func.isRequired
 };

@@ -86,6 +86,7 @@ class TopBar extends Component {
           <button
             onClick={() => this.handleSmoothScroll('home')}
             onKeyDown={() => this.handleSmoothScroll('home')}
+            style={{ cursor: 'pointer' }}
           >
             <h2
               className="top-bar__logo"
