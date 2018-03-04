@@ -43,6 +43,12 @@ const styles = {
     alignItems: 'center',
     textAlign: 'center',
   },
+  individualProjectStyle: {
+    position: 'relative',
+    width: '50%',
+    padding: '0 2rem',
+    display: 'flex',
+  },
   projectOverlayStyle: {
     position: 'absolute',
     top: '5px',
@@ -118,7 +124,7 @@ class Work extends Component {
       );
     }
     return this.data[i].works.map((work, index) => (
-      <div key={index} style={{ position: 'relative', width: '50%', padding: '0 2rem', display: 'flex' }}>
+      <div key={index} className="work__individual-project" style={styles.individualProjectStyle}>
         <StitchBox style={{ width: '100%' }}>
           <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>

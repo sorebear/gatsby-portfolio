@@ -1,83 +1,79 @@
 .skills {
+  &__skill-type-card {
+    padding: $single-space;
+  }
 
-   &__skill-type-card {
-      padding: $single-space;
-   }
+  &__details-wrapper {
+    margin-top: -$triple-space;
+    margin-bottom: -$triple-space;
+  }
 
-   &__details-wrapper {
-      margin-top: -$triple-space;
-      margin-bottom: -$triple-space;
-   }
+  &__details--cms-development,
+  &__details--web-development,
+  &__details--mobile-development {
+    margin-top: $single-space;
+    margin-bottom: $single-space;
 
-   &__details--cms-development,
-   &__details--web-development,
-   &__details--mobile-development {
-      margin-top: $single-space;
-      margin-bottom: $single-space;
+    p {
+      margin: 0 auto $single-space auto;
+    }
 
-      p {
-         margin: 0 auto $single-space auto;
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__technology-container {
+    margin-bottom: $double-space;
+  }
+
+  &__skill-type-card {
+    transition: 0.3s;
+
+    &--cms-development {
+      .stitch-box__border {
+        border-color: $orange;
       }
 
-      p:last-child {
-         margin-bottom: 0;
-      }
-   }
-
-   &__technology-container {
-      margin-bottom: $double-space;
-   }
-
-   &__skill-type-card {
-      transition: .3s;
-
-      &--cms-development {
-
-         .stitch-box__border {
-            border-color: $orange;
-         }
-
-         i {
-            background-image: linear-gradient($orange, darken($orange, 15%));
-         }
-
-         h4 {
-            color: darken($orange, 15%);
-         }
+      i {
+        background-image: linear-gradient($orange, darken($orange, 15%));
       }
 
-      &--web-development {
+      h4 {
+        color: darken($orange, 15%);
+      }
+    }
 
-         .stitch-box__border {
-            border-color: $red;
-         }
-
-         i {
-            background-image: linear-gradient($red, darken($red, 15%));
-         }
-
-         h4 {
-            color: darken($red, 15%);
-         }
+    &--web-development {
+      .stitch-box__border {
+        border-color: $red;
       }
 
-      &--mobile-development {
-
-         .stitch-box__border {
-            border-color: $teal;
-         }
-
-         i {
-            background-image: linear-gradient($teal, darken($teal, 10%));
-         }
-
-         h4 {
-            color: darken($teal, 10%);
-         }
+      i {
+        background-image: linear-gradient($red, darken($red, 15%));
       }
-   }
+
+      h4 {
+        color: darken($red, 15%);
+      }
+    }
+
+    &--mobile-development {
+      .stitch-box__border {
+        border-color: $teal;
+      }
+
+      i {
+        background-image: linear-gradient($teal, darken($teal, 10%));
+      }
+
+      h4 {
+        color: darken($teal, 10%);
+      }
+    }
+  }
 }
 
 .stitch-rows {
-   height: $quad-space;
+  height: $quad-space;
 }

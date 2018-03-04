@@ -15,16 +15,16 @@ const styles = {
     flexDirection: 'column',
   },
   stitchBoxStyle: {
-    height: '75px',
-    width: '75px',
-    margin: '10px',
+    height: '4rem',
+    width: '4rem',
+    margin: '.5rem',
   },
   linkContainerStyle: {
     display: 'flex',
     justifyContent: 'space-around',
   },
   socialMediaLinkStyle: {
-    margin: '5px',
+    margin: '.25rem',
   },
   textStyle: {
     color: 'white',

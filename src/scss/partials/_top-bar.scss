@@ -1,42 +1,39 @@
 .top-bar {
+  &__logo,
+  &__nav-link {
+    transition: 0.5s;
+  }
 
-   &__logo,
-   &__nav-link {
-      transition: .5s;
-   }
+  &--unscrolled {
+    background-color: transparent;
 
-   &--unscrolled {
-      background-color: transparent;
+    h2 {
+      transform: translateY(-175%);
+    }
 
-      h2 {
-         transform: translateY(-175%);
-      }
-      
-      li {
-         color: $orange;
-      }
-   }
+    li {
+      color: $orange;
+    }
+  }
 
-   &--scrolled {
-      background-color: $slate;
+  &--scrolled {
+    background-color: $slate;
 
-      h2 {
-         transform: translateY(0);
-      }
+    h2 {
+      transform: translateY(0);
+    }
 
-      li {
-         color: $white;
-      }
-   }
+    li {
+      color: $white;
+    }
+  }
 
-   .stitch-text {
-
-		&__top-border,
-		&__bottom-border {
-			border-bottom-width: $half-border-width;
-			border-bottom-style: $default-border-style;
-			width: 100%;
-		}
-	}
+  .stitch-text {
+    &__top-border,
+    &__bottom-border {
+      border-bottom-width: $half-border-width;
+      border-bottom-style: $default-border-style;
+      width: 100%;
+    }
+  }
 }
-

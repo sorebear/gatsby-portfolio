@@ -1,441 +1,447 @@
 @keyframes expandVertical {
-	0% {
-		height: 0%;
-	}
-	100% {
-		height: 100%;
-	}
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
 }
 
 @keyframes expandHorizontal {
-	0% {
-		width: 0%;
-	}
-	100% {
-		width: 100%;
-	}
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes retractHorizontal {
-	0% { width: 100%; }
-	100% { width: 0%; }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 @keyframes retractHorizontal-2 {
-	0% { width: 100%; }
-	100% { width: 0%; }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 @keyframes retractHorizontal-3 {
-	0% { width: 100%; }
-	100% { width: 0%; }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
-$row-1-vertical-animation: expandVertical 0.3s forwards .3s;
+$row-1-vertical-animation: expandVertical 0.3s forwards 0.3s;
 $row-2-vertical-animation: expandVertical 0.3s forwards 1s;
 $row-3-vertical-animation: expandVertical 0.5s forwards 1.3s;
-$row-4-vertical-animation: expandVertical 0.5s forwards .3s;
-$row-5-vertical-animation: expandVertical 0.3s forwards .3s;
+$row-4-vertical-animation: expandVertical 0.5s forwards 0.3s;
+$row-5-vertical-animation: expandVertical 0.3s forwards 0.3s;
 
-$rows-1-2-horizontal-animation: retractHorizontal .75s forwards .5s;
-$rows-3-4-horizontal-animation-1: retractHorizontal .75s forwards .7s;
-$rows-3-4-horizontal-animation-2: retractHorizontal-2 .75s forwards .7s;
-$rows-3-4-horizontal-animation-3: retractHorizontal-3 .75s forwards .7s;
-$rows-5-6-horizontal-animation: retractHorizontal .75s forwards .5s;
+$rows-1-2-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
+$rows-3-4-horizontal-animation-1: retractHorizontal 0.75s forwards 0.7s;
+$rows-3-4-horizontal-animation-2: retractHorizontal-2 0.75s forwards 0.7s;
+$rows-3-4-horizontal-animation-3: retractHorizontal-3 0.75s forwards 0.7s;
+$rows-5-6-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
 
 .vertical-line {
-	border-left-width: $default-border-width;
-	border-left-style: $default-border-style;
+  border-left-width: $default-border-width;
+  border-left-style: $default-border-style;
 }
 
 .horizontal-line {
-   border-top-width: $default-border-width;
-   border-top-style: $default-border-style;
-   width: 100%;
+  border-top-width: $default-border-width;
+  border-top-style: $default-border-style;
+  width: 100%;
 }
 
 .horizontal-line-mask {
-	background-color: $offwhite;
+  background-color: $offwhite;
 }
 
 .vertical-line-mask {
-   height: 0%;
+  height: 0%;
 }
 
 .horizontal-line-mask {
-   width: 0%;
+  width: 0%;
 }
 
 .skills {
-	.vertical-line-container--row-1 {
-		height: $quad-space + $double-space;
+  .vertical-line-container--row-1 {
+    height: $quad-space + $double-space;
 
-		.skills__vertical-line-mask--cms-development {
-			.vertical-line {
-				height: $triple-space + $third-space + $third-space;
-			}
-		}
+    .skills__vertical-line-mask--cms-development {
+      .vertical-line {
+        height: $triple-space + $third-space + $third-space;
+      }
+    }
 
-		.skills__vertical-line-mask--web-development {
-			.vertical-line {
-				height: $quad-space + $half-space + $quarter-space;
-			}
-		}
+    .skills__vertical-line-mask--web-development {
+      .vertical-line {
+        height: $quad-space + $half-space + $quarter-space;
+      }
+    }
 
-		.skills__vertical-line-mask--mobile-development {
-			.vertical-line {
-				height: $quad-space + $double-space;
-			}
-		}
-	}
+    .skills__vertical-line-mask--mobile-development {
+      .vertical-line {
+        height: $quad-space + $double-space;
+      }
+    }
+  }
 
-	.vertical-line-container--row-2 {
-		height: $quad-space + $double-space;
+  .vertical-line-container--row-2 {
+    height: $quad-space + $double-space;
 
-		.skills__vertical-line-mask--cms-development {
-			.vertical-line {
-				margin-top: $double-space + $third-space;
-				height: $triple-space + $third-space + $third-space;
-			}
-		}
+    .skills__vertical-line-mask--cms-development {
+      .vertical-line {
+        margin-top: $double-space + $third-space;
+        height: $triple-space + $third-space + $third-space;
+      }
+    }
 
-		.skills__vertical-line-mask--web-development {
-			.vertical-line {
-				margin-top: $single-space + $quarter-space;
-				height: $quad-space + $half-space + $quarter-space;
-			}
-		}
+    .skills__vertical-line-mask--web-development {
+      .vertical-line {
+        margin-top: $single-space + $quarter-space;
+        height: $quad-space + $half-space + $quarter-space;
+      }
+    }
 
-		.skills__vertical-line-mask--mobile-development {
-			.vertical-line {
-				height: $quad-space + $double-space;
-			}
-		}
-	}
+    .skills__vertical-line-mask--mobile-development {
+      .vertical-line {
+        height: $quad-space + $double-space;
+      }
+    }
+  }
 }
 
 .work {
-	.vertical-line-container--row-3 {
-		height: $quad-space + $quad-space + $triple-space + $quarter-space;
+  .vertical-line-container--row-3 {
+    height: $quad-space + $quad-space + $triple-space + $quarter-space;
 
-		.work__vertical-line-mask--cms-development {
-			.vertical-line {
-				height: $quad-space + $quad-space + $quad-space + $quad-space;
-			}
-		}
+    .work__vertical-line-mask--cms-development {
+      .vertical-line {
+        height: $quad-space + $quad-space + $quad-space + $quad-space;
+      }
+    }
 
-		.work__vertical-line-mask--web-development {
-			.vertical-line {
-				height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
-			}
-		}
+    .work__vertical-line-mask--web-development {
+      .vertical-line {
+        height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
+      }
+    }
 
-		.work__vertical-line-mask--mobile-development {
-			.vertical-line {
-				height: $quad-space + $quad-space + $half-space;
-			}
-		}
-   }
-   
-   .vertical-line-container--row-4 {
-      height: $quad-space + $quad-space + $triple-space + $quarter-space;
+    .work__vertical-line-mask--mobile-development {
+      .vertical-line {
+        height: $quad-space + $quad-space + $half-space;
+      }
+    }
+  }
+
+  .vertical-line-container--row-4 {
+    height: $quad-space + $quad-space + $triple-space + $quarter-space;
+    align-items: flex-end !important;
+
+    .work__vertical-line-mask--cms-development {
       align-items: flex-end !important;
+      .vertical-line {
+        height: $quad-space + $quad-space + $quad-space;
+      }
+    }
 
-		.work__vertical-line-mask--cms-development {
-         align-items: flex-end !important;
-			.vertical-line {
-				height: $quad-space + $quad-space + $quad-space;
-			}
-		}
+    .work__vertical-line-mask--web-development {
+      align-items: flex-end !important;
+      .vertical-line {
+        height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
+      }
+    }
 
-		.work__vertical-line-mask--web-development {
-         align-items: flex-end !important;
-			.vertical-line {
-				height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
-			}
-		}
+    .work__vertical-line-mask--mobile-development {
+      align-items: flex-end !important;
+      .vertical-line {
+        height: $quad-space + $quad-space + $half-space;
+      }
+    }
+  }
 
-		.work__vertical-line-mask--mobile-development {
-         align-items: flex-end !important;
-			.vertical-line {
-				height: $quad-space + $quad-space + $half-space;
-			}
-		}
-   }
+  .vertical-line-container--row-5 {
+    height: $quad-space + $double-space;
 
-   .vertical-line-container--row-5 {
-      height: $quad-space + $double-space;
+    .work__vertical-line-mask--cms-development {
+      .vertical-line {
+        height: $triple-space + $third-space + $third-space;
+      }
+    }
 
-		.work__vertical-line-mask--cms-development {
-			.vertical-line {
-				height: $triple-space + $third-space + $third-space;
-			}
-		}
+    .work__vertical-line-mask--web-development {
+      .vertical-line {
+        height: $quad-space + $half-space + $quarter-space;
+      }
+    }
 
-		.work__vertical-line-mask--web-development {
-			.vertical-line {
-				height: $quad-space + $half-space + $quarter-space;
-			}
-		}
-
-		.work__vertical-line-mask--mobile-development {
-			.vertical-line {
-				height: $quad-space + $double-space;
-			}
-		}
-   }
+    .work__vertical-line-mask--mobile-development {
+      .vertical-line {
+        height: $quad-space + $double-space;
+      }
+    }
+  }
 }
 
 .content-wrapper.skills-cms-development {
-   .horizontal-line {
-      border-color: $orange;
-   }
+  .horizontal-line {
+    border-color: $orange;
+  }
 
-	.skills {
-		&__skill-type-card--cms-development {
-			.stitch-box {
-            &__top-border-mask,
-            &__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
+  .skills {
+    &__skill-type-card--cms-development {
+      .stitch-box {
+        &__top-border-mask,
+        &__bottom-border-mask {
+          animation: expandHorizontal 0.2s forwards;
+        }
 
-				&__left-border-mask,
-				&__right-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-			}
-		}
-
-		&__vertical-line-mask--cms-development {
-			&.skills__vertical-line-mask {
-				.vertical-line {
-					border-color: $orange;
-				}
-
-				&--row-1 {
-					animation: $row-1-vertical-animation;
-				}
-
-				&--row-2 {
-					animation: $row-2-vertical-animation;
-				}
-			}
+        &__left-border-mask,
+        &__right-border-mask {
+          animation: expandVertical 0.2s forwards;
+        }
       }
+    }
 
-      &__horizontal-line-mask--cms-development {
-			&.skills__horizontal-line-mask {
+    &__vertical-line-mask--cms-development {
+      &.skills__vertical-line-mask {
+        .vertical-line {
+          border-color: $orange;
+        }
 
-            &--row-1,
-            &--row-2 {
-					animation: $rows-1-2-horizontal-animation
-				}
-			}
+        &--row-1 {
+          animation: $row-1-vertical-animation;
+        }
+
+        &--row-2 {
+          animation: $row-2-vertical-animation;
+        }
       }
-   }
-   
-	.work {
-		&__vertical-line-mask--cms-development {
-			&.work__vertical-line-mask {
-				.vertical-line {
-					border-color: $orange;
-				}
+    }
 
-				&--row-3 {
-					animation: $row-3-vertical-animation;
-				}
-
-				&--row-4 {
-					animation: $row-4-vertical-animation;
-            }
-            
-            &--row-5 {
-					animation: $row-5-vertical-animation;
-				}
-			}
-		}
-
-		&__horizontal-line-mask--cms-development {
-			&.work__horizontal-line-mask {
-
-            &--row-3,
-            &--row-4 {
-					animation: $rows-3-4-horizontal-animation-1;
-            }
-            
-            &--row-5,
-            &--row-6 {
-					animation: $rows-5-6-horizontal-animation;
-				}
-			}
+    &__horizontal-line-mask--cms-development {
+      &.skills__horizontal-line-mask {
+        &--row-1,
+        &--row-2 {
+          animation: $rows-1-2-horizontal-animation;
+        }
       }
-	}
+    }
+  }
+
+  .work {
+    &__vertical-line-mask--cms-development {
+      &.work__vertical-line-mask {
+        .vertical-line {
+          border-color: $orange;
+        }
+
+        &--row-3 {
+          animation: $row-3-vertical-animation;
+        }
+
+        &--row-4 {
+          animation: $row-4-vertical-animation;
+        }
+
+        &--row-5 {
+          animation: $row-5-vertical-animation;
+        }
+      }
+    }
+
+    &__horizontal-line-mask--cms-development {
+      &.work__horizontal-line-mask {
+        &--row-3,
+        &--row-4 {
+          animation: $rows-3-4-horizontal-animation-1;
+        }
+
+        &--row-5,
+        &--row-6 {
+          animation: $rows-5-6-horizontal-animation;
+        }
+      }
+    }
+  }
 }
 
 .content-wrapper.skills-web-development {
-   .horizontal-line {
-      border-color: $red;
-   }
+  .horizontal-line {
+    border-color: $red;
+  }
 
-	.skills {
-		&__skill-type-card--web-development {
-			.stitch-box {
-            &__top-border-mask,
-            &__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
+  .skills {
+    &__skill-type-card--web-development {
+      .stitch-box {
+        &__top-border-mask,
+        &__bottom-border-mask {
+          animation: expandHorizontal 0.2s forwards;
+        }
 
-				&__left-border-mask,
-				&__right-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-			}
-		}
-
-		&__vertical-line-mask--web-development {
-			&.skills__vertical-line-mask {
-				.vertical-line {
-					border-color: $red;
-				}
-
-				&--row-1 {
-					animation: $row-1-vertical-animation;
-				}
-
-				&--row-2 {
-					animation: $row-2-vertical-animation;
-				}
-			}
-		}
-
-		&__horizontal-line-mask--web-development {
-			&.skills__horizontal-line-mask {
-
-            &--row-1,
-            &--row-2 {
-					animation: $rows-1-2-horizontal-animation;
-				}
-			}
+        &__left-border-mask,
+        &__right-border-mask {
+          animation: expandVertical 0.2s forwards;
+        }
       }
-	}
+    }
 
-	.work {
-		&__vertical-line-mask--web-development {
-			&.work__vertical-line-mask {
-				.vertical-line {
-					border-color: $red;
-				}
+    &__vertical-line-mask--web-development {
+      &.skills__vertical-line-mask {
+        .vertical-line {
+          border-color: $red;
+        }
 
-				&--row-3 {
-					animation: $row-3-vertical-animation;
-				}
+        &--row-1 {
+          animation: $row-1-vertical-animation;
+        }
 
-				&--row-4 {
-					animation: $row-4-vertical-animation;
-            }
-            
-            &--row-5 {
-					animation: $row-5-vertical-animation;
-				}
-			}
-		}
-
-		&__horizontal-line-mask--web-development {
-			&.work__horizontal-line-mask {
-
-            &--row-3,
-            &--row-4 {
-					animation: $rows-3-4-horizontal-animation-2;
-				}
-
-            &--row-5,
-            &--row-6 {
-					animation: $rows-5-6-horizontal-animation;
-				}
-			}
+        &--row-2 {
+          animation: $row-2-vertical-animation;
+        }
       }
-	}
+    }
+
+    &__horizontal-line-mask--web-development {
+      &.skills__horizontal-line-mask {
+        &--row-1,
+        &--row-2 {
+          animation: $rows-1-2-horizontal-animation;
+        }
+      }
+    }
+  }
+
+  .work {
+    &__vertical-line-mask--web-development {
+      &.work__vertical-line-mask {
+        .vertical-line {
+          border-color: $red;
+        }
+
+        &--row-3 {
+          animation: $row-3-vertical-animation;
+        }
+
+        &--row-4 {
+          animation: $row-4-vertical-animation;
+        }
+
+        &--row-5 {
+          animation: $row-5-vertical-animation;
+        }
+      }
+    }
+
+    &__horizontal-line-mask--web-development {
+      &.work__horizontal-line-mask {
+        &--row-3,
+        &--row-4 {
+          animation: $rows-3-4-horizontal-animation-2;
+        }
+
+        &--row-5,
+        &--row-6 {
+          animation: $rows-5-6-horizontal-animation;
+        }
+      }
+    }
+  }
 }
 
 .content-wrapper.skills-mobile-development {
-   .horizontal-line {
-      border-color: $teal;
-   }
-	.skills {
-		&__skill-type-card--mobile-development {
-			.stitch-box {
-            &__top-border-mask,
-            &__bottom-border-mask {
-					animation: expandHorizontal 0.2s forwards;
-				}
+  .horizontal-line {
+    border-color: $teal;
+  }
+  .skills {
+    &__skill-type-card--mobile-development {
+      .stitch-box {
+        &__top-border-mask,
+        &__bottom-border-mask {
+          animation: expandHorizontal 0.2s forwards;
+        }
 
-				&__left-border-mask,
-				&__right-border-mask {
-					animation: expandVertical 0.2s forwards;
-				}
-			}
-		}
-
-		&__vertical-line-mask--mobile-development {
-			&.skills__vertical-line-mask {
-				.vertical-line {
-					border-color: $teal;
-				}
-
-				&--row-1 {
-					animation: $row-1-vertical-animation;
-				}
-
-				&--row-2 {
-					animation: $row-2-vertical-animation;
-            }
-			}
-		}
-
-		&__horizontal-line-mask--mobile-development {
-			&.skills__horizontal-line-mask {
-
-            &--row-1,
-            &--row-2 {
-					animation: $rows-1-2-horizontal-animation;
-				}
-			}
+        &__left-border-mask,
+        &__right-border-mask {
+          animation: expandVertical 0.2s forwards;
+        }
       }
-   }
-   
-   .work {
-		&__vertical-line-mask--mobile-development {
-			&.work__vertical-line-mask {
-				.vertical-line {
-					border-color: $teal;
-				}
+    }
 
-				&--row-3 {
-					animation: $row-3-vertical-animation;
-				}
+    &__vertical-line-mask--mobile-development {
+      &.skills__vertical-line-mask {
+        .vertical-line {
+          border-color: $teal;
+        }
 
-				&--row-4 {
-					animation: $row-4-vertical-animation;
-            }
-            
-            &--row-5 {
-					animation: $row-5-vertical-animation;
-				}
-			}
-		}
+        &--row-1 {
+          animation: $row-1-vertical-animation;
+        }
 
-		&__horizontal-line-mask--mobile-development {
-			&.work__horizontal-line-mask {
-
-            &--row-3,
-            &--row-4 {
-					animation: $rows-3-4-horizontal-animation-3;
-				}
-
-            &--row-5,
-            &--row-6 {
-					animation: $rows-5-6-horizontal-animation;
-				}
-			}
+        &--row-2 {
+          animation: $row-2-vertical-animation;
+        }
       }
-	}
+    }
+
+    &__horizontal-line-mask--mobile-development {
+      &.skills__horizontal-line-mask {
+        &--row-1,
+        &--row-2 {
+          animation: $rows-1-2-horizontal-animation;
+        }
+      }
+    }
+  }
+
+  .work {
+    &__vertical-line-mask--mobile-development {
+      &.work__vertical-line-mask {
+        .vertical-line {
+          border-color: $teal;
+        }
+
+        &--row-3 {
+          animation: $row-3-vertical-animation;
+        }
+
+        &--row-4 {
+          animation: $row-4-vertical-animation;
+        }
+
+        &--row-5 {
+          animation: $row-5-vertical-animation;
+        }
+      }
+    }
+
+    &__horizontal-line-mask--mobile-development {
+      &.work__horizontal-line-mask {
+        &--row-3,
+        &--row-4 {
+          animation: $rows-3-4-horizontal-animation-3;
+        }
+
+        &--row-5,
+        &--row-6 {
+          animation: $rows-5-6-horizontal-animation;
+        }
+      }
+    }
+  }
 }

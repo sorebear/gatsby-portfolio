@@ -43,7 +43,7 @@ const MainWork = ({ activeSet }) => {
       <StitchRows rows={['3', '4']} section="work" set={activeSet} rotate={rotate}>
         <div style={styles.contentWrapperStyle} className="work__main-work">
           <div style={styles.logoContainerStyle}>
-            <a href="envivent.com" target="_blank" style={styles.anchorStyle}>
+            <a href="envivent.com" className="work__envivent-link" target="_blank" style={styles.anchorStyle}>
               <img src={enviventLogo} style={styles.logoStyle} alt="envivent web development logo" />
             </a>
           </div>

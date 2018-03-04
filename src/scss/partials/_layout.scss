@@ -1,12 +1,18 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-    padding: 0 2rem;
+  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  html {
+    font-size: 80%;
+  }
 }

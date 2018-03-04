@@ -1,16 +1,15 @@
 .footer {
+  a,
+  a:link,
+  a:hover {
+    * {
+      border-color: #929292;
+    }
+  }
 
-   a,
-   a:link,
-   a:hover {
-      * {
-         border-color: #929292;
-      }
-   }
-
-   a:active {
-      * {
-         border-color: $white;
-      }
-   }
+  a:active {
+    * {
+      border-color: $white;
+    }
+  }
 }

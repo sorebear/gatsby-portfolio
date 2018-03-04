@@ -1,85 +1,99 @@
 @keyframes expandHorizontal {
-   0% { width: 0%; }
-   100% { width: 100%; }
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 @keyframes retractHorizontal {
-   0% { width: 100%; }
-   100% { width: 0%; }
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
 }
 
 @keyframes expandVertical {
-   0% { height: 0%; }
-   100% { height: 100%; }
+  0% {
+    height: 0%;
+  }
+  100% {
+    height: 100%;
+  }
 }
 
 @keyframes retractVertical {
-   0% { height: 100%; }
-   100% { height: 0%; }
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
 }
 
 .stitch-box {
+  &__top-border {
+    border-top-width: $default-border-width;
+    border-top-style: $default-border-style;
+    width: 100%;
+  }
 
-   &__top-border {
-      border-top-width: $default-border-width;
-      border-top-style: $default-border-style;
-      width: 100%;
-   }
+  &__bottom-border {
+    border-bottom-width: $default-border-width;
+    border-bottom-style: $default-border-style;
+    width: 100%;
+  }
 
-   &__bottom-border {
-      border-bottom-width: $default-border-width;
-      border-bottom-style: $default-border-style;
-      width: 100%;
-   }
+  &__left-border {
+    border-left-width: $default-border-width;
+    border-left-style: $default-border-style;
+    height: 100%;
+  }
 
-   &__left-border {
-      border-left-width: $default-border-width;
-      border-left-style: $default-border-style;
-      height: 100%;
-   }
+  &__right-border {
+    border-right-width: $default-border-width;
+    border-right-style: $default-border-style;
+    height: 100%;
+  }
 
-   &__right-border {
-      border-right-width: $default-border-width;
-      border-right-style: $default-border-style;
-      height: 100%;
-   }
+  &__top-border-mask {
+    height: $default-border-width;
+    animation: retractHorizontal 0.3s forwards;
+  }
 
-   &__top-border-mask {
-      height: $default-border-width;
-      animation: retractHorizontal .3s forwards;
-   }
+  &__bottom-border-mask {
+    height: $default-border-width;
+    animation: retractHorizontal 0.3s forwards;
+  }
 
-   &__bottom-border-mask {
-      height: $default-border-width;
-      animation: retractHorizontal .3s forwards;
-   }
+  &__left-border-mask {
+    width: $default-border-width;
+    animation: retractVertical 0.3s forwards;
+  }
 
-   &__left-border-mask {
-      width: $default-border-width;
-      animation: retractVertical .3s forwards;
-   }
+  &__right-border-mask {
+    width: $default-border-width;
+    animation: retractVertical 0.3s forwards;
+  }
 
-   &__right-border-mask {
-      width: $default-border-width;
-      animation: retractVertical .3s forwards;
-   }
+  &:hover .stitch-box {
+    &__top-border-mask {
+      animation: expandHorizontal 0.2s forwards 0.2s;
+    }
 
-   &:hover .stitch-box {
+    &__bottom-border-mask {
+      animation: expandHorizontal 0.2s forwards 0.6s;
+    }
 
-      &__top-border-mask {
-         animation: expandHorizontal .2s forwards .2s;
-      }
+    &__left-border-mask {
+      animation: expandVertical 0.2s forwards;
+    }
 
-      &__bottom-border-mask {
-         animation: expandHorizontal .2s forwards .6s;
-      }
-
-      &__left-border-mask {
-         animation: expandVertical .2s forwards;
-      }
-
-      &__right-border-mask {
-         animation: expandVertical .2s forwards .4s;
-      }
-   }
+    &__right-border-mask {
+      animation: expandVertical 0.2s forwards 0.4s;
+    }
+  }
 }

@@ -1,44 +1,43 @@
 /* https://color.adobe.com/Renaissance-color-theme-16511/edit/?copy=true&base=0&rule=Custom&selected=4&name=Copy%20of%20Renaissance&mode=rgb&rgbvalues=0,0.415686,0.447059,0.376471,0.392157,0,0.854902,0.847059,0.709804,0.694118,0,0,0.894118,0.623529,0&swatchOrder=0,1,2,3,4 */
 
 body {
-   background-color: $offwhite;
+  background-color: $offwhite;
 }
 
 button {
-   background-color: $teal;
-   color: $white;
+  background-color: $teal;
+  color: $white;
 }
 
 h3.section-title {
-   color: $slate;
-   text-shadow: $box-shadow;
+  color: $slate;
+  text-shadow: $box-shadow;
 }
 
 .basic-card {
+  &--offwhite {
+    color: $slate;
+    background-color: $offwhite;
+  }
 
-   &--offwhite {
-      color: $slate;
-      background-color: $offwhite;
-   }
-
-   &--white {
-      color: $slate;
-      background-color: $white;
-   }
+  &--white {
+    color: $slate;
+    background-color: $white;
+  }
 }
 
 .card {
-   &--offwhite {
-      color: $slate;
-      background-color: $offwhite;
-   }
+  &--offwhite {
+    color: $slate;
+    background-color: $offwhite;
+  }
 
-   &--white {
-      color: $slate;
-      background-color: $white;
-   }
+  &--white {
+    color: $slate;
+    background-color: $white;
+  }
 }
 
 .light-text {
-   color: $white;
+  color: $white;
 }
