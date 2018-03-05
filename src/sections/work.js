@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import MainWork from './mainWork';
 
 import SectionTitle from '../components/sectionTitle';
-import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
 import StitchRows from '../components/stitchRows';
@@ -89,7 +88,12 @@ class Work extends Component {
               transform: `rotate(${skillSet.rotate * -1}deg)`,
             }}
           >
-            <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+            <img
+              src={skillSet.image}
+              className="skills__skill-type-icon"
+              style={{ height: '9rem' }}
+              alt={skillSet.name}
+            />
             <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
           </button>
         </StitchBox>
@@ -127,7 +131,11 @@ class Work extends Component {
       );
     }
     return this.data[i].works.map(work => (
-      <div key={`work-project-${work.spinalName}`} className="work__individual-project" style={styles.individualProjectStyle}>
+      <div
+        key={`work-project-${work.spinalName}`}
+        className="work__individual-project"
+        style={styles.individualProjectStyle}
+      >
         <StitchBox style={{ width: '100%' }}>
           <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
@@ -152,7 +160,9 @@ class Work extends Component {
             section="work"
             skillSetArr={['mobile-development', 'web-development', 'cms-development']}
           />
-          <SectionTitle text="Full-Time Work" style={styles.workSectionTitleStyle} />
+          <SectionTitle style={styles.workSectionTitleStyle}>
+            Full-Time Work
+          </SectionTitle>
         </div>
         <MainWork activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
@@ -161,7 +171,9 @@ class Work extends Component {
             section="work"
             skillSetArr={['cms-development', 'web-development', 'mobile-development']}
           />
-          <SectionTitle text="Side-Projects" style={styles.workSectionTitleStyle} />
+          <SectionTitle style={styles.workSectionTitleStyle} >
+            Side-Projects
+          </SectionTitle>
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>
           {this.renderSkillSets()}

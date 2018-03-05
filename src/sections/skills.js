@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from '../components/icon';
 import StitchBox from '../components/stitchBox';
 import StitchColumns from '../components/stitchColumns';
 import StitchRows from '../components/stitchRows';
@@ -91,10 +90,10 @@ class Skills extends Component {
             style={{
               textAlign: 'center',
               cursor: 'pointer',
-              transform: `rotate(${skillSet.rotate * -1}deg)`
+              transform: `rotate(${skillSet.rotate * -1}deg)`,
             }}
           >
-            <Icon className={`${skillSet.icon} skills__skill-type-icon`} />
+            <img src={skillSet.image} className="skills__skill-type-icon" alt={skillSet.name} />
             <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
           </button>
         </StitchBox>
@@ -103,11 +102,11 @@ class Skills extends Component {
   }
 
   renderSkillSetDetailsIcons(i) {
-    return this.data[i].details.icons.map((icon, index) => {
+    return this.data[i].details.icons.map((icon) => {
       if (icon.icon) {
         return (
           <img
-            key={`${this.data[i].spinalName}-icons-${index}`}
+            key={icon.iconKey}
             alt={icon.iconAlt}
             className="skill-icon"
             style={styles.iconStyle}
@@ -117,13 +116,13 @@ class Skills extends Component {
       }
       if (icon.separator === 'and') {
         return (
-          <h3 key={index} style={{ marginBottom: 0 }}>
+          <h3 key={icon.iconKey} style={{ marginBottom: 0 }}>
             &amp;&amp;
           </h3>
         );
       }
       return (
-        <h3 key={index} style={{ marginBottom: 0 }}>
+        <h3 key={icon.iconKey} style={{ marginBottom: 0 }}>
           ||
         </h3>
       );
@@ -131,8 +130,8 @@ class Skills extends Component {
   }
 
   renderSkillSetDetailsText(i) {
-    return this.data[i].details.text.map((text, index) => (
-      <p key={index} style={styles.detailsDescription}>
+    return this.data[i].details.text.map(text => (
+      <p key={text} style={styles.detailsDescription}>
         {text}
       </p>
     ));
@@ -140,7 +139,7 @@ class Skills extends Component {
 
   renderSkillSetDetails() {
     return this.data.map((skillSetDetails, index) => (
-      <div key={index} style={{ width: '33.33%' }}>
+      <div key={`skills-skillset-${skillSetDetails.spinalName}`} style={{ width: '33.33%' }}>
         <StitchRows
           rows={['1', '2']}
           section="skills"
@@ -180,7 +179,7 @@ class Skills extends Component {
             className="skills__details"
             style={{
               ...styles.skillsDetailsStyle,
-              transform: `translateX(${this.props.activeIndex * -33.33}%)`
+              transform: `translateX(${this.props.activeIndex * -33.33}%)`,
             }}
           >
             {this.renderSkillSetDetails()}
@@ -201,5 +200,5 @@ export default Skills;
 Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSkillSet: PropTypes.string.isRequired,
-  updateSkillSet: PropTypes.func.isRequired
+  updateSkillSet: PropTypes.func.isRequired,
 };

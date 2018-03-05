@@ -52,7 +52,9 @@ class Index extends Component {
         <TopBar />
         <HeroImage title="Soren Baird" image={forestTrailDark} />
         <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
-          <SectionTitle id="skills-title" text="Skills" />
+          <SectionTitle id="skills-title">
+            Skills
+          </SectionTitle>
           <Skills
             activeSkillSet={activeSet}
             activeIndex={activeIndex}
@@ -71,7 +73,9 @@ class Index extends Component {
         </BasicSection>
         {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
                 <BasicSection id="pricing" className="pricing">
-                    <SectionTitle text="Pricing" />
+                    <SectionTitle>
+                      Pricing
+                    </SectionTitle>
                     <Pricing image="snowy-forest.jpg" />
                 </BasicSection> */}
         <BasicSection
@@ -79,7 +83,9 @@ class Index extends Component {
           className="contact"
           style={{ backgroundImage: `${lightGradient}, url(${snowyForest})` }}
         >
-          <SectionTitle text="Contact" />
+          <SectionTitle>
+                Contact
+          </SectionTitle>
           <Contact />
         </BasicSection>
         <section id="footer">

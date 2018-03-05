@@ -11,6 +11,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    wordBreak: 'keep-all',
   },
   titleStyle: {
     fontSize: '3rem',
@@ -19,14 +20,14 @@ const styles = {
   },
 };
 
-const SectionTitle = ({ id, text, style }) => (
+const SectionTitle = ({ id, children, style }) => (
   <div
     id={id}
-    className={`section-title section-title--${text.replace(/ /g, '-').toLowerCase()}`}
+    className={`section-title section-title--${children.replace(/ /g, '-').toLowerCase()}`}
     style={{ ...styles.titleContainerStyle, ...style }}
   >
     <StichText style={{ cursor: 'default' }}>
-      <h3 style={styles.titleStyle}>{text}</h3>
+      <h3 style={styles.titleStyle}>{children}</h3>
     </StichText>
   </div>
 );
@@ -35,7 +36,7 @@ export default SectionTitle;
 
 SectionTitle.propTypes = {
   id: PropTypes.string,
-  text: PropTypes.string.isRequired,
+  children: PropTypes.string.isRequired,
   style: PropTypes.object,
 };
 
