@@ -36,11 +36,17 @@ const styles = {
   },
 };
 
-const MainWork = ({ activeSet }) => {
+const MainWork = ({ activeSet, contentWidth }) => {
   const rotate = activeSet === 'web-development' ? -5 : 5;
   return (
     <div className="work__main-work-wrapper" style={styles.mainWorkStyle}>
-      <StitchRows rows={['3', '4']} section="work" set={activeSet} rotate={rotate}>
+      <StitchRows
+        rows={['3', '4']}
+        section="work"
+        set={activeSet}
+        width={contentWidth}
+        rotate={rotate}
+      >
         <div style={styles.contentWrapperStyle} className="work__main-work">
           <div style={styles.logoContainerStyle}>
             <a href="envivent.com" className="work__envivent-link" target="_blank" style={styles.anchorStyle}>
@@ -68,4 +74,5 @@ export default MainWork;
 
 MainWork.propTypes = {
   activeSet: PropTypes.string.isRequired,
+  contentWidth: PropTypes.number.isRequired,
 };

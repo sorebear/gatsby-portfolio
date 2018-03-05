@@ -91,7 +91,7 @@ class Work extends Component {
             <img
               src={skillSet.image}
               className="skills__skill-type-icon"
-              style={{ height: '9rem' }}
+              style={{ width: '9rem' }}
               alt={skillSet.name}
             />
             <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
@@ -109,6 +109,7 @@ class Work extends Component {
           section="work"
           set={workTypes.spinalName}
           rotate={workTypes.rotate}
+          width={this.props.contentWidth}
         >
           <div
             className={`work__projects work__projects--${workTypes.spinalName}`}
@@ -164,7 +165,7 @@ class Work extends Component {
             Full-Time Work
           </SectionTitle>
         </div>
-        <MainWork activeSet={this.props.activeSet} />
+        <MainWork contentWidth={this.props.contentWidth} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
           <StitchColumns
             row="4"
@@ -206,4 +207,5 @@ Work.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSet: PropTypes.string.isRequired,
   updateSet: PropTypes.func.isRequired,
+  contentWidth: PropTypes.number.isRequired,
 };

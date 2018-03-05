@@ -30,11 +30,22 @@ class Index extends Component {
   constructor(props) {
     super(props);
     this.updateSet = this.updateSet.bind(this);
+    this.updateWindowWidth = this.updateWindowWidth.bind(this);
     this.state = {
       activeSet: 'cms-development',
       activeSection: 'skills',
       activeIndex: 0,
+      contentWidth: 1128,
     };
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  updateWindowWidth() {
+    const newWidth = document.getElementById('skills-title').offsetWidth;
+    this.setState({ contentWidth: newWidth });
   }
 
   updateSet(newSet, section, newIndex) {
@@ -46,7 +57,7 @@ class Index extends Component {
   }
 
   render() {
-    const { activeSet, activeSection, activeIndex } = this.state;
+    const { activeSet, activeSection, activeIndex, contentWidth } = this.state;
     return (
       <div className={`content-wrapper ${activeSection}-${activeSet}`}>
         <TopBar />
@@ -58,6 +69,7 @@ class Index extends Component {
           <Skills
             activeSkillSet={activeSet}
             activeIndex={activeIndex}
+            contentWidth={contentWidth}
             updateSkillSet={this.updateSet}
           />
         </BasicSection>
@@ -69,7 +81,12 @@ class Index extends Component {
           <About />
         </BasicSection>
         <BasicSection id="work" className="work" style={{ padding: 0 }}>
-          <Work activeSet={activeSet} activeIndex={activeIndex} updateSet={this.updateSet} />
+          <Work
+            activeSet={activeSet}
+            activeIndex={activeIndex}
+            contentWidth={contentWidth}
+            updateSet={this.updateSet}
+          />
         </BasicSection>
         {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
                 <BasicSection id="pricing" className="pricing">

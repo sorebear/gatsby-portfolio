@@ -238,6 +238,10 @@
   .work {
     &__main-work {
       flex-direction: column !important;
+
+      & > div {
+        padding: 0 !important;
+      }
     }
 
     &__individual-project {
@@ -246,6 +250,22 @@
 
     &__envivent-link {
       max-width: 250px !important;
+    }
+
+    .skills__skill-type-card--cms-development,
+    .skills__skill-type-card--web-development,
+    .skills__skill-type-card--mobile-development {
+      width: 33.33% !important;
+    }
+
+    .skills__skill-type-card {
+      img {
+        margin: 0;
+      }
+
+      h4 {
+        display: none;
+      }
     }
   }
 }

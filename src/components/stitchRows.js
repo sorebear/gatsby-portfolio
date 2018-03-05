@@ -26,6 +26,7 @@ class StitchRows extends Component {
       bottomAttachment: this.props.rotate > 0 ? { right: 0 } : { left: 0 },
       topTransformOrigin: this.props.rotate > 0 ? '100% 50%' : '0% 50%',
       bottomTransformOrigin: this.props.rotate > 0 ? '0% 50%' : '100% 50%',
+      height: props.width * Math.tan(5 * (Math.PI / 180)),
     };
   }
 
@@ -36,6 +37,7 @@ class StitchRows extends Component {
         bottomAttachment: { right: 0 },
         topTransformOrigin: '100% 50%',
         bottomTransformOrigin: '0 50%',
+        height: newProps.width * Math.tan(5 * (Math.PI / 180)),
       });
     } else {
       this.setState({
@@ -43,6 +45,7 @@ class StitchRows extends Component {
         bottomAttachment: { left: 0 },
         topTransformOrigin: '0% 50%',
         bottomTransformOrigin: '100% 50%',
+        height: newProps.width * Math.tan(5 * (Math.PI / 180)),
       });
     }
   }
@@ -51,7 +54,7 @@ class StitchRows extends Component {
     const { section, children, rotate, rows, set } = this.props;
     return (
       <div style={styles.horizontalLineContainer}>
-        <div className="stitch-rows" style={{ position: 'relative' }}>
+        <div className="stitch-rows" style={{ position: 'relative', height: `${this.state.height + 5}px` }}>
           <div
             className="horizontal-line"
             style={{
@@ -70,12 +73,13 @@ class StitchRows extends Component {
             style={{
               ...styles.horiztonalLineMaskStyle,
               ...this.state.topAttachment,
+              height: `${this.state.height + 5}px`,
               width: '100%',
             }}
           />
         </div>
         {children}
-        <div className="stitch-rows" style={{ position: 'relative' }}>
+        <div className="stitch-rows" style={{ position: 'relative', height: `${this.state.height + 5}px` }}>
           <div
             className="horizontal-line"
             style={{
@@ -94,6 +98,7 @@ class StitchRows extends Component {
             style={{
               ...styles.horiztonalLineMaskStyle,
               ...this.state.bottomAttachment,
+              height: `${this.state.height + 5}px`,
               width: '100%',
             }}
           />
@@ -108,10 +113,8 @@ export default StitchRows;
 StitchRows.propTypes = {
   section: PropTypes.string.isRequired,
   rotate: PropTypes.number.isRequired,
+  width: PropTypes.number.isRequired,
   rows: PropTypes.array.isRequired,
   set: PropTypes.string.isRequired,
-  children: PropTypes.oneOfType([
-    PropTypes.array,
-    PropTypes.object,
-  ]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
 };

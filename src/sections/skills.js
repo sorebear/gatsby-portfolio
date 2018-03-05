@@ -96,7 +96,7 @@ class Skills extends Component {
             <img
               src={skillSet.image}
               className="skills__skill-type-icon"
-              style={{ height: '9rem' }}
+              style={{ width: '9rem' }}
               alt={skillSet.name}
             />
             <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
@@ -113,7 +113,7 @@ class Skills extends Component {
           <img
             key={icon.iconKey}
             alt={icon.iconAlt}
-            className="skill-icon"
+            className="skills__skill-icon"
             style={styles.iconStyle}
             src={icon.icon}
           />
@@ -121,13 +121,21 @@ class Skills extends Component {
       }
       if (icon.separator === 'and') {
         return (
-          <h3 key={icon.iconKey} style={{ marginBottom: 0 }}>
+          <h3
+            className="skills__skills-separator"
+            key={icon.iconKey}
+            style={{ marginBottom: 0 }}
+          >
             &amp;&amp;
           </h3>
         );
       }
       return (
-        <h3 key={icon.iconKey} style={{ marginBottom: 0 }}>
+        <h3
+          className="skills__skills-separator"
+          key={icon.iconKey}
+          style={{ marginBottom: 0 }}
+        >
           ||
         </h3>
       );
@@ -150,6 +158,7 @@ class Skills extends Component {
           section="skills"
           set={skillSetDetails.spinalName}
           rotate={skillSetDetails.rotate}
+          width={this.props.contentWidth}
         >
           <div
             className={`skills__details--${skillSetDetails.spinalName}`}
@@ -166,19 +175,17 @@ class Skills extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div className={`skills ${this.props.activeSkillSet}`}>
-        <div className="container">
-          <div className="skills__types-container" style={styles.typesContainerStyle}>
-            {this.renderSkillSets()}
-          </div>
-          <StitchColumns
-            row="1"
-            section="skills"
-            skillSetArr={['cms-development', 'web-development', 'mobile-development']}
-          />
+        <div className="skills__types-container" style={styles.typesContainerStyle}>
+          {this.renderSkillSets()}
         </div>
-
+        <StitchColumns
+          row="1"
+          section="skills"
+          skillSetArr={['cms-development', 'web-development', 'mobile-development']}
+        />
         <div className="skills__details-wrapper" style={styles.skillsDetailsWrapperStyle}>
           <div
             className="skills__details"
@@ -206,4 +213,5 @@ Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSkillSet: PropTypes.string.isRequired,
   updateSkillSet: PropTypes.func.isRequired,
+  contentWidth: PropTypes.number.isRequired,
 };
