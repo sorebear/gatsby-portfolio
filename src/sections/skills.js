@@ -93,7 +93,12 @@ class Skills extends Component {
               transform: `rotate(${skillSet.rotate * -1}deg)`,
             }}
           >
-            <img src={skillSet.image} className="skills__skill-type-icon" alt={skillSet.name} />
+            <img
+              src={skillSet.image}
+              className="skills__skill-type-icon"
+              style={{ height: '9rem' }}
+              alt={skillSet.name}
+            />
             <h4 style={{ marginTop: 0 }}>{skillSet.name}</h4>
           </button>
         </StitchBox>
