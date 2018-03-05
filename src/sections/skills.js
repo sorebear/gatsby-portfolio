@@ -175,7 +175,6 @@ class Skills extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className={`skills ${this.props.activeSkillSet}`}>
         <div className="skills__types-container" style={styles.typesContainerStyle}>
