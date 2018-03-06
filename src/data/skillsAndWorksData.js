@@ -21,50 +21,30 @@ const gatsbyIcon =
 
 const skillsData = [
   {
-    name: 'CMS Development',
-    spinalName: 'cms-development',
-    image: cmsDevelopment,
-    rotate: 5,
-    details: {
-      text: [
-        'I primarily build modern, fast, and secure CMS solutions with Gatsby.js, GraphQL and Netlify.',
-        'I also build traditional CMS sites using Wordpress and Drupal.',
-      ],
-      icons: [
-        { icon: gatsbyIcon, iconAlt: 'gatsby icon', iconKey: 'cms-gatsby' },
-        { separator: 'and', iconKey: 'cms-sep-1' },
-        { icon: graphQLIcon, iconAlt: 'graph-ql icon', iconKey: 'cms-graphql' },
-        { separator: 'and', iconKey: 'cms-sep-2' },
-        { icon: netlifyIcon, iconAlt: 'netlify icon', iconKey: 'cms-netlify' },
-        { separator: 'or', iconKey: 'cms-sep-3' },
-        { icon: wordpressIcon, iconAlt: 'wordpress icon', iconKey: 'cms-wordpress' },
-        { separator: 'or', iconKey: 'cms-sep-4' },
-        { icon: drupalIcon, iconAlt: 'drupal icon', iconKey: 'cms-drupal' },
-      ],
-    },
-    works: [],
-  },
-  {
     name: 'Web Development',
     spinalName: 'web-development',
     image: webDevelopment,
-    rotate: -5,
+    rotate: 5,
     details: {
       text: [
         'I primarily build full-stack web applications using the Meteor Framework with React, Node.js and MongoDB.',
         'I also build a variety of other web applications using JavaScript and PHP.',
       ],
-      icons: [
-        { icon: meteorIcon, iconAlt: 'meteor-js icon', iconKey: 'web-meteor' },
-        { separator: 'and', iconKey: 'web-sep-1' },
-        { icon: reactIcon, iconAlt: 'react icon', iconKey: 'web-react' },
-        { separator: 'and', iconKey: 'web-sep-2' },
-        { icon: nodeJSIcon, iconAlt: 'node-js icon', iconKey: 'web-node' },
-        { separator: 'and', iconKey: 'web-sep-3' },
-        { icon: mongoDBIcon, iconAlt: 'mongo-db icon', iconKey: 'web-mongodb' },
-        { separator: 'or', iconKey: 'web-sep-4' },
-        { icon: phpIcon, iconAlt: 'php icon', iconKey: 'web-php' },
-      ],
+      icons: {
+        row1 : [
+            { icon: meteorIcon, iconAlt: 'meteor-js icon', iconKey: 'web-meteor' },
+            { separator: 'and', iconKey: 'web-sep-1' },
+            { icon: reactIcon, iconAlt: 'react icon', iconKey: 'web-react' },
+            { separator: 'and', iconKey: 'web-sep-2' },
+            { icon: nodeJSIcon, iconAlt: 'node-js icon', iconKey: 'web-node' },
+        ],
+        row2: [
+          { separator: 'and', iconKey: 'web-sep-3' },
+          { icon: mongoDBIcon, iconAlt: 'mongo-db icon', iconKey: 'web-mongodb' },
+          { separator: 'or', iconKey: 'web-sep-4' },
+          { icon: phpIcon, iconAlt: 'php icon', iconKey: 'web-php' },
+        ],
+      },
     },
     works: [
       {
@@ -84,6 +64,34 @@ const skillsData = [
     ],
   },
   {
+    name: 'CMS Development',
+    spinalName: 'cms-development',
+    image: cmsDevelopment,
+    rotate: -5,
+    details: {
+      text: [
+        'I primarily build modern, fast, and secure CMS solutions with Gatsby.js, GraphQL and Netlify.',
+        'I also build traditional CMS sites using Wordpress and Drupal.',
+      ],
+      icons: {
+        row1 : [
+          { icon: gatsbyIcon, iconAlt: 'gatsby icon', iconKey: 'cms-gatsby' },
+          { separator: 'and', iconKey: 'cms-sep-1' },
+          { icon: graphQLIcon, iconAlt: 'graph-ql icon', iconKey: 'cms-graphql' },
+          { separator: 'and', iconKey: 'cms-sep-2' },
+          { icon: netlifyIcon, iconAlt: 'netlify icon', iconKey: 'cms-netlify' },
+        ],
+        row2 : [
+          { separator: 'or', iconKey: 'cms-sep-3' },
+          { icon: wordpressIcon, iconAlt: 'wordpress icon', iconKey: 'cms-wordpress' },
+          { separator: 'or', iconKey: 'cms-sep-4' },
+          { icon: drupalIcon, iconAlt: 'drupal icon', iconKey: 'cms-drupal' },
+        ]
+      },
+    },
+    works: [],
+  },
+  {
     name: 'Mobile Development',
     spinalName: 'mobile-development',
     image: mobileDevelopment,
@@ -93,15 +101,19 @@ const skillsData = [
         'I build Android and iOS mobile applications using React Native and Meteor with Cordova.',
         'I also build native Android applications using Java and Android Studio.',
       ],
-      icons: [
-        { icon: reactIcon, iconAlt: 'react icon', iconKey: 'mobile-reactnative' },
-        { separator: 'or', iconKey: 'mobile-sep-1' },
-        { icon: meteorIcon, iconAlt: 'meteor icon', iconKey: 'mobile-meteor' },
-        { separator: 'or', iconKey: 'mobile-sep-2' },
-        { icon: androidIcon, iconAlt: 'android icon', iconKey: 'mobile-android' },
-        { separator: 'and', iconKey: 'mobile-sep-3' },
-        { icon: javaIcon, iconAlt: 'java icon', iconKey: 'mobile-java' },
-      ],
+      icons: {
+        row1: [
+          { icon: reactIcon, iconAlt: 'react icon', iconKey: 'mobile-reactnative' },
+          { separator: 'or', iconKey: 'mobile-sep-1' },
+          { icon: meteorIcon, iconAlt: 'meteor icon', iconKey: 'mobile-meteor' },
+        ],
+        row2: [
+          { separator: 'or', iconKey: 'mobile-sep-2' },
+          { icon: androidIcon, iconAlt: 'android icon', iconKey: 'mobile-android' },
+          { separator: 'and', iconKey: 'mobile-sep-3' },
+          { icon: javaIcon, iconAlt: 'java icon', iconKey: 'mobile-java' },
+        ]
+      },
     },
     works: [
       {

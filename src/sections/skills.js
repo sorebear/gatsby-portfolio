@@ -18,25 +18,20 @@ const styles = {
   typeCardStyle: {
     textAlign: 'center',
   },
-  typesSelectorLineStyle: {
-    width: 0,
-    borderRightWidth: 0,
-    borderTopWidth: 0,
-    borderBottomWidth: 0,
-    position: 'absolute',
-    left: '50%',
-    transform: 'translateX(-50%)',
-    transition: '1s',
-    top: '100%',
-  },
   iconStyle: {
     height: '5.5rem',
     marginBottom: 0,
   },
-  technologiesStyle: {
+  technologiesContainerStyle: {
     display: 'flex',
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+  technologiesRowStyle: {
+    display: 'flex',
+    width: '100%',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   skillsDetailsWrapperStyle: {
     width: '100%',
@@ -106,15 +101,15 @@ class Skills extends Component {
     ));
   }
 
-  renderSkillSetDetailsIcons(i) {
-    return this.data[i].details.icons.map((icon) => {
+  renderSkillSetDetailsIcons(i, row, mobile) {
+    return this.data[i].details.icons[row].map((icon) => {
       if (icon.icon) {
         return (
           <img
             key={icon.iconKey}
             alt={icon.iconAlt}
             className="skills__skill-icon"
-            style={styles.iconStyle}
+            style={{ ...styles.iconStyle, width: `mobile ? '20%' : 'unset'` }}
             src={icon.icon}
           />
         );
@@ -124,7 +119,7 @@ class Skills extends Component {
           <h3
             className="skills__skills-separator"
             key={icon.iconKey}
-            style={{ marginBottom: 0 }}
+            style={{ marginBottom: 0, textAlign: 'center', width: mobile ? '20%' : 'unset' }}
           >
             &amp;&amp;
           </h3>
@@ -134,7 +129,7 @@ class Skills extends Component {
         <h3
           className="skills__skills-separator"
           key={icon.iconKey}
-          style={{ marginBottom: 0 }}
+          style={{ marginBottom: 0, textAlign: 'center',  width: mobile ? '20%' : 'unset' }}
         >
           ||
         </h3>
@@ -154,18 +149,37 @@ class Skills extends Component {
     return this.data.map((skillSetDetails, index) => (
       <div key={`skills-skillset-${skillSetDetails.spinalName}`} style={{ width: '33.33%' }}>
         <StitchRows
-          rows={['1', '2']}
+          rows={[1, 2]}
           section="skills"
           set={skillSetDetails.spinalName}
+          columnHeights={["10.15rem", "10.15rem"]}
+          setArr={['web-development', 'cms-development', 'mobile-development']}
           rotate={skillSetDetails.rotate}
-          width={this.props.contentWidth}
+          angledLineHeight={this.props.angledLineHeight}
+
         >
           <div
             className={`skills__details--${skillSetDetails.spinalName}`}
             style={{ width: '100%' }}
           >
-            <div className="skills__technology-container" style={styles.technologiesStyle}>
-              {this.renderSkillSetDetailsIcons(index)}
+            <div 
+              className="skills__technology-container--web web-only" 
+              style={styles.technologiesContainerStyle}
+            >
+              {this.renderSkillSetDetailsIcons(index, 'row1')}
+              {this.renderSkillSetDetailsIcons(index, 'row2')}
+            </div>
+            <div 
+              className="skills__technology-container--mobile mobile-only" 
+              style={{...styles.technologiesContainerStyle, flexDirection: 'column'}}
+            >
+              <h2>{skillSetDetails.name}</h2>
+              <div className="skills__technology-container--row-1" style={styles.technologiesRowStyle}>
+                {this.renderSkillSetDetailsIcons(index, 'row1', true)}
+              </div>
+              <div className="skills__technology-container--row-2" style={styles.technologiesRowStyle}>
+                {this.renderSkillSetDetailsIcons(index, 'row2', true)}
+              </div>
             </div>
             {this.renderSkillSetDetailsText(index)}
           </div>
@@ -180,11 +194,14 @@ class Skills extends Component {
         <div className="skills__types-container" style={styles.typesContainerStyle}>
           {this.renderSkillSets()}
         </div>
-        <StitchColumns
+        {/* <StitchColumns
           row="1"
           section="skills"
-          skillSetArr={['cms-development', 'web-development', 'mobile-development']}
-        />
+          columnHeight="11.6rem"
+          angledLineHeight={this.props.angledLineHeight}
+          percentArr={[.833, .5, .167]}
+          skillSetArr={['web-development', 'cms-development', 'mobile-development']}
+        /> */}
         <div className="skills__details-wrapper" style={styles.skillsDetailsWrapperStyle}>
           <div
             className="skills__details"
@@ -196,11 +213,14 @@ class Skills extends Component {
             {this.renderSkillSetDetails()}
           </div>
         </div>
-        <StitchColumns
+        {/* <StitchColumns
           row="2"
           section="skills"
-          skillSetArr={['mobile-development', 'web-development', 'cms-development']}
-        />
+          columnHeight="11.6rem"
+          angledLineHeight={this.props.angledLineHeight}
+          percentArr={[.833, .5, .167]}
+          skillSetArr={['mobile-development', 'cms-development', 'web-development']}
+        /> */}
       </div>
     );
   }
@@ -212,5 +232,5 @@ Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSkillSet: PropTypes.string.isRequired,
   updateSkillSet: PropTypes.func.isRequired,
-  contentWidth: PropTypes.number.isRequired,
+  angledLineHeight: PropTypes.number.isRequired,
 };

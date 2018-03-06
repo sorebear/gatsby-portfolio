@@ -6,7 +6,7 @@ const styles = {
   verticalLineContainer: {
     width: '100%',
     display: 'flex',
-    position: 'relative',
+    position: 'absolute',
     justifyContent: 'space-between',
   },
   verticalMaskStyle: {
@@ -17,10 +17,15 @@ const styles = {
   },
 };
 
-const StitchColumn = ({ section, row, skillSetArr, alignItems }) => (
+const StitchColumn = ({ section, row, skillSetArr, alignItems, columnHeight, angledLineHeight, percentArr }) => (
   <div
     className={`vertical-line-container vertical-line-container--row-${row}`}
-    style={styles.verticalLineContainer}
+    style={{
+      ...styles.verticalLineContainer, 
+      top: row % 2 === 0 ? 0 : 'unset', 
+      bottom: row % 2 === 0 ? 'unset' : 0,
+      flexDirection: row % 2 === 0 ? 'row-reverse' : 'row'
+    }}
   >
     <div
       className={
@@ -31,7 +36,14 @@ const StitchColumn = ({ section, row, skillSetArr, alignItems }) => (
     }
       style={{ ...styles.verticalMaskStyle, alignItems }}
     >
-      <div className="vertical-line" style={{ zIndex: 10 }} />
+      <div 
+        className="vertical-line" 
+        style={{ 
+          zIndex: 10, 
+          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[0]}px)`,
+          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[0]}px` : 0,
+        }} 
+      />
     </div>
     <div
       className={
@@ -42,7 +54,14 @@ const StitchColumn = ({ section, row, skillSetArr, alignItems }) => (
       }
       style={{ ...styles.verticalMaskStyle, alignItems }}
     >
-      <div className="vertical-line" style={{ zIndex: 10 }} />
+      <div 
+        className="vertical-line" 
+        style={{ 
+          zIndex: 10, 
+          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[1]}px)`,
+          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[1]}px` : 0,
+        }} 
+      />
     </div>
     <div
       className={
@@ -53,7 +72,14 @@ const StitchColumn = ({ section, row, skillSetArr, alignItems }) => (
       }
       style={{ ...styles.verticalMaskStyle, alignItems }}
     >
-      <div className="vertical-line" style={{ zIndex: 10 }} />
+      <div 
+        className="vertical-line" 
+        style={{ 
+          zIndex: 10, 
+          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[2]}px)`,
+          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[2]}px` : 0,
+        }} 
+      />
     </div>
   </div>
 );
@@ -62,7 +88,7 @@ export default StitchColumn;
 
 StitchColumn.propTypes = {
   section: PropTypes.string.isRequired,
-  row: PropTypes.string.isRequired,
+  row: PropTypes.number.isRequired,
   skillSetArr: PropTypes.array.isRequired,
   alignItems: PropTypes.string,
 };

@@ -3,11 +3,6 @@
     padding: $single-space;
   }
 
-  &__details-wrapper {
-    margin-top: -$triple-space;
-    margin-bottom: -$triple-space;
-  }
-
   &__details--cms-development,
   &__details--web-development,
   &__details--mobile-development {
@@ -23,7 +18,8 @@
     }
   }
 
-  &__technology-container {
+  &__technology-container--mobile,
+  &__technology-container--web {
     margin-bottom: $double-space;
   }
 
@@ -82,16 +78,28 @@
 @media only screen and (max-width: 767px) {
   .skills {
 
-    &__skill-icon {
-      height: 2.5rem !important;
-    }
-
     &__skills-separator {
       font-size: 1rem;
     }
 
     &__types-container {
       justify-content: space-between !important;
+    }
+
+    &__technology-container {
+      &--mobile {
+        h2 {
+          margin-bottom: $double-space;
+        }
+      }
+
+      &--row-2 {
+        margin-top: $single-space;
+      
+        h3:first-child {
+          display: none;
+        }
+      }
     }
 
     &__skill-type-card--cms-development,

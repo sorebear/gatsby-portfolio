@@ -30,26 +30,12 @@
 .work {
   .section-title {
     background-color: $offwhite;
-
-    &--full-time-work {
-      top: 45% !important;
-    }
-  }
-
-  &__projects-wrapper {
-    margin-top: -$quad-space;
-    margin-bottom: $double-space;
   }
 
   &__projects,
   &__main-work {
     margin-top: $single-space;
     margin-bottom: $single-space;
-  }
-
-  &__main-work-wrapper {
-    margin-top: -$triple-space -$quarter-space;
-    margin-bottom: -$triple-space -$third-space;
   }
 
   &__type-name {

@@ -11,12 +11,12 @@ import StitchRows from '../components/stitchRows';
 import data from '../data/skillsAndWorksData';
 
 const styles = {
-  workSectionTitleStyle: {
+  sideProjectsTitleStyle: {
     margin: 0,
     position: 'absolute',
-    top: '50%',
+    bottom: '7.25rem',
     left: '50%',
-    transform: 'translate(-50%, -50%)',
+    transform: 'translate(-50%, 25%)',
   },
   workSetsContainerStyle: {
     display: 'flex',
@@ -105,11 +105,13 @@ class Work extends Component {
     return this.data.map((workTypes, index) => (
       <div key={`projects-type-${workTypes.spinalName}`} style={{ width: '33.33%' }}>
         <StitchRows
-          rows={['5', '6']}
+          rows={[5, 6]}
           section="work"
           set={workTypes.spinalName}
+          columnHeights={["10.15rem", "10.15rem"]}
+          setArr={['web-development', 'cms-development', 'mobile-development']}
           rotate={workTypes.rotate}
-          width={this.props.contentWidth}
+          angledLineHeight={this.props.angledLineHeight}
         >
           <div
             className={`work__projects work__projects--${workTypes.spinalName}`}
@@ -156,38 +158,44 @@ class Work extends Component {
     return (
       <div>
         <div className="work__header" style={{ position: 'relative' }}>
-          <StitchColumns
+          {/* <StitchColumns
             row="3"
             section="work"
-            skillSetArr={['mobile-development', 'web-development', 'cms-development']}
-          />
-          <SectionTitle style={styles.workSectionTitleStyle}>
-            Full-Time Work
-          </SectionTitle>
+            columnHeight="11.6rem"
+            angledLineHeight={this.props.angledLineHeight}
+            percentArr={[.833, .5, .167]}
+            skillSetArr={['mobile-development', 'cms-development', 'web-development']}
+          /> */}
+
         </div>
-        <MainWork contentWidth={this.props.contentWidth} activeSet={this.props.activeSet} />
+        <MainWork angledLineHeight={this.props.angledLineHeight} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
-          <StitchColumns
+          {/* <StitchColumns
             row="4"
             section="work"
-            skillSetArr={['cms-development', 'web-development', 'mobile-development']}
-          />
-          <SectionTitle style={styles.workSectionTitleStyle} >
+            columnHeight="11.6rem"
+            angledLineHeight={this.props.angledLineHeight}
+            percentArr={[.167, .5, .833]}
+            skillSetArr={['web-development', 'cms-development', 'mobile-development']}
+          /> */}
+          <SectionTitle style={styles.sideProjectsTitleStyle} >
             Side-Projects
           </SectionTitle>
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>
           {this.renderSkillSets()}
         </div>
-        <StitchColumns
+        {/* <StitchColumns
           row="5"
           section="work"
-          heightArr={['60%', '80%', '100%']}
-          skillSetArr={['cms-development', 'web-development', 'mobile-development']}
-        />
+          columnHeight="11.6rem"
+          angledLineHeight={this.props.angledLineHeight}
+          percentArr={[.167, .5, .833]}
+          skillSetArr={['web-development', 'cms-development', 'mobile-development']}
+        /> */}
         <div className="work__projects-wrapper" style={styles.allProjectsWrapperStyle}>
           <div
-            className="work__projects"
+            className="work__projects-container"
             style={{
               ...styles.allProjectsContainerStyle,
               transform: `translateX(${this.props.activeIndex * -33.33}%)`,
@@ -207,5 +215,5 @@ Work.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSet: PropTypes.string.isRequired,
   updateSet: PropTypes.func.isRequired,
-  contentWidth: PropTypes.number.isRequired,
+  angledLineHeight: PropTypes.number.isRequired,
 };

@@ -43,17 +43,17 @@
   }
 }
 
-$row-1-vertical-animation: expandVertical 0.3s forwards 0.3s;
-$row-2-vertical-animation: expandVertical 0.3s forwards 1s;
+$row-1-vertical-animation: expandVertical 0.4s forwards 0.5s;
+$row-2-vertical-animation: expandVertical 0.4s forwards 1.1s;
 $row-3-vertical-animation: expandVertical 0.5s forwards 1.3s;
-$row-4-vertical-animation: expandVertical 0.5s forwards 0.3s;
-$row-5-vertical-animation: expandVertical 0.3s forwards 0.3s;
+$row-4-vertical-animation: expandVertical 0.5s forwards 0.5s;
+$row-5-vertical-animation: expandVertical 0.4s forwards 0.5s;
 
-$rows-1-2-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
-$rows-3-4-horizontal-animation-1: retractHorizontal 0.75s forwards 0.7s;
-$rows-3-4-horizontal-animation-2: retractHorizontal-2 0.75s forwards 0.7s;
-$rows-3-4-horizontal-animation-3: retractHorizontal-3 0.75s forwards 0.7s;
-$rows-5-6-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
+$rows-1-2-horizontal-animation: retractHorizontal 0.7s forwards 0.8s;
+$rows-3-4-horizontal-animation-1: retractHorizontal 0.7s forwards 0.8s;
+$rows-3-4-horizontal-animation-2: retractHorizontal-2 0.7s forwards 0.8s;
+$rows-3-4-horizontal-animation-3: retractHorizontal-3 0.7s forwards 0.8s;
+$rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.8s;
 
 .vertical-line {
   border-left-width: $default-border-width;
@@ -64,6 +64,10 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
   border-top-width: $default-border-width;
   border-top-style: $default-border-style;
   width: 100%;
+}
+
+.vertical-line-container--row-6 {
+  display: none !important;
 }
 
 .horizontal-line-mask {
@@ -80,121 +84,47 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.75s forwards 0.5s;
 
 .skills {
   .vertical-line-container--row-1 {
-    height: $quad-space + $double-space;
+    height: $quad-space + $triple-space;
+  }
 
-    .skills__vertical-line-mask--cms-development {
-      .vertical-line {
-        height: $triple-space + $third-space + $third-space;
-      }
-    }
-
-    .skills__vertical-line-mask--web-development {
-      .vertical-line {
-        height: $quad-space + $half-space + $quarter-space;
-      }
-    }
-
-    .skills__vertical-line-mask--mobile-development {
-      .vertical-line {
-        height: $quad-space + $double-space;
-      }
-    }
+  &__details-wrapper {
+    padding-top: $triple-space;
+    padding-bottom: $triple-space;
   }
 
   .vertical-line-container--row-2 {
-    height: $quad-space + $double-space;
-
-    .skills__vertical-line-mask--cms-development {
-      .vertical-line {
-        margin-top: $double-space + $third-space;
-        height: $triple-space + $third-space + $third-space;
-      }
-    }
-
-    .skills__vertical-line-mask--web-development {
-      .vertical-line {
-        margin-top: $single-space + $quarter-space;
-        height: $quad-space + $half-space + $quarter-space;
-      }
-    }
-
-    .skills__vertical-line-mask--mobile-development {
-      .vertical-line {
-        height: $quad-space + $double-space;
-      }
-    }
+    height: $quad-space + $triple-space;
   }
 }
 
 .work {
   .vertical-line-container--row-3 {
-    height: $quad-space + $quad-space + $triple-space + $quarter-space;
+    height: $quad-space + $double-space + $triple-space + $quad-space;
+  }
 
-    .work__vertical-line-mask--cms-development {
-      .vertical-line {
-        height: $quad-space + $quad-space + $quad-space + $quad-space;
-      }
-    }
-
-    .work__vertical-line-mask--web-development {
-      .vertical-line {
-        height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
-      }
-    }
-
-    .work__vertical-line-mask--mobile-development {
-      .vertical-line {
-        height: $quad-space + $quad-space + $half-space;
-      }
-    }
+  &__main-work-wrapper {
+    padding-top: $quad-space + $triple-space + $double-space;
+    padding-bottom: $quad-space + $triple-space + $double-space;
   }
 
   .vertical-line-container--row-4 {
-    height: $quad-space + $quad-space + $triple-space + $quarter-space;
+    height: $quad-space + $quad-space + $triple-space + $double-space;
     align-items: flex-end !important;
 
-    .work__vertical-line-mask--cms-development {
-      align-items: flex-end !important;
-      .vertical-line {
-        height: $quad-space + $quad-space + $quad-space;
-      }
-    }
-
-    .work__vertical-line-mask--web-development {
-      align-items: flex-end !important;
-      .vertical-line {
-        height: $quad-space + $quad-space + $single-space + $half-space + $quarter-space;
-      }
-    }
-
+    .work__vertical-line-mask--cms-development,
+    .work__vertical-line-mask--web-development,
     .work__vertical-line-mask--mobile-development {
       align-items: flex-end !important;
-      .vertical-line {
-        height: $quad-space + $quad-space + $half-space;
-      }
     }
   }
 
   .vertical-line-container--row-5 {
-    height: $quad-space + $double-space;
+    height: $quad-space + $triple-space;
+  }
 
-    .work__vertical-line-mask--cms-development {
-      .vertical-line {
-        height: $triple-space + $third-space + $third-space;
-      }
-    }
-
-    .work__vertical-line-mask--web-development {
-      .vertical-line {
-        height: $quad-space + $half-space + $quarter-space;
-      }
-    }
-
-    .work__vertical-line-mask--mobile-development {
-      .vertical-line {
-        height: $quad-space + $double-space;
-      }
-    }
+  &__projects-wrapper {
+    padding-top: $triple-space;
+    padding-bottom: $triple-space;
   }
 }
 
