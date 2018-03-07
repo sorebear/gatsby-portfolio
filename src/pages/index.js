@@ -33,7 +33,7 @@ class Index extends Component {
     this.updateWindowWidth = this.updateWindowWidth.bind(this);
     this.contentRef = null;
     this.state = {
-      activeSet: 'cms-development',
+      activeSet: 'web-development',
       activeSection: 'skills',
       activeIndex: 0,
       contentWidth: 1128,
@@ -44,6 +44,7 @@ class Index extends Component {
   componentDidMount() {
     this.contentRef = document.getElementById('skills-title');
     this.updateWindowWidth();
+    this.updateSet('web-development', 'skills', 0);
     window.addEventListener('resize', this.updateWindowWidth);
   }
 

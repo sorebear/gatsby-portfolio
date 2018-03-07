@@ -1,12 +1,3 @@
-@keyframes expandDown {
-  0% {
-    height: 0%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-
 @keyframes fadeIn {
   0% {
     transform: translateY(-25%);
@@ -15,15 +6,6 @@
   100% {
     transform: translateY(0);
     opacity: 1;
-  }
-}
-
-@keyframes expandRight {
-  0% {
-    transform: translate(-100%, -50%);
-  }
-  100% {
-    transform: translate(0%, -50%);
   }
 }
 
@@ -69,11 +51,21 @@
       .stitch-box__border {
         border-color: $orange;
       }
+
+      h2.mobile-only {
+        color: darken($orange, 15%);
+        margin-bottom: 2.7rem;
+      }
     }
 
     &.work__projects--web-development {
       .stitch-box__border {
         border-color: $red;
+      }
+
+      h2.mobile-only {
+        color: darken($red, 15%);
+        margin-bottom: 2.7rem;
       }
     }
 
@@ -82,142 +74,12 @@
         border-color: $teal;
       }
     }
+
+    h2.mobile-only {
+      color: darken($teal, 10%);
+      margin-bottom: 2.7rem;
+    }
   }
-
-  //  &__displaying-main .work {
-  //     &__type--main .work {
-  //        &__type-name {
-  //           border-right-style: $default-border-style;
-  //           border-right-width: $default-border-width;
-  //           border-color: $slate !important;
-  //        }
-
-  //        &__horizontal-line {
-  //           animation: expandRight 0.2s forwards 0.1s;
-  //           border-bottom-style: $default-border-style;
-  //           border-bottom-width: $default-border-width;
-  //           border-color: $slate !important;
-  //        }
-  //     }
-
-  //     &__projects-container {
-  //        .work__individual-project {
-  //           animation: fadeIn 0.5s both 0.3s;
-  //        }
-
-  //        .work__vertical-line--main {
-  //           animation: expandDown 0.2s forwards 0.3s;
-  //           border-left-style: $default-border-style;
-  //           border-left-width: $default-border-width;
-  //           border-color: $slate !important;
-  //        }
-  //     }
-
-  //     &__individual-project--main {
-  //        display: flex !important;
-  //     }
-  //  }
-
-  //  &__displaying-cms .work {
-  //     &__type--cms .work {
-  //        &__type-name {
-  //           border-right-style: $default-border-style;
-  //           border-right-width: $default-border-width;
-  //           border-color: $orange !important;
-  //        }
-
-  //        &__horizontal-line {
-  //           animation: expandRight 0.2s forwards 0.1s;
-  //           border-bottom-style: $default-border-style;
-  //           border-bottom-width: $default-border-width;
-  //           border-color: $orange !important;
-  //        }
-  //     }
-
-  //     &__projects-container {
-  //        .work__individual-project {
-  //           animation: fadeIn 0.5s both 0.3s;
-  //        }
-
-  //        .work__vertical-line--cms {
-  //           animation: expandDown 0.2s forwards 0.3s;
-  //           border-left-style: $default-border-style;
-  //           border-left-width: $default-border-width;
-  //           border-color: $orange !important;
-  //        }
-  //     }
-
-  //     &__individual-project--cms {
-  //        display: flex !important;
-  //     }
-  //  }
-
-  //  &__displaying-web .work {
-  //     &__projects-container {
-  //        .work__individual-project {
-  //           animation: fadeIn 0.5s both 0.3s;
-  //        }
-  //        .work__vertical-line--web {
-  //           animation: expandDown 0.2s forwards 0.3s;
-  //           border-left-style: $default-border-style;
-  //           border-left-width: $default-border-width;
-  //           border-color: $red !important;
-  //        }
-  //     }
-
-  //     &__type--web .work {
-  //        &__type-name {
-  //           border-right-style: $default-border-style;
-  //           border-right-width: $default-border-width;
-  //           border-color: $red !important;
-  //        }
-
-  //        &__horizontal-line {
-  //           animation: expandRight 0.2s forwards 0.1s;
-  //           border-bottom-style: $default-border-style;
-  //           border-bottom-width: $default-border-width;
-  //           border-color: $red !important;
-  //        }
-  //     }
-
-  //     &__individual-project--web {
-  //        display: flex !important;
-  //     }
-  //  }
-
-  //  &__displaying-mobile .work {
-  //     &__projects-container {
-  //        .work__individual-project {
-  //           animation: fadeIn 0.5s both 0.3s;
-  //        }
-
-  //        .work__vertical-line--mobile {
-  //           animation: expandDown 0.2s forwards 0.3s;
-  //           border-left-style: $default-border-style;
-  //           border-left-width: $default-border-width;
-  //           border-color: $teal !important;
-  //        }
-  //     }
-
-  //     &__type--mobile .work {
-  //        &__type-name {
-  //           border-right-style: $default-border-style;
-  //           border-right-width: $default-border-width;
-  //           border-color: $teal !important;
-  //        }
-
-  //        &__horizontal-line {
-  //           animation: expandRight 0.2s forwards 0.1s;
-  //           border-bottom-style: $default-border-style;
-  //           border-bottom-width: $default-border-width;
-  //           border-color: $teal !important;
-  //        }
-  //     }
-
-  //     &__individual-project--mobile {
-  //        display: flex !important;
-  //     }
-  //  }
 }
 
 @media only screen and (max-width: 767px) {

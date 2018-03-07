@@ -81,7 +81,7 @@ class TopBar extends Component {
 
   render() {
     return (
-      <div className={`top-bar ${this.state.topBarClass}`}>
+      <div className={`top-bar web-only ${this.state.topBarClass}`}>
         <div style={styles.topBarStyle}>
           <button
             onClick={() => this.handleSmoothScroll('home')}

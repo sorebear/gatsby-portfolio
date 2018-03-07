@@ -70,9 +70,9 @@
   }
 }
 
-.stitch-rows {
-  height: $quad-space;
-}
+// .stitch-rows {
+//   height: $quad-space;
+// }
 
 
 @media only screen and (max-width: 767px) {
@@ -106,6 +106,24 @@
     &__skill-type-card--web-development,
     &__skill-type-card--mobile-development {
       width: 33.33% !important;
+    }
+
+    &__details--web-development {
+      h2 {
+        color: darken($red, 15%);
+      }
+    }
+
+    &__details--cms-development {
+      h2 {
+        color: darken($orange, 15%);
+      }
+    }
+
+    &__details--mobile-development {
+      h2 {
+        color: darken($teal, 10%);
+      }
     }
 
     &__skill-type-card {

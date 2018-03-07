@@ -117,6 +117,7 @@ class Work extends Component {
             className={`work__projects work__projects--${workTypes.spinalName}`}
             style={styles.projectCategoryContainerStyle}
           >
+            <h2 className="mobile-only">{workTypes.name}</h2>
             {this.renderProjectCategory(index)}
           </div>
         </StitchRows>
@@ -157,27 +158,8 @@ class Work extends Component {
   render() {
     return (
       <div>
-        <div className="work__header" style={{ position: 'relative' }}>
-          {/* <StitchColumns
-            row="3"
-            section="work"
-            columnHeight="11.6rem"
-            angledLineHeight={this.props.angledLineHeight}
-            percentArr={[.833, .5, .167]}
-            skillSetArr={['mobile-development', 'cms-development', 'web-development']}
-          /> */}
-
-        </div>
         <MainWork angledLineHeight={this.props.angledLineHeight} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
-          {/* <StitchColumns
-            row="4"
-            section="work"
-            columnHeight="11.6rem"
-            angledLineHeight={this.props.angledLineHeight}
-            percentArr={[.167, .5, .833]}
-            skillSetArr={['web-development', 'cms-development', 'mobile-development']}
-          /> */}
           <SectionTitle style={styles.sideProjectsTitleStyle} >
             Side-Projects
           </SectionTitle>
@@ -185,14 +167,6 @@ class Work extends Component {
         <div className="work__types-container" style={styles.workSetsContainerStyle}>
           {this.renderSkillSets()}
         </div>
-        {/* <StitchColumns
-          row="5"
-          section="work"
-          columnHeight="11.6rem"
-          angledLineHeight={this.props.angledLineHeight}
-          percentArr={[.167, .5, .833]}
-          skillSetArr={['web-development', 'cms-development', 'mobile-development']}
-        /> */}
         <div className="work__projects-wrapper" style={styles.allProjectsWrapperStyle}>
           <div
             className="work__projects-container"
