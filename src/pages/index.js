@@ -36,8 +36,7 @@ class Index extends Component {
       activeSet: 'web-development',
       activeSection: 'skills',
       activeIndex: 0,
-      contentWidth: 1128,
-      angledLineHeight:  this.contentWidth * Math.tan(5 * (Math.PI / 180)),
+      angledLineHeight: this.contentWidth * Math.tan(5 * (Math.PI / 180)),
     };
   }
 
@@ -49,9 +48,8 @@ class Index extends Component {
   }
 
   updateWindowWidth() {
-    this.setState({ 
-      contentWidth: this.contentRef.offsetWidth,
-      angledLineHeight: this.contentRef.offsetWidth * Math.tan(5 * (Math.PI / 180))
+    this.setState({
+      angledLineHeight: this.contentRef.offsetWidth * Math.tan(5 * (Math.PI / 180)),
     });
   }
 
