@@ -70,6 +70,17 @@ class Work extends Component {
     this.data = data;
   }
 
+  componentDidUpdate() {
+    const self = this;
+    setTimeout(function() {
+      console.log(document.getElementById('work-projects-web-development').offsetHeight);
+      console.log(document.getElementById('work-projects-cms-development').offsetHeight);
+      console.log(document.getElementById('work-projects-mobile-development').offsetHeight);
+      console.log(self.props.angledLineHeight * 2);
+    }, 1000);
+
+  }
+
   renderSkillSets() {
     return data.map((skillSet, index) => (
       <div
@@ -103,7 +114,10 @@ class Work extends Component {
 
   renderAllProjects() {
     return this.data.map((workTypes, index) => (
-      <div key={`projects-type-${workTypes.spinalName}`} style={{ width: '33.33%' }}>
+      <div 
+        key={`projects-type-${workTypes.spinalName}`} 
+        style={{ width: '33.33%' }}
+      >
         <StitchRows
           rows={[5, 6]}
           section="work"
@@ -114,6 +128,7 @@ class Work extends Component {
           angledLineHeight={this.props.angledLineHeight}
         >
           <div
+            id={`work-projects-${workTypes.spinalName}`} 
             className={`work__projects work__projects--${workTypes.spinalName}`}
             style={styles.projectCategoryContainerStyle}
           >

@@ -16,8 +16,8 @@
 
   &__projects,
   &__main-work {
-    margin-top: $single-space;
-    margin-bottom: $single-space;
+    padding-top: $single-space;
+    padding-bottom: $single-space;
   }
 
   &__type-name {
@@ -25,6 +25,16 @@
     border-right-style: $default-border-style;
     border-right-width: $default-border-width;
     border-color: transparent;
+  }
+
+  &__projects-container {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
   }
 
   &__project-overlay {
