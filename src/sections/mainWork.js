@@ -28,7 +28,7 @@ const styles = {
   workSectionTitleStyle: {
     position: 'absolute',
     top: '8.7rem',
-    transform: 'translateY(-50%)'
+    transform: 'translateY(-50%)',
   },
   anchorStyle: {
     width: '75%',
@@ -49,22 +49,27 @@ const MainWork = ({ activeSet, angledLineHeight }) => {
   const rotate = activeSet === 'web-development' ? -5 : 5;
   return (
     <div className="work__main-work-wrapper" style={styles.mainWorkStyle}>
-        <SectionTitle style={styles.workSectionTitleStyle}>
-          Full-Time Work
-        </SectionTitle>
+      <SectionTitle style={styles.workSectionTitleStyle}>
+        Full-Time Work
+      </SectionTitle>
       <StitchRows
         rows={[3, 4]}
         section="work"
         set={activeSet}
-        columnHeights={["18.85rem", "18.85rem"]}
+        columnHeights={['18.85rem', '18.85rem']}
         setArr={['mobile-development', 'cms-development', 'web-development']}
         angledLineHeight={angledLineHeight}
         rotate={rotate}
       >
-        
         <div style={styles.contentWrapperStyle} className="work__main-work">
           <div style={styles.logoContainerStyle}>
-            <a href="envivent.com" className="work__envivent-link" target="_blank" style={styles.anchorStyle}>
+            <a
+              href="http://envivent.com"
+              className="work__envivent-link"
+              rel="noopener noreferrer"
+              target="_blank"
+              style={styles.anchorStyle}
+            >
               <img src={enviventLogo} style={styles.logoStyle} alt="envivent web development logo" />
             </a>
           </div>

@@ -5,7 +5,6 @@ import MainWork from './mainWork';
 
 import SectionTitle from '../components/sectionTitle';
 import StitchBox from '../components/stitchBox';
-import StitchColumns from '../components/stitchColumns';
 import StitchRows from '../components/stitchRows';
 
 import data from '../data/skillsAndWorksData';
@@ -68,16 +67,29 @@ class Work extends Component {
   constructor(props) {
     super(props);
     this.data = data;
+    this.state = {
+      'web-development': 'flex',
+      'cms-development': 'flex',
+      'mobile-development': 'flex',
+    };
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      'web-development': 'flex',
+      'cms-development': 'flex',
+      'mobile-development': 'flex',
+    });
+    setTimeout(() => {
+      this.setState({
+        'web-development': newProps.activeSet === 'web-development' ? 'flex' : 'none',
+        'cms-development': newProps.activeSet === 'cms-development' ? 'flex' : 'none',
+        'mobile-development': newProps.activeSet === 'mobile-development' ? 'flex' : 'none',
+      });
+    }, 500);
   }
 
   componentDidUpdate() {
-    const self = this;
-    setTimeout(function() {
-      console.log(document.getElementById('work-projects-web-development').offsetHeight);
-      console.log(document.getElementById('work-projects-cms-development').offsetHeight);
-      console.log(document.getElementById('work-projects-mobile-development').offsetHeight);
-      console.log(self.props.angledLineHeight * 2);
-    }, 1000);
 
   }
 
@@ -114,23 +126,26 @@ class Work extends Component {
 
   renderAllProjects() {
     return this.data.map((workTypes, index) => (
-      <div 
-        key={`projects-type-${workTypes.spinalName}`} 
+      <div
+        key={`projects-type-${workTypes.spinalName}`}
         style={{ width: '33.33%' }}
       >
         <StitchRows
           rows={[5, 6]}
           section="work"
           set={workTypes.spinalName}
-          columnHeights={["10.15rem", "10.15rem"]}
+          columnHeights={['10.15rem', '10.15rem']}
           setArr={['web-development', 'cms-development', 'mobile-development']}
           rotate={workTypes.rotate}
           angledLineHeight={this.props.angledLineHeight}
         >
           <div
-            id={`work-projects-${workTypes.spinalName}`} 
+            id={`work-projects-${workTypes.spinalName}`}
             className={`work__projects work__projects--${workTypes.spinalName}`}
-            style={styles.projectCategoryContainerStyle}
+            style={{
+              ...styles.projectCategoryContainerStyle,
+              display: this.state[workTypes.spinalName],
+            }}
           >
             <h2 className="mobile-only">{workTypes.name}</h2>
             {this.renderProjectCategory(index)}
@@ -156,7 +171,7 @@ class Work extends Component {
         style={styles.individualProjectStyle}
       >
         <StitchBox style={{ width: '100%' }}>
-          <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
+          <img src={work.image} style={{ margin: '5px', width: '100%', height: '300px' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
             <a href={work.liveLink} style={{ color: 'white' }} target="_blank">
               <h2>{work.name}</h2>

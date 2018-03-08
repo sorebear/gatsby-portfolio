@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import StitchBox from '../components/stitchBox';
-import StitchColumns from '../components/stitchColumns';
 import StitchRows from '../components/stitchRows';
 
 import data from '../data/skillsAndWorksData';
@@ -31,7 +30,7 @@ const styles = {
     display: 'flex',
     width: '100%',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   skillsDetailsWrapperStyle: {
     width: '100%',
@@ -109,7 +108,7 @@ class Skills extends Component {
             key={icon.iconKey}
             alt={icon.iconAlt}
             className="skills__skill-icon"
-            style={{ ...styles.iconStyle, width: `mobile ? '20%' : 'unset'` }}
+            style={{ ...styles.iconStyle, width: mobile ? '20%' : 'unset' }}
             src={icon.icon}
           />
         );
@@ -129,7 +128,7 @@ class Skills extends Component {
         <h3
           className="skills__skills-separator"
           key={icon.iconKey}
-          style={{ marginBottom: 0, textAlign: 'center',  width: mobile ? '20%' : 'unset' }}
+          style={{ marginBottom: 0, textAlign: 'center', width: mobile ? '20%' : 'unset' }}
         >
           ||
         </h3>
@@ -152,7 +151,7 @@ class Skills extends Component {
           rows={[1, 2]}
           section="skills"
           set={skillSetDetails.spinalName}
-          columnHeights={["10.15rem", "10.15rem"]}
+          columnHeights={['10.15rem', '10.15rem']}
           setArr={['web-development', 'cms-development', 'mobile-development']}
           rotate={skillSetDetails.rotate}
           angledLineHeight={this.props.angledLineHeight}
@@ -162,16 +161,16 @@ class Skills extends Component {
             className={`skills__details--${skillSetDetails.spinalName}`}
             style={{ width: '100%' }}
           >
-            <div 
-              className="skills__technology-container--web web-only" 
+            <div
+              className="skills__technology-container--web web-only"
               style={styles.technologiesContainerStyle}
             >
               {this.renderSkillSetDetailsIcons(index, 'row1')}
               {this.renderSkillSetDetailsIcons(index, 'row2')}
             </div>
-            <div 
-              className="skills__technology-container--mobile mobile-only" 
-              style={{...styles.technologiesContainerStyle, flexDirection: 'column'}}
+            <div
+              className="skills__technology-container--mobile mobile-only"
+              style={{ ...styles.technologiesContainerStyle, flexDirection: 'column' }}
             >
               <h2>{skillSetDetails.name}</h2>
               <div className="skills__technology-container--row-1" style={styles.technologiesRowStyle}>
@@ -194,14 +193,6 @@ class Skills extends Component {
         <div className="skills__types-container" style={styles.typesContainerStyle}>
           {this.renderSkillSets()}
         </div>
-        {/* <StitchColumns
-          row="1"
-          section="skills"
-          columnHeight="11.6rem"
-          angledLineHeight={this.props.angledLineHeight}
-          percentArr={[.833, .5, .167]}
-          skillSetArr={['web-development', 'cms-development', 'mobile-development']}
-        /> */}
         <div className="skills__details-wrapper" style={styles.skillsDetailsWrapperStyle}>
           <div
             className="skills__details"
@@ -213,14 +204,6 @@ class Skills extends Component {
             {this.renderSkillSetDetails()}
           </div>
         </div>
-        {/* <StitchColumns
-          row="2"
-          section="skills"
-          columnHeight="11.6rem"
-          angledLineHeight={this.props.angledLineHeight}
-          percentArr={[.833, .5, .167]}
-          skillSetArr={['mobile-development', 'cms-development', 'web-development']}
-        /> */}
       </div>
     );
   }

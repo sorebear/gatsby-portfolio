@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import StitchColumns from './stitchColumns';
@@ -20,7 +20,7 @@ const styles = {
   },
 };
 
-const StitchRows = (props) => (
+const StitchRows = props => (
   <div style={styles.horizontalLineContainer}>
     <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}>
       <div
@@ -53,7 +53,7 @@ const StitchRows = (props) => (
         section={props.section}
         columnHeight={props.columnHeights[0]}
         angledLineHeight={props.angledLineHeight}
-        percentArr={ props.rotate > 0 ? [.833, .5, .167] : [.167, .5, .833]}
+        percentArr={props.rotate > 0 ? [0.833, 0.5, 0.167] : [0.167, 0.5, 0.833]}
         skillSetArr={props.setArr}
       />
     </div>
@@ -89,19 +89,19 @@ const StitchRows = (props) => (
         section={props.section}
         columnHeight={props.columnHeights[1]}
         angledLineHeight={props.angledLineHeight}
-        percentArr={ props.rotate > 0 ? [.833, .5, .167] : [.167, .5, .833]}
+        percentArr={props.rotate > 0 ? [0.833, 0.5, 0.167] : [0.167, 0.5, 0.833]}
         skillSetArr={props.setArr}
       />
     </div>
   </div>
 );
-  
-
 
 export default StitchRows;
 
 StitchRows.propTypes = {
   section: PropTypes.string.isRequired,
+  columnHeights: PropTypes.array.isRequired,
+  setArr: PropTypes.array.isRequired,
   rotate: PropTypes.number.isRequired,
   angledLineHeight: PropTypes.number.isRequired,
   rows: PropTypes.array.isRequired,
