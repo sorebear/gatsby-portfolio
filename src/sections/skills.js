@@ -19,6 +19,7 @@ const styles = {
   },
   iconStyle: {
     height: '5.5rem',
+    width: '5.5rem',
     marginBottom: 0,
   },
   technologiesContainerStyle: {
