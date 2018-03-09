@@ -105,13 +105,14 @@ class Skills extends Component {
     return this.data[i].details.icons[row].map((icon) => {
       if (icon.icon) {
         return (
-          <img
-            key={icon.iconKey}
-            alt={icon.iconAlt}
-            className="skills__skill-icon"
-            style={{ ...styles.iconStyle, width: mobile ? '20%' : 'unset' }}
-            src={icon.icon}
-          />
+          <div key={icon.iconKey} style={{ width: mobile ? '20%' : 'unset', textAlign: 'center'}}>
+            <img
+              alt={icon.iconAlt}
+              className="skills__skill-icon"
+              style={styles.iconStyle}
+              src={icon.icon}
+            />
+          </div>
         );
       }
       if (icon.separator === 'and') {
@@ -156,11 +157,10 @@ class Skills extends Component {
           setArr={['web-development', 'cms-development', 'mobile-development']}
           rotate={skillSetDetails.rotate}
           angledLineHeight={this.props.angledLineHeight}
-
         >
           <div
             className={`skills__details--${skillSetDetails.spinalName}`}
-            style={{ width: '100%' }}
+            style={{ width: '100%', zIndex: 10 }}
           >
             <div
               className="skills__technology-container--web web-only"

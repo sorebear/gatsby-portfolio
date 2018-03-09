@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StitchColumns from './stitchColumns';
+import bgPattern from '../images/bg/weather.png';
 
 const styles = {
   horizontalLineContainer: {
@@ -24,7 +25,7 @@ const StitchRows = props => (
   <div style={styles.horizontalLineContainer}>
     <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}>
       <div
-        className="horizontal-line"
+        className="horizontal-line horizontal-line-top"
         style={{
           transform: `rotate(${props.rotate}deg)`,
           transformOrigin: props.rotate > 0 ? '100% 50%' : '0% 50%',
@@ -32,7 +33,9 @@ const StitchRows = props => (
           right: props.rotate > 0 ? 'unset' : 0,
           width: '100%',
           position: 'absolute',
-          bottom: 0,
+          height: '100px',
+          bottom: '-100px',
+          zIndex: 1,
         }}
       />
       <div
@@ -44,8 +47,10 @@ const StitchRows = props => (
           ...styles.horiztonalLineMaskStyle,
           left: props.rotate > 0 ? 0 : 'unset',
           right: props.rotate > 0 ? 'unset' : 0,
-          height: `${props.angledLineHeight + 5}px`,
+          // height: `${props.angledLineHeight + 5}px`,
+          height: '125px',
           width: '100%',
+          zIndex: 5,
         }}
       />
       <StitchColumns
@@ -60,7 +65,7 @@ const StitchRows = props => (
     {props.children}
     <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}>
       <div
-        className="horizontal-line"
+        className="horizontal-line horizontal-line-bottom"
         style={{
           transform: `rotate(${props.rotate}deg)`,
           transformOrigin: props.rotate < 0 ? '100% 50%' : '0% 50%',
@@ -68,7 +73,9 @@ const StitchRows = props => (
           right: props.rotate < 0 ? 'unset' : 0,
           width: '100%',
           position: 'absolute',
-          top: 0,
+          height: '100px',
+          top: '-100px',
+          zIndex: 1,
         }}
       />
       <div
@@ -80,8 +87,10 @@ const StitchRows = props => (
           ...styles.horiztonalLineMaskStyle,
           left: props.rotate < 0 ? 0 : 'unset',
           right: props.rotate < 0 ? 'unset' : 0,
-          height: `${props.angledLineHeight + 5}px`,
+          // height: `${props.angledLineHeight + 5}px`,
+          height: '125px',
           width: '100%',
+          zIndex: 5,
         }}
       />
       <StitchColumns

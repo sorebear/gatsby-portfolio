@@ -61,9 +61,18 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.8s;
 }
 
 .horizontal-line {
+  width: 100%;
+  background-color: $offwhite;
+}
+
+.horizontal-line-top {
   border-top-width: $default-border-width;
   border-top-style: $default-border-style;
-  width: 100%;
+}
+
+.horizontal-line-bottom {
+  border-bottom-width: $default-border-width;
+  border-bottom-style: $default-border-style;
 }
 
 .vertical-line-container--row-6 {
@@ -81,6 +90,7 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.8s;
 .horizontal-line-mask {
   width: 0%;
 }
+
 
 .skills {
   .vertical-line-container--row-1 {
@@ -124,7 +134,7 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.8s;
 
   &__projects-wrapper {
     padding-top: $triple-space;
-    padding-bottom: $triple-space;
+    padding-bottom: $quad-space;
   }
 }
 

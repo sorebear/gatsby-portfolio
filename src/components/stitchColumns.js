@@ -47,9 +47,9 @@ const StitchColumn = ({
       <div
         className="vertical-line"
         style={{
-          zIndex: 10,
-          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[0]}px)`,
-          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[0]}px` : 0,
+          // zIndex: -1,
+          height: columnHeight,
+          // marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[0]}px` : 0,
         }}
       />
     </div>
@@ -65,9 +65,9 @@ const StitchColumn = ({
       <div
         className="vertical-line"
         style={{
-          zIndex: 10,
-          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[1]}px)`,
-          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[1]}px` : 0,
+          // zIndex: -1,
+          height: columnHeight,
+          // marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[1]}px` : 0,
         }}
       />
     </div>
@@ -83,9 +83,9 @@ const StitchColumn = ({
       <div
         className="vertical-line"
         style={{
-          zIndex: 10,
-          height: `calc(${columnHeight} - ${angledLineHeight * percentArr[2]}px)`,
-          marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[2]}px` : 0,
+          // zIndex: -1,
+          height: columnHeight,
+          // marginTop: row % 2 === 0 ? `${angledLineHeight * percentArr[2]}px` : 0,
         }}
       />
     </div>

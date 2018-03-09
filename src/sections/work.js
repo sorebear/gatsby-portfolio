@@ -26,8 +26,8 @@ const styles = {
   },
   allProjectsWrapperStyle: {
     width: '100%',
-    overflowX: 'hidden',
     position: 'relative',
+    overflow: 'hidden',
   },
   allProjectsContainerStyle: {
     width: '300%',
@@ -42,6 +42,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
+    zIndex: 10,
   },
   individualProjectStyle: {
     position: 'relative',
@@ -77,7 +78,6 @@ class Work extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    console.log(this.state);
     this.setState({
       'web-development': newProps.activeSet === 'web-development' ? 'flex' : this.state['web-development'],
       'cms-development': newProps.activeSet === 'cms-development' ? 'flex' : this.state['cms-development'],

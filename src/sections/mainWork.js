@@ -17,6 +17,7 @@ const styles = {
   contentWrapperStyle: {
     display: 'flex',
     flexDirection: 'row',
+    zIndex: 10,
   },
   logoContainerStyle: {
     flex: 1,
