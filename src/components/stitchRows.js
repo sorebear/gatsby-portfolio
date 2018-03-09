@@ -23,7 +23,8 @@ const styles = {
 
 const StitchRows = props => (
   <div style={styles.horizontalLineContainer}>
-    <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}>
+    {/* <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}> */}
+    <div className="stitch-rows" style={{ position: 'relative', height: '5.8rem' }}>
       <div
         className="horizontal-line horizontal-line-top"
         style={{
@@ -63,7 +64,8 @@ const StitchRows = props => (
       />
     </div>
     {props.children}
-    <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}>
+    {/* <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}> */}
+    <div className="stitch-rows" style={{ position: 'relative', height: '5.8rem' }}>
       <div
         className="horizontal-line horizontal-line-bottom"
         style={{
