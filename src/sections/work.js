@@ -8,6 +8,8 @@ import StitchBox from '../components/stitchBox';
 import StitchRows from '../components/stitchRows';
 
 import data from '../data/skillsAndWorksData';
+import code from '../images/work/code.svg';
+import live from '../images/work/live.svg';
 
 const styles = {
   sideProjectsTitleStyle: {
@@ -57,8 +59,8 @@ const styles = {
     padding: '1.45rem',
     textAlign: 'center',
     backgroundColor: 'rgba(0, 0, 0, .7)',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-around',
     alignItems: 'center',
   },
 };
@@ -75,10 +77,11 @@ class Work extends Component {
   }
 
   componentWillReceiveProps(newProps) {
+    console.log(this.state);
     this.setState({
-      'web-development': 'flex',
-      'cms-development': 'flex',
-      'mobile-development': 'flex',
+      'web-development': newProps.activeSet === 'web-development' ? 'flex' : this.state['web-development'],
+      'cms-development': newProps.activeSet === 'cms-development' ? 'flex' : this.state['cms-development'],
+      'mobile-development': newProps.activeSet === 'mobile-development' ? 'flex' : this.state['mobile-development'],
     });
     setTimeout(() => {
       this.setState({
@@ -171,13 +174,15 @@ class Work extends Component {
         style={styles.individualProjectStyle}
       >
         <StitchBox style={{ width: '100%' }}>
-          <img src={work.image} style={{ margin: '5px', width: '100%', height: '300px' }} alt={work.name} />
+          <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            <a href={work.liveLink} style={{ color: 'white' }} target="_blank">
-              <h2>{work.name}</h2>
+            <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+              <img src={live} style={{ width: '3rem', margin: 0}} />
+              <p>Live</p>
             </a>
-            <a href={work.githubLink} target="_blank">
-              <p>GitHub</p>
+            <a href={work.githubLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+              <img src={code} style={{ width: '3rem', margin: 0 }} />
+              <p>Code</p>
             </a>
           </div>
         </StitchBox>
@@ -202,7 +207,7 @@ class Work extends Component {
             className="work__projects-container"
             style={{
               ...styles.allProjectsContainerStyle,
-              transform: `translateX(${this.props.activeIndex * -33.33}%)`,
+              transform: `translate3d(${this.props.activeIndex * -33.33}%, 0, 0)`,
             }}
           >
             {this.renderAllProjects()}

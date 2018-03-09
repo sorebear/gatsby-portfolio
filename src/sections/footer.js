@@ -27,6 +27,8 @@ const styles = {
     margin: '.25rem',
   },
   textStyle: {
+    marginTop: '1.45rem',
+    marginBottom: '5.8rem',
     color: 'white',
   },
 };

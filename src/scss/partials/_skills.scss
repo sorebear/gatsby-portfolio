@@ -3,6 +3,16 @@
     padding: $single-space;
   }
 
+  &__details {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
   &__details--cms-development,
   &__details--web-development,
   &__details--mobile-development {
@@ -69,11 +79,6 @@
     }
   }
 }
-
-// .stitch-rows {
-//   height: $quad-space;
-// }
-
 
 @media only screen and (max-width: 767px) {
   .skills {
