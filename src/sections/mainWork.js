@@ -20,7 +20,9 @@ const styles = {
     zIndex: 10,
   },
   logoContainerStyle: {
-    flex: 1,
+    // flex: 1,
+    minWidth: '50%',
+    minHeight: '50%',
     padding: '0 2rem',
     display: 'flex',
     justifyContent: 'center',
@@ -40,7 +42,9 @@ const styles = {
   },
   textContainerStyle: {
     padding: '0 2rem',
-    flex: 1,
+    // flex: 1,
+    minWidth: '50%',
+    minHeight: '50%',
     display: 'flex',
     flexDirection: 'column',
   },

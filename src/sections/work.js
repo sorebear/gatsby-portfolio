@@ -174,7 +174,7 @@ class Work extends Component {
         style={styles.individualProjectStyle}
       >
         <StitchBox style={{ width: '100%' }}>
-          <img src={work.image} style={{ margin: '5px', width: '100%' }} alt={work.name} />
+          <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
             <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
               <img src={live} style={{ width: '3rem', margin: 0}} />

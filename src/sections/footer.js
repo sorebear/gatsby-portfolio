@@ -25,6 +25,8 @@ const styles = {
   },
   socialMediaLinkStyle: {
     margin: '.25rem',
+    margin: 0,
+    padding: '5px',
   },
   textStyle: {
     marginTop: '1.45rem',
