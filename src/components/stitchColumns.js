@@ -23,8 +23,8 @@ const StitchColumn = ({
   skillSetArr,
   alignItems,
   columnHeight,
-  angledLineHeight,
-  percentArr,
+  // angledLineHeight,
+  // percentArr,
 }) => (
   <div
     className={`vertical-line-container vertical-line-container--row-${row}`}
@@ -99,8 +99,8 @@ StitchColumn.propTypes = {
   row: PropTypes.number.isRequired,
   skillSetArr: PropTypes.array.isRequired,
   alignItems: PropTypes.string,
-  percentArr: PropTypes.array.isRequired,
-  angledLineHeight: PropTypes.number.isRequired,
+  // percentArr: PropTypes.array.isRequired,
+  // angledLineHeight: PropTypes.number.isRequired,
   columnHeight: PropTypes.string.isRequired,
 };
 

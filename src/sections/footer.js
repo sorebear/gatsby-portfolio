@@ -24,7 +24,6 @@ const styles = {
     justifyContent: 'space-around',
   },
   socialMediaLinkStyle: {
-    margin: '.25rem',
     margin: 0,
     padding: '5px',
   },

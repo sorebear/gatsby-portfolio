@@ -105,7 +105,7 @@ class Skills extends Component {
     return this.data[i].details.icons[row].map((icon) => {
       if (icon.icon) {
         return (
-          <div key={icon.iconKey} style={{ width: mobile ? '20%' : 'unset', textAlign: 'center'}}>
+          <div key={icon.iconKey} style={{ width: mobile ? '20%' : 'unset', textAlign: 'center' }}>
             <img
               alt={icon.iconAlt}
               className="skills__skill-icon"

@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import StitchColumns from './stitchColumns';
-import bgPattern from '../images/bg/weather.png';
 
 const styles = {
   horizontalLineContainer: {
@@ -23,7 +22,6 @@ const styles = {
 
 const StitchRows = props => (
   <div style={styles.horizontalLineContainer}>
-    {/* <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}> */}
     <div className="stitch-rows" style={{ position: 'relative', height: '5.8rem' }}>
       <div
         className="horizontal-line horizontal-line-top"
@@ -64,7 +62,6 @@ const StitchRows = props => (
       />
     </div>
     {props.children}
-    {/* <div className="stitch-rows" style={{ position: 'relative', height: `${props.angledLineHeight + 5}px` }}> */}
     <div className="stitch-rows" style={{ position: 'relative', height: '5.8rem' }}>
       <div
         className="horizontal-line horizontal-line-bottom"
