@@ -3,6 +3,7 @@ import meteorIcon from '../images/devicons/meteor.svg';
 import mongoDBIcon from '../images/devicons/mongodb.svg';
 import nodeJSIcon from '../images/devicons/nodejs.svg';
 import graphQLIcon from '../images/devicons/graphql.svg';
+import javaScriptIcon from '../images/devicons/javascript.svg';
 import netlifyIcon from '../images/devicons/netlify.svg';
 import androidIcon from '../images/devicons/android.svg';
 import javaIcon from '../images/devicons/java.svg';
@@ -12,6 +13,7 @@ import phpIcon from '../images/devicons/php.svg';
 import cmsDevelopment from '../images/work/cms-development.svg';
 import webDevelopment from '../images/work/web-development.svg';
 import mobileDevelopment from '../images/work/mobile-development.svg';
+
 
 import puzzleMe from '../images/work/puzzle-me.png';
 import memoryMatch from '../images/work/memory-match.png';
@@ -28,21 +30,21 @@ const skillsData = [
     rotate: 5,
     details: {
       text: [
-        'I primarily build full-stack web applications using the Meteor Framework with React, Node.js and MongoDB.',
-        'I also build a variety of other web applications using JavaScript and PHP.',
+        'I primarily build full-stack web applications using the React, Node.js, and MongoDB.',
+        'I also build web applications using core JavaScript and PHP.',
       ],
       icons: {
-        row1 : [
-            { icon: meteorIcon, iconAlt: 'meteor-js icon', iconKey: 'web-meteor' },
-            { separator: 'and', iconKey: 'web-sep-1' },
-            { icon: reactIcon, iconAlt: 'react icon', iconKey: 'web-react' },
-            { separator: 'and', iconKey: 'web-sep-2' },
-            { icon: nodeJSIcon, iconAlt: 'node-js icon', iconKey: 'web-node' },
+        row1: [
+          { icon: reactIcon, iconAlt: 'react icon', iconKey: 'web-react' },
+          { separator: 'and', iconKey: 'web-sep-1' },
+          { icon: nodeJSIcon, iconAlt: 'node-js icon', iconKey: 'web-node' },
+          { separator: 'and', iconKey: 'web-sep-2' },
+          { icon: mongoDBIcon, iconAlt: 'mongo-db icon', iconKey: 'web-mongodb' },
         ],
         row2: [
-          { separator: 'and', iconKey: 'web-sep-3' },
-          { icon: mongoDBIcon, iconAlt: 'mongo-db icon', iconKey: 'web-mongodb' },
-          { separator: 'or', iconKey: 'web-sep-4' },
+          { separator: 'or', iconKey: 'web-sep-3' },
+          { icon: javaScriptIcon, iconAlt: 'javascript icon', iconKey: 'web-javascript' },
+          { separator: 'and', iconKey: 'web-sep-4' },
           { icon: phpIcon, iconAlt: 'php icon', iconKey: 'web-php' },
         ],
       },
@@ -75,19 +77,19 @@ const skillsData = [
         'I also build traditional CMS sites using Wordpress and Drupal.',
       ],
       icons: {
-        row1 : [
+        row1: [
           { icon: gatsbyIcon, iconAlt: 'gatsby icon', iconKey: 'cms-gatsby' },
           { separator: 'and', iconKey: 'cms-sep-1' },
           { icon: graphQLIcon, iconAlt: 'graph-ql icon', iconKey: 'cms-graphql' },
           { separator: 'and', iconKey: 'cms-sep-2' },
           { icon: netlifyIcon, iconAlt: 'netlify icon', iconKey: 'cms-netlify' },
         ],
-        row2 : [
+        row2: [
           { separator: 'or', iconKey: 'cms-sep-3' },
           { icon: wordpressIcon, iconAlt: 'wordpress icon', iconKey: 'cms-wordpress' },
           { separator: 'or', iconKey: 'cms-sep-4' },
           { icon: drupalIcon, iconAlt: 'drupal icon', iconKey: 'cms-drupal' },
-        ]
+        ],
       },
     },
     works: [],
@@ -113,7 +115,7 @@ const skillsData = [
           { icon: androidIcon, iconAlt: 'android icon', iconKey: 'mobile-android' },
           { separator: 'and', iconKey: 'mobile-sep-3' },
           { icon: javaIcon, iconAlt: 'java icon', iconKey: 'mobile-java' },
-        ]
+        ],
       },
     },
     works: [
