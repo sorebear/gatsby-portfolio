@@ -6,6 +6,7 @@ import Typist from 'react-typist';
 const styles = {
   heroImageStyle: {
     backgroundSize: 'cover',
+    // backgroundSize: '25%',
     height: '100vh',
     width: '100%',
     display: 'flex',
@@ -28,7 +29,14 @@ const styles = {
 };
 
 const HeroImage = ({ title, image }) => (
-  <div id="home" style={{ ...styles.heroImageStyle, backgroundImage: `url(${image})` }}>
+  <div
+    id="home"
+    className="basic-section hero-image"
+    style={{
+      ...styles.heroImageStyle,
+      backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${image})`,
+    }}
+  >
     <h1 style={styles.titleStyle}>
       <span style={styles.mainTitleStyle}>{title}</span>
       <span style={{ visibility: 'hidden', fontSize: 0 }}>

@@ -17,7 +17,8 @@ import BasicSection from '../components/basicSection';
 // Images
 import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
 import snowyForest from '../images/bg/snowy-forest--comp.jpg';
-import aboutMe from '../images/bg/about-me.jpg';
+import aboutMe from '../images/bg/about-me-2.jpg';
+// import bearsWallpaper from '../images/bg/bears-wallpaper.jpg';
 
 // CSS
 import '../scss/main.scss';

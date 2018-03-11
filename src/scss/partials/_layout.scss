@@ -22,6 +22,21 @@
     font-size: 80%;
   }
 
+  h1 {
+    font-size: 3.5rem !important;
+  }
+
+  .section-title h3,
+  .basic-section.hero-image h3 {
+    font-size: 2.25rem !important;
+  }
+
+  .basic-section.about,
+  .basic-section.hero-image,
+  .basic-section.contact {
+    background-attachment: unset !important;
+  }
+
   .web-only {
     display: none !important;
   }
