@@ -7,7 +7,7 @@ import StitchBox from '../components/stitchBox';
 const styles = {
   footerStyle: {
     minHeight: '20vh',
-    backgroundColor: '#333',
+    backgroundColor: '#222',
     textAlign: 'center',
     display: 'flex',
     justifyContent: 'center',

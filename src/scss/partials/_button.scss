@@ -4,33 +4,7 @@ button:active {
   box-shadow: none;
   border: none;
   outline: none;
-  background: transparent;
   background-color: transparent !important;
   color: inherit;
   outline: none;
-}
-
-.contact-me__submit-button {
-  -webkit-transform-style: preserve-3d;
-  -moz-transform-style: preserve-3d;
-  transform-style: preserve-3d;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translate3d(0, 0, 0);
-  transition: all 0.2s;
-  background-color: transparent;
-  border: 0.15rem solid $slate !important;
-  color: $slate !important;
-  box-shadow: 0 4px 4px rgba($slate, 0.2) !important;
-
-  &:hover {
-    color: $white !important;
-    background-color: $slate !important;
-  }
-
-  &:active {
-    box-shadow: 0 3px 3px rgba($slate, 0.3) !important;
-    transform: translate3d(0, 1px, 0) !important;
-  }
 }

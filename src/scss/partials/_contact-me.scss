@@ -1,3 +1,27 @@
+.contact-me__submit-button {
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+  transition: all 0.2s;
+  background-color: transparent;
+
+  &:hover {
+    color: $slate!important;
+    background-color: $white !important;
+  }
+
+  &:active {
+    background-color: darken($white, 10%) !important;
+    box-shadow: 0 3px 3px rgba($slate, 0.3) !important;
+    transform: translate3d(0, 1px, 0) !important;
+  }
+}
+
+
 @media only screen and (max-width: 767px) {
   .contact-me {
     &__input-container {

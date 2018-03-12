@@ -5,7 +5,7 @@ import Typist from 'react-typist';
 
 const styles = {
   heroImageStyle: {
-    backgroundSize: 'cover',
+    // backgroundSize: 'cover',
     height: '100vh',
     width: '100%',
     display: 'flex',
@@ -23,7 +23,7 @@ const styles = {
   },
   mainTitleStyle: {
     fontSize: '4rem',
-    color: '#e49f00',
+    color: '#b10000',
   },
 };
 
@@ -45,11 +45,13 @@ class HeroImage extends Component {
         className="basic-section hero-image"
         style={{
           ...styles.heroImageStyle,
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${image})`,
+          // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${image})`,
+          backgroundImage: `url(${image})`,
+          backgroundColor: '#333',
         }}
       >
         <h1 style={styles.titleStyle}>
-          <span style={styles.mainTitleStyle}>{title}</span>
+          <span className="colored-title" style={styles.mainTitleStyle}>{title}</span>
           <span style={{ visibility: 'hidden', fontSize: 0 }}>
             : Web Developer, Mobile Developer, CMS Developer
           </span>

@@ -7,10 +7,108 @@
   -moz-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translate3d(0, 0, 0);
-  transition: 0.3s;
+  transition: all 0.4s;
+  border-top: 5px solid transparent;
+
+  background-color: $offwhite;
+  color: black;
 
   &:hover {
     box-shadow: $box-shadow-hover;
     transform: translateY(-5px);
   }
 }
+
+
+.web-development-active {
+  .basic-card {
+    border-top-color: $red !important;
+
+    button {
+      border-color: $red !important;
+      color: $red !important;
+      &:hover {
+        color: $offwhite !important;
+        background-color: $red !important;
+      }
+    
+      &:active {
+        border-color: transparent !important;
+        background-color: darken($red, 5%) !important;
+        // box-shadow: 0 3px 3px rgba($slate, 0.3) !important;
+        // transform: translate3d(0, 1px, 0) !important;
+      }
+    }
+  }
+}
+
+.cms-development-active {
+  .basic-card {
+    border-top-color: $orange !important;
+
+    button {
+      border-color: $orange !important;
+      color: $orange !important;
+
+      &:hover {
+        color: $offwhite !important;
+        background-color: $orange !important;
+      }
+    
+      &:active {
+        border-color: transparent !important;
+        background-color: darken($orange, 5%) !important;
+        // box-shadow: 0 3px 3px rgba($slate, 0.3) !important;
+        // transform: translate3d(0, 1px, 0) !important;
+      }
+    }
+  }
+}
+
+.mobile-development-active {
+  .basic-card {
+    border-top-color: $teal !important;
+
+    button {
+      border-color: $teal !important;
+      color: $teal !important;
+
+      &:hover {
+        color: $offwhite !important;
+        background-color: $teal !important;
+      }
+    
+      &:active {
+        border-color: transparent !important;
+        background-color: darken($teal, 5%) !important;
+        // box-shadow: 0 3px 3px rgba($slate, 0.3) !important;
+        // transform: translate3d(0, 1px, 0) !important;
+      }
+    }
+  }
+}
+
+
+// .basic-card {
+//   &--offwhite {
+//     color: $slate;
+//     background-color: $offwhite;
+//   }
+
+//   &--white {
+//     color: $slate;
+//     background-color: $white;
+//   }
+// }
+
+// .card {
+//   &--offwhite {
+//     color: $slate;
+//     background-color: $offwhite;
+//   }
+
+//   &--white {
+//     color: $slate;
+//     background-color: $white;
+//   }
+// }

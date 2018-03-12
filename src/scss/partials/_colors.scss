@@ -4,38 +4,9 @@ body {
   background-color: $offwhite;
 }
 
-button {
-  background-color: $teal;
-  color: $white;
-}
-
 h3.section-title {
   color: $slate;
   text-shadow: $box-shadow;
-}
-
-.basic-card {
-  &--offwhite {
-    color: $slate;
-    background-color: $offwhite;
-  }
-
-  &--white {
-    color: $slate;
-    background-color: $white;
-  }
-}
-
-.card {
-  &--offwhite {
-    color: $slate;
-    background-color: $offwhite;
-  }
-
-  &--white {
-    color: $slate;
-    background-color: $white;
-  }
 }
 
 .light-text {

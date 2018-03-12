@@ -29,7 +29,7 @@ const styles = {
   },
   logoStyle: {
     margin: '0 1rem',
-    color: '#e49f00',
+    color: '#b10000',
     cursor: 'pointer',
   },
 };
@@ -37,7 +37,7 @@ const styles = {
 class TopBar extends Component {
   constructor(props) {
     super(props);
-    this.navLinks = ['skills', 'about', 'work', 'contact'];
+    this.navLinks = ['skills', 'about', 'pricing', 'work', 'contact'];
     this.scrollDestination = null;
     this.state = {
       topBarClass: 'top-bar--unscrolled',

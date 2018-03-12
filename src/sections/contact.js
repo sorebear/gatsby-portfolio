@@ -12,8 +12,8 @@ const styles = {
     display: 'flex',
   },
   inputStyle: {
-    border: '.15rem solid black',
-    color: 'black',
+    border: '.15rem solid white',
+    color: 'white',
     outline: 'none',
     display: 'block',
     width: '100%',

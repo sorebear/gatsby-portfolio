@@ -79,8 +79,8 @@ class Skills extends Component {
       >
         <StitchBox style={{ transform: `rotate(${skillSet.rotate}deg)` }}>
           <button
-            onClick={() => this.props.updateSkillSet(skillSet.spinalName, 'skills', index)}
-            onKeyDown={() => this.props.updateSkillSet(skillSet.spinalName, 'skills', index)}
+            onClick={() => this.props.updateActiveSet(skillSet.spinalName, 'skills', index)}
+            onKeyDown={() => this.props.updateActiveSet(skillSet.spinalName, 'skills', index)}
             className="skills__skill-type-card"
             style={{
               textAlign: 'center',
@@ -215,6 +215,6 @@ export default Skills;
 Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
   activeSkillSet: PropTypes.string.isRequired,
-  updateSkillSet: PropTypes.func.isRequired,
+  updateActiveSet: PropTypes.func.isRequired,
   angledLineHeight: PropTypes.number.isRequired,
 };

@@ -5,20 +5,26 @@ import HeroImage from '../sections/heroImage';
 import Skills from '../sections/skills';
 import About from '../sections/about';
 import Work from '../sections/work';
-// import Pricing from '../sections/pricing';
+import Pricing from '../sections/pricing';
 import Contact from '../sections/contact';
 import Footer from '../sections/footer';
 
 import TopBar from '../components/topBar';
 import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
-// import Divider from '../components/divider';
 
 // Images
 import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
 import snowyForest from '../images/bg/snowy-forest--comp.jpg';
+import mountainViewSunrise from '../images/bg/mountain-view-sunrise--comp.jpg';
 import aboutMe from '../images/bg/about-me-2.jpg';
 // import bearsWallpaper from '../images/bg/bears-wallpaper.jpg';
+import clothAlike from '../images/bg/cloth-alike.png';
+import crissCross from '../images/bg/crissxcross.png';
+import lightWool from '../images/bg/light-wool.png';
+import purtyWood from '../images/bg/purty-wood.png';
+import xv from '../images/bg/xv.png';
+
 
 // CSS
 import '../scss/main.scss';
@@ -30,7 +36,7 @@ const lightGradient = 'linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 2
 class Index extends Component {
   constructor(props) {
     super(props);
-    this.updateSet = this.updateSet.bind(this);
+    this.updateActiveSet = this.updateActiveSet.bind(this);
     this.updateWindowWidth = this.updateWindowWidth.bind(this);
     this.contentRef = null;
     this.state = {
@@ -44,7 +50,7 @@ class Index extends Component {
   componentDidMount() {
     this.contentRef = document.getElementById('skills-title');
     this.updateWindowWidth();
-    this.updateSet('web-development', 'skills', 0);
+    this.updateActiveSet('web-development', 'skills', 0);
     window.addEventListener('resize', this.updateWindowWidth);
   }
 
@@ -54,7 +60,7 @@ class Index extends Component {
     });
   }
 
-  updateSet(newSet, section, newIndex) {
+  updateActiveSet(newSet, section, newIndex) {
     this.setState({
       activeSet: newSet,
       activeSection: section,
@@ -65,20 +71,9 @@ class Index extends Component {
   render() {
     const { activeSet, activeSection, activeIndex, angledLineHeight } = this.state;
     return (
-      <div className={`content-wrapper ${activeSection}-${activeSet}`}>
+      <div className={`content-wrapper ${activeSet}-active`}>
         <TopBar />
-        <HeroImage title="Soren Baird" image={forestTrailDark} />
-        <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
-          <SectionTitle id="skills-title">
-            Skills
-          </SectionTitle>
-          <Skills
-            activeSkillSet={activeSet}
-            activeIndex={activeIndex}
-            angledLineHeight={angledLineHeight}
-            updateSkillSet={this.updateSet}
-          />
-        </BasicSection>
+        <HeroImage title="Soren Baird" image={crissCross} />
         <BasicSection
           id="about"
           className="about"
@@ -86,28 +81,60 @@ class Index extends Component {
         >
           <About />
         </BasicSection>
+        <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
+          <SectionTitle 
+            id="skills-title"
+            className=""
+          >
+            Skills
+          </SectionTitle>
+          <Skills
+            activeSkillSet={activeSet}
+            activeIndex={activeIndex}
+            angledLineHeight={angledLineHeight}
+            updateActiveSet={this.updateActiveSet}
+          />
+        </BasicSection>
+        <BasicSection 
+          id="pricing" 
+          className="pricing"
+          style={{ 
+            backgroundImage: `url(${crissCross}`, 
+            backgroundColor: '#333',
+            backgroundSize: 'initial',
+          }}
+        >
+            <SectionTitle
+              className="colored-title"
+              style={{ color: 'white' }}
+            >
+              Pricing
+            </SectionTitle>
+            <Pricing image="snowy-forest.jpg" />
+        </BasicSection>
         <BasicSection id="work" className="work" style={{ padding: 0 }}>
           <Work
             activeSet={activeSet}
             activeIndex={activeIndex}
             angledLineHeight={angledLineHeight}
-            updateSet={this.updateSet}
+            updateActiveSet={this.updateActiveSet}
           />
         </BasicSection>
-        {/* <Divider style={{ backgroundImage: `${darkGradient}, url(${forestSunrise})`}} />
-                <BasicSection id="pricing" className="pricing">
-                    <SectionTitle>
-                      Pricing
-                    </SectionTitle>
-                    <Pricing image="snowy-forest.jpg" />
-                </BasicSection> */}
         <BasicSection
           id="contact"
           className="contact"
-          style={{ backgroundImage: `${lightGradient}, url(${snowyForest})` }}
+          // style={{ backgroundImage: `${lightGradient}, url(${snowyForest})` }}
+          style={{ 
+            backgroundImage: `url(${crissCross})`,
+            backgroundColor: '#333',
+            backgroundSize: 'initial',
+          }}
         >
-          <SectionTitle>
-                Contact
+          <SectionTitle 
+            style={{ color: 'white' }}
+            className="colored-title"
+          >
+            Contact
           </SectionTitle>
           <Contact />
         </BasicSection>

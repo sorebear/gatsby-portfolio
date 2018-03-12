@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import smoothScroll from 'smoothscroll';
 
 import Icon from '../components/icon';
 import BasicCard from '../components/basicCard';
@@ -19,44 +20,40 @@ const styles = {
     textAlign: 'center',
     textShadow: '0 4px 2px rgba(0, 0, 0, .3)',
   },
+  priceStyle: {
+    display: 'inline-block',
+    // paddingBottom: '1.16rem',
+    // borderBottom: '1px solid black'
+  }
 };
 
 export default () => (
   <div style={styles.pricingStyle}>
     <BasicCard className="basic-card basic-card--white">
       <div>
-        <Icon className="icon-basic-server-cloud" />
-        <h3 style={{ marginTop: 0 }}>Custom CMS w/Hosting</h3>
-        <h2>$55/month</h2>
-        <p>We will develop your designs into a custom CMS Site and maintain the hosting for you.</p>
-      </div>
-      <Button style={{ justifySelf: 'flex-end' }}>Hire Me</Button>
-    </BasicCard>
-    <BasicCard className="basic-card basic-card--white">
-      <div>
-        <Icon className="icon-basic-clock" />
+        {/* <Icon className="icon-basic-clock" /> */}
         <h3 style={{ marginTop: 0 }}>Hire Me By The Hour</h3>
-        <h2>$35/hour</h2>
+        <h4 style={styles.priceStyle}>$35/hour</h4>
         <p>
-          Do you have a project that needs someone to quickly jump in and help? Or perhaps an
+          Do you have a project that needs someone to quickly jump in and help? Or, perhaps an
           ongoing project and you are uncertain about the total amount of work required? Hiring by
           the hour might be best for you.
         </p>
       </div>
-      <Button>Hire Me</Button>
+      <Button onClick={() => smoothScroll(document.getElementById('contact'))} type="button">Hire Me</Button>
     </BasicCard>
     <BasicCard className="basic-card basic-card--white">
       <div>
-        <Icon className="icon-basic-notebook-pencil" />
+        {/* <Icon className="icon-basic-notebook-pencil" /> */}
         <h3 style={{ marginTop: 0 }}>Hire Me By The Project</h3>
-        <h2>Let&apos;s Talk!</h2>
+        <h4 style={styles.priceStyle}>$200+</h4>
         <p>
-          Do you have a specific project you would like built or you quickly need someone to jump in
-          and get a product to completion? Hiring by the project might be best for you. Let&apos;s
+          Do you have a new application you need built? Or, you need someone to quickly jump in
+          and get a current app to completion? Hiring by the project might be best for you. Let&apos;s
           talk about the scope of your project and negotiate a fair price.
         </p>
       </div>
-      <Button>Get Started</Button>
+      <Button onClick={() => smoothScroll(document.getElementById('contact'))} type="button">Let&apos;s Talk</Button>
     </BasicCard>
   </div>
 );

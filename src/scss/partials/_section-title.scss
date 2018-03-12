@@ -1,3 +1,21 @@
 .section-title {
   margin-bottom: $quad-space;
 }
+
+.web-development-active {
+  .colored-title {
+    color: $red !important;
+  }
+}
+
+.cms-development-active {
+  .colored-title {
+    color: $orange !important;
+  }
+}
+
+.mobile-development-active {
+  .colored-title {
+    color: $teal !important;
+  }
+}

@@ -20,10 +20,10 @@ const styles = {
   },
 };
 
-const SectionTitle = ({ id, children, style }) => (
+const SectionTitle = ({ id, children, style, className }) => (
   <div
     id={id}
-    className={`section-title section-title--${children.replace(/ /g, '-').toLowerCase()}`}
+    className={`section-title section-title--${children.replace(/ /g, '-').toLowerCase()} ${className}`}
     style={{ ...styles.titleContainerStyle, ...style }}
   >
     <StichText style={{ cursor: 'default' }}>

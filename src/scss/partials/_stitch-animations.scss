@@ -145,7 +145,7 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.5s;
   }
 }
 
-.content-wrapper.skills-cms-development {
+.content-wrapper.cms-development-active {
   .horizontal-line {
     border-color: $orange;
   }
@@ -228,7 +228,7 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.5s;
   }
 }
 
-.content-wrapper.skills-web-development {
+.content-wrapper.web-development-active {
   .horizontal-line {
     border-color: $red;
   }
@@ -311,7 +311,7 @@ $rows-5-6-horizontal-animation: retractHorizontal 0.7s forwards 0.5s;
   }
 }
 
-.content-wrapper.skills-mobile-development {
+.content-wrapper.mobile-development-active {
   .horizontal-line {
     border-color: $teal;
   }

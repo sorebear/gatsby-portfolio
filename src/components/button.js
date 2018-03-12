@@ -7,8 +7,8 @@ const styles = {
     width: '100%',
     maxWidth: '250px',
     textAlign: 'center',
-    color: 'black',
-    border: '.15rem solid black',
+    color: 'white',
+    border: '.15rem solid white',
     backgroundColor: 'transparent',
     cursor: 'pointer',
     margin: '0 auto',
@@ -19,12 +19,13 @@ const styles = {
   },
 };
 
-const Button = ({ type, value, className, children, style }) => (
+const Button = ({ type, value, className, onClick, children, style }) => (
   <button
     type={type}
     value={value}
     className={className}
     style={{ ...styles.buttonStyle, ...style }}
+    onClick={onClick}
   >
     <h5 style={styles.textStyle}>{children}</h5>
   </button>
