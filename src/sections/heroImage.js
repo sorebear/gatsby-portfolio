@@ -6,6 +6,7 @@ import Typist from 'react-typist';
 const styles = {
   heroImageStyle: {
     backgroundSize: 'cover',
+    height: '100vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
@@ -44,7 +45,6 @@ class HeroImage extends Component {
         className="basic-section hero-image"
         style={{
           ...styles.heroImageStyle,
-          height: this.height,
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${image})`,
         }}
       >
