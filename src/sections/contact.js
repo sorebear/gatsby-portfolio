@@ -44,6 +44,7 @@ export default () => (
           placeholder="Name*"
           className="contact-me__input"
           style={{ ...styles.inputStyle, marginRight: '10px' }}
+          required
         />
         <input
           name="_repolyto"
@@ -51,6 +52,7 @@ export default () => (
           placeholder="Email*"
           className="contact-me__input"
           style={{ ...styles.inputStyle, marginLeft: '10px' }}
+          required
         />
       </div>
       <textarea
@@ -59,6 +61,7 @@ export default () => (
         placeholder="Message*"
         className="contact-me__input"
         style={styles.inputStyle}
+        required
       />
       <Button
         type="submit"

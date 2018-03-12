@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import smoothScroll from 'smoothscroll';
-import StitchText from '../components/stitchText';
+// import StitchText from '../components/stitchText';
 
 const styles = {
   topBarStyle: {
@@ -73,7 +73,9 @@ class TopBar extends Component {
           onKeyDown={() => this.handleSmoothScroll(link)}
           style={styles.listItemStyle}
         >
-          <StitchText>{link}</StitchText>
+          {/* <StitchText> */}
+            {link}
+          {/* </StitchText> */}
         </button>
       </li>
     ));

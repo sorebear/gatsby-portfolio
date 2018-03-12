@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import StichText from './stitchText';
+// import StichText from './stitchText';
 
 const styles = {
   titleContainerStyle: {
@@ -26,9 +26,9 @@ const SectionTitle = ({ id, children, style, className }) => (
     className={`section-title section-title--${children.replace(/ /g, '-').toLowerCase()} ${className}`}
     style={{ ...styles.titleContainerStyle, ...style }}
   >
-    <StichText style={{ cursor: 'default' }}>
+    {/* <StichText style={{ cursor: 'default' }}> */}
       <h3 style={styles.titleStyle}>{children}</h3>
-    </StichText>
+    {/* </StichText> */}
   </div>
 );
 

@@ -1,7 +1,10 @@
 .top-bar {
-  &__logo,
-  &__nav-link {
+  &__logo {
     transition: 0.5s;
+  }
+
+  &__nav-link {
+    transition: 0.3s;
   }
 
   &--unscrolled {
@@ -9,6 +12,10 @@
 
     h2 {
       transform: translateY(-175%);
+    }
+
+    li.top-bar__nav-link:hover {
+      color: $white;
     }
   }
 
@@ -20,7 +27,7 @@
       transform: translateY(0);
     }
 
-    li {
+    li.top-bar__nav-link {
       color: $white;
     }
   }
@@ -46,6 +53,10 @@
     .top-bar__logo {
       color: $red !important;
     }
+
+    li:hover {
+      color: $red;
+    }
   }
 }
 
@@ -60,6 +71,10 @@
     .top-bar__logo {
       color: $orange !important;
     }
+
+    li:hover {
+      color: $orange;
+    }
   }
 }
 
@@ -73,6 +88,10 @@
   &--scrolled {
     .top-bar__logo {
       color: $teal !important;
+    }
+
+    li:hover {
+      color: $teal;
     }
   }
 }
