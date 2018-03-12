@@ -1,15 +1,48 @@
-.footer {
+.web-development-active .footer {
   a,
   a:link,
   a:hover {
     * {
-      border-color: #929292;
+      border-color: $red;
     }
   }
 
   a:active {
     * {
-      border-color: $white;
+      border-color: lighten($red, 25%);
     }
   }
 }
+
+.cms-development-active .footer {
+  a,
+  a:link,
+  a:hover {
+    * {
+      border-color: $orange;
+    }
+  }
+
+  a:active {
+    * {
+      border-color: lighten($orange, 25%);
+    }
+  }
+}
+
+.mobile-development-active .footer {
+  a,
+  a:link,
+  a:hover {
+    * {
+      border-color: $teal;
+    }
+  }
+
+  a:active {
+    * {
+      border-color: lighten($teal, 25%);
+    }
+  }
+}
+

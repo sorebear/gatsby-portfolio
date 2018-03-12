@@ -49,6 +49,7 @@ const styles = {
     width: '50%',
     padding: '0 2rem',
     display: 'flex',
+    marginBottom: '1.45rem',
   },
   projectOverlayStyle: {
     position: 'absolute',

@@ -14,24 +14,14 @@ import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
 
 // Images
-import forestTrailDark from '../images/bg/forest-trail-dark--comp.jpg';
-import snowyForest from '../images/bg/snowy-forest--comp.jpg';
-import mountainViewSunrise from '../images/bg/mountain-view-sunrise--comp.jpg';
 import aboutMe from '../images/bg/about-me-2.jpg';
-// import bearsWallpaper from '../images/bg/bears-wallpaper.jpg';
-import clothAlike from '../images/bg/cloth-alike.png';
 import crissCross from '../images/bg/crissxcross.png';
-import lightWool from '../images/bg/light-wool.png';
-import purtyWood from '../images/bg/purty-wood.png';
-import xv from '../images/bg/xv.png';
-
 
 // CSS
 import '../scss/main.scss';
 
 // Variables
 const darkGradient = 'linear-gradient(rgba(25, 25, 25, .8), rgba(25, 25, 25, .6))';
-const lightGradient = 'linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .5))';
 
 class Index extends Component {
   constructor(props) {
@@ -81,7 +71,11 @@ class Index extends Component {
         >
           <About />
         </BasicSection>
-        <BasicSection style={{ paddingBottom: 0 }} id="skills" className="skills">
+        <BasicSection 
+          id="skills"
+          className="skills"
+          style={{ paddingBottom: 0 }}
+        >
           <SectionTitle 
             id="skills-title"
             className=""
@@ -99,7 +93,7 @@ class Index extends Component {
           id="pricing" 
           className="pricing"
           style={{ 
-            backgroundImage: `url(${crissCross}`, 
+            backgroundImage: `url(${crissCross})`, 
             backgroundColor: '#333',
             backgroundSize: 'initial',
           }}
@@ -110,7 +104,7 @@ class Index extends Component {
             >
               Pricing
             </SectionTitle>
-            <Pricing image="snowy-forest.jpg" />
+            <Pricing />
         </BasicSection>
         <BasicSection id="work" className="work" style={{ padding: 0 }}>
           <Work
@@ -123,7 +117,6 @@ class Index extends Component {
         <BasicSection
           id="contact"
           className="contact"
-          // style={{ backgroundImage: `${lightGradient}, url(${snowyForest})` }}
           style={{ 
             backgroundImage: `url(${crissCross})`,
             backgroundColor: '#333',

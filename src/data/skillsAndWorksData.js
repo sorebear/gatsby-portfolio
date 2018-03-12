@@ -64,6 +64,13 @@ const skillsData = [
         liveLink: 'http://memorymatch.sorenbaird.com',
         githubLink: 'https://github.com/sorebear/inventor_memory_match',
       },
+      {
+        name: 'Puzzle Me',
+        spinalName: 'puzzle-me',
+        image: puzzleMe,
+        liveLink: 'http://puzzleme.sorenbaird.com',
+        githubLink: 'https://github.com/sorebear/puzzle_me',
+      },
     ],
   },
   {
@@ -119,13 +126,7 @@ const skillsData = [
       },
     },
     works: [
-      {
-        name: 'Puzzle Me',
-        spinalName: 'puzzle-me',
-        image: puzzleMe,
-        liveLink: 'http://puzzleme.sorenbaird.com',
-        githubLink: 'https://github.com/sorebear/puzzle_me',
-      },
+
     ],
   },
 ];

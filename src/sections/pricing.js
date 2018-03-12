@@ -6,10 +6,6 @@ import BasicCard from '../components/basicCard';
 import Button from '../components/button';
 
 const styles = {
-  pricingWrapperStyle: {
-    backgroundSize: 'cover',
-    backgroundAttachment: 'fixed',
-  },
   pricingStyle: {
     display: 'flex',
     justifyContent: 'space-between',
