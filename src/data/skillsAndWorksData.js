@@ -61,7 +61,7 @@ const skillsData = [
         name: 'Inventor Memory Match',
         spinalName: 'inventor-memory-match',
         image: memoryMatch,
-        liveLink: 'http://sorenbaird.com/apps/memory_match',
+        liveLink: 'http://memorymatch.sorenbaird.com',
         githubLink: 'https://github.com/sorebear/inventor_memory_match',
       },
     ],
