@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 const styles = {
   basicCardStyle: {
     padding: '2rem',
-    maxWidth: '45%',
     textAlign: 'center',
     transition: '.3s',
     display: 'flex',

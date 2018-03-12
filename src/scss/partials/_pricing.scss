@@ -1,7 +1,39 @@
 .pricing {
+  .basic-card:first-child {
+    margin-right: 5%;
+  }
+
+  .basic-card:last-child {
+    margin-left: 5%;
+  }
+
+
   i {
     font-size: '5rem';
     // background-image: linear-gradient($teal, darken($teal, 10%)) !important;
     color: white !important;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pricing {
+    &__card-container {
+      flex-direction: column;
+      align-items: center;
+
+      .basic-card:first-child,
+      .basic-card:last-child {
+        width: 100% !important;
+        // min-width: 300px;
+        max-width: 425px;
+        margin-left: 0;
+        margin-right: 0;
+        
+      }
+
+      .basic-card:first-child {
+        margin-bottom: $double-space;
+      }
+    }
   }
 }

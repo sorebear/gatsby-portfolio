@@ -24,7 +24,7 @@ const styles = {
 };
 
 export default () => (
-  <div style={styles.pricingStyle}>
+  <div className="pricing__card-container" style={styles.pricingStyle}>
     <BasicCard className="basic-card basic-card--white">
       <div>
         {/* <Icon className="icon-basic-clock" /> */}
