@@ -163,7 +163,7 @@ class Work extends Component {
     if (!this.data[i].works.length) {
       return (
         <div style={{ marginTop: '5.8rem', marginBottom: '4.35rem' }}>
-          <h3>There are currently no {data[i].name} projects to showcase.</h3>
+          <h3>There are currently no {data[i].name} projects available to showcase.</h3>
           <h3>Please check back again later</h3>
         </div>
       );
