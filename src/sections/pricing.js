@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import smoothScroll from 'smoothscroll';
 
-import Icon from '../components/icon';
 import BasicCard from '../components/basicCard';
 import Button from '../components/button';
 
@@ -18,9 +17,7 @@ const styles = {
   },
   priceStyle: {
     display: 'inline-block',
-    // paddingBottom: '1.16rem',
-    // borderBottom: '1px solid black'
-  }
+  },
 };
 
 export default () => (
@@ -45,8 +42,8 @@ export default () => (
         <h4 style={styles.priceStyle}>$200+</h4>
         <p>
           Do you have a new application you need built? Or, you need someone to quickly jump in
-          and get a current app to completion? Hiring by the project might be best for you. Let&apos;s
-          talk about the scope of your project and negotiate a fair price.
+          and get a current app to completion? Hiring by the project might be best for you.
+          Let&apos;s talk about the scope of your project and colloborate on a fair price.
         </p>
       </div>
       <Button onClick={() => smoothScroll(document.getElementById('contact'))} type="button">Let&apos;s Talk</Button>

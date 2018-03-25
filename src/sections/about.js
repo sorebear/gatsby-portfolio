@@ -26,8 +26,8 @@ export default () => (
       developer, spending most of my free time learning new technologies and building side projects.
     </p>
     <p style={styles.textStyle}>
-      If you&apos;re interested in hiring me for a project or just grabbing a coffee, tea, or pint,
-      send me a messag!
+      If you&apos;re interested in hiring me for a project or just grabbing a drink and talking
+      about technology and life, send me a message!
     </p>
   </div>
 );

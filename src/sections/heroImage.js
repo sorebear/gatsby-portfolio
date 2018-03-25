@@ -45,7 +45,6 @@ class HeroImage extends Component {
         className="basic-section hero-image"
         style={{
           ...styles.heroImageStyle,
-          // backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url(${image})`,
           backgroundImage: `url(${image})`,
           backgroundColor: '#333',
         }}

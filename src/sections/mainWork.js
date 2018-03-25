@@ -75,14 +75,14 @@ const MainWork = ({ activeSet, angledLineHeight }) => {
             </a>
           </div>
           <div style={styles.textContainerStyle}>
-            <p>I am currently a full-time Web Developer at Envivent Web Development</p>
+            <p>I am currently a full-time Web Developer at Envivent Web Development.</p>
             <p>
-              We work primarily with healthcare ad agencies, acting as their development partner
+              We work primarily with healthcare ad agencies, acting as their development partner.
             </p>
             <p>
               We build traditional websites, content management systems, interactive tools, data
               management portals, closed loop marketing solutions, email campaigns, trade show
-              panels, Salesforce.com apps/websites, and more
+              panels, Salesforce.com apps/websites, and more.
             </p>
           </div>
         </div>
