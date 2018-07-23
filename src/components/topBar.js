@@ -37,7 +37,7 @@ const styles = {
 class TopBar extends Component {
   constructor(props) {
     super(props);
-    this.navLinks = ['skills', 'about', 'pricing', 'work', 'contact'];
+    this.navLinks = ['about', 'skills', 'pricing', 'work', 'contact'];
     this.scrollDestination = null;
     this.state = {
       topBarClass: 'top-bar--unscrolled',
