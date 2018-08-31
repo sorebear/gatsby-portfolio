@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Soren Baird | Developer'
+    title: 'Soren Baird | Web Developer, CMS Developer, Mobile Developer',
+    author: 'Soren Baird',
+    description: 'I\'m a web and mobile developer with an eye for design, and a love for learning new things and meeting new people.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
