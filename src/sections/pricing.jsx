@@ -24,7 +24,6 @@ export default () => (
   <div className="pricing__card-container" style={styles.pricingStyle}>
     <BasicCard className="basic-card basic-card--white">
       <div>
-        {/* <Icon className="icon-basic-clock" /> */}
         <h3 style={{ marginTop: 0 }}>Hire Me By The Hour</h3>
         <h4 style={styles.priceStyle}>$35/hour</h4>
         <p>
@@ -33,11 +32,10 @@ export default () => (
           the hour might be best for you.
         </p>
       </div>
-      <Button onClick={() => smoothScroll(document.getElementById('contact'))} type="button">Hire Me</Button>
+      <Button onClick={() => smoothScroll(document.getElementById('contact'))} value="35" type="button">Hire Me</Button>
     </BasicCard>
     <BasicCard className="basic-card basic-card--white">
       <div>
-        {/* <Icon className="icon-basic-notebook-pencil" /> */}
         <h3 style={{ marginTop: 0 }}>Hire Me By The Project</h3>
         <h4 style={styles.priceStyle}>$200+</h4>
         <p>
@@ -46,7 +44,7 @@ export default () => (
           Let&apos;s talk about the scope of your project and colloborate on a fair price.
         </p>
       </div>
-      <Button onClick={() => smoothScroll(document.getElementById('contact'))} type="button">Let&apos;s Talk</Button>
+      <Button onClick={() => smoothScroll(document.getElementById('contact'))} value="200" type="button">Let&apos;s Talk</Button>
     </BasicCard>
   </div>
 );
