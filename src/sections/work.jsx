@@ -177,10 +177,12 @@ class Work extends Component {
         <StitchBox style={{ width: '100%' }}>
           <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
-              <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
-              <p>Live</p>
-            </a>
+            { !work.liveLink ? '' : (
+              <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+                <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
+                <p>Live</p>
+              </a>
+            )}
             <a href={work.githubLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
               <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
               <p>Code</p>

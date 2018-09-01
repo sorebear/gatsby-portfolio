@@ -5,13 +5,14 @@ import Typist from 'react-typist';
 
 const styles = {
   heroImageStyle: {
-    // backgroundSize: 'cover',
     height: '100vh',
     width: '100%',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    paddingLeft: '1.5rem',
+    paddingRight: '1.5rem',
     backgroundAttachment: 'fixed',
   },
   titleStyle: {
@@ -54,7 +55,7 @@ class HeroImage extends Component {
         <h1 style={styles.titleStyle}>
           <span className="colored-title" style={styles.mainTitleStyle}>{title}</span>
           <span style={{ visibility: 'hidden', fontSize: 0 }}>
-            : Web Developer, Mobile Developer, CMS Developer
+            : Web Developer, CMS Developer, Mobile Developer
           </span>
         </h1>
         <h3 style={{ ...styles.titleStyle, fontSize: '36px' }}>

@@ -17,9 +17,6 @@ import BasicSection from '../components/basicSection';
 import aboutMe from '../images/bg/about-me-2.jpg';
 import crissCross from '../images/bg/crissxcross.png';
 
-// CSS
-import '../scss/main.scss';
-
 // Variables
 const darkGradient = 'linear-gradient(rgba(25, 25, 25, .8), rgba(25, 25, 25, .6))';
 
