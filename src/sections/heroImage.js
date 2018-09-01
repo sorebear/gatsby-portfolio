@@ -47,6 +47,8 @@ class HeroImage extends Component {
           ...styles.heroImageStyle,
           backgroundImage: `url(${image})`,
           backgroundColor: '#333',
+          paddingLeft: '1rem',
+          paddingRight: '1rem',
         }}
       >
         <h1 style={styles.titleStyle}>
