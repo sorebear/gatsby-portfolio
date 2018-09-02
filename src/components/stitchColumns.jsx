@@ -23,8 +23,6 @@ const StitchColumn = ({
   skillSetArr,
   alignItems,
   columnHeight,
-  // angledLineHeight,
-  // percentArr,
 }) => (
   <div
     className={`vertical-line-container vertical-line-container--row-${row}`}

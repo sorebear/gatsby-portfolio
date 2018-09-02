@@ -51,16 +51,20 @@ const styles = {
     display: 'flex',
     marginBottom: '1.45rem',
   },
-  projectOverlayStyle: {
+  projectOverlayOuterStyle: {
     position: 'absolute',
     top: '5px',
     left: '5px',
     bottom: '5px',
     right: '5px',
+    textAlign: 'center',
+  },
+  projectOverlayInnerStyle: {
+    backgroundColor: 'rgba(0, 0, 0, .7)',
+    width: '100%',
+    // height: '100%',
     display: 'flex',
     padding: '1.45rem',
-    textAlign: 'center',
-    backgroundColor: 'rgba(0, 0, 0, .7)',
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
@@ -176,17 +180,19 @@ class Work extends Component {
       >
         <StitchBox style={{ width: '100%' }}>
           <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
-          <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            { !work.liveLink ? '' : (
-              <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
-                <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
-                <p>Live</p>
+          <div className="work__project-overlay--outer" style={styles.projectOverlayOuterStyle}>
+            <div className="work__project-overlay--inner" style={styles.projectOverlayInnerStyle}>
+              { !work.liveLink ? '' : (
+                <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+                  <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
+                  <p>Live</p>
+                </a>
+              )}
+              <a href={work.githubLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+                <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
+                <p>Code</p>
               </a>
-            )}
-            <a href={work.githubLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
-              <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
-              <p>Code</p>
-            </a>
+            </div>
           </div>
         </StitchBox>
       </div>

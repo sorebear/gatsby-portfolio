@@ -26,9 +26,7 @@ const SectionTitle = ({ id, children, style, className }) => (
     className={`section-title section-title--${children.replace(/ /g, '-').toLowerCase()} ${className}`}
     style={{ ...styles.titleContainerStyle, ...style }}
   >
-    {/* <StichText style={{ cursor: 'default' }}> */}
-      <h3 style={styles.titleStyle}>{children}</h3>
-    {/* </StichText> */}
+    <h3 style={styles.titleStyle}>{children}</h3>
   </div>
 );
 
@@ -37,10 +35,12 @@ export default SectionTitle;
 SectionTitle.propTypes = {
   id: PropTypes.string,
   children: PropTypes.string.isRequired,
+  className: PropTypes.string,
   style: PropTypes.object,
 };
 
 SectionTitle.defaultProps = {
-  style: {},
   id: '',
+  className: '',
+  style: {},
 };

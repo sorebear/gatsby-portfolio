@@ -34,26 +34,30 @@
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
+    // transform: translate3d(0, 0, 0);
   }
 
   &__project-overlay {
-    -webkit-transform-style: preserve-3d;
-    -moz-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    -moz-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
-    transition: 0.3s;
-    transform: scale(0.75);
-    opacity: 0;
-    transition: all 0.5s;
+
+    &--inner {
+      -webkit-transform-style: preserve-3d;
+      -moz-transform-style: preserve-3d;
+      transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: 0.3s;
+      transform: scale(0.75);
+      opacity: 0;
+      transition: transform 0.3s, opacity 0.4s;
+    }
   }
 
-  &__project-overlay:hover {
-    opacity: 1;
-    transform: scale(1);
+  &__individual-project .stitch-box:hover {
+    .work__project-overlay--inner {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   &__projects {

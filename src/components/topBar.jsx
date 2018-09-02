@@ -73,9 +73,7 @@ class TopBar extends Component {
           onKeyDown={() => this.handleSmoothScroll(link)}
           style={styles.listItemStyle}
         >
-          {/* <StitchText> */}
-            {link}
-          {/* </StitchText> */}
+          {link}
         </button>
       </li>
     ));
