@@ -67,6 +67,7 @@ export default () => (
         type="submit"
         value="Send"
         className="contact-me__submit-button"
+        onClick={() => {}}
         style={{ width: '160px' }}
       >
         Send

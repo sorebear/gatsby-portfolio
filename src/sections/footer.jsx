@@ -13,6 +13,7 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'column',
+    paddingTop: '0.675rem',
   },
   stitchBoxStyle: {
     height: '4rem',

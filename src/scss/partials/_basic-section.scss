@@ -1,4 +1,9 @@
 .basic-section {
-  padding-top: $quad-space;
-  padding-bottom: $quad-space;
+  padding-top: $double-space;
+  padding-bottom: $double-space;
+
+  @media only screen and (min-width: $desktop-breakpoint) {
+    padding-top: $quad-space;
+    padding-bottom: $quad-space;
+  }
 }

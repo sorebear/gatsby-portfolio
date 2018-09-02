@@ -68,12 +68,12 @@ class Index extends Component {
         >
           <About />
         </BasicSection>
-        <BasicSection 
+        <BasicSection
           id="skills"
           className="skills"
           style={{ paddingBottom: 0 }}
         >
-          <SectionTitle 
+          <SectionTitle
             id="skills-title"
             className=""
           >
@@ -86,22 +86,22 @@ class Index extends Component {
             updateActiveSet={this.updateActiveSet}
           />
         </BasicSection>
-        <BasicSection 
-          id="pricing" 
+        <BasicSection
+          id="pricing"
           className="pricing"
-          style={{ 
-            backgroundImage: `url(${crissCross})`, 
+          style={{
+            backgroundImage: `url(${crissCross})`,
             backgroundColor: '#333',
             backgroundSize: 'initial',
           }}
         >
-            <SectionTitle
-              className="colored-title"
-              style={{ color: 'white' }}
-            >
-              Pricing
-            </SectionTitle>
-            <Pricing />
+          <SectionTitle
+            className="colored-title"
+            style={{ color: 'white' }}
+          >
+            Pricing
+          </SectionTitle>
+          <Pricing />
         </BasicSection>
         <BasicSection id="work" className="work" style={{ padding: 0 }}>
           <Work
@@ -112,19 +112,19 @@ class Index extends Component {
           />
         </BasicSection>
         <BasicSection
-          id="contact"
+          id="connect"
           className="contact"
-          style={{ 
+          style={{
             backgroundImage: `url(${crissCross})`,
             backgroundColor: '#333',
             backgroundSize: 'initial',
           }}
         >
-          <SectionTitle 
+          <SectionTitle
             style={{ color: 'white' }}
             className="colored-title"
           >
-            Contact
+            Connect
           </SectionTitle>
           <Contact />
         </BasicSection>

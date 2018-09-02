@@ -34,27 +34,28 @@
     -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
     backface-visibility: hidden;
-    // transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
   }
 
-  &__project-overlay {
-
-    &--inner {
-      -webkit-transform-style: preserve-3d;
-      -moz-transform-style: preserve-3d;
-      transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-      -moz-backface-visibility: hidden;
-      backface-visibility: hidden;
-      transition: 0.3s;
-      transform: scale(0.75);
-      opacity: 0;
-      transition: transform 0.3s, opacity 0.4s;
-    }
+  &__project-overlay,
+  &__project-overlay-mask {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transition: 0.4s;
+    opacity: 0;
   }
 
-  &__individual-project .stitch-box:hover {
-    .work__project-overlay--inner {
+  &__project-overlay-mask {
+    transform: scale(0.65);
+  }
+
+  &__individual-project .stitch-box:hover .work {
+    &__project-overlay,
+    &__project-overlay-mask {
       opacity: 1;
       transform: scale(1);
     }
@@ -96,7 +97,7 @@
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $desktop-breakpoint - 1) {
   .work {
     &__main-work {
       flex-direction: column !important;

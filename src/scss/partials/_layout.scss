@@ -11,13 +11,13 @@
   padding: 0 2rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $desktop-breakpoint) {
   .mobile-only {
     display: none !important;
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $desktop-breakpoint - 1) {
   html {
     font-size: 80%;
   }

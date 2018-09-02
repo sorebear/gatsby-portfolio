@@ -28,7 +28,7 @@
 }
 
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: $desktop-breakpoint - 1) {
   .contact-me {
     &__input-container {
       flex-direction: column;

@@ -1,5 +1,9 @@
 .section-title {
-  margin-bottom: $quad-space;
+  margin-bottom: $double-space;
+
+  @media only screen and (min-width: $desktop-breakpoint) {
+    margin-bottom: $quad-space;
+  }
 }
 
 .web-development-active {
