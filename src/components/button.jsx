@@ -16,20 +16,34 @@ const styles = {
   textStyle: {
     margin: 0,
     padding: 0,
+    color: 'inherit',
   },
 };
 
-const Button = ({ type, value, className, onClick, children, style }) => (
-  <button
-    type={type}
-    value={value}
-    className={className}
-    style={{ ...styles.buttonStyle, ...style }}
-    onClick={onClick}
-  >
-    <h5 style={styles.textStyle}>{children}</h5>
-  </button>
-);
+const Button = ({ type, href, value, className, onClick, children, style }) => {
+  return href ? (
+    <a
+      value={value}
+      className={className}
+      style={{ ...styles.buttonStyle, ...style }}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <h5 style={styles.textStyle}>{children}</h5>
+    </a>
+  ) : (
+    <button
+      type={type}
+      value={value}
+      className={className}
+      style={{ ...styles.buttonStyle, ...style }}
+      onClick={onClick}
+    >
+      <h5 style={styles.textStyle}>{children}</h5>
+    </button>
+  );
+};
 
 export default Button;
 
@@ -38,6 +52,7 @@ Button.propTypes = {
   children: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
   style: PropTypes.object,
+  href: PropTypes.string,
   type: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
 };
@@ -45,4 +60,5 @@ Button.propTypes = {
 Button.defaultProps = {
   style: {},
   className: '',
+  href: '',
 };

@@ -24,7 +24,8 @@
   .basic-card {
     border-top-color: $red !important;
 
-    button {
+    button,
+    a {
       border-color: $red !important;
       color: $red !important;
       &:hover {
@@ -46,7 +47,8 @@
   .basic-card {
     border-top-color: $orange !important;
 
-    button {
+    button,
+    a {
       border-color: $orange !important;
       color: $orange !important;
 
@@ -69,7 +71,8 @@
   .basic-card {
     border-top-color: $teal !important;
 
-    button {
+    button,
+    a {
       border-color: $teal !important;
       color: $teal !important;
 

@@ -22,7 +22,7 @@ const styles = {
 
 export default () => (
   <div className="pricing__card-container" style={styles.pricingStyle}>
-    <BasicCard className="basic-card basic-card--white">
+    <BasicCard className="basic-card--white">
       <div>
         <h3 style={{ marginTop: 0 }}>Hire Me By The Hour</h3>
         <h4 style={styles.priceStyle}>$35/hour</h4>
@@ -33,18 +33,6 @@ export default () => (
         </p>
       </div>
       <Button onClick={() => smoothScroll(document.getElementById('contact'))} value="35" type="button">Hire Me</Button>
-    </BasicCard>
-    <BasicCard className="basic-card basic-card--white">
-      <div>
-        <h3 style={{ marginTop: 0 }}>Hire Me By The Project</h3>
-        <h4 style={styles.priceStyle}>$200+</h4>
-        <p>
-          Do you have a new application you need built? Or, you need someone to quickly jump in
-          and get a current app to completion? Hiring by the project might be best for you.
-          Let&apos;s talk about the scope of your project and colloborate on a fair price.
-        </p>
-      </div>
-      <Button onClick={() => smoothScroll(document.getElementById('contact'))} value="200" type="button">Let&apos;s Talk</Button>
     </BasicCard>
   </div>
 );

@@ -4,17 +4,19 @@ import PropTypes from 'prop-types';
 const styles = {
   basicCardStyle: {
     padding: '2rem',
-    textAlign: 'center',
+    // textAlign: 'center',
     transition: '.3s',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    width: '100%',
+    flexWrap: 'wrap',
+    width: '46%',
+    margin: '0 2% 4% 2%',
   },
 };
 
 const BasicCard = ({ children, style, className }) => (
-  <div style={{ ...styles.basicCardStyle, ...style }} className={className}>
+  <div style={{ ...styles.basicCardStyle, ...style }} className={`basic-card ${className}`}>
     {children}
   </div>
 );

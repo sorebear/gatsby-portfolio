@@ -5,7 +5,7 @@ import HeroImage from '../sections/heroImage';
 import Skills from '../sections/skills';
 import About from '../sections/about';
 import Work from '../sections/work';
-import Pricing from '../sections/pricing';
+import Resources from '../sections/resources';
 import Contact from '../sections/contact';
 import Footer from '../sections/footer';
 
@@ -87,8 +87,8 @@ class Index extends Component {
           />
         </BasicSection>
         <BasicSection
-          id="pricing"
-          className="pricing"
+          id="resources"
+          className="resources"
           style={{
             backgroundImage: `url(${crissCross})`,
             backgroundColor: '#333',
@@ -99,9 +99,9 @@ class Index extends Component {
             className="colored-title"
             style={{ color: 'white' }}
           >
-            Pricing
+            Resources
           </SectionTitle>
-          <Pricing />
+          <Resources />
         </BasicSection>
         <BasicSection id="work" className="work" style={{ padding: 0 }}>
           <Work
