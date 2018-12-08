@@ -25,7 +25,6 @@ export default () => (
     <BasicCard className="basic-card--white">
       <div>
         <h3 style={{ marginTop: 0 }}>Hire Me By The Hour</h3>
-        <h4 style={styles.priceStyle}>$35/hour</h4>
         <p>
           Do you have a project that needs someone to quickly jump in and help? Or, perhaps an
           ongoing project and you are uncertain about the total amount of work required? Hiring by
