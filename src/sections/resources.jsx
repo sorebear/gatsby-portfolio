@@ -1,5 +1,5 @@
 import React from 'react';
-import smoothScroll from 'smoothscroll';
+import Link from 'gatsby-link';
 
 import BasicCard from '../components/basicCard';
 import Button from '../components/button';
@@ -22,16 +22,19 @@ const styles = {
 
 export default () => (
   <div className="pricing__card-container" style={styles.pricingStyle}>
-    <BasicCard className="basic-card--white">
+    <BasicCard className="basic-card basic-card--white">
       <div>
-        <h3 style={{ marginTop: 0 }}>Hire Me By The Hour</h3>
+        <h3 style={{ marginTop: 0 }}>JAMstack</h3>
         <p>
-          Do you have a project that needs someone to quickly jump in and help? Or, perhaps an
-          ongoing project and you are uncertain about the total amount of work required? Hiring by
-          the hour might be best for you.
+          This site is built on the JAMstack. It is a static site built with React using Gatsby.js.
+          It also utilizes an AWS Lambda Function to handle the contact form submission.
+          It is deployed with Continious Integration on Netlify.
+        </p>
+        <p>
+          Click below to learn more about JAMstack.
         </p>
       </div>
-      <Button onClick={() => smoothScroll(document.getElementById('contact'))} value="35" type="button">Hire Me</Button>
+      <Link className="button" href="/jamstack" to="/jamstack">JAMstack Resources</Link>
     </BasicCard>
   </div>
 );

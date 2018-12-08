@@ -10,7 +10,8 @@ const styles = {
     flexDirection: 'column',
     justifyContent: 'space-between',
     flexWrap: 'wrap',
-    width: '46%',
+    width: '620px',
+    maxWidth: '100%',
     margin: '0 2% 4% 2%',
   },
 };

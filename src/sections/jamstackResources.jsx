@@ -114,7 +114,7 @@ class Skills extends Component {
           angledLineHeight={this.props.angledLineHeight}
         >
           <div
-            className={`skills__details--${skillSetDetails.spinalName}`}
+            // className={`skills__details--${skillSetDetails.spinalName}`}
             style={{ width: '100%', zIndex: 10 }}
           >
             { this.props.children[index] }

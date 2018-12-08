@@ -78,7 +78,7 @@ class Index extends Component {
             angledLineHeight={angledLineHeight}
             updateActiveSet={this.updateActiveSet}
           >
-            <div style={{ display: 'flex', textAlign: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
+            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               <p>
                 You can learn a lot from picking a Static Site Generator you&apos;re
                 interested in using and reading through their documentation.
@@ -142,8 +142,22 @@ class Index extends Component {
                   Lambda Functions on Netlify
                 </Button>
               </BasicCard>
+              <h2>Videos</h2>
+              <BasicCard>
+                <h3>Phil Hawksworth - What is the JAMstack?</h3>
+                <Button href="https://www.youtube.com/watch?v=Opye_qcRdUo&index=1&list=PL58Wk5g77lF-UQ39pejLX2Zn5DxQyExBa">
+                  Watch Video
+                </Button>
+              </BasicCard>
+              <BasicCard>
+                <h3>Monica Dinculescu</h3>
+                <p>Bet You Didn&apos;t Think You Browser Could Do That</p>
+                <Button href="https://www.youtube.com/watch?v=f5QYSdpMs6Y&list=PL58Wk5g77lF-UQ39pejLX2Zn5DxQyExBa&index=3">
+                  Watch Video
+                </Button>
+              </BasicCard>
             </div>
-            <div>
+            <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               <BasicCard>
                 <h2>Gatsby Docs Tutorial</h2>
                 <p>Tutorial Type: Documentation</p>
@@ -168,9 +182,6 @@ class Index extends Component {
                   View Tutorial
                 </Button>
               </BasicCard>
-              <div>
-                <iframe title="what-is-the-jamstack" width="560" height="315" src="https://www.youtube.com/embed/Opye_qcRdUo" frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
-              </div>
             </div>
           </JamstackResources>
         </BasicSection>
