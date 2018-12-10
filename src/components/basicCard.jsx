@@ -25,7 +25,7 @@ const BasicCard = ({ children, style, className }) => (
 export default BasicCard;
 
 BasicCard.propTypes = {
-  className: PropTypes.string.isRequired,
+  className: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,
@@ -34,5 +34,6 @@ BasicCard.propTypes = {
 };
 
 BasicCard.defaultProps = {
+  className: '',
   style: {},
 };

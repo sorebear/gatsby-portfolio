@@ -153,5 +153,7 @@ Skills.propTypes = {
   activeSkillSet: PropTypes.string.isRequired,
   updateActiveSet: PropTypes.func.isRequired,
   angledLineHeight: PropTypes.number.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.oneOfType([
+    PropTypes.element, PropTypes.arrayOf(PropTypes.element),
+  ]).isRequired,
 };
