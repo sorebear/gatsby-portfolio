@@ -1,0 +1,41 @@
+.home-button {
+  display: none;
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    z-index: 50;
+    box-shadow: $box-shadow;
+
+    img {
+      width: 60%;
+      height: auto;
+      margin: 0 0 5px 0;
+    }
+  }
+}
+
+.web-development-active {
+  .home-button {
+    background-color: $red;
+  }
+}
+
+.cms-development-active {
+  .home-button {
+    background-color: $orange;
+  }
+}
+
+.mobile-development-active {
+  .home-button {
+    background-color: $teal;
+  }
+}

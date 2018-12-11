@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import smoothScroll from 'smoothscroll';
-// import StitchText from '../components/stitchText';
+import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 
 const styles = {
   topBarStyle: {
@@ -37,15 +38,23 @@ const styles = {
 class TopBar extends Component {
   constructor(props) {
     super(props);
-    this.navLinks = ['about', 'skills', 'pricing', 'work', 'connect'];
+    this.window = null;
+    this.navLinks = ['about', 'skills', 'resources', 'work', 'connect'];
     this.scrollDestination = null;
     this.state = {
       topBarClass: 'top-bar--unscrolled',
     };
+
+    this.toggleOpacity = this.toggleOpacity.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', this.toggleOpacity.bind(this));
+    this.window = window;
+    this.window.addEventListener('scroll', this.toggleOpacity);
+  }
+
+  componentWillUnmount() {
+    this.window.removeEventListener('scroll', this.toggleOpacity);
   }
 
   toggleOpacity() {
@@ -68,13 +77,23 @@ class TopBar extends Component {
         className="top-bar__nav-link"
         style={{ margin: 0 }}
       >
-        <button
-          onClick={() => this.handleSmoothScroll(link)}
-          onKeyDown={() => this.handleSmoothScroll(link)}
-          style={styles.listItemStyle}
-        >
-          {link}
-        </button>
+        { this.props.location === 'home' ? (
+          <button
+            onClick={() => this.handleSmoothScroll(link)}
+            onKeyDown={() => this.handleSmoothScroll(link)}
+            style={styles.listItemStyle}
+          >
+            {link}
+          </button>
+        ) : (
+          <Link
+            to={`/#${link}`}
+            href={`#${link}`}
+            style={styles.listItemStyle}
+          >
+            {link}
+          </Link>
+        )}
       </li>
     ));
   }
@@ -83,18 +102,33 @@ class TopBar extends Component {
     return (
       <div className={`top-bar web-only ${this.state.topBarClass}`}>
         <div style={styles.topBarStyle}>
-          <button
-            onClick={() => this.handleSmoothScroll('home')}
-            onKeyDown={() => this.handleSmoothScroll('home')}
-            style={{ cursor: 'pointer' }}
-          >
-            <h2
-              className="top-bar__logo"
-              style={styles.logoStyle}
+          { this.props.location === 'home' ? (
+            <button
+              onClick={() => this.handleSmoothScroll('home')}
+              onKeyDown={() => this.handleSmoothScroll('home')}
+              style={{ cursor: 'pointer' }}
             >
-              Soren Baird
-            </h2>
-          </button>
+              <h2
+                className="top-bar__logo"
+                style={styles.logoStyle}
+              >
+                Soren Baird
+              </h2>
+            </button>
+          ) : (
+            <Link
+              to="/"
+              href="/"
+              style={{ cursor: 'pointer' }}
+            >
+              <h2
+                className="top-bar__logo"
+                style={styles.logoStyle}
+              >
+                Soren Baird
+              </h2>
+            </Link>
+          )}
           <ul className="nav" style={styles.navStyle}>
             {this.renderNavLinks()}
           </ul>
@@ -105,3 +139,11 @@ class TopBar extends Component {
 }
 
 export default TopBar;
+
+TopBar.propTypes = {
+  location: PropTypes.string,
+};
+
+TopBar.defaultProps = {
+  location: '',
+};

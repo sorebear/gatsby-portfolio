@@ -5,6 +5,9 @@
       "commonjs": true,
       "es6": true
     },
+    "globals": {
+      "graphql": false
+    },
     "parserOptions": {
       "ecmaFeatures": {
         "jsx": true
@@ -15,6 +18,8 @@
       "object-curly-newline": 0,
       "react/jsx-filename-extension": false,
       "react/forbid-prop-types": false,
-      "import/no-extraneous-dependencies": false
+      "import/no-extraneous-dependencies": false,
+      "linebreak-style": "off",
+      "arrow-body-style": 0
     }
 }

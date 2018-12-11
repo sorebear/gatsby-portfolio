@@ -8,3 +8,25 @@ button:active {
   color: inherit;
   outline: none;
 }
+
+.basic-card button,
+.basic-card a.button,
+form button[type=submit] {
+  padding: 16px 20px;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  color: white;
+  border: .15rem solid white;
+  background-color: transparent;
+  cursor: pointer;
+  margin: 0 auto;
+  
+  h5 {
+    margin: 0;
+    padding: 0;
+    color: inherit;
+  }
+}
+
+

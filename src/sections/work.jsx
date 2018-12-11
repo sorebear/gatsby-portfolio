@@ -99,10 +99,6 @@ class Work extends Component {
     }, 500);
   }
 
-  componentDidUpdate() {
-
-  }
-
   renderSkillSets() {
     return data.map((skillSet, index) => (
       <div
@@ -185,12 +181,22 @@ class Work extends Component {
           <div className="work__project-overlay-mask" style={styles.projectOverlayMaskStyle} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
             { !work.liveLink ? '' : (
-              <a href={work.liveLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+              <a
+                href={work.liveLink}
+                style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
                 <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
                 <p>Live</p>
               </a>
             )}
-            <a href={work.githubLink} style={{ color: 'white', display: 'flex', flexDirection: 'column' }} target="_blank">
+            <a
+              href={work.githubLink}
+              style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+              rel="noreferrer noopener"
+              target="_blank"
+            >
               <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
               <p>Code</p>
             </a>

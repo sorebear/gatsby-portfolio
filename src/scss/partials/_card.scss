@@ -1,5 +1,4 @@
 .basic-card {
-  box-shadow: $box-shadow;
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
@@ -9,13 +8,45 @@
   transform: translate3d(0, 0, 0);
   transition: all 0.4s;
   border-top: 5px solid transparent;
-
+  border-bottom: 1px solid grey;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
   background-color: $offwhite;
   color: black;
 
-  &:hover {
-    box-shadow: $box-shadow-hover;
-    transform: translateY(-5px);
+  h3 {
+    font-size: 2em;
+    margin-bottom: .5em;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  p:first-of-type:last-of-type {
+    font-style: italic;
+    margin-top: -.75em;
+
+    & + small {
+      margin-top: 0;
+      margin-bottom: 27px;
+    }
+  }
+
+  p:last-of-type {
+    margin-bottom: 1.5em;
+  }
+
+  @media screen and (min-width: 768px) {
+    box-shadow: $box-shadow;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      transform: translateY(-5px);
+    }
   }
 }
 
@@ -24,7 +55,8 @@
   .basic-card {
     border-top-color: $red !important;
 
-    button {
+    button,
+    a {
       border-color: $red !important;
       color: $red !important;
       &:hover {
@@ -46,7 +78,8 @@
   .basic-card {
     border-top-color: $orange !important;
 
-    button {
+    button,
+    a {
       border-color: $orange !important;
       color: $orange !important;
 
@@ -69,7 +102,8 @@
   .basic-card {
     border-top-color: $teal !important;
 
-    button {
+    button,
+    a {
       border-color: $teal !important;
       color: $teal !important;
 
