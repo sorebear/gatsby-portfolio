@@ -53,7 +53,12 @@ class Contact extends Component {
       email,
       message,
     }).then(() => {
-      this.setState({ messageSent: true });
+      this.setState({
+        name: '',
+        email: '',
+        message: '',
+        messageSent: true,
+      });
     }).catch((error) => {
       console.log(error);
     });
@@ -113,7 +118,7 @@ class Contact extends Component {
             required
           />
           { messageSent ? (
-            <h2 style={{ color: 'white' }}>Message Sent!</h2>
+            <h2 style={{ color: 'white', marginBottom: '24.38px' }}>Message Sent!</h2>
           ) : (
             <Button
               type="submit"
