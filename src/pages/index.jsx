@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Helmet from 'react-helmet';
 
 // React Components
 import HeroImage from '../sections/heroImage';
@@ -14,6 +15,7 @@ import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
 
 // Images
+import homeScreenshot from '../images/og/home.png';
 import aboutMe from '../images/bg/about-me-2.jpg';
 import crissCross from '../images/bg/crissxcross.png';
 
@@ -63,6 +65,12 @@ class Index extends Component {
     const { activeSet, activeIndex, angledLineHeight } = this.state;
     return (
       <div className={`content-wrapper ${activeSet}-active`}>
+        <Helmet>
+          <meta property="og:title" content="Soren Baird - Web Developer, CMS Developer, Mobile Developer" />
+          <name>JAMstack Resources | Soren Baird</name>
+          <meta property="og:image" content={homeScreenshot} />
+          <meta property="og:url" content="https://sorenbaird.com" />
+        </Helmet>
         <TopBar location="home" />
         <HeroImage location="home" title="Soren Baird" image={crissCross} />
         <BasicSection
