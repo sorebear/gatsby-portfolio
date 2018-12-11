@@ -12,7 +12,6 @@ import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
 
 // Images
-import jamstackScreenshot from '../images/og/jamstack.png';
 import crissCross from '../images/bg/crissxcross.png';
 import BasicCard from '../components/basicCard';
 import Button from '../components/button';
@@ -63,8 +62,9 @@ class Index extends Component {
         <Helmet>
           <meta property="og:title" content="JAMstack Resources | Soren Baird" />
           <name>JAMstack Resources | Soren Baird</name>
-          <meta property="og:image" content={jamstackScreenshot} />
+          <meta property="og:image" content="https://res.cloudinary.com/sorebear/image/upload/v1544489724/portfolio/jamstack.png" />
           <meta property="og:url" content="https://sorenbaird.com/jamstack" />
+          <meta property="og:description" content="Learn more about the JAMstack with these resources." />
         </Helmet>
         <TopBar />
         <HomeButton activeSet={activeSet} />
@@ -89,7 +89,7 @@ class Index extends Component {
             <div className="resources-container" style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
               <p>
                 You can learn a lot from picking a Static Site Generator you&apos;re
-                interested in using and reading through their documentation.
+                interested in and reading through the documentation.
               </p>
               <h2>Static Site Generators | Javascript Based</h2>
               <BasicCard>
