@@ -8,7 +8,7 @@ exports.handler = (event, context, callback) => {
       user: 'sorenbaird@gmail.com',
       clientId: '55184836945-qt5tdklhmnjankd8451np0op1pc3qfap.apps.googleusercontent.com',
       clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+      refreshToken: '1/G7nFIot0Vge-Rwx_53E6GBqxCKNUw7ZldqMww_WY27Tu7jjpMuIVaGwoqEghYJk5',
     },
   });
 
