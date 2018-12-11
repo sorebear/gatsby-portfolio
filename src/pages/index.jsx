@@ -15,7 +15,6 @@ import SectionTitle from '../components/sectionTitle';
 import BasicSection from '../components/basicSection';
 
 // Images
-import homeScreenshot from '../images/og/home.png';
 import aboutMe from '../images/bg/about-me-2.jpg';
 import crissCross from '../images/bg/crissxcross.png';
 
@@ -68,8 +67,9 @@ class Index extends Component {
         <Helmet>
           <meta property="og:title" content="Soren Baird - Web Developer, CMS Developer, Mobile Developer" />
           <name>JAMstack Resources | Soren Baird</name>
-          <meta property="og:image" content={homeScreenshot} />
+          <meta property="og:image" content="https://res.cloudinary.com/sorebear/image/upload/v1544489724/portfolio/home.png" />
           <meta property="og:url" content="https://sorenbaird.com" />
+          <meta property="og:description" content="I am a Full Stack Web Developer living and coding in Orange County, CA." />
         </Helmet>
         <TopBar location="home" />
         <HeroImage location="home" title="Soren Baird" image={crissCross} />
