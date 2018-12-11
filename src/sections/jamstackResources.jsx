@@ -68,7 +68,28 @@ class Skills extends Component {
   constructor(props) {
     super(props);
     this.data = data;
+    this.state = {
+      'web-development': 'flex',
+      'cms-development': 'none',
+      'mobile-development': 'none',
+    };
   }
+
+  componentWillReceiveProps(newProps) {
+    this.setState({
+      'web-development': newProps.activeSet === 'web-development' ? 'block' : this.state['web-development'],
+      'cms-development': newProps.activeSet === 'cms-development' ? 'block' : this.state['cms-development'],
+      'mobile-development': newProps.activeSet === 'mobile-development' ? 'block' : this.state['mobile-development'],
+    });
+    setTimeout(() => {
+      this.setState({
+        'web-development': newProps.activeSet === 'web-development' ? 'block' : 'none',
+        'cms-development': newProps.activeSet === 'cms-development' ? 'block' : 'none',
+        'mobile-development': newProps.activeSet === 'mobile-development' ? 'block' : 'none',
+      });
+    }, 500);
+  }
+
 
   renderSkillSets() {
     return data.map((skillSet, index) => (
@@ -115,7 +136,7 @@ class Skills extends Component {
         >
           <div
             // className={`skills__details--${skillSetDetails.spinalName}`}
-            style={{ width: '100%', zIndex: 10 }}
+            style={{ width: '100%', zIndex: 10, display: this.state[skillSetDetails.spinalName] }}
           >
             { this.props.children[index] }
           </div>
@@ -126,7 +147,7 @@ class Skills extends Component {
 
   render() {
     return (
-      <div className={`skills ${this.props.activeSkillSet}`}>
+      <div className={`skills ${this.props.activeSet}`}>
         <div className="skills__types-container" style={styles.typesContainerStyle}>
           {this.renderSkillSets()}
         </div>
@@ -150,7 +171,7 @@ export default Skills;
 
 Skills.propTypes = {
   activeIndex: PropTypes.number.isRequired,
-  activeSkillSet: PropTypes.string.isRequired,
+  activeSet: PropTypes.string.isRequired,
   updateActiveSet: PropTypes.func.isRequired,
   angledLineHeight: PropTypes.number.isRequired,
   children: PropTypes.oneOfType([

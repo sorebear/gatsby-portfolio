@@ -1,0 +1,15 @@
+.resources-container {
+  padding-top: 64px;
+  padding-bottom: 36px;
+
+  & > p {
+    width: 620px;
+    max-width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+
+  & > h2:not(:first-child) {
+    margin-top: 2em;
+  }
+}

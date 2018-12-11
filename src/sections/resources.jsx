@@ -2,12 +2,11 @@ import React from 'react';
 import Link from 'gatsby-link';
 
 import BasicCard from '../components/basicCard';
-import Button from '../components/button';
 
 const styles = {
   pricingStyle: {
     display: 'flex',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   titleStyle: {
     fontSize: '3rem',

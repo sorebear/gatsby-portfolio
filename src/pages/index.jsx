@@ -23,22 +23,27 @@ const darkGradient = 'linear-gradient(rgba(25, 25, 25, .8), rgba(25, 25, 25, .6)
 class Index extends Component {
   constructor(props) {
     super(props);
+    this.window = null;
     this.updateActiveSet = this.updateActiveSet.bind(this);
     this.updateWindowWidth = this.updateWindowWidth.bind(this);
     this.contentRef = null;
     this.state = {
       activeSet: 'web-development',
-      activeSection: 'skills',
       activeIndex: 0,
       angledLineHeight: this.contentWidth * Math.tan(5 * (Math.PI / 180)),
     };
   }
 
   componentDidMount() {
+    this.window = window;
     this.contentRef = document.getElementById('skills-title');
     this.updateWindowWidth();
     this.updateActiveSet('web-development', 'skills', 0);
-    window.addEventListener('resize', this.updateWindowWidth);
+    this.window.addEventListener('resize', this.updateWindowWidth);
+  }
+
+  componentWillUnmount() {
+    this.window.removeEventListener('resize', this.updateWindowWidth);
   }
 
   updateWindowWidth() {
@@ -50,17 +55,16 @@ class Index extends Component {
   updateActiveSet(newSet, section, newIndex) {
     this.setState({
       activeSet: newSet,
-      activeSection: section,
       activeIndex: newIndex,
     });
   }
 
   render() {
-    const { activeSet, activeSection, activeIndex, angledLineHeight } = this.state;
+    const { activeSet, activeIndex, angledLineHeight } = this.state;
     return (
       <div className={`content-wrapper ${activeSet}-active`}>
-        <TopBar />
-        <HeroImage title="Soren Baird" image={crissCross} />
+        <TopBar location="home" />
+        <HeroImage location="home" title="Soren Baird" image={crissCross} />
         <BasicSection
           id="about"
           className="about"

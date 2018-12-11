@@ -9,6 +9,12 @@ h3.section-title {
   text-shadow: $box-shadow;
 }
 
+a,
+a:hover,
+a:active {
+  color: inherit;
+}
+
 .light-text {
   color: $white;
 }

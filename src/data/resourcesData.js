@@ -1,24 +1,24 @@
-import cmsDevelopment from '../images/work/cms-development.svg';
-import webDevelopment from '../images/work/web-development.svg';
-import mobileDevelopment from '../images/work/mobile-development.svg';
+import lightbulb from '../images/resources/basic_lightbulb.svg';
+import pencilRuler from '../images/resources/basic_pencil_ruler.svg';
+import webpages from '../images/resources/basic_webpage_multiple.svg';
 
 const resourcesData = [
   {
     name: 'Static Site Generators',
     spinalName: 'web-development',
-    image: webDevelopment,
+    image: webpages,
     rotate: 5,
   },
   {
     name: 'Learn More',
     spinalName: 'cms-development',
-    image: cmsDevelopment,
+    image: lightbulb,
     rotate: -5,
   },
   {
     name: 'Tutorials',
     spinalName: 'mobile-development',
-    image: mobileDevelopment,
+    image: pencilRuler,
     rotate: 5,
   },
 ];

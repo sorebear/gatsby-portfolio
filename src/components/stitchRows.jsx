@@ -28,12 +28,12 @@ const StitchRows = props => (
         style={{
           transform: `rotate(${props.rotate}deg)`,
           transformOrigin: props.rotate > 0 ? '100% 50%' : '0% 50%',
-          left: props.rotate > 0 ? 0 : 'unset',
-          right: props.rotate > 0 ? 'unset' : 0,
-          width: '100%',
+          left: props.rotate > 0 ? '1%' : 'unset',
+          right: props.rotate > 0 ? 'unset' : '1%',
+          width: '98%',
           position: 'absolute',
           height: '100px',
-          bottom: '-100px',
+          bottom: '-95px',
           zIndex: 1,
         }}
       />
@@ -68,12 +68,12 @@ const StitchRows = props => (
         style={{
           transform: `rotate(${props.rotate}deg)`,
           transformOrigin: props.rotate < 0 ? '100% 50%' : '0% 50%',
-          left: props.rotate < 0 ? 0 : 'unset',
-          right: props.rotate < 0 ? 'unset' : 0,
-          width: '100%',
+          left: props.rotate < 0 ? '1%' : 'unset',
+          right: props.rotate < 0 ? 'unset' : '1%',
+          width: '98%',
           position: 'absolute',
           height: '100px',
-          top: '-100px',
+          top: '-95px',
           zIndex: 1,
         }}
       />
