@@ -6,9 +6,9 @@ exports.handler = (event, context, callback) => {
     auth: {
       type: 'OAuth2',
       user: 'sorenbaird@gmail.com',
-      clientId: '55184836945-qt5tdklhmnjankd8451np0op1pc3qfap.apps.googleusercontent.com',
+      clientId: '591711810893-klfh0ukhj1ivhpeppqcq0h74jv82lkll.apps.googleusercontent.com',
       clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      refreshToken: '1/G7nFIot0Vge-Rwx_53E6GBqxCKNUw7ZldqMww_WY27Tu7jjpMuIVaGwoqEghYJk5',
+      refreshToken: '1/W7v1vtRvgP5XwRYcmY64zXUnnGuYsYEVbyCMG16XofUBO0GxkDN61FfgdLdT3sJg',
     },
   });
 
