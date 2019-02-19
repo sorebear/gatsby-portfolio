@@ -2,7 +2,6 @@ const axios = require('axios');
 
 exports.handler = (event, context, callback) => {
   const body = JSON.parse(event.body);
-
   const { username, password, url } = body;
   axios.get(url, {
     auth: { username, password },
