@@ -36,6 +36,7 @@ class Contact extends Component {
       name: '',
       email: '',
       message: '',
+      error: false,
       messageSent: false,
     };
 
@@ -60,6 +61,9 @@ class Contact extends Component {
         messageSent: true,
       });
     }).catch((error) => {
+      this.setState({
+        error: true,
+      });
       console.log(error);
     });
   }
@@ -76,59 +80,73 @@ class Contact extends Component {
     this.setState({ message: e.target.value });
   }
 
-  render() {
+  renderContactForm() {
     const { name, email, message, messageSent } = this.state;
     return (
-      <div className="contact-me" style={styles.contactMeStyle}>
-        <form
-          onSubmit={this.handleSubmit}
-          style={styles.formStyle}
-          className="contact-me__form"
-        >
-          <div className="contact-me__input-container" style={styles.inputContainerStyle}>
-            <input
-              value={name}
-              onChange={this.handleNameInput}
-              name="name"
-              type="text"
-              placeholder="Name*"
-              className="contact-me__input"
-              style={{ ...styles.inputStyle, marginRight: '10px' }}
-              required
-            />
-            <input
-              value={email}
-              onChange={this.handleEmailInput}
-              name="email"
-              type="email"
-              placeholder="Email*"
-              className="contact-me__input"
-              style={{ ...styles.inputStyle, marginLeft: '10px' }}
-              required
-            />
-          </div>
-          <textarea
-            value={message}
-            onChange={this.handleMessageInput}
-            name="message"
-            rows="8"
-            placeholder="Message*"
+      <form
+        onSubmit={this.handleSubmit}
+        style={styles.formStyle}
+        className="contact-me__form"
+      >
+        <div className="contact-me__input-container" style={styles.inputContainerStyle}>
+          <input
+            value={name}
+            onChange={this.handleNameInput}
+            name="name"
+            type="text"
+            placeholder="Name*"
             className="contact-me__input"
-            style={styles.inputStyle}
+            style={{ ...styles.inputStyle, marginRight: '10px' }}
             required
           />
-          { messageSent ? (
-            <h2 style={{ color: 'white', marginBottom: '24.38px' }}>Message Sent!</h2>
-          ) : (
-            <Button
-              type="submit"
-              className="contact-me__submit-button"
-              style={{ width: '160px' }}
-            >
-              Send
-            </Button>
-          )}
-        </form>
+          <input
+            value={email}
+            onChange={this.handleEmailInput}
+            name="email"
+            type="email"
+            placeholder="Email*"
+            className="contact-me__input"
+            style={{ ...styles.inputStyle, marginLeft: '10px' }}
+            required
+          />
+        </div>
+        <textarea
+          value={message}
+          onChange={this.handleMessageInput}
+          name="message"
+          rows="8"
+          placeholder="Message*"
+          className="contact-me__input"
+          style={styles.inputStyle}
+          required
+        />
+        { messageSent ? (
+          <h2 style={{ color: 'white', marginBottom: '24.38px' }}>Message Sent!</h2>
+        ) : (
+          <Button
+            type="submit"
+            className="contact-me__submit-button"
+            style={{ width: '160px' }}
+          >
+            Send
+          </Button>
+        )}
+      </form>
+    );
+  }
+
+  render() {
+    const { error } = this.state;
+    return (
+      <div className="contact-me" style={styles.contactMeStyle}>
+        {error ? (
+          <div style={{ color: 'white', textAlign: 'center', marginBottom: '24.38px' }}>
+            <h2>We&apos;re Sorry.</h2>
+            <p>There was an issue submitting the form. Please try again later.</p>
+          </div>
+        ) : (
+          this.renderContactForm()
+        )}
       </div>
     );
   }
