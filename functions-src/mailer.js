@@ -22,6 +22,8 @@ exports.handler = (event, context, callback) => {
     text: `SENDER NAME: ${body.name}, SENDER EMAIL: ${body.email}, SENDER MESSAGE: ${body.message}`,
   };
 
+  console.log('[mailOptions]', mailOptions);
+
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
       console.log(error);
