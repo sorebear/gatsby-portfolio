@@ -22,11 +22,11 @@ exports.handler = (event, context, callback) => {
     text: `SENDER NAME: ${body.name}, SENDER EMAIL: ${body.email}, SENDER MESSAGE: ${body.message}`,
   };
 
-  console.log('[mailOptions]', mailOptions);
-
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      console.log('[mailOptions]', mailOptions);
+      console.log('[error]', error);
+      console.log('[info]', info);
       callback(null, {
         statusCode: 500,
         body: JSON.stringify(error),
