@@ -56,7 +56,7 @@ const skillsData = [
         name: 'Thrive Leadership',
         spinalName: 'thrive-leadership',
         image: thriveLeadership,
-        liveLink: 'http://thriveleadership.net',
+        liveLink: 'https://thrive-leadership.netlify.com',
         githubLink: 'https://github.com/sorebear/thrive-leadership',
       },
       {
