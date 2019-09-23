@@ -67,9 +67,14 @@ const styles = {
     right: '5px',
     display: 'flex',
     padding: '1.45rem',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  projectOverlayLinksStyle: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-around',
   },
 };
 
@@ -180,26 +185,31 @@ class Work extends Component {
           <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
           <div className="work__project-overlay-mask" style={styles.projectOverlayMaskStyle} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            { !work.liveLink ? '' : (
-              <a
-                href={work.liveLink}
-                style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
-                <p>Live</p>
-              </a>
-            )}
-            <a
-              href={work.githubLink}
-              style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
-              <p>Code</p>
-            </a>
+            <p style={{ color: 'white', textTransform: 'uppercase' }}>{work.name}</p>
+            <div className="work__project-overlay--links" style={styles.projectOverlayLinksStyle}>
+              { work.liveLink && (
+                <a
+                  href={work.liveLink}
+                  style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
+                  <p>Live</p>
+                </a>
+              )}
+              { work.githubLink && (
+                <a
+                  href={work.githubLink}
+                  style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
+                  <p>Code</p>
+                </a>
+              )}
+            </div>
           </div>
         </StitchBox>
       </div>
