@@ -185,7 +185,24 @@ class Work extends Component {
           <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
           <div className="work__project-overlay-mask" style={styles.projectOverlayMaskStyle} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            <p style={{ color: 'white', textTransform: 'uppercase' }}>{work.name}</p>
+            <h3 style={{ color: 'white', textTransform: 'uppercase', marginBottom: '.325em' }}>
+              {work.name}
+            </h3>
+            { work.company && (
+              <p style={{ color: 'white' }}>
+                { work.companyLink ? (
+                  <a
+                    href={work.companyLink}
+                    rel="noreferre noopener"
+                    target="_blank"
+                  >
+                    {work.company}
+                  </a>
+                ) : (
+                  <span>{work.company}</span>
+                )}
+              </p>
+            )}
             <div className="work__project-overlay--links" style={styles.projectOverlayLinksStyle}>
               { work.liveLink && (
                 <a
@@ -222,7 +239,7 @@ class Work extends Component {
         <MainWork angledLineHeight={this.props.angledLineHeight} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
           <SectionTitle style={styles.sideProjectsTitleStyle} >
-            Side-Projects
+            Project Samples
           </SectionTitle>
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>

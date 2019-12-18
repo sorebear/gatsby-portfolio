@@ -53,7 +53,7 @@ const MainWork = ({ activeSet, angledLineHeight }) => {
   return (
     <div className="work__main-work-wrapper" style={styles.mainWorkStyle}>
       <SectionTitle style={styles.workSectionTitleStyle}>
-        Full-Time Work
+        Professional Experience
       </SectionTitle>
       <StitchRows
         rows={[3, 4]}
