@@ -20,6 +20,7 @@
       "react/forbid-prop-types": false,
       "import/no-extraneous-dependencies": false,
       "linebreak-style": "off",
-      "arrow-body-style": 0
+      "arrow-body-style": 0,
+      "no-console": 0
     }
 }

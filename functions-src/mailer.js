@@ -1,15 +1,17 @@
 const nodemailer = require('nodemailer');
 
 exports.handler = (event, context, callback) => {
+  const auth = {
+    type: 'OAuth2',
+    user: 'sorenbaird@gmail.com',
+    clientId: '591711810893-klfh0ukhj1ivhpeppqcq0h74jv82lkll.apps.googleusercontent.com',
+    clientSecret: process.env.GMAIL_CLIENT_SECRET,
+    refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+  };
+
   const transporter = nodemailer.createTransport({
     service: 'gmail',
-    auth: {
-      type: 'OAuth2',
-      user: 'sorenbaird@gmail.com',
-      clientId: '591711810893-klfh0ukhj1ivhpeppqcq0h74jv82lkll.apps.googleusercontent.com',
-      clientSecret: process.env.GMAIL_CLIENT_SECRET,
-      refreshToken: '1/W7v1vtRvgP5XwRYcmY64zXUnnGuYsYEVbyCMG16XofUBO0GxkDN61FfgdLdT3sJg',
-    },
+    auth,
   });
 
   const body = JSON.parse(event.body);
@@ -24,7 +26,10 @@ exports.handler = (event, context, callback) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
-      console.log(error);
+      console.log('[auth]', auth);
+      console.log('[mailOptions]', mailOptions);
+      console.log('[error]', error);
+      console.log('[info]', info);
       callback(null, {
         statusCode: 500,
         body: JSON.stringify(error),
