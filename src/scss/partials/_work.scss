@@ -15,7 +15,9 @@
   }
 
   &__projects,
-  &__main-work {
+  &__main-work,
+  &__main-work-1,
+  &__main-work-2 {
     padding-top: $single-space;
     padding-bottom: $single-space;
   }
@@ -99,7 +101,9 @@
 
 @media only screen and (max-width: $desktop-breakpoint - 1) {
   .work {
-    &__main-work {
+    &__main-work,
+    &__main-work-1,
+    &__main-work-2 {
       flex-direction: column !important;
 
       & > div {
