@@ -67,9 +67,14 @@ const styles = {
     right: '5px',
     display: 'flex',
     padding: '1.45rem',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
+  },
+  projectOverlayLinksStyle: {
+    width: '100%',
+    display: 'flex',
+    justifyContent: 'space-around',
   },
 };
 
@@ -180,26 +185,48 @@ class Work extends Component {
           <img src={work.image} style={{ padding: '5px', margin: 0, width: '100%' }} alt={work.name} />
           <div className="work__project-overlay-mask" style={styles.projectOverlayMaskStyle} />
           <div className="work__project-overlay" style={styles.projectOverlayStyle}>
-            { !work.liveLink ? '' : (
-              <a
-                href={work.liveLink}
-                style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
-                <p>Live</p>
-              </a>
+            <h3 style={{ color: 'white', textTransform: 'uppercase', marginBottom: '.325em' }}>
+              {work.name}
+            </h3>
+            { work.company && (
+              <p style={{ color: 'white' }}>
+                { work.companyLink ? (
+                  <a
+                    href={work.companyLink}
+                    rel="noreferre noopener"
+                    target="_blank"
+                  >
+                    {work.company}
+                  </a>
+                ) : (
+                  <span>{work.company}</span>
+                )}
+              </p>
             )}
-            <a
-              href={work.githubLink}
-              style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
-              rel="noreferrer noopener"
-              target="_blank"
-            >
-              <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
-              <p>Code</p>
-            </a>
+            <div className="work__project-overlay--links" style={styles.projectOverlayLinksStyle}>
+              { work.liveLink && (
+                <a
+                  href={work.liveLink}
+                  style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <img src={live} alt="laptop icon" style={{ width: '3rem', margin: 0 }} />
+                  <p>Live</p>
+                </a>
+              )}
+              { work.githubLink && (
+                <a
+                  href={work.githubLink}
+                  style={{ color: 'white', display: 'flex', flexDirection: 'column' }}
+                  rel="noreferrer noopener"
+                  target="_blank"
+                >
+                  <img src={code} alt="code icon" style={{ width: '3rem', margin: 0 }} />
+                  <p>Code</p>
+                </a>
+              )}
+            </div>
           </div>
         </StitchBox>
       </div>
@@ -212,7 +239,7 @@ class Work extends Component {
         <MainWork angledLineHeight={this.props.angledLineHeight} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
           <SectionTitle style={styles.sideProjectsTitleStyle} >
-            Side-Projects
+            Project Samples
           </SectionTitle>
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>

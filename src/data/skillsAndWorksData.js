@@ -20,6 +20,9 @@ import mobileDevelopment from '../images/work/mobile-development.svg';
 import thriveLeadership from '../images/work/thrive-leadership.png';
 import memoryMatch from '../images/work/memory-match.png';
 import bologneseBanners from '../images/work/bolognese-banners.png';
+import pvschools from '../images/work/pvschools.jpg';
+import huntsville from '../images/work/huntsville.jpg';
+import experimentWithWonder from '../images/work/experiment-with-wonder.jpg';
 
 const gatsbyIcon =
   'data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJFYmVuZV8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwIiB5PSIwIiB2aWV3Qm94PSIwIDAgMTIwMCAxMjAwIiB4bWw6c3BhY2U9InByZXNlcnZlIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAxMjAwIDEyMDAiPjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+LnN0MHtmaWxsOiM2Mzl9PC9zdHlsZT48cGF0aCBjbGFzcz0ic3QwIiBkPSJNNjAwLDBDMjY4LjYsMCwwLDI2OC42LDAsNjAwczI2OC42LDYwMCw2MDAsNjAwczYwMC0yNjguNiw2MDAtNjAwUzkzMS40LDAsNjAwLDB6IE0yNjYuNiw5MzMuMwlDMTc2LjEsODQyLjgsMTMxLDcyNC42LDEyOS42LDYwNkw1OTQsMTA3MC40QzQ3NS40LDEwNjksMzU3LjIsMTAyMy45LDI2Ni42LDkzMy4zeiBNNzA0LjMsMTA1OS40TDE0MC42LDQ5NS43CWM0Ny41LTIxMC4xLDIzNS0zNjcuMSw0NTkuNC0zNjcuMWMxNTYuOSwwLDI5NS41LDc3LDM4MS4yLDE5NC45TDkxNS42LDM3OUM4NDUuOCwyNzkuNSw3MzAuNSwyMTQuMyw2MDAsMjE0LjMJYy0xNjcuNywwLTMxMC4zLDEwNy43LTM2My4zLDI1Ny41bDQ5MS42LDQ5MS42YzEyMy40LTQzLjcsMjE4LTE0OC4yLDI0Ny42LTI3Ny42SDc3MS40VjYwMGgzMDAJQzEwNzEuNCw4MjQuNSw5MTQuNCwxMDExLjksNzA0LjMsMTA1OS40eiIvPjwvc3ZnPg==';
@@ -54,6 +57,7 @@ const skillsData = [
     works: [
       {
         name: 'Thrive Leadership',
+        company: 'Freelance Project',
         spinalName: 'thrive-leadership',
         image: thriveLeadership,
         liveLink: 'https://thrive-leadership.netlify.com',
@@ -61,12 +65,15 @@ const skillsData = [
       },
       {
         name: 'Bolognese Banners',
+        company: 'Envivent',
+        companyLink: 'https://envivent.com',
         spinalName: 'bolognese-banners',
         image: bologneseBanners,
         githubLink: 'https://github.com/sorebear/bolognese-banners',
       },
       {
         name: 'Inventor Memory Match',
+        company: 'Personal Project',
         spinalName: 'inventor-memory-match',
         image: memoryMatch,
         liveLink: 'http://memorymatch.sorenbaird.com',
@@ -100,7 +107,32 @@ const skillsData = [
         ],
       },
     },
-    works: [],
+    works: [
+      {
+        name: 'Paradise Valley School District',
+        company: '360 BC Group',
+        companyLink: 'https://www.360bcgroup.com/',
+        spinalName: 'pvschools',
+        image: pvschools,
+        liveLink: 'https://pvschools.net',
+      },
+      {
+        name: 'Huntsville City Schools',
+        company: '360 BC Group',
+        companyLink: 'https://www.360bcgroup.com/',
+        spinalName: 'huntsville',
+        image: huntsville,
+        liveLink: 'https://huntsvillecityschools.org',
+      },
+      {
+        name: 'Experiment With Wonder',
+        company: 'Freelance Project',
+        spinalName: 'experiment-with-wonder',
+        image: experimentWithWonder,
+        liveLink: 'https://caitlinbaird.com',
+        githubLink: 'https://github.com/sorebear/experiment-with-wonder',
+      },
+    ],
   },
   {
     name: 'Mobile Development',
