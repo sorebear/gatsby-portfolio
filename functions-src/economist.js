@@ -1,6 +1,11 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 
+const headers = {
+  'Access-Control-Allow-Origin': '*',
+  'Content-Type': 'application/json',
+};
+
 exports.handler = (event, context, callback) => {
   const { httpMethod, queryStringParameters } = event;
 
@@ -50,6 +55,7 @@ exports.handler = (event, context, callback) => {
 
       return callback(null, {
         statusCode: 200,
+        headers,
         body: JSON.stringify(response),
       });
     }
@@ -79,6 +85,7 @@ exports.handler = (event, context, callback) => {
 
     return callback(null, {
       statusCode: 200,
+      headers,
       body: JSON.stringify(response),
     });
   }).catch((err) => {
