@@ -18,6 +18,7 @@
       "object-curly-newline": 0,
       "react/jsx-filename-extension": false,
       "react/forbid-prop-types": false,
+      "react/no-array-index-key": false,
       "import/no-extraneous-dependencies": false,
       "linebreak-style": "off",
       "arrow-body-style": 0,
