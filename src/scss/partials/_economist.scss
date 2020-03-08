@@ -2,6 +2,11 @@ $economist-red: rgb(227, 18, 11);
 $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
 @import url('https://fonts.googleapis.com/css?family=Lora:400,700&display=swap');
 
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 @mixin box-shadow {
   box-shadow: $box-shadow;
 
@@ -120,6 +125,10 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
     padding: 20px;
     text-align: center;
 
+    form {
+      margin-bottom: 0;
+    }
+
     input {
       padding: 10px 20px;
       outline: none;
@@ -130,6 +139,14 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
       border-radius: 10px;
       border: 3px solid black;
     }
+  }
+
+  &__spinner {
+    margin: 0;
+    height: 52px;
+    width: auto;
+    transform-style: preserve-3d;
+    animation: spin 1.5s linear infinite;
   }
 
   &__print-edition {
