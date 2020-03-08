@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import axios from 'axios';
 
+import spinner from '../images/icons/spinner.png';
 import moon from '../images/fontawesome/moon-solid.svg';
 import sun from '../images/fontawesome/sun-solid.svg';
 
@@ -18,7 +19,7 @@ class Economist extends Component {
     this.fetchFirstArticle = this.fetchFirstArticle.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.state = {
-      loading: false,
+      loading: true,
       password: '',
       todaysNewsList: [],
       printNewsList: [],
@@ -39,8 +40,9 @@ class Economist extends Component {
     if (cachedPassword) {
       this.setState({ password: cachedPassword }, () => {
         this.checkForCachedNews();
-        this.checkForCachedPrintEdition();
       });
+    } else {
+      this.setState({ loading: false });
     }
   }
 
@@ -49,19 +51,22 @@ class Economist extends Component {
     this.dateString = date.toDateString().replace(/ /g, '');
 
     const cachedNewsList = localStorage.getItem(this.dateString);
+    const cachedPrintNewsList = localStorage.getItem(`${this.dateString}Print`);
 
     if (cachedNewsList) {
-      this.setState({ todaysNewsList: JSON.parse(cachedNewsList) }, this.fetchFirstArticle);
+      this.setState({
+        todaysNewsList: JSON.parse(cachedNewsList),
+        loading: false,
+      }, this.fetchFirstArticle);
     } else {
       this.fetchArticles('/');
     }
-  }
 
-  checkForCachedPrintEdition() {
-    const cachedNewsList = localStorage.getItem('printedition');
-
-    if (cachedNewsList) {
-      this.setState({ printNewsList: JSON.parse(cachedNewsList) });
+    if (cachedPrintNewsList) {
+      this.setState({
+        printNewsList: JSON.parse(cachedNewsList),
+        loading: false,
+      });
     } else {
       this.fetchArticles('/printedition');
     }
@@ -69,6 +74,8 @@ class Economist extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    this.setState({ loading: true });
+
     this.fetchArticles('/');
     this.fetchArticles('/printedition');
   }
@@ -82,12 +89,18 @@ class Economist extends Component {
           localStorage.setItem(this.dateString, JSON.stringify(res.data));
           localStorage.setItem('economistApiPassword', password);
 
-          this.setState({ todaysNewsList: res.data }, this.fetchFirstArticle);
+          this.setState({
+            todaysNewsList: res.data,
+            loading: false,
+          }, this.fetchFirstArticle);
         } else if (path === '/printedition') {
           localStorage.setItem('weekly', JSON.stringify(res.data));
           localStorage.setItem('economistApiPassword', password);
 
-          this.setState({ printNewsList: res.data });
+          this.setState({
+            printNewsList: res.data,
+            loading: false,
+          });
         }
       })
       .catch(err => console.log('Error: ', err));
@@ -128,6 +141,7 @@ class Economist extends Component {
       activeArticle,
       activeIndex,
       darkTheme,
+      loading,
       showingWeek,
       todaysNewsList,
       printNewsList,
@@ -195,10 +209,14 @@ class Economist extends Component {
             <div className="economist__password-wrapper">
               <h1>The Economist</h1>
               <form onSubmit={this.handleFormSubmit}>
-                <input
-                  type="text"
-                  onChange={e => this.setState({ password: e.target.value })}
-                />
+                {loading ? (
+                  <img src={spinner} alt="Loading Spinner" className="economist__spinner" />
+                ) : (
+                  <input
+                    type="text"
+                    onChange={e => this.setState({ password: e.target.value })}
+                  />
+                )}
               </form>
             </div>
           )}
