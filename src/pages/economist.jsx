@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import axios from 'axios';
 
+import spinner from '../images/icons/spinner.png';
 import moon from '../images/fontawesome/moon-solid.svg';
 import sun from '../images/fontawesome/sun-solid.svg';
 
 import Article from '../components/article';
 import ArticleTeaser from '../components/articleTeaser';
+import PrintEdition from '../components/printEdition';
 
 class Economist extends Component {
   constructor(props) {
@@ -15,20 +17,33 @@ class Economist extends Component {
     this.baseUrl = '/.netlify/functions/economist';
     this.fetchArticle = this.fetchArticle.bind(this);
     this.fetchFirstArticle = this.fetchFirstArticle.bind(this);
-    this.fetchTodaysArticles = this.fetchTodaysArticles.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.state = {
-      loading: false,
+      loading: true,
       password: '',
-      newsList: [],
+      todaysNewsList: [],
+      printNewsList: [],
       activeArticle: [],
+      showingWeek: false,
       activeIndex: null,
       darkTheme: false,
     };
   }
 
   componentDidMount() {
-    this.checkForCachedNews();
+    this.checkForCachedPassword();
+  }
+
+  checkForCachedPassword() {
+    const cachedPassword = localStorage.getItem('economistApiPassword');
+
+    if (cachedPassword) {
+      this.setState({ password: cachedPassword }, () => {
+        this.checkForCachedNews();
+      });
+    } else {
+      this.setState({ loading: false });
+    }
   }
 
   checkForCachedNews() {
@@ -36,43 +51,64 @@ class Economist extends Component {
     this.dateString = date.toDateString().replace(/ /g, '');
 
     const cachedNewsList = localStorage.getItem(this.dateString);
+    const cachedPrintNewsList = localStorage.getItem(`${this.dateString}Print`);
 
     if (cachedNewsList) {
-      this.setState({ newsList: JSON.parse(cachedNewsList) }, this.fetchFirstArticle);
+      this.setState({
+        todaysNewsList: JSON.parse(cachedNewsList),
+        loading: false,
+      }, this.fetchFirstArticle);
     } else {
-      this.checkForCachedPassword();
+      this.fetchArticles('/');
     }
-  }
 
-  checkForCachedPassword() {
-    const cachedPassword = localStorage.getItem('economistApiPassword');
-
-    if (cachedPassword) {
-      this.setState({ password: cachedPassword }, this.fetchTodaysArticles);
+    if (cachedPrintNewsList) {
+      this.setState({
+        printNewsList: JSON.parse(cachedNewsList),
+        loading: false,
+      });
+    } else {
+      this.fetchArticles('/printedition');
     }
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
-    this.fetchTodaysArticles();
+    this.setState({ loading: true });
+
+    this.fetchArticles('/');
+    this.fetchArticles('/printedition');
   }
 
-  fetchTodaysArticles() {
+  fetchArticles(path) {
     const { password } = this.state;
 
-    axios.get(`${this.baseUrl}?key=${password}&page=/`)
+    axios.get(`${this.baseUrl}?key=${password}&page=${path}`)
       .then((res) => {
-        localStorage.setItem(this.dateString, JSON.stringify(res.data));
-        localStorage.setItem('economistApiPassword', password);
+        if (path === '/') {
+          localStorage.setItem(this.dateString, JSON.stringify(res.data));
+          localStorage.setItem('economistApiPassword', password);
 
-        this.setState({ newsList: res.data }, this.fetchFirstArticle);
+          this.setState({
+            todaysNewsList: res.data,
+            loading: false,
+          }, this.fetchFirstArticle);
+        } else if (path === '/printedition') {
+          localStorage.setItem('weekly', JSON.stringify(res.data));
+          localStorage.setItem('economistApiPassword', password);
+
+          this.setState({
+            printNewsList: res.data,
+            loading: false,
+          });
+        }
       })
       .catch(err => console.log('Error: ', err));
   }
 
   fetchFirstArticle() {
-    const { newsList } = this.state;
-    const firstArticleLink = newsList[0].link;
+    const { todaysNewsList } = this.state;
+    const firstArticleLink = todaysNewsList[0].link;
     this.fetchArticle(firstArticleLink, 0);
   }
 
@@ -85,14 +121,14 @@ class Economist extends Component {
       this.setState({
         activeArticle: JSON.parse(cachedNewsArticle),
         activeIndex: teaserIndex,
-      });
+      }, () => window.scrollTo(0, 0));
     } else {
       axios.get(`${this.baseUrl}?key=${password}&page=${url}`)
         .then((res) => {
           this.setState({
             activeArticle: res.data,
             activeIndex: teaserIndex,
-          });
+          }, () => window.scrollTo(0, 0));
 
           localStorage.setItem(url, JSON.stringify(res.data));
         })
@@ -101,7 +137,15 @@ class Economist extends Component {
   }
 
   render() {
-    const { activeArticle, activeIndex, darkTheme, newsList } = this.state;
+    const {
+      activeArticle,
+      activeIndex,
+      darkTheme,
+      loading,
+      showingWeek,
+      todaysNewsList,
+      printNewsList,
+    } = this.state;
     console.log(this.state);
     return (
       <div className="content-wrapper">
@@ -113,18 +157,38 @@ class Economist extends Component {
           <meta property="og:description" content="Learn more about the JAMstack with these resources." />
         </Helmet>
         <div className={`economist ${darkTheme ? 'dark' : 'light'}`}>
-          {newsList.length ? (
+          {todaysNewsList.length ? (
             <div>
               <div className="economist__article-list-wrapper">
-                {newsList.map((newsListItem, index) => (
-                  <ArticleTeaser
-                    index={index}
-                    activeIndex={activeIndex}
-                    article={newsListItem}
+                <div className="economist__print-edition-toggle">
+                  <button
+                    className={showingWeek ? '' : 'active'}
+                    onClick={() => this.setState({ showingWeek: false })}
+                  >
+                    Today
+                  </button>
+                  <button
+                    className={showingWeek ? 'active' : ''}
+                    onClick={() => this.setState({ showingWeek: true })}
+                  >
+                    Print Edition
+                  </button>
+                </div>
+                {showingWeek ? (
+                  <PrintEdition
+                    data={printNewsList}
                     fetchArticle={this.fetchArticle}
-                    key={`article-tease-${newsListItem.number}`}
                   />
-                ))}
+                ) : (
+                  todaysNewsList.map((newsListItem, index) => (
+                    <ArticleTeaser
+                      index={index}
+                      activeIndex={activeIndex}
+                      article={newsListItem}
+                      fetchArticle={this.fetchArticle}
+                      key={`article-tease-${newsListItem.number}`}
+                    />
+                )))}
               </div>
               <div className="economist__article-wrapper">
                 <button
@@ -145,10 +209,14 @@ class Economist extends Component {
             <div className="economist__password-wrapper">
               <h1>The Economist</h1>
               <form onSubmit={this.handleFormSubmit}>
-                <input
-                  type="text"
-                  onChange={e => this.setState({ password: e.target.value })}
-                />
+                {loading ? (
+                  <img src={spinner} alt="Loading Spinner" className="economist__spinner" />
+                ) : (
+                  <input
+                    type="text"
+                    onChange={e => this.setState({ password: e.target.value })}
+                  />
+                )}
               </form>
             </div>
           )}
