@@ -7,6 +7,7 @@ import sun from '../images/fontawesome/sun-solid.svg';
 
 import Article from '../components/article';
 import ArticleTeaser from '../components/articleTeaser';
+import PrintEdition from '../components/printEdition';
 
 class Economist extends Component {
   constructor(props) {
@@ -15,20 +16,32 @@ class Economist extends Component {
     this.baseUrl = '/.netlify/functions/economist';
     this.fetchArticle = this.fetchArticle.bind(this);
     this.fetchFirstArticle = this.fetchFirstArticle.bind(this);
-    this.fetchTodaysArticles = this.fetchTodaysArticles.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
     this.state = {
       loading: false,
       password: '',
-      newsList: [],
+      todaysNewsList: [],
+      printNewsList: [],
       activeArticle: [],
+      showingWeek: false,
       activeIndex: null,
       darkTheme: false,
     };
   }
 
   componentDidMount() {
-    this.checkForCachedNews();
+    this.checkForCachedPassword();
+  }
+
+  checkForCachedPassword() {
+    const cachedPassword = localStorage.getItem('economistApiPassword');
+
+    if (cachedPassword) {
+      this.setState({ password: cachedPassword }, () => {
+        this.checkForCachedNews();
+        this.checkForCachedPrintEdition();
+      });
+    }
   }
 
   checkForCachedNews() {
@@ -38,41 +51,51 @@ class Economist extends Component {
     const cachedNewsList = localStorage.getItem(this.dateString);
 
     if (cachedNewsList) {
-      this.setState({ newsList: JSON.parse(cachedNewsList) }, this.fetchFirstArticle);
+      this.setState({ todaysNewsList: JSON.parse(cachedNewsList) }, this.fetchFirstArticle);
     } else {
-      this.checkForCachedPassword();
+      this.fetchArticles('/');
     }
   }
 
-  checkForCachedPassword() {
-    const cachedPassword = localStorage.getItem('economistApiPassword');
+  checkForCachedPrintEdition() {
+    const cachedNewsList = localStorage.getItem('printedition');
 
-    if (cachedPassword) {
-      this.setState({ password: cachedPassword }, this.fetchTodaysArticles);
+    if (cachedNewsList) {
+      this.setState({ printNewsList: JSON.parse(cachedNewsList) });
+    } else {
+      this.fetchArticles('/printedition');
     }
   }
 
   handleFormSubmit(e) {
     e.preventDefault();
-    this.fetchTodaysArticles();
+    this.fetchArticles('/');
+    this.fetchArticles('/printedition');
   }
 
-  fetchTodaysArticles() {
+  fetchArticles(path) {
     const { password } = this.state;
 
-    axios.get(`${this.baseUrl}?key=${password}&page=/`)
+    axios.get(`${this.baseUrl}?key=${password}&page=${path}`)
       .then((res) => {
-        localStorage.setItem(this.dateString, JSON.stringify(res.data));
-        localStorage.setItem('economistApiPassword', password);
+        if (path === '/') {
+          localStorage.setItem(this.dateString, JSON.stringify(res.data));
+          localStorage.setItem('economistApiPassword', password);
 
-        this.setState({ newsList: res.data }, this.fetchFirstArticle);
+          this.setState({ todaysNewsList: res.data }, this.fetchFirstArticle);
+        } else if (path === '/printedition') {
+          localStorage.setItem('weekly', JSON.stringify(res.data));
+          localStorage.setItem('economistApiPassword', password);
+
+          this.setState({ printNewsList: res.data });
+        }
       })
       .catch(err => console.log('Error: ', err));
   }
 
   fetchFirstArticle() {
-    const { newsList } = this.state;
-    const firstArticleLink = newsList[0].link;
+    const { todaysNewsList } = this.state;
+    const firstArticleLink = todaysNewsList[0].link;
     this.fetchArticle(firstArticleLink, 0);
   }
 
@@ -85,14 +108,14 @@ class Economist extends Component {
       this.setState({
         activeArticle: JSON.parse(cachedNewsArticle),
         activeIndex: teaserIndex,
-      });
+      }, () => window.scrollTo(0, 0));
     } else {
       axios.get(`${this.baseUrl}?key=${password}&page=${url}`)
         .then((res) => {
           this.setState({
             activeArticle: res.data,
             activeIndex: teaserIndex,
-          });
+          }, () => window.scrollTo(0, 0));
 
           localStorage.setItem(url, JSON.stringify(res.data));
         })
@@ -101,7 +124,14 @@ class Economist extends Component {
   }
 
   render() {
-    const { activeArticle, activeIndex, darkTheme, newsList } = this.state;
+    const {
+      activeArticle,
+      activeIndex,
+      darkTheme,
+      showingWeek,
+      todaysNewsList,
+      printNewsList,
+    } = this.state;
     console.log(this.state);
     return (
       <div className="content-wrapper">
@@ -113,18 +143,38 @@ class Economist extends Component {
           <meta property="og:description" content="Learn more about the JAMstack with these resources." />
         </Helmet>
         <div className={`economist ${darkTheme ? 'dark' : 'light'}`}>
-          {newsList.length ? (
+          {todaysNewsList.length ? (
             <div>
               <div className="economist__article-list-wrapper">
-                {newsList.map((newsListItem, index) => (
-                  <ArticleTeaser
-                    index={index}
-                    activeIndex={activeIndex}
-                    article={newsListItem}
+                <div className="economist__print-edition-toggle">
+                  <button
+                    className={showingWeek ? '' : 'active'}
+                    onClick={() => this.setState({ showingWeek: false })}
+                  >
+                    Today
+                  </button>
+                  <button
+                    className={showingWeek ? 'active' : ''}
+                    onClick={() => this.setState({ showingWeek: true })}
+                  >
+                    Print Edition
+                  </button>
+                </div>
+                {showingWeek ? (
+                  <PrintEdition
+                    data={printNewsList}
                     fetchArticle={this.fetchArticle}
-                    key={`article-tease-${newsListItem.number}`}
                   />
-                ))}
+                ) : (
+                  todaysNewsList.map((newsListItem, index) => (
+                    <ArticleTeaser
+                      index={index}
+                      activeIndex={activeIndex}
+                      article={newsListItem}
+                      fetchArticle={this.fetchArticle}
+                      key={`article-tease-${newsListItem.number}`}
+                    />
+                )))}
               </div>
               <div className="economist__article-wrapper">
                 <button
