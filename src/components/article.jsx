@@ -17,7 +17,7 @@ const Article = ({ article }) => (
     </p>
     <div className="article__body">
       {article.body.map((paragraph, index) => (
-        <p key={`paragraph-${index}`} style={{ fontFamily: '"Domine", sarif' }}>
+        <p key={`paragraph-${index}`}>
           {paragraph}
         </p>
       ))}

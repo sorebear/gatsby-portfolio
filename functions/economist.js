@@ -95,8 +95,8 @@ function getArticle(callback, $) {
   checkForText($, response[0], 'footnote', article, '.article__footnote');
   checkForText($, response[0], 'section', article, '.article__section-headline a');
 
-  if (response[0].section == null) {
-    checkForText(0, 'section', article, '.article__section-headline');
+  if (!response[0].section) {
+    checkForText($, response[0], 'section', article, '.article__section-headline');
   }
 
   response[0].body = [];
