@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Article = ({ article }) => (
+const Article = ({ article, textSize }) => (
   <div className="article">
     <div className="article__image-container">
       <img src={article.mainImage} alt="Banner" />
@@ -17,7 +17,7 @@ const Article = ({ article }) => (
     </p>
     <div className="article__body">
       {article.body.map((paragraph, index) => (
-        <p key={`paragraph-${index}`}>
+        <p key={`paragraph-${index}`} style={{ fontSize: `${textSize}px` }}>
           {paragraph}
         </p>
       ))}
@@ -37,4 +37,5 @@ Article.propTypes = {
       PropTypes.string,
     ]),
   }).isRequired,
+  textSize: PropTypes.number.isRequired,
 };
