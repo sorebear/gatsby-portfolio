@@ -27,10 +27,15 @@ class Economist extends Component {
       showingWeek: false,
       activeIndex: null,
       darkTheme: false,
+      textSize: 18,
+      workMode: false,
     };
   }
 
   componentDidMount() {
+    const date = new Date();
+    this.dateString = date.toDateString().replace(/ /g, '');
+
     this.checkForCachedPassword();
   }
 
@@ -47,9 +52,6 @@ class Economist extends Component {
   }
 
   checkForCachedNews() {
-    const date = new Date();
-    this.dateString = date.toDateString().replace(/ /g, '');
-
     const cachedNewsList = localStorage.getItem(this.dateString);
     const cachedPrintNewsList = localStorage.getItem(`${this.dateString}Print`);
 
@@ -64,7 +66,7 @@ class Economist extends Component {
 
     if (cachedPrintNewsList) {
       this.setState({
-        printNewsList: JSON.parse(cachedNewsList),
+        printNewsList: JSON.parse(cachedPrintNewsList),
         loading: false,
       });
     } else {
@@ -94,7 +96,7 @@ class Economist extends Component {
             loading: false,
           }, this.fetchFirstArticle);
         } else if (path === '/printedition') {
-          localStorage.setItem('weekly', JSON.stringify(res.data));
+          localStorage.setItem(`${this.dateString}Print`, JSON.stringify(res.data));
           localStorage.setItem('economistApiPassword', password);
 
           this.setState({
@@ -143,8 +145,10 @@ class Economist extends Component {
       darkTheme,
       loading,
       showingWeek,
+      textSize,
       todaysNewsList,
       printNewsList,
+      workMode,
     } = this.state;
     console.log(this.state);
     return (
@@ -156,7 +160,7 @@ class Economist extends Component {
           <meta property="og:url" content="https://sorenbaird.com/jamstack" />
           <meta property="og:description" content="Learn more about the JAMstack with these resources." />
         </Helmet>
-        <div className={`economist ${darkTheme ? 'dark' : 'light'}`}>
+        <div className={`economist ${darkTheme ? 'dark' : 'light'} ${workMode ? 'work-mode' : ''}`}>
           {todaysNewsList.length ? (
             <div>
               <div className="economist__article-list-wrapper">
@@ -201,8 +205,27 @@ class Economist extends Component {
                   />
                 </button>
                 {activeArticle.map(article => (
-                  <Article article={article} key={article.headline} />
+                  <Article key={article.headline} article={article} textSize={textSize} />
                 ))}
+                <div className="economist__text-size">
+                  <button
+                    onClick={() => this.setState({ workMode: !workMode })}
+                  >
+                    X
+                  </button>
+                  <button
+                    className="economist__text-size--alter economist__text-size--increase"
+                    onClick={() => this.setState({ textSize: textSize + 1 })}
+                  >
+                    +
+                  </button>
+                  <button
+                    className="economist__text-size--alter economist__text-size--decrease"
+                    onClick={() => this.setState({ textSize: textSize - 1 })}
+                  >
+                    -
+                  </button>
+                </div>
               </div>
             </div>
           ) : (
