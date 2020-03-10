@@ -23,6 +23,10 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
   }
 }
 
+body {
+  scroll-behavior: smooth;
+}
+
 .economist {
   &.dark {
     color: white;
@@ -63,7 +67,7 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
     }
   }
 
-  &.work-mode {
+  &.no-images {
     img {
       display: none;
     }
@@ -71,7 +75,9 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
     .economist__dark-theme-toggle img {
       display: block;
     }
+  }
 
+  &.work-mode {
     * {
       font-family: 'Courier Prime', 'Courier New', monospace;
       border: none;
@@ -397,6 +403,18 @@ $box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.3);
       justify-content: center;
       align-items: center;
       @include box-shadow();
+      cursor: pointer;
+
+      svg {
+        width: 17px;
+        height: auto;
+        margin: 0;
+
+        &.fa-plus,
+        &.fa-minus {
+          width: 13px;
+        }
+      }
     }
   }
 
