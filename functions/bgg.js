@@ -26,7 +26,7 @@ exports.handler = async (event, context, callback) => {
     });
   }
 
-  if (queryStringParameters.key !== 'booboobearcub') {
+  if (queryStringParameters.key !== process.env.BGG_API_KEY) {
     return callback(null, {
       statusCode: 403,
       body: 'Incorrect key.',

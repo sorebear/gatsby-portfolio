@@ -239,7 +239,7 @@ class Work extends Component {
         <MainWork angledLineHeight={this.props.angledLineHeight} activeSet={this.props.activeSet} />
         <div style={{ position: 'relative' }}>
           <SectionTitle style={styles.sideProjectsTitleStyle} >
-            Project Samples
+            Portfolio
           </SectionTitle>
         </div>
         <div className="work__types-container" style={styles.workSetsContainerStyle}>
