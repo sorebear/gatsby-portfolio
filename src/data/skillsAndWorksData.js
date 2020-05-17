@@ -1,5 +1,5 @@
 import reactIcon from '../images/devicons/react.svg';
-import mongoDBIcon from '../images/devicons/mongodb.svg';
+import mysqlIcon from '../images/devicons/mysql.svg';
 import nodeJSIcon from '../images/devicons/nodejs.svg';
 import graphQLIcon from '../images/devicons/graphql.svg';
 import javaScriptIcon from '../images/devicons/javascript.svg';
@@ -18,7 +18,7 @@ import mobileDevelopment from '../images/work/mobile-development.svg';
 
 
 import thriveLeadership from '../images/work/thrive-leadership.png';
-import memoryMatch from '../images/work/memory-match.png';
+import team360videos from '../images/work/team-360-videos.png';
 import bologneseBanners from '../images/work/bolognese-banners.png';
 import pvschools from '../images/work/pvschools.jpg';
 import huntsville from '../images/work/huntsville.jpg';
@@ -35,8 +35,8 @@ const skillsData = [
     rotate: 5,
     details: {
       text: [
-        'I primarily build full-stack web applications using the React, Node.js, and MongoDB.',
-        'I also build web applications using vanilla Javascript and PHP.',
+        'I primarily build full-stack web applications using React, Node.js, and MySQL.',
+        'I also build web applications using vanilla JavaScript and PHP.',
       ],
       icons: {
         row1: [
@@ -44,7 +44,7 @@ const skillsData = [
           { separator: 'and', iconKey: 'web-sep-1' },
           { icon: nodeJSIcon, iconAlt: 'node-js icon', iconKey: 'web-node' },
           { separator: 'and', iconKey: 'web-sep-2' },
-          { icon: mongoDBIcon, iconAlt: 'mongo-db icon', iconKey: 'web-mongodb' },
+          { icon: mysqlIcon, iconAlt: 'mysql icon', iconKey: 'web-mysql' },
         ],
         row2: [
           { separator: 'or', iconKey: 'web-sep-3' },
@@ -55,6 +55,13 @@ const skillsData = [
       },
     },
     works: [
+      {
+        name: 'Team 360 Videos',
+        company: '360 BC Group',
+        spinalName: 'team-360-videos',
+        image: team360videos,
+        liveLink: 'https://team360videos.com/',
+      },
       {
         name: 'Thrive Leadership',
         company: 'Freelance Project',
@@ -71,14 +78,6 @@ const skillsData = [
         image: bologneseBanners,
         githubLink: 'https://github.com/sorebear/bolognese-banners',
       },
-      {
-        name: 'Inventor Memory Match',
-        company: 'Personal Project',
-        spinalName: 'inventor-memory-match',
-        image: memoryMatch,
-        liveLink: 'http://memorymatch.sorenbaird.com',
-        githubLink: 'https://github.com/sorebear/inventor_memory_match',
-      },
     ],
   },
   {
@@ -88,22 +87,22 @@ const skillsData = [
     rotate: -5,
     details: {
       text: [
-        'I primarily build modern, fast, and secure CMS solutions with Gatsby.js, GraphQL and Netlify.',
-        'I also build traditional CMS sites using Drupal and Wordpress.',
+        'I primarily build robust, flexible, and secure CMS solutions with Drupal.',
+        'I also build CMS sites with Wordpress and headless CMS sites with Gatsby.js, GraphQL, and Netlify.',
       ],
       icons: {
         row1: [
+          { icon: drupalIcon, iconAlt: 'drupal icon', iconKey: 'cms-drupal' },
+          { separator: 'or', iconKey: 'cms-sep-3' },
+          { icon: wordpressIcon, iconAlt: 'wordpress icon', iconKey: 'cms-wordpress' },
+        ],
+        row2: [
+          { separator: 'or', iconKey: 'cms-sep-4' },
           { icon: gatsbyIcon, iconAlt: 'gatsby icon', iconKey: 'cms-gatsby' },
           { separator: 'and', iconKey: 'cms-sep-1' },
           { icon: graphQLIcon, iconAlt: 'graph-ql icon', iconKey: 'cms-graphql' },
           { separator: 'and', iconKey: 'cms-sep-2' },
           { icon: netlifyIcon, iconAlt: 'netlify icon', iconKey: 'cms-netlify' },
-        ],
-        row2: [
-          { separator: 'or', iconKey: 'cms-sep-3' },
-          { icon: drupalIcon, iconAlt: 'drupal icon', iconKey: 'cms-drupal' },
-          { separator: 'or', iconKey: 'cms-sep-4' },
-          { icon: wordpressIcon, iconAlt: 'wordpress icon', iconKey: 'cms-wordpress' },
         ],
       },
     },
