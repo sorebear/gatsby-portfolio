@@ -35,8 +35,8 @@ const skillsData = [
     rotate: 5,
     details: {
       text: [
-        'I primarily build full-stack web applications using the React, Node.js, and MySQL.',
-        'I also build web applications using vanilla Javascript and PHP.',
+        'I primarily build full-stack web applications using React, Node.js, and MySQL.',
+        'I also build web applications using vanilla JavaScript and PHP.',
       ],
       icons: {
         row1: [
