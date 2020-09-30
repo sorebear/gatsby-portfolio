@@ -111,6 +111,10 @@
       }
     }
 
+    &__main-work-2 {
+      flex-direction: column-reverse !important;
+    }
+
     &__individual-project {
       width: 100% !important;
     }
