@@ -11,6 +11,33 @@
   padding: 0 2rem;
 }
 
+.underline {
+  border-bottom: dashed;
+  border-bottom-width: 1.5px;
+  position: relative;
+}
+
+.web-development-active .underline {
+  border-bottom-color: $red;
+  &::after {
+    background-color: $red;
+  }
+}
+
+.cms-development-active .underline {
+  border-bottom-color: $orange;
+  &::after {
+    background-color: $orange;
+  }
+}
+
+.mobile-development-active .underline {
+  border-bottom-color: $teal;
+  &::after {
+    background-color: $teal;
+  }
+}
+
 @media only screen and (min-width: $desktop-breakpoint) {
   .mobile-only {
     display: none !important;
